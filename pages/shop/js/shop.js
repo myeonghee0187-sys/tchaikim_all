@@ -1,3 +1,122 @@
+/* Freedom, worn: 보이는 동안만 재생하고 모션 감소·재생 실패 시 포스터를 유지합니다. */
+(function initMotifVideo() {
+  var container = document.querySelector(".motif_video");
+  var video = container && container.querySelector(".motif_video_media");
+
+  if (!video) return;
+
+  var motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var isInViewport = false;
+  var isPageHidden = false;
+  var isPlayPending = false;
+  var playRequestId = 0;
+
+  video.muted = true;
+  video.pause();
+
+  function shouldPlayVideo() {
+    return isInViewport && !isPageHidden && !document.hidden && !motionPreference.matches;
+  }
+
+  function pauseVideo() {
+    playRequestId += 1;
+    isPlayPending = false;
+    video.pause();
+    container.classList.remove("is_playing");
+  }
+
+  function updatePlayback() {
+    if (!shouldPlayVideo()) {
+      pauseVideo();
+      return;
+    }
+    if (!video.paused || isPlayPending) return;
+
+    var requestId = ++playRequestId;
+    isPlayPending = true;
+    var playResult = video.play();
+
+    if (playResult && typeof playResult.then === "function") {
+      playResult.then(function () {
+        if (requestId !== playRequestId) return;
+        isPlayPending = false;
+        if (!shouldPlayVideo()) pauseVideo();
+      }).catch(function () {
+        if (requestId !== playRequestId) return;
+        isPlayPending = false;
+        container.classList.remove("is_playing");
+      });
+    } else {
+      isPlayPending = false;
+    }
+  }
+
+  function handlePlaying() {
+    if (!shouldPlayVideo()) {
+      pauseVideo();
+      return;
+    }
+    if (!video.paused) container.classList.add("is_playing");
+  }
+
+  function handlePause() {
+    if (video.paused) {
+      isPlayPending = false;
+      container.classList.remove("is_playing");
+    }
+  }
+
+  function handlePageHide() {
+    isPageHidden = true;
+    pauseVideo();
+  }
+
+  function handlePageShow() {
+    isPageHidden = false;
+    var bounds = container.getBoundingClientRect();
+    isInViewport = bounds.bottom > 0 && bounds.top < window.innerHeight &&
+      bounds.right > 0 && bounds.left < window.innerWidth;
+    updatePlayback();
+  }
+
+  function handleVisibilityChange() {
+    if (document.hidden) {
+      pauseVideo();
+    } else {
+      handlePageShow();
+    }
+  }
+
+  function handleMotionChange() {
+    updatePlayback();
+  }
+
+  /* 관찰자를 지원하지 않는 환경에서는 자동 재생 없이 포스터를 보여줍니다. */
+  if (!("IntersectionObserver" in window)) return;
+
+  video.addEventListener("playing", handlePlaying);
+  video.addEventListener("pause", handlePause);
+  video.addEventListener("error", pauseVideo);
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("pagehide", handlePageHide);
+  window.addEventListener("pageshow", handlePageShow);
+
+  if (typeof motionPreference.addEventListener === "function") {
+    motionPreference.addEventListener("change", handleMotionChange);
+  } else {
+    motionPreference.addListener(handleMotionChange);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      isInViewport = entry.isIntersecting && entry.intersectionRatio > 0;
+    });
+    updatePlayback();
+  }, { rootMargin: "0px", threshold: [0, 0.01] });
+
+  observer.observe(container);
+})();
+
 /* Three.js는 Hero에서만 필요합니다. 원격 모듈을 첫 줄에서 기다리면 상품 버튼과
    배너까지 늦게 초기화되므로, 데스크톱 Hero가 필요할 때만 비동기로 불러옵니다. */
 var THREE = null;
