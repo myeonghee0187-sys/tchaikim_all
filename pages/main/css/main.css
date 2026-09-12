@@ -994,7 +994,52 @@
 
   .brand_collage_card,
   .brand_collage_card.is_size_sm {
-    width: min(15.625vw, 300px);
+    width: 20%;
+    max-width: 300px;
+  }
+}
+
+/* 모션 감소 환경에서는 스크럽 덱 대신 브랜드별 정적 갤러리로 보여 줍니다.
+   애니메이션용 카피 레일과 가로 카드가 한 화면에 겹치지 않게 분리합니다. */
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .brand_collage {
+    min-height: auto;
+    padding-block: 120px;
+  }
+
+  .brand_collage_cards {
+    max-width: 920px;
+  }
+
+  .brand_collage_row {
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 28px;
+  }
+
+  .brand_collage_group_title {
+    display: block;
+    flex: 0 0 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    font-family: var(--font_display);
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.15;
+  }
+
+  .brand_collage_group_title.is_bespoke {
+    margin-top: 40px;
+  }
+
+  .brand_collage_card,
+  .brand_collage_card.is_size_sm {
+    width: calc(50% - 12px);
+    max-width: 300px;
+  }
+
+  .brand_collage_name,
+  .brand_stack_copy {
+    display: none;
   }
 }
 

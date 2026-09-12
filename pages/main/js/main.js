@@ -519,9 +519,6 @@
       var bespokeCopyItems = stackCopy ? Array.prototype.slice.call(stackCopy.querySelectorAll('[data-copy-variant="bespoke"]')) : [];
       var readyCopyItems = stackCopy ? Array.prototype.slice.call(stackCopy.querySelectorAll('[data-copy-variant="ready"]')) : [];
       var hasCollageReveal = collageStep && cards && nameLeft && nameRight;
-      /* 카드 덱 애니메이션 자체가 1024px부터 실행되므로, 같은 구간에서는
-         두 브랜드명도 실제 렌더링 폭을 기준으로 좌우 화면 밖까지 보냅니다. */
-      var isDesktop = window.innerWidth >= 1024;
       var revealOrder = [1, 2, 0, 3];
       /* 완성된 덱은 한 장만 주인공으로 보이고 나머지는 작은 대각선 간격과
          낮은 불투명도로 뒤를 받칩니다. offsetLeft를 쓰면 transform과 CSS zoom의
@@ -558,10 +555,22 @@
         return Math.abs(order) === 1 ? 0.58 : 0.32;
       }
 
-      var nameLeftBox = nameLeft ? nameLeft.getBoundingClientRect() : null;
-      var nameRightBox = nameRight ? nameRight.getBoundingClientRect() : null;
-      var nameLeftExitX = nameLeftBox ? -nameLeftBox.right - 40 : 0;
-      var nameRightExitX = nameRightBox ? window.innerWidth - nameRightBox.left + 40 : 0;
+      function getBrandNameContainerLeft() {
+        var nameContainer = nameLeft ? nameLeft.parentElement : null;
+        return nameContainer ? (collageStep.clientWidth - nameContainer.offsetWidth) / 2 : 0;
+      }
+
+      function getNameLeftExitX() {
+        return nameLeft
+          ? -(getBrandNameContainerLeft() + nameLeft.offsetLeft + nameLeft.offsetWidth + 40)
+          : 0;
+      }
+
+      function getNameRightExitX() {
+        return nameRight
+          ? collageStep.clientWidth - (getBrandNameContainerLeft() + nameRight.offsetLeft) + 40
+          : 0;
+      }
 
       var splitTextIntoLetters = function (element) {
         var text = element.textContent;
@@ -662,7 +671,7 @@
         scrollTrigger: {
           trigger: pin,
           start: "top top",
-          end: "+=" + window.innerHeight * 10,
+          end: function () { return "+=" + window.innerHeight * 10; },
           pin: true,
           scrub: 1,
           onEnter: warmDecodeCards,
@@ -717,15 +726,15 @@
           tl.to(card, { opacity: 1, duration: 0.4, ease: "none" }, cardStart)
             .to(card, {
               scale: 1,
-              y: window.innerHeight * -0.02,
+              y: function () { return window.innerHeight * -0.02; },
               duration: 0.8,
               ease: "none"
             }, cardStart);
         });
 
         /* 두 이름은 일부가 남지 않도록 실제 렌더링 폭을 기준으로 화면 밖까지 보냅니다. */
-        tl.to(nameLeft, isDesktop ? { x: nameLeftExitX, duration: 1.15, ease: "none" } : { y: -70, duration: 1.15, ease: "none" }, 1.82)
-          .to(nameRight, isDesktop ? { x: nameRightExitX, duration: 1.15, ease: "none" } : { y: 70, duration: 1.15, ease: "none" }, 1.82);
+        tl.to(nameLeft, { x: getNameLeftExitX, duration: 1.15, ease: "none" }, 1.82)
+          .to(nameRight, { x: getNameRightExitX, duration: 1.15, ease: "none" }, 1.82);
 
         /* 가로 한 줄이 중앙 카드 덱으로 모입니다. 세 번째 카드를 기준(order 0)으로
            앞장은 또렷하게, 뒤 카드는 작은 대각선 간격과 낮은 불투명도로 깊이를
