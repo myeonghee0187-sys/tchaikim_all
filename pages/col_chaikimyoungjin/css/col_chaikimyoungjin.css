@@ -12,7 +12,7 @@
   --collection_quote: #dfdfdf;
   --collection_tag_line: #e2ddd5;
   --collection_hero_title: #262626;
-  /* 헤더 슬롯이 차지하는 높이. 1850~1990 구간에서만 파일 끝 블록이 줄입니다. */
+  /* 헤더 슬롯의 실제 높이. 데스크톱 배율은 파일 끝에서 보정합니다. */
   --collection_header_reserve: var(--header_height);
   --collection_section_title: #1e1e1e;
 }
@@ -665,11 +665,7 @@
   width: var(--archive_photo_width);
   margin: 0;
   transform: rotate(var(--archive_photo_tilt));
-  /* z-index는 보간되지 않고 지연이 끝나는 순간 한 번에 바뀝니다.
-     복귀할 때만 지연을 주어야 카드가 작아지는 동안 맨 위에 남아 있습니다. */
-  transition:
-    transform var(--duration_base) var(--easing_base),
-    z-index 0s var(--duration_base);
+  /* hover는 GSAP이 전용 변수만 보간합니다. CSS transition을 겹치지 않습니다. */
 }
 
 .archive_photo img {
@@ -679,21 +675,25 @@
   height: auto;
 }
 
-/* 올려 둔 사진이 쌓인 더미에서 빠져나와 전체가 보이도록 커지고 맨 앞으로 옵니다.
+/* hover 이동은 바깥 figure의 전용 변수, 등장 애니메이션은 안쪽 img가 맡습니다.
+   GSAP은 기울기를 직접 쓰지 않아 연도별 rotation을 그대로 유지합니다.
+   그림자·필터 없이 선택한 사진만 움직이고, z-index는 복귀 완료 후 되돌립니다. */
+@media (min-width: 1280px) and (hover: hover) and (pointer: fine) {
+  .archive_frame {
+    isolation: isolate;
+  }
 
-   ★ 그림자를 두지 않습니다. figure는 사진이 날아 들어오기 전에도(= img가
-   `opacity: 0`일 때도) 자리와 크기를 가지고 있어 hover 대상이 됩니다. 그래서
-   그림자를 걸어 두면 **사진은 없는데 그림자 사각형만 허공에 먼저 깔립니다.**
-   사용자 지적("사진 뒤에 쉐도우가 미리 깔린다")이 이것이었습니다.
+  .archive_photo {
+    transform:
+      translateY(var(--archive_hover_y, 0px))
+      rotate(var(--archive_photo_tilt))
+      scale(var(--archive_hover_scale, 1));
+  }
 
-   커지는 것과 맨 앞으로 오는 것만 남깁니다 — 이 둘은 사진이 보이지 않는 동안에는
-   눈에 띄지 않습니다. */
-.archive_photo:hover {
-  z-index: 20;
-  transform: rotate(var(--archive_photo_tilt)) scale(1.08);
-  transition:
-    transform var(--duration_base) var(--easing_base),
-    z-index 0s;
+  /* GSAP을 불러오지 못해도 가려진 사진을 앞으로 꺼내 볼 수 있습니다. */
+  .archive:not(.is_hover_ready) .archive_photo:hover {
+    z-index: 20;
+  }
 }
 
 /* JS가 꺼져 있을 때 보이는 기본 배치이자 2021 배치입니다.
@@ -1705,32 +1705,20 @@
 }
 
 /* =========================================================
-   발표용 축소 해제 — common.css의 1850~1990px `html { zoom: 0.75 }`
+   Collection desktop canvas — 바깥 pin은 viewport, 안쪽 배치는 1920 좌표.
 
-   ★ 이 페이지는 그 축소를 쓰지 않습니다. 축소가 걸리면 콘텐츠가 화면의 75%만
-   쓰고 오른쪽과 아래에 큰 빈 공간이 남습니다(사용자 스크린샷의 증상입니다).
-   사용자 결정: "75% 줌이라고 콘텐츠 자체를 75% 크기로 줄이는 방식으로
-   해결하지 말아줘." 그래서 이 구간에서도 1배로 그립니다.
-
-   ★ 이 블록은 반드시 파일 끝에 있어야 합니다. common.css보다 뒤에 로드되고
-   선택자 특정도가 같아서, 순서로 이깁니다. 위로 옮기면 조용히 무력화됩니다.
-
-   ★ 자매 페이지에도 같은 블록이 있습니다. 한쪽만 두면 브랜드를 오갈 때
-   페이지 크기가 달라집니다.
+   루트 zoom 아래의 ScrollTrigger pin은 실측 폭을 다시 축소합니다.
+   두 섹션의 내부 캔버스만 같은 배율로 그려 이중 축소를 피합니다.
+   zoom은 내부 레이아웃 높이도 반영하고 GSAP의 이동 transform과 충돌하지 않습니다.
    ========================================================= */
-@media (min-width: 1850px) and (max-width: 1990px) {
+@media (min-width: 1280px) {
   :root {
-    /* 히어로의 max-height 계산이 이 값을 씁니다. 1로 되돌려야 100svh가 그대로 쓰입니다. */
     --site_view_scale: 1;
-
-    /* ★ 헤더만은 다른 페이지와 같은 크기로 그립니다.
-       다른 페이지는 html zoom 0.75 안에서 헤더가 0.75배로 그려집니다. 이 페이지는
-       축소를 껐기 때문에 그대로 두면 **헤더만 1.33배로 커집니다**
-       (실측: 높이 64 vs 48, 로고 170 vs 127.5, 메뉴 글자 20 vs 15). */
-    --collection_header_scale: 0.75;
-
-    /* 헤더 슬롯이 실제로 차지하는 높이도 그만큼 줄어듭니다.
-       히어로의 max-height가 이 값을 빼야 "첫 화면에 딱 맞는" 계산이 맞습니다. */
+    --canvas_gain: 1;
+    --vh_gain: 1;
+    /* JS가 스크롤바를 제외한 clientWidth / 1920 값으로 동기화합니다. */
+    --collection_canvas_scale: calc(100vw / 1920px);
+    --collection_header_scale: 1;
     --collection_header_reserve: calc(var(--header_height) * var(--collection_header_scale));
   }
 
@@ -1738,16 +1726,56 @@
     zoom: 1;
   }
 
-  /* 헤더는 이 슬롯 안에 있습니다(고정 위치라도 zoom은 함께 적용됩니다).
-     슬롯의 min-height도 같이 줄어들어 아래 섹션이 시작하는 지점이 다른 페이지와 같아집니다. */
+  /* common의 전역 가로 잘림으로 캔버스 오류를 가리지 않습니다. */
+  body {
+    overflow-x: visible;
+  }
+
+  .showcase {
+    height: calc(3335px * var(--collection_canvas_scale));
+  }
+
+  .showcase.is_pinned {
+    height: 100vh;
+  }
+
+  .showcase_bg,
+  .showcase_frame,
+  .archive_frame {
+    width: var(--layout_canvas);
+    margin-left: 0;
+    zoom: var(--collection_canvas_scale);
+  }
+
+  .showcase_bg {
+    inset: 0 auto auto 0;
+    height: 3335px;
+  }
+
+  /* 문장의 화면 하단 여백도 같은 디자인 좌표로 환산합니다. */
+  .showcase_quote {
+    top: min(712px, calc(100vh / var(--collection_canvas_scale) - 360px));
+  }
+
+  /* 공통 디자인은 그대로 두고, 기존 헤더의 실제 크기만 슬롯에서 유지합니다. */
   .common_header_slot {
     zoom: var(--collection_header_scale);
   }
 
-  /* common.css가 축소를 되돌리려고 걸어 둔 역보정(1 / 0.75)도 함께 풉니다.
-     축소가 없는데 이것만 남으면 푸터와 TOP 버튼이 1.333배로 커집니다. */
   .common_footer_slot,
   .top_button {
     zoom: 1;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1849px) {
+  :root {
+    --collection_header_scale: var(--collection_canvas_scale);
+  }
+}
+
+@media (min-width: 1850px) and (max-width: 1990px) {
+  :root {
+    --collection_header_scale: 0.75;
   }
 }

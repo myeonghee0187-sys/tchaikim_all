@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
 <link rel="stylesheet" href="css/bespoke_base.css">
-<link rel="stylesheet" href="css/reservation_done.css?v=2">
+<link rel="stylesheet" href="css/reservation_done.css?v=3">
 </head>
 <body class="page_bespoke" data-page="bespoke" data-header-variant="black">
 
@@ -33,109 +33,83 @@
   <span class="a11y_hidden">Loading header</span>
 </div>
 
+
 <main class="main" id="main_content">
 
   <section class="done_section" aria-labelledby="done_title">
     <div class="common_container">
 
       <div class="bespoke_section_head done_head">
-        <p class="bespoke_eyebrow">Reservation Received</p>
-        <h1 class="bespoke_section_title" id="done_title">Thank you.<br>Your first meeting is<br>on its way to being set.</h1>
-        <p class="bespoke_section_desc">A confirmation email will follow within 2 business days.<br>Here&rsquo;s what to expect, and where to find us.</p>
+        <p class="bespoke_eyebrow">Reservation Request Received</p>
+        <h1 class="bespoke_section_title" id="done_title">Thank you.<br>We&rsquo;ve received<br>your request.</h1>
+        <p class="bespoke_section_desc">We&rsquo;ll confirm your appointment by email within 2 business days.</p>
       </div>
 
-      <!-- 매장 안내 — 레이아웃은 efuto-sendai.jp의 `.info__cntShop`을 그대로 따랐다
-           (실제로 열어서 1440 / 375 두 폭에서 재고 옮긴 구조다).
-
-             제목 블록
-             └ 2열 행(space-between · align-items: center)
-                ├ 왼쪽 47% : 매장 이름 → 라벨/값 목록(행마다 윗줄) → 링크
-                └ 오른쪽 50% : 지도
-             └ 아래에 사진 한 장
-
-           ★ 스타일 값은 레퍼런스에서 가져오지 않았다. 글꼴·크기·색·자간은
-           전부 이 저장소의 기존 클래스(`.bespoke_eyebrow` · `.bespoke_label` ·
-           `.bespoke_info_body` · `.bespoke_crosslink`)와 토큰을 그대로 쓴다. -->
-      <section class="done_shop" aria-labelledby="done_shop_title">
-
-        <div class="done_shop_head">
-          <p class="bespoke_eyebrow">Shop</p>
-          <h2 class="bespoke_section_title done_shop_heading" id="done_shop_title">Where to find us.</h2>
-        </div>
-
-        <div class="done_shop_row">
-
-          <div class="done_shop_detail">
-            <h3 class="done_shop_name">Tchai Kim Atelier</h3>
-
-            <!-- 레퍼런스의 `.list` → `.list__row`(h4 라벨 + 값)와 같은 구조다.
-                 여기서는 라벨/값 쌍이므로 `dl`이 맞다. -->
-            <dl class="done_shop_list">
-              <div class="done_shop_item">
-                <dt class="bespoke_label">Address</dt>
-                <dd class="bespoke_info_body">1-11 Dokseodang-ro 20-gil,<br>Yongsan-gu, Seoul 04420 (Hannam-dong)</dd>
-              </div>
-              <div class="done_shop_item">
-                <dt class="bespoke_label">Opening Hours</dt>
-                <dd class="bespoke_info_body">Weekdays, 10:00 AM &ndash; 7:00 PM<br>Lunch break 1:00&ndash;2:00 PM &middot; Closed weekends &amp; holidays</dd>
-              </div>
-              <div class="done_shop_item">
-                <dt class="bespoke_label">Contact &amp; Appointment</dt>
-                <dd class="bespoke_info_body">
-                  <a class="done_contact_link" href="mailto:tchaikim@naver.com">tchaikim@naver.com</a><br>
-                  <a class="done_contact_link" href="tel:+82233366922">02-333-6692</a> &mdash; visits by appointment only
-                </dd>
-              </div>
-              <div class="done_shop_item">
-                <dt class="bespoke_label">What&rsquo;s Next</dt>
-                <dd class="bespoke_info_body">Your designer will reach out to confirm<br>the details of your visit.</dd>
-              </div>
-            </dl>
-
-            <!-- 레퍼런스는 왼쪽 열 맨 아래에 SNS 링크를 둔다. 그 자리에 원래
-                 목록 아래 따로 있던 지도 링크 두 개를 옮겼다(내용은 그대로). -->
-            <div class="done_links bespoke_button_row">
-              <a class="bespoke_button is_secondary" href="https://maps.app.goo.gl/saThexGvLGpyijPE9" target="_blank" rel="noopener noreferrer">
-                View on Google Maps
-                <img src="assets/icons/arrow_right.svg" alt="" width="15" height="15">
-                <span class="a11y_hidden">(opens in a new tab)</span>
-              </a>
-              <a class="bespoke_button is_secondary" href="https://naver.me/FLEGvNOi" target="_blank" rel="noopener noreferrer">
-                View on Naver Map
-                <img src="assets/icons/arrow_right.svg" alt="" width="15" height="15">
-                <span class="a11y_hidden">(opens in a new tab)</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- 지도 — 손그림 약도 이미지다(1218 × 985, 1.5MB).
-
-               ★ 같은 이름의 **옛 구글 지도 캡처(1400 × 706)를 덮어쓴 파일**이다.
-               예전 것은 이 저장소의 `asset/bespoke/map.png`에 같은 내용이
-               한 벌 더 남아 있고 git 이력에도 있다.
-
-               ★ `width`/`height`를 원본 크기로 적어 두면 브라우저가 로드 전에
-               자리를 잡아 레이아웃이 튀지 않는다. css는 `width: 100%` ·
-               `height: auto`뿐이라 **비율이 그대로 유지되고 잘리지 않는다**
-               (그래서 `object-fit`이 필요 없다). -->
-          <figure class="done_shop_map">
-            <img src="assets/map.png" alt="Hand-drawn map showing the Tchai Kim atelier on Dokseodang-ro 20-gil in Hannam-dong, Yongsan-gu, Seoul" width="1218" height="985" loading="lazy" decoding="async">
-          </figure>
-
-        </div>
-
+      <section class="done_request" id="done_request" aria-labelledby="done_request_title" hidden>
+        <p class="bespoke_eyebrow" id="done_request_title">Your Request</p>
+        <dl class="done_request_list">
+          <div class="done_request_item"><dt>Meeting</dt><dd id="done_request_meeting"></dd></div>
+          <div class="done_request_item"><dt>Date</dt><dd id="done_request_date"></dd></div>
+          <div class="done_request_item"><dt>Time</dt><dd id="done_request_time"></dd></div>
+          <div class="done_request_item"><dt>Silhouette</dt><dd id="done_request_silhouette"></dd></div>
+          <div class="done_request_item"><dt>Fabric</dt><dd id="done_request_fabric"></dd></div>
+        </dl>
       </section>
 
+      <section class="done_shop done_visit" id="done_visit" aria-labelledby="done_visit_title">
+        <div class="done_shop_head">
+          <p class="bespoke_eyebrow">Atelier Visit</p>
+          <h2 class="bespoke_section_title done_shop_heading" id="done_visit_title">Plan your visit.</h2>
+        </div>
+        <div class="done_shop_row">
+          <div class="done_shop_detail">
+            <h3 class="done_shop_name">Tchai Kim Atelier</h3>
+            <dl class="done_shop_list">
+              <div class="done_shop_item"><dt class="bespoke_label">Address</dt><dd class="bespoke_info_body">1-11 Dokseodang-ro 20-gil,<br>Yongsan-gu, Seoul 04420 (Hannam-dong)</dd></div>
+              <div class="done_shop_item"><dt class="bespoke_label">Opening Hours</dt><dd class="bespoke_info_body">Weekdays, 10:00 AM &ndash; 7:00 PM<br>Lunch break 1:00&ndash;2:00 PM &middot; Closed weekends &amp; holidays</dd></div>
+              <div class="done_shop_item"><dt class="bespoke_label">Contact</dt><dd class="bespoke_info_body"><a class="done_contact_link" href="mailto:tchaikim@naver.com">tchaikim@naver.com</a><br><a class="done_contact_link" href="tel:+82233366922">02-333-6692</a> &mdash; visits by appointment only</dd></div>
+            </dl>
+            <div class="done_links bespoke_button_row">
+              <a class="bespoke_button is_secondary" href="https://maps.app.goo.gl/saThexGvLGpyijPE9" target="_blank" rel="noopener noreferrer">View on Google Maps <img src="assets/icons/arrow_right.svg" alt="" width="15" height="15"><span class="a11y_hidden">(opens in a new tab)</span></a>
+              <a class="bespoke_button is_secondary" href="https://naver.me/FLEGvNOi" target="_blank" rel="noopener noreferrer">View on Naver Map <img src="assets/icons/arrow_right.svg" alt="" width="15" height="15"><span class="a11y_hidden">(opens in a new tab)</span></a>
+            </div>
+          </div>
+          <figure class="done_shop_map">
+            <img src="assets/map.png" alt="Hand-drawn map showing the Tchai Kim atelier on Dokseodang-ro 20-gil in Hannam-dong, Yongsan-gu, Seoul" width="1218" height="985" loading="lazy" decoding="async">
+            <figcaption>Hannam-dong &middot; Tchai Kim Atelier</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="done_phone" id="done_phone" aria-labelledby="done_phone_title" hidden>
+        <div class="done_shop_head">
+          <p class="bespoke_eyebrow">Phone Call</p>
+          <h2 class="bespoke_section_title done_shop_heading" id="done_phone_title">What happens next.</h2>
+        </div>
+        <div class="done_phone_grid">
+          <div>
+            <p class="done_phone_lead">We&rsquo;ll call the number you provided at the requested time.</p>
+            <p class="bespoke_info_body">Please keep your phone available a few minutes before the consultation.</p>
+          </div>
+          <dl class="done_phone_meta">
+            <div><dt class="bespoke_label">Contact number</dt><dd class="bespoke_info_body" id="done_phone_number">The number provided with your request</dd></div>
+            <div><dt class="bespoke_label">Before the call</dt><dd class="bespoke_info_body">Have any reference images or questions ready so your designer can make the most of the 60-minute consultation.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <aside class="done_change" aria-labelledby="done_change_title">
+        <p class="bespoke_eyebrow" id="done_change_title">Need to make a change?</p>
+        <p class="bespoke_info_body">Contact us before your appointment is confirmed.</p>
+        <p class="done_change_links"><a class="done_contact_link" href="mailto:tchaikim@naver.com">tchaikim@naver.com</a><span aria-hidden="true">&middot;</span><a class="done_contact_link" href="tel:+82233366922">02-333-6692</a></p>
+      </aside>
+
       <hr class="bespoke_rule done_rule">
-
-      <p class="done_back">
-        <a class="bespoke_crosslink is_plain" href="index.html">&larr; Back to Bespoke</a>
-      </p>
-
+      <p class="done_back"><a class="bespoke_crosslink is_plain" href="index.html">&larr; Return to Bespoke</a></p>
     </div>
   </section>
-
 </main>
+
 
 <div class="common_footer_slot" data-component="../../common/components/footer.html">
   <span class="a11y_hidden">Loading footer</span>
@@ -147,5 +121,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
+<script src="js/reservation_done.js?v=1"></script>
 </body>
 </html>

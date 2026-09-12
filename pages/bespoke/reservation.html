@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Request a reservation — Bespoke — Tchai Kim Youngjin</title>
-<meta name="description" content="Tell us about the piece you have in mind, and choose a time to meet — at our Seoul atelier, or by video call.">
+<meta name="description" content="Tell us about the piece you have in mind, and choose a time to meet — at our Seoul atelier, or by phone call.">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#fffdf9">
 <link rel="icon" type="image/svg+xml" href="../../favicon/favicon.svg">
@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
 <link rel="stylesheet" href="css/bespoke_base.css">
-<link rel="stylesheet" href="css/reservation.css">
+<link rel="stylesheet" href="css/reservation.css?v=2">
 </head>
 <body class="page_bespoke" data-page="bespoke" data-header-variant="black">
 
@@ -43,7 +43,7 @@
         <div class="bespoke_section_head">
           <p class="bespoke_eyebrow">Reservation</p>
           <h1 class="bespoke_hero_heading" id="reservation_hero_title">Let&rsquo;s design your<br>first meeting.</h1>
-          <p class="bespoke_section_desc">Tell us about the piece you have in mind, and choose a time to meet &mdash; at our Seoul atelier, or by video call.</p>
+          <p class="bespoke_section_desc">Tell us about the piece you have in mind, and choose a time to meet &mdash; at our Seoul atelier, or by phone call.</p>
         </div>
       </div>
     </section>
@@ -211,9 +211,10 @@
               <span class="bespoke_button is_secondary">Phone Call</span>
             </label>
           </div>
+          <p class="reservation_mode_note" id="reservation_mode_note" aria-live="polite">Choose a weekday for your visit to our Hannam-dong atelier.</p>
         </fieldset>
 
-        <div class="reservation_schedule">
+        <div class="reservation_schedule" id="reservation_schedule">
 
           <fieldset class="reservation_fieldset reservation_calendar">
             <legend class="a11y_hidden">Choose a date</legend>
@@ -222,14 +223,14 @@
               <button class="reservation_calendar_nav" type="button" data-calendar_step="-1" aria-label="Previous month">
                 <img src="assets/icons/chevron_left.svg" alt="" width="24" height="24">
               </button>
-              <p class="reservation_calendar_month" id="reservation_calendar_month">August 2026</p>
+              <p class="reservation_calendar_month" id="reservation_calendar_month">Loading calendar</p>
               <button class="reservation_calendar_nav is_next" type="button" data-calendar_step="1" aria-label="Next month">
                 <img src="assets/icons/chevron_left.svg" alt="" width="24" height="24">
               </button>
             </div>
 
             <table class="reservation_calendar_table">
-              <caption class="a11y_hidden">August 2026</caption>
+              <caption class="a11y_hidden" id="reservation_calendar_caption">Calendar</caption>
               <thead>
                 <tr>
                   <th scope="col"><abbr title="Sunday">S</abbr></th>
@@ -241,87 +242,45 @@
                   <th scope="col"><abbr title="Saturday">S</abbr></th>
                 </tr>
               </thead>
-              <tbody id="reservation_calendar_body">
-                <tr>
-                  <td></td><td></td><td></td><td></td><td></td><td></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-01">1</button></td>
-                </tr>
-                <tr>
-                  <td><button class="reservation_day" type="button" value="2026-08-02">2</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-03">3</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-04">4</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-05">5</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-06">6</button></td>
-                  <td><button class="reservation_day is_selected" type="button" value="2026-08-07" aria-pressed="true">7</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-08">8</button></td>
-                </tr>
-                <tr>
-                  <td><button class="reservation_day" type="button" value="2026-08-09">9</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-10">10</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-11">11</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-12">12</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-13">13</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-14">14</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-15">15</button></td>
-                </tr>
-                <tr>
-                  <td><button class="reservation_day" type="button" value="2026-08-16">16</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-17">17</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-18">18</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-19">19</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-20">20</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-21">21</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-22">22</button></td>
-                </tr>
-                <tr>
-                  <td><button class="reservation_day" type="button" value="2026-08-23">23</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-24">24</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-25">25</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-26">26</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-27">27</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-28">28</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-29">29</button></td>
-                </tr>
-                <tr>
-                  <td><button class="reservation_day" type="button" value="2026-08-30">30</button></td>
-                  <td><button class="reservation_day" type="button" value="2026-08-31">31</button></td>
-                  <td></td><td></td><td></td><td></td><td></td>
-                </tr>
-              </tbody>
+              <tbody id="reservation_calendar_body"></tbody>
             </table>
-            <input type="hidden" name="meeting_date" id="reservation_date_value" value="2026-08-07">
+            <input type="hidden" name="meeting_date" id="reservation_date_value" value="">
           </fieldset>
 
           <fieldset class="reservation_fieldset reservation_timetable">
             <legend class="a11y_hidden">Choose a time</legend>
+            <div class="reservation_timetable_head" aria-live="polite">
+              <p class="reservation_timetable_title" id="reservation_timetable_title">Atelier appointment times</p>
+              <p class="reservation_timetable_date" id="reservation_timetable_date">Select a date to view available times.</p>
+            </div>
             <ul class="reservation_time_list">
               <li>
                 <label class="reservation_time">
-                  <input class="a11y_hidden" type="radio" name="meeting_time" value="11:00">
+                  <input class="a11y_hidden" type="radio" name="meeting_time" value="11:00" disabled>
                   <span class="reservation_time_face">11:00 AM</span>
                 </label>
               </li>
               <li>
                 <label class="reservation_time">
-                  <input class="a11y_hidden" type="radio" name="meeting_time" value="13:00" checked>
+                  <input class="a11y_hidden" type="radio" name="meeting_time" value="13:00" disabled>
                   <span class="reservation_time_face">1:00 PM</span>
                 </label>
               </li>
               <li>
                 <label class="reservation_time">
-                  <input class="a11y_hidden" type="radio" name="meeting_time" value="14:00">
+                  <input class="a11y_hidden" type="radio" name="meeting_time" value="14:00" disabled>
                   <span class="reservation_time_face">2:00 PM</span>
                 </label>
               </li>
               <li>
                 <label class="reservation_time">
-                  <input class="a11y_hidden" type="radio" name="meeting_time" value="15:00">
+                  <input class="a11y_hidden" type="radio" name="meeting_time" value="15:00" disabled>
                   <span class="reservation_time_face">3:00 PM</span>
                 </label>
               </li>
               <li>
                 <label class="reservation_time">
-                  <input class="a11y_hidden" type="radio" name="meeting_time" value="16:00">
+                  <input class="a11y_hidden" type="radio" name="meeting_time" value="16:00" disabled>
                   <span class="reservation_time_face">4:00 PM</span>
                 </label>
               </li>
@@ -346,15 +305,15 @@
         <div class="bespoke_form_grid">
           <p class="bespoke_field">
             <label class="bespoke_field_label" for="field_name">Full name</label>
-            <input class="bespoke_field_input" id="field_name" name="full_name" type="text" placeholder="your name" autocomplete="name" value="Mei Ling Lee">
+            <input class="bespoke_field_input" id="field_name" name="full_name" type="text" placeholder="your name" autocomplete="name">
           </p>
           <p class="bespoke_field">
             <label class="bespoke_field_label" for="field_phone">Contact number</label>
-            <input class="bespoke_field_input" id="field_phone" name="phone" type="tel" placeholder="+1 000 000 0000" autocomplete="tel" value="010-1234-5678">
+            <input class="bespoke_field_input" id="field_phone" name="phone" type="tel" placeholder="+1 000 000 0000" autocomplete="tel">
           </p>
           <p class="bespoke_field">
             <label class="bespoke_field_label" for="field_email">Email address</label>
-            <input class="bespoke_field_input" id="field_email" name="email" type="email" placeholder="your@email.com" autocomplete="email" value="example@example.com">
+            <input class="bespoke_field_input" id="field_email" name="email" type="email" placeholder="your@email.com" autocomplete="email">
           </p>
           <p class="bespoke_field">
             <label class="bespoke_field_label" for="field_occasion">Occasion</label>
@@ -370,7 +329,7 @@
 
         <p class="bespoke_field reservation_notes">
           <label class="bespoke_field_label" for="field_notes">Special requests or notes</label>
-          <textarea class="bespoke_field_textarea" id="field_notes" name="notes" rows="3" placeholder="Let us know anything about the silhouette, occasion, or details you'd like your designer to consider.">I would like a slightly longer chima than the standard length, and a collar finished by hand.</textarea>
+          <textarea class="bespoke_field_textarea" id="field_notes" name="notes" rows="3" placeholder="Let us know anything about the silhouette, occasion, or details you'd like your designer to consider."></textarea>
         </p>
       </div>
     </section>
@@ -390,17 +349,17 @@
              폼 데이터에 들어가면 안 됩니다.
              동기화는 js/reservation.js의 initSubmit()이 맡습니다. -->
         <div class="bespoke_check reservation_check_all">
-          <input class="bespoke_check_input" id="agree_all" type="checkbox" checked>
+          <input class="bespoke_check_input" id="agree_all" type="checkbox">
           <label class="bespoke_check_label" for="agree_all">Agree to all</label>
         </div>
 
         <ul class="bespoke_check_list">
           <li class="bespoke_check">
-            <input class="bespoke_check_input" id="agree_privacy" name="agree_privacy" type="checkbox" required checked>
+            <input class="bespoke_check_input" id="agree_privacy" name="agree_privacy" type="checkbox" required>
             <label class="bespoke_check_label" for="agree_privacy">I agree to the collection and use of my personal information for the purpose of this consultation.</label>
           </li>
           <li class="bespoke_check">
-            <input class="bespoke_check_input" id="agree_production" name="agree_production" type="checkbox" required checked>
+            <input class="bespoke_check_input" id="agree_production" name="agree_production" type="checkbox" required>
             <label class="bespoke_check_label" for="agree_production">I understand that average production time is 3&ndash;5 weeks, and production begins upon confirmation of payment.</label>
           </li>
         </ul>
@@ -408,10 +367,7 @@
         <hr class="bespoke_rule reservation_confirm_rule">
 
         <div class="reservation_submit">
-          <button class="bespoke_button is_primary" type="submit">Request a reservation</button>
-          <!-- 두 동의가 모두 켜진 상태로 시작하므로 비워 둡니다
-               (`.bespoke_status:empty`가 숨깁니다). 동의를 풀면
-               refreshAgreeStatus()가 안내 문구를 다시 채웁니다. -->
+          <button class="bespoke_button is_primary" id="reservation_submit_button" type="submit" disabled>Request a reservation</button>
           <p class="bespoke_status" id="reservation_status" role="status"></p>
         </div>
       </div>
@@ -431,6 +387,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
-<script src="js/reservation.js"></script>
+<script src="js/reservation.js?v=2"></script>
 </body>
 </html>

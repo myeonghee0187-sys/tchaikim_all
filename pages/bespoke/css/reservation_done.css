@@ -242,3 +242,160 @@
 .done_back {
   margin: 0;
 }
+
+
+/* ============================================================
+   Reservation completion refinements
+   ============================================================ */
+.done_head {
+  margin-bottom: 64px;
+}
+
+.done_request {
+  padding-block: 28px 36px;
+  margin-bottom: 88px;
+  border-top: 1px solid var(--color_border);
+  border-bottom: 1px solid var(--color_border);
+}
+
+.done_request > .bespoke_eyebrow {
+  margin-bottom: 26px;
+}
+
+/* No per-row dividers: spacing and label/value columns carry the hierarchy. */
+.done_request_list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+}
+
+.done_request_item {
+  display: grid;
+  grid-template-columns: minmax(110px, 160px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: baseline;
+}
+
+.done_request_item dt,
+.done_request_item dd {
+  margin: 0;
+}
+
+.done_request_item dt {
+  color: var(--color_text_muted);
+  font-family: var(--font_ui);
+  font-size: var(--fs_ui_14);
+}
+
+.done_request_item dd {
+  color: var(--color_text);
+  font-family: var(--font_body);
+  font-size: var(--fs_ui_16);
+  line-height: 1.5;
+}
+
+@media (max-width: 639px) {
+  .done_request_item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .done_shop_row {
+    align-items: flex-start;
+  }
+}
+
+.done_shop_map {
+  padding: 10px;
+  border: 1px solid var(--color_border);
+  background: var(--color_surface);
+}
+
+.done_shop_map img {
+  filter: saturate(0.88) contrast(0.97);
+  transition: transform var(--duration_base) var(--easing_base);
+}
+
+.done_shop_map figcaption {
+  margin-top: 10px;
+  color: var(--color_text_muted);
+  font-family: var(--font_ui);
+  font-size: var(--fs_ui_14);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .done_shop_map:hover img {
+    transform: scale(1.012);
+  }
+}
+
+.done_phone {
+  margin-bottom: 88px;
+}
+
+.done_phone_grid {
+  display: grid;
+  gap: 48px;
+}
+
+@media (min-width: 900px) {
+  .done_phone_grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 80px;
+  }
+}
+
+.done_phone_lead {
+  max-width: 520px;
+  margin: 0 0 16px;
+  color: var(--color_text);
+  font-family: var(--font_display);
+  font-size: var(--bespoke_fs_card);
+  line-height: 1.45;
+}
+
+.done_phone-meta,
+.done_phone_meta {
+  margin: 0;
+}
+
+.done_phone_meta > div {
+  display: grid;
+  gap: 8px;
+  padding-block: 20px;
+  border-top: 1px solid var(--color_border);
+}
+
+.done_phone_meta > div:last-child {
+  border-bottom: 1px solid var(--color_border);
+}
+
+.done_phone_meta dd {
+  margin: 0;
+}
+
+.done_change {
+  padding-top: 34px;
+  margin-top: 72px;
+  border-top: 1px solid var(--color_border);
+}
+
+.done_change .bespoke_eyebrow {
+  margin-bottom: 12px;
+}
+
+.done_change-links,
+.done_change_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  font-family: var(--font_ui);
+  font-size: var(--fs_ui_14);
+}
+
+.done_back .bespoke_crosslink {
+  font-size: var(--fs_ui_14);
+}

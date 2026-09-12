@@ -439,3 +439,88 @@
 .reservation_submit .bespoke_status {
   max-width: 405px;
 }
+
+
+/* ============================================================
+   Reservation UX refinements
+   ============================================================ */
+
+/* Weekend column labels are intentionally unavailable. */
+.reservation_calendar_table th:first-child,
+.reservation_calendar_table th:last-child {
+  color: var(--color_text_subtle);
+}
+
+.reservation_mode_note {
+  max-width: 620px;
+  margin: -32px 0 56px;
+  color: var(--color_text_muted);
+  font-family: var(--font_ui);
+  font-size: var(--fs_ui_14);
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .reservation_mode_note {
+    margin-top: -52px;
+    margin-bottom: 80px;
+  }
+}
+
+.reservation_timetable_head {
+  min-height: 58px;
+  margin-bottom: 22px;
+}
+
+.reservation_timetable_title {
+  margin: 0 0 6px;
+  color: var(--color_text);
+  font-family: var(--font_body);
+  font-size: var(--fs_ui_16);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.reservation_timetable_date {
+  margin: 0;
+  color: var(--color_text_secondary);
+  font-family: var(--font_ui);
+  font-size: var(--fs_ui_14);
+  line-height: 1.55;
+}
+
+/* The meeting mode should feel visibly different before the user gets to the
+   completion page, while preserving the same calendar/time layout. */
+.reservation_schedule.is_phone_mode .reservation_timetable_title {
+  color: var(--color_point);
+}
+
+.reservation_time:has(input:disabled) {
+  cursor: not-allowed;
+}
+
+.reservation_time:has(input:disabled) .reservation_time_face {
+  border-color: var(--color_border);
+  background-color: transparent;
+  color: var(--color_text_subtle);
+}
+
+@media (hover: hover) {
+  .reservation_time:has(input:disabled):hover .reservation_time_face {
+    border-color: var(--color_border);
+    background-color: transparent;
+    color: var(--color_text_subtle);
+  }
+}
+
+.reservation_submit .bespoke_button:disabled {
+  border-color: var(--color_border);
+  background-color: var(--color_surface_subtle);
+  color: var(--color_text_subtle);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.reservation_submit .bespoke_button:not(:disabled) {
+  cursor: pointer;
+}

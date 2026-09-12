@@ -13,7 +13,8 @@
      수밖에 없었다. 그 관계를 뒤집어, 사진을 무대로 올리고 목록은 인덱스로
      내렸다. 색이 차오르는 행 연출은 그대로 남겼다.
 
-     스크롤(넓은 화면) / 클릭 / 포커스(키보드) 세 경로가 같은 함수를 부른다.
+     스크롤과 클릭은 같은 진행 위치를 공유한다. 데스크톱에서 단계를 클릭하면
+     해당 단계의 스크롤 구간 중앙으로 이동하고, 포커스는 콘텐츠만 미리 보여 준다.
      **hover 경로는 없다**(아래 리스너 자리의 사유 참고).
 
      **높이를 JS로 재지 않는다.** 사진 상자가 고정 크기이고, 글 다섯 벌은
@@ -45,6 +46,11 @@
     }
 
     var activeKey = null;
+    /* 클릭이 현재 스크롤 진행 위치까지 바꿀 수 있도록 트리거를 바깥에 보관한다.
+       게이트 밖(모바일 · 모션 감소 · GSAP 없음)에서는 null이라 기존처럼
+       콘텐츠만 전환된다. */
+    var processTrigger = null;
+    var lastScrollIndex = -1;
 
     var initialStep = steps.filter(function (step) {
       return step.classList.contains("is_active");
@@ -91,27 +97,107 @@
       return step && section.contains(step) ? step : null;
     }
 
-    function handlePointer(event) {
+    /* 각 단계의 경계가 아니라 **구간 중앙**으로 이동한다.
+       5단계라면 10% · 30% · 50% · 70% · 90%다.
+       마지막을 100%로 보내지 않으므로 05를 눌렀을 때 sticky가 즉시 풀리거나
+       다음 섹션으로 넘어가는 일이 없다. */
+    function progressForIndex(index) {
+      return (index + 0.5) / steps.length;
+    }
+
+    function syncScrollToIndex(index) {
+      if (
+        !processTrigger ||
+        !section.classList.contains("is_scroll_ready") ||
+        index < 0 ||
+        index >= steps.length
+      ) {
+        return false;
+      }
+
+      var start = Number(processTrigger.start);
+      var end = Number(processTrigger.end);
+
+      if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) {
+        return false;
+      }
+
+      var targetY = start + (end - start) * progressForIndex(index);
+
+      /* 먼저 같은 단계로 맞춰 둔다. 즉시 점프하는 동안 ScrollTrigger가 갱신돼도
+         이전 스크롤 단계가 화면을 되돌리지 않는다. */
+      lastScrollIndex = index;
+      setActiveKey(steps[index].dataset.step);
+
+      /* common.js가 만든 Lenis가 있으면 그것의 내부 좌표도 함께 맞춘다.
+         중간 단계를 애니메이션으로 훑지 않도록 immediate를 쓴다. */
+      var lenis = window.tchaikimmLenis;
+
+      if (lenis && typeof lenis.scrollTo === "function") {
+        lenis.scrollTo(targetY, {
+          immediate: true,
+          force: true,
+          onComplete: function () {
+            if (window.ScrollTrigger) {
+              window.ScrollTrigger.update();
+            }
+          }
+        });
+      } else {
+        /* Lenis가 꺼진 환경에서는 브라우저 좌표를 즉시 옮긴다.
+           object-form의 behavior 옵션을 쓰지 않아 CSS scroll-behavior의 영향을
+           받지 않고 중간 단계를 지나가지 않는다. */
+        window.scrollTo(0, targetY);
+      }
+
+      if (window.ScrollTrigger) {
+        window.ScrollTrigger.update();
+      }
+
+      return true;
+    }
+
+    function handleFocus(event) {
       var step = stepFrom(event.target);
 
       if (step) {
+        /* Tab으로 탐색할 때 페이지까지 갑자기 이동시키지는 않는다.
+           Enter/Space를 누르면 아래 click 경로가 실행돼 스크롤도 동기화된다. */
         setActiveKey(step.dataset.step);
       }
     }
 
+    function handleClick(event) {
+      var step = stepFrom(event.target);
+
+      if (!step) {
+        return;
+      }
+
+      var index = steps.indexOf(step);
+
+      if (index < 0) {
+        return;
+      }
+
+      setActiveKey(step.dataset.step);
+      syncScrollToIndex(index);
+    }
+
     /* ★ 2026-08-11(사용자 요청): **마우스 hover 경로를 제거했다.**
        스크롤이 단계를 넘기게 된 뒤로, 목록 위를 지나가기만 해도 단계가 바뀌어
-       스크롤이 정한 단계와 다투었다. 이제 남은 경로는 둘이다.
+       스크롤이 정한 단계와 다투었다.
 
-       ★ 클릭·포커스는 남긴다 — hover가 아니고, 게이트 밖(좁은 화면 · 모션 감소 ·
-       GSAP 없음)에서는 **스크롤 구간이 아예 없어서 이 둘이 유일한 조작 수단**이다.
-       여기까지 지우면 그 환경에서 01 Consultation에서 영영 못 움직인다. */
+       ★ 2026-09-13: 클릭은 이제 콘텐츠만 바꾸지 않고 **해당 단계의 실제
+       스크롤 구간 중앙까지 함께 이동**한다. 그래서 04를 클릭한 뒤 아래로
+       굴리면 05로, 위로 굴리면 03으로 자연스럽게 이어진다.
 
-    /* 키보드 Tab. 포커스가 들어오면 그 단계로 바뀐다. */
-    section.addEventListener("focusin", handlePointer);
+       포커스는 접근성을 위해 콘텐츠만 미리 보여 준다. Tab 이동만으로 페이지가
+       갑자기 움직이면 안 되기 때문이다. Enter/Space는 button의 click을 발생시켜
+       데스크톱에서는 스크롤까지 정상적으로 동기화한다. */
 
-    /* 마우스·터치 클릭. */
-    section.addEventListener("click", handlePointer);
+    section.addEventListener("focusin", handleFocus);
+    section.addEventListener("click", handleClick);
 
     /* ── 스크롤로 단계 넘기기 (2026-08-10 사용자 요청) ────────────────────
        "스크롤 내릴 때 1~5번이 나타나는데, 다 내려갈 때까지는 계속 고정."
@@ -128,9 +214,8 @@
        상자가 100svh이므로, 섹션 아랫변이 화면 아랫변에 닿는 순간과 정의상
        같다. 숫자로 적으면 css의 활주로 길이와 한 쌍이 되어 조용히 어긋난다.
 
-       ★ 단계가 **바뀔 때만** 부른다. 매 프레임 부르면 클릭·포커스로 짚어 둔
-       단계를 스크롤이 계속 되돌려 버린다. 지금은 스크롤 단계가 실제로 넘어갈
-       때까지 그 선택이 살아 있다.
+       ★ 클릭도 이 트리거의 start/end 값을 이용한다. 단계 구간의 중앙으로
+       실제 좌표를 옮기므로 이후 휠 입력은 클릭한 단계의 앞뒤에서 이어진다.
 
        ★ 게이트 밖(좁은 화면 · 모션 감소 · GSAP 없음)에서는 `is_scroll_ready`가
        붙지 않아 고정도 없고, 클릭·포커스로만 바뀐다.
@@ -144,8 +229,6 @@
     window.gsap.matchMedia().add(PROCESS_SCROLL_GATE, function () {
       section.classList.add("is_scroll_ready");
 
-      var lastIndex = -1;
-
       var trigger = window.ScrollTrigger.create({
         trigger: section,
         start: "top top",
@@ -156,22 +239,29 @@
             Math.floor(self.progress * steps.length)
           );
 
-          if (index === lastIndex) {
+          if (index === lastScrollIndex) {
             return;
           }
 
-          lastIndex = index;
+          lastScrollIndex = index;
           setActiveKey(steps[index].dataset.step);
         }
       });
 
+      processTrigger = trigger;
+
       return function () {
         section.classList.remove("is_scroll_ready");
+
+        if (processTrigger === trigger) {
+          processTrigger = null;
+          lastScrollIndex = -1;
+        }
+
         trigger.kill();
       };
     });
   }
-
 
 
   /* ---------------------------------------------------------
@@ -598,93 +688,190 @@
       return;
     }
 
-    var textureImage = section.querySelector(".materials_texture_img");
+    var textureFrame = section.querySelector(".materials_texture");
+    var textureImages = Array.prototype.slice.call(
+      section.querySelectorAll(".materials_texture_img")
+    );
     var swatches = Array.prototype.slice.call(section.querySelectorAll(".materials_swatch"));
-    var listItems = Array.prototype.slice.call(section.querySelectorAll(".materials_list_item"));
-    var captionBox = section.querySelector(".materials_caption");
     var captionItems = Array.prototype.slice.call(
       section.querySelectorAll(".materials_caption_item")
     );
+    var status = section.querySelector(".materials_status");
 
-    if (!textureImage || !swatches.length || !listItems.length || !captionItems.length) {
+    if (
+      !textureFrame ||
+      textureImages.length < 2 ||
+      !swatches.length ||
+      !captionItems.length
+    ) {
       return;
     }
 
     var activeFabric = null;
+    var visibleTextureIndex = textureImages[0].classList.contains("is_visible") ? 0 : 1;
     var textureToken = 0;
+    var preloaded = Object.create(null);
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    function fabricOf(element) {
-      var button = element.querySelector("[data-fabric]");
-
-      return button ? button.dataset.fabric : null;
+    function fabricOf(swatch) {
+      return swatch ? swatch.dataset.fabric : null;
     }
 
-    /* ★ 이 섹션의 사진은 원본 카메라 파일이다(3000~6000px, 장당 1~4MB).
-       클릭한 뒤에 받기 시작하면 다 받을 때까지 자리가 비어 보이므로,
-       **여섯 장을 미리 받아 둔다.** 목록은 스와치 마크업에서 그대로 읽으니
-       사진을 바꿔도 여기를 고칠 필요가 없다.
+    function buttonFor(fabric) {
+      return section.querySelector(
+        '.materials_swatch_button[data-fabric="' + fabric + '"]'
+      );
+    }
 
-       DOM의 <img>와 같은 URL이라 브라우저 캐시에서 한 벌만 받는다.
-       이 섹션에서 실제로 쓰는 여섯 장만 대상이다. */
-    var preloaded = Object.create(null);
+    function sourceFor(fabric) {
+      var button = buttonFor(fabric);
+      var image = button ? button.querySelector(".materials_swatch_img img") : null;
+
+      return image ? image.getAttribute("src") : "";
+    }
+
+    function altFor(fabric) {
+      var button = buttonFor(fabric);
+      var image = button ? button.querySelector(".materials_swatch_img img") : null;
+      var alt = image ? image.getAttribute("alt") || "" : "";
+
+      return alt.replace(/\s*swatch$/i, " shown close up");
+    }
+
+    function labelFor(fabric) {
+      var button = buttonFor(fabric);
+
+      return button ? button.dataset.label || fabric : fabric;
+    }
+
+    function absoluteSource(source) {
+      try {
+        return new URL(source, document.baseURI).href;
+      } catch (error) {
+        return source;
+      }
+    }
 
     function preloadTexture(source) {
-      if (!source || preloaded[source]) {
-        return preloaded[source] || null;
+      var absolute = absoluteSource(source);
+
+      if (!source) {
+        return null;
+      }
+
+      if (preloaded[absolute]) {
+        return preloaded[absolute];
       }
 
       var image = new Image();
-
+      image.decoding = "async";
       image.src = source;
-      preloaded[source] = image;
+      preloaded[absolute] = image;
 
       return image;
     }
 
-    /* 클릭한 순간 갈아 끼운다. 페이드로 흐리는 단계가 없어 빈 자리가 없다.
-
-       ★ **아직 안 받아진 사진이면 src를 바꾸지 않고 기다린다.** 바꿔 버리면
-       받는 동안 <img>가 빈 상자가 되어(= 고치려던 그 증상) 자리가 비어 보인다.
-       기다리는 동안에는 **직전 원단 사진이 그대로 떠 있다** — 화면이 비는
-       구간이 어느 경로에서도 생기지 않는다. 미리 받아 두었으므로 보통은
-       `complete`가 참이라 이 대기 경로를 타지 않는다. */
+    /* 큰 사진 두 장을 같은 자리에 겹쳐 두고 앞뒤 레이어를 바꾼다.
+       새 이미지가 아직 준비되지 않았으면 현재 사진을 그대로 유지해 빈 프레임이
+       생기지 않는다. 준비되는 순간 opacity + 미세 scale 전환만 실행한다. */
     function swapTexture(source, alt) {
-      if (!source || textureImage.getAttribute("src") === source) {
+      if (!source) {
+        return;
+      }
+
+      var current = textureImages[visibleTextureIndex];
+
+      if (absoluteSource(current.getAttribute("src")) === absoluteSource(source)) {
+        textureFrame.setAttribute("aria-label", alt);
         return;
       }
 
       var token = ++textureToken;
-      var image = preloadTexture(source);
+      var preload = preloadTexture(source);
 
       function apply() {
-        /* 기다리는 사이에 다른 원단을 눌렀으면 이 차례는 버린다. */
         if (token !== textureToken) {
           return;
         }
 
-        textureImage.src = source;
-        textureImage.alt = alt;
+        var nextIndex = visibleTextureIndex === 0 ? 1 : 0;
+        var next = textureImages[nextIndex];
+        var previous = textureImages[visibleTextureIndex];
+
+        next.classList.remove("is_visible");
+        next.src = source;
+
+        /* 브라우저 캐시에 파일이 있어도 디코딩이 끝나기 전에 opacity를 올리면
+           한 프레임 비어 보일 수 있다. 새 레이어의 decode가 끝날 때까지 기존
+           레이어를 그대로 유지한 뒤 두 class를 같은 프레임에 바꾼다. */
+        function reveal() {
+          if (token !== textureToken) {
+            return;
+          }
+
+          void next.offsetWidth;
+
+          window.requestAnimationFrame(function () {
+            if (token !== textureToken) {
+              return;
+            }
+
+            next.classList.add("is_visible");
+            previous.classList.remove("is_visible");
+            visibleTextureIndex = nextIndex;
+            textureFrame.setAttribute("aria-label", alt);
+          });
+        }
+
+        if (typeof next.decode === "function") {
+          next.decode().then(reveal).catch(reveal);
+        } else if (next.complete) {
+          reveal();
+        } else {
+          next.addEventListener("load", reveal, { once: true });
+          next.addEventListener("error", reveal, { once: true });
+        }
       }
 
-      if (!image || image.complete) {
+      if (!preload || (preload.complete && preload.naturalWidth > 0)) {
         apply();
         return;
       }
 
-      image.addEventListener("load", apply, { once: true });
-      /* 사진이 깨져 있으면 계속 기다리지 말고 그대로 넣는다 —
-         그래야 alt가 읽히고 문제가 화면에 드러난다. */
-      image.addEventListener("error", apply, { once: true });
+      preload.addEventListener("load", apply, { once: true });
+      /* 에셋 경로가 잘못된 경우에도 무한 대기하지 않는다. 현재 사진은 남기고
+         aria-label만 선택한 원단으로 갱신해 문제를 숨기지 않는다. */
+      preload.addEventListener(
+        "error",
+        function () {
+          if (token === textureToken) {
+            textureFrame.setAttribute("aria-label", alt);
+          }
+        },
+        { once: true }
+      );
     }
 
-    function setActiveFabric(fabric) {
+    function centerMobileSwatch(swatch) {
+      if (!swatch || !window.matchMedia("(max-width: 767px)").matches) {
+        return;
+      }
+
+      swatch.scrollIntoView({
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }
+
+    function setActiveFabric(fabric, shouldCenter) {
       if (!fabric || fabric === activeFabric) {
         return;
       }
 
-      activeFabric = fabric;
+      var activeIndex = -1;
 
-      swatches.forEach(function (swatch) {
+      swatches.forEach(function (swatch, index) {
         var isMatch = fabricOf(swatch) === fabric;
         var button = swatch.querySelector(".materials_swatch_button");
 
@@ -693,120 +880,69 @@
         if (button) {
           button.setAttribute("aria-pressed", isMatch ? "true" : "false");
         }
-      });
 
-      listItems.forEach(function (item) {
-        var isMatch = fabricOf(item) === fabric;
-        var button = item.querySelector(".materials_list_button");
-
-        item.classList.toggle("is_active", isMatch);
-
-        if (button) {
-          button.setAttribute("aria-pressed", isMatch ? "true" : "false");
+        if (isMatch) {
+          activeIndex = index;
         }
       });
 
-      captionItems.forEach(function (item) {
-        item.classList.toggle("is_active", item.dataset.fabric === fabric);
-      });
-
-      var swatchImage = section.querySelector(
-        '.materials_swatch_button[data-fabric="' + fabric + '"] .materials_swatch_img img'
-      );
-
-      if (swatchImage) {
-        /* 큰 사진의 대체 텍스트는 스와치의 것을 고쳐 쓴다. 이름 목록에서
-           만들면 "Seasonal Fabric fabric ..."처럼 겹치는 경우가 생긴다. */
-        var textureAlt = (swatchImage.getAttribute("alt") || "").replace(
-          /\s*swatch$/,
-          " shown close up"
-        );
-
-        swapTexture(swatchImage.getAttribute("src"), textureAlt);
-      }
-    }
-
-    /* 설명 여섯 개의 줄 수가 서로 달라서, 자리를 미리 잡아 두지 않으면
-       원단을 옮길 때마다 섹션 높이가 들썩인다. 가장 큰 것을 재서 고정한다
-       (shop_detail 아코디언과 같은 방식이라 폭이 달라져도 값이 맞는다). */
-    var reservedWidth = 0;
-
-    function reserveCaptionHeight() {
-      if (!captionBox) {
+      if (activeIndex < 0) {
         return;
       }
 
-      captionBox.style.minHeight = "";
-
-      var tallest = 0;
+      activeFabric = fabric;
 
       captionItems.forEach(function (item) {
-        var wasActive = item.classList.contains("is_active");
+        var isMatch = item.dataset.fabric === fabric;
 
-        if (!wasActive) {
-          item.classList.add("is_active");
-        }
-
-        tallest = Math.max(tallest, item.offsetHeight);
-
-        if (!wasActive) {
-          item.classList.remove("is_active");
-        }
+        item.classList.toggle("is_active", isMatch);
+        item.setAttribute("aria-hidden", isMatch ? "false" : "true");
       });
 
-      captionBox.style.minHeight = tallest + "px";
-      reservedWidth = captionBox.clientWidth;
+      var label = labelFor(fabric);
+
+      if (status) {
+        status.textContent = label + " selected";
+      }
+
+      swapTexture(sourceFor(fabric), altFor(fabric));
+
+      if (shouldCenter) {
+        centerMobileSwatch(swatches[activeIndex]);
+      }
     }
 
-    /* ★ 트리거는 클릭(탭) **하나뿐**이다. mouseover·focusin 위임을 두지 않는다.
-
-       예전에는 셋 다 있었다. hover를 빼는 것은 사용자 결정이고, focusin도
-       같이 뺐다 — Tab으로 지나가기만 해도 사진이 바뀌는 것은 "클릭으로만
-       바뀐다"는 규칙과 어긋난다. `<button>`이라 키보드 Enter·Space가
-       click 이벤트를 그대로 발생시키므로 **키보드로 고르는 길은 그대로
-       남아 있다.** 터치도 tap이 click이라 같은 경로를 탄다. */
+    /* hover나 단순 focus 이동은 선택을 바꾸지 않는다. Enter/Space는 button의
+       click을 발생시키므로 키보드·터치·마우스가 모두 이 한 경로를 공유한다. */
     section.addEventListener("click", function (event) {
-      var button = event.target.closest ? event.target.closest("[data-fabric]") : null;
+      var button = event.target.closest
+        ? event.target.closest(".materials_swatch_button[data-fabric]")
+        : null;
 
-      if (button) {
-        setActiveFabric(button.dataset.fabric);
+      if (button && section.contains(button)) {
+        setActiveFabric(button.dataset.fabric, true);
       }
     });
 
-    /* 마크업이 이미 켜 둔 원단을 시작값으로 삼는다. 여기서 setActiveFabric을
-       부르지 않는 이유: 부르면 같은 사진으로 한 번 페이드가 돌아 깜빡인다. */
-    var initialItem = listItems.filter(function (item) {
-      return item.classList.contains("is_active");
-    })[0];
+    var initial = swatches.filter(function (swatch) {
+      return swatch.classList.contains("is_active");
+    })[0] || swatches[0];
 
-    activeFabric = fabricOf(initialItem || listItems[0]);
+    activeFabric = fabricOf(initial);
 
-    /* 여섯 장을 미리 받아 둔다. 첫 클릭이 곧바로 갈아 끼워지려면
-       이 시점에 시작해 두어야 한다. */
-    swatches.forEach(function (swatch) {
-      var image = swatch.querySelector(".materials_swatch_img img");
-
-      if (image) {
-        preloadTexture(image.getAttribute("src"));
-      }
-    });
-
-    reserveCaptionHeight();
-
-    /* 웹폰트가 적용되면 줄 수가 달라지므로 다시 잰다. */
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(reserveCaptionHeight);
+    /* 썸네일과 큰 사진은 같은 URL을 쓰므로 브라우저 캐시를 그대로 활용한다.
+       idle 시점에 여섯 장의 디코딩을 시작해 첫 클릭에서 빈 프레임이 생길 확률을
+       낮추되, 페이지 초기 렌더링보다 먼저 실행하지는 않는다. */
+    function primeTextures() {
+      swatches.forEach(function (swatch) {
+        preloadTexture(sourceFor(fabricOf(swatch)));
+      });
     }
 
-    /* 폭이 실제로 달라졌을 때만 다시 잰다(무한 루프 방지). */
-    if ("ResizeObserver" in window) {
-      new ResizeObserver(function () {
-        if (captionBox.clientWidth !== reservedWidth) {
-          reserveCaptionHeight();
-        }
-      }).observe(captionBox);
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(primeTextures, { timeout: 1800 });
     } else {
-      window.addEventListener("resize", reserveCaptionHeight);
+      window.setTimeout(primeTextures, 300);
     }
   }
 

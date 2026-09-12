@@ -354,8 +354,8 @@
      88%는 "화면에 막 들어온 직후"라, 다 뜬 모습을 충분히 읽을 수 있습니다. */
   var MOBILE_REVEAL_START = "top 88%";
 
-  /* 창 크기가 이만큼(px) 넘게 달라졌을 때만 다시 만듭니다.
-     주소창이 접히는 정도의 변화로 매번 다시 만들지 않기 위한 여유입니다. */
+  /* 모바일의 주소창 높이 변화 등에만 적용하는 재계산 여유입니다.
+     데스크톱의 폭과 높이는 1px 변화도 새 scale과 pin 계산에 반영합니다. */
   var REBUILD_TOLERANCE = 40;
   var REBUILD_DELAY = 200;
 
@@ -363,50 +363,209 @@
      타임라인의 길이까지 정하기 때문에 함수형 값이나 invalidateOnRefresh로는
      따라잡을 수 없습니다(길이는 함수로 줄 수 없습니다).
      그래서 창이 실제로 달라졌을 때 matchMedia를 통째로 새로 만듭니다. */
+  /* 두 pin을 한 context에 등록해 이전 spacer를 모두 걷은 뒤 문서 순서로
+     다시 만듭니다. 개별 resize 타이머는 다른 섹션의 옛 spacer를 재게 됩니다. */
+  var responsiveBuilders = [];
+  var responsiveGsap = null;
+
+  function getCollectionCanvasScale() {
+    if (window.innerWidth < 1280) {
+      return 1;
+    }
+
+    return (document.documentElement.clientWidth || window.innerWidth) / CANVAS_WIDTH;
+  }
+
+  function syncCollectionCanvasScale() {
+    document.documentElement.style.setProperty(
+      "--collection_canvas_scale",
+      String(getCollectionCanvasScale())
+    );
+  }
+
   function createRebuilder(gsap, build) {
+    responsiveGsap = gsap;
+    responsiveBuilders.push(build);
+  }
+
+  function initResponsiveAnimations() {
     var context = null;
+    var boundary = window.matchMedia("(min-width: 1280px)");
+    var isDesktop = boundary.matches;
     var height = window.innerHeight;
     var width = window.innerWidth;
+    var canvasWidth = document.documentElement.clientWidth;
     var timer = null;
+    var refreshFrame = null;
+    var pendingPinState = null;
+    var resizePinState = null;
+    var hasResizeSnapshot = false;
 
-    function apply() {
-      if (context) {
-        context.revert();
+    function activePinState() {
+      if (!window.ScrollTrigger) {
+        return null;
       }
 
-      context = gsap.matchMedia();
-      context.add(DESKTOP_MOTION, build);
+      var triggers = window.ScrollTrigger.getAll();
+
+      for (var index = 0; index < triggers.length; index += 1) {
+        var trigger = triggers[index];
+        var section = trigger.trigger;
+
+        if (trigger.pin && trigger.isActive && section &&
+          (section.classList.contains("showcase") || section.classList.contains("archive"))) {
+          return { section: section, progress: trigger.progress };
+        }
+      }
+
+      return null;
+    }
+
+    function refresh(pinState) {
+      if (refreshFrame !== null) {
+        window.cancelAnimationFrame(refreshFrame);
+      }
+
+      pendingPinState = pinState;
+      refreshFrame = window.requestAnimationFrame(function () {
+        refreshFrame = null;
+
+        if (!window.ScrollTrigger) {
+          pendingPinState = null;
+          return;
+        }
+
+        /* scale과 두 spacer가 모두 확정된 다음 viewport 좌표로 다시 잽니다. */
+        window.ScrollTrigger.refresh();
+
+        var lenis = window.tchaikimmLenis;
+
+        if (lenis && typeof lenis.resize === "function") {
+          lenis.resize();
+        }
+
+        /* pin 중 데스크톱 폭만 바꾼 경우 같은 장면을 유지합니다.
+           모바일 경계를 넘을 때는 새 흐름 배치에 스크롤을 강제로 맞추지 않습니다. */
+        if (pendingPinState && boundary.matches) {
+          var triggers = window.ScrollTrigger.getAll();
+
+          for (var index = 0; index < triggers.length; index += 1) {
+            var trigger = triggers[index];
+
+            if (trigger.pin && trigger.trigger === pendingPinState.section) {
+              var target = trigger.start +
+                (trigger.end - trigger.start) * pendingPinState.progress;
+
+              if (lenis && !lenis.isStopped && typeof lenis.scrollTo === "function") {
+                lenis.scrollTo(target, { immediate: true });
+              } else {
+                window.scrollTo(0, target);
+              }
+
+              window.ScrollTrigger.update();
+              break;
+            }
+          }
+        }
+
+        pendingPinState = null;
+      });
+    }
+
+    function apply() {
+      if (timer !== null) {
+        window.clearTimeout(timer);
+        timer = null;
+      }
+
+      if (refreshFrame !== null) {
+        window.cancelAnimationFrame(refreshFrame);
+        refreshFrame = null;
+      }
+
+      var nextIsDesktop = boundary.matches;
+      var pinState = isDesktop && nextIsDesktop
+        ? (hasResizeSnapshot ? resizePinState : pendingPinState || activePinState())
+        : null;
+
+      resizePinState = null;
+      hasResizeSnapshot = false;
+
+      if (context) {
+        context.revert();
+        context = null;
+      }
+
+      syncCollectionCanvasScale();
+      height = window.innerHeight;
+      width = window.innerWidth;
+      canvasWidth = document.documentElement.clientWidth;
+      isDesktop = nextIsDesktop;
+
+      if (responsiveGsap && responsiveBuilders.length) {
+        context = responsiveGsap.matchMedia();
+        context.add(DESKTOP_MOTION, function () {
+          var cleanups = responsiveBuilders.map(function (build) {
+            return build();
+          });
+
+          return function () {
+            cleanups.reverse().forEach(function (cleanup) {
+              if (typeof cleanup === "function") {
+                cleanup();
+              }
+            });
+          };
+        });
+      }
+
+      refresh(pinState);
     }
 
     function handleResize() {
-      if (timer) {
+      if (boundary.matches !== isDesktop) {
+        apply();
+        return;
+      }
+
+      /* ScrollTrigger의 자동 refresh가 200ms 재빌드보다 먼저 실행될 수 있습니다.
+         resize 묶음의 첫 이벤트에서 기존 장면을 저장하고 마지막 재빌드까지 유지합니다. */
+      if (isDesktop && !hasResizeSnapshot &&
+        (window.innerWidth !== width || window.innerHeight !== height ||
+          document.documentElement.clientWidth !== canvasWidth)) {
+        resizePinState = pendingPinState || activePinState();
+        hasResizeSnapshot = true;
+      }
+
+      if (timer !== null) {
         window.clearTimeout(timer);
       }
 
       timer = window.setTimeout(function () {
         timer = null;
 
-        if (Math.abs(window.innerHeight - height) < REBUILD_TOLERANCE &&
-          Math.abs(window.innerWidth - width) < REBUILD_TOLERANCE) {
+        var widthChange = Math.abs(window.innerWidth - width);
+        var heightChange = Math.abs(window.innerHeight - height);
+        var hasCanvasChange = document.documentElement.clientWidth !== canvasWidth;
+
+        /* desktop scale은 1px 폭 변화에도 달라집니다. 40px 여유는 주소창 등
+           모바일의 작은 높이 변화에만 적용합니다. */
+        if (isDesktop
+          ? widthChange === 0 && heightChange === 0 && !hasCanvasChange
+          : widthChange < REBUILD_TOLERANCE && heightChange < REBUILD_TOLERANCE) {
+          resizePinState = null;
+          hasResizeSnapshot = false;
           return;
         }
 
-        height = window.innerHeight;
-        width = window.innerWidth;
         apply();
       }, REBUILD_DELAY);
     }
 
-    /* ★ 브레이크포인트를 넘는 순간은 디바운스에 맡기지 않고 즉시 다시 만듭니다.
-       resize 디바운스(200ms)만 믿으면 그 사이 데스크톱 pin(pin-spacer + 고정 폭)이
-       좁은 화면에 남아 가로 스크롤이 생깁니다. 실제로 1920 → 414에서 확인했습니다.
-       DESKTOP_MOTION의 폭 조건과 같은 경계를 봅니다. */
-    var boundary = window.matchMedia("(min-width: 1280px)");
-
     function handleBoundary() {
-      height = window.innerHeight;
-      width = window.innerWidth;
-      apply();
+      if (boundary.matches !== isDesktop) {
+        apply();
+      }
     }
 
     if (boundary.addEventListener) {
@@ -417,8 +576,6 @@
 
     apply();
     window.addEventListener("resize", handleResize);
-    /* 세로 ↔ 가로 전환은 폭과 높이가 한꺼번에 바뀝니다. resize가 따라오지 않는
-       기기가 있어 함께 답니다(같은 디바운스를 타므로 중복 실행되지 않습니다). */
     window.addEventListener("orientationchange", handleResize);
   }
 
@@ -663,7 +820,10 @@
     /* class가 섹션을 화면 한 장 크기로 줄입니다. 실제 창 높이는 그 뒤에 재야 맞습니다. */
     showcase.classList.add("is_pinned");
 
-    var viewHeight = showcase.offsetHeight;
+    /* frame과 카드의 offset 값은 1920 시안 좌표입니다. viewport 높이만
+       같은 좌표계로 바꿔 이동량과 순차 등장 시점을 계산합니다. */
+    var canvasScale = getCollectionCanvasScale();
+    var viewHeight = showcase.offsetHeight / canvasScale;
     var travel = Math.max(0, frame.offsetHeight - viewHeight);
     var rests = galleryRestOffsets(gallery, viewHeight, travel);
 
@@ -726,7 +886,7 @@
       animation: timeline,
       trigger: showcase,
       start: "top top",
-      end: "+=" + Math.round(timeline.duration() * SHOWCASE_PX_PER_UNIT),
+      end: "+=" + Math.round(timeline.duration() * SHOWCASE_PX_PER_UNIT * canvasScale),
       pin: true,
       pinSpacing: true,
       scrub: 1,
@@ -1044,7 +1204,7 @@
      1.65초에 걸쳐 날아드는 동안 페이지가 계속 스크롤돼 프레임이 위로 빠져나갔습니다
      (스크롤 15500에서 프레임 top −119px, 첫 장 top −87px로 잘림).
      이제 화면을 고정하고 스크롤 진행도가 곧 등장 진행도입니다 — 역스크롤도 역재생됩니다. */
-  function buildArchiveTimeline(gsap, archive, images, enterVars) {
+  function buildArchiveTimeline(gsap, archive, images, enterVars, onImagesReady, canPlay) {
     /* stagger를 건 fromTo는 각 대상의 차례가 와야 from 값을 적용합니다.
        그래서 미리 넣어 두지 않으면 두 번째 사진부터는 트리거 전까지 제자리에 보이다가
        자기 차례에 갑자기 화면 밖으로 튀었다 다시 들어옵니다. */
@@ -1077,6 +1237,8 @@
           stagger: ARCHIVE_STAGGER
         }
       )
+      /* hover는 모든 사진이 놓인 뒤 켭니다. 아래 hold까지 기다릴 필요는 없습니다. */
+      .call(onImagesReady)
       /* 빈 트윈이 곧 "머무는 구간"입니다. 마지막 장이 도착한 뒤에도 잠시 고정돼
          다섯 장이 다 놓인 화면을 읽을 수 있습니다. */
       .to({}, { duration: ARCHIVE_HOLD });
@@ -1093,7 +1255,7 @@
     window.ScrollTrigger.create({
       trigger: archive,
       start: ARCHIVE_START,
-      end: "+=" + Math.round(timeline.duration() * ARCHIVE_PX_PER_UNIT),
+      end: "+=" + Math.round(timeline.duration() * ARCHIVE_PX_PER_UNIT * getCollectionCanvasScale()),
       pin: true,
       pinSpacing: true,
       anticipatePin: 1,
@@ -1102,14 +1264,249 @@
          0 → 1로 돌고, 이미 다 놓인 뒤에 다시 들어오면 아무 일도 없습니다
          (되감아 올라가도 사진이 다시 날아가지 않습니다). */
       onEnter: function () {
-        timeline.play();
+        if (canPlay()) {
+          timeline.play();
+        }
       },
       onEnterBack: function () {
-        timeline.play();
+        if (canPlay()) {
+          timeline.play();
+        }
       }
     });
 
     return timeline;
+  }
+
+  /* figure의 전용 변수만 움직여 연도별 기울기와 img 등장 transform을 보존합니다. */
+  function createArchiveHover(gsap, archive, figures) {
+    var media = window.matchMedia(
+      "(min-width: 1280px) and (hover: hover) and (pointer: fine)"
+    );
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var states = figures.map(function (figure) {
+      return { figure: figure, tween: null, isActive: false };
+    });
+    var activeState = null;
+    var isBlocked = false;
+    var isListening = false;
+    var foregroundLayer = 20;
+    var pointer = null;
+    var syncFrame = null;
+
+    archive.classList.add("is_hover_ready");
+
+    function clearState(state) {
+      if (state.tween) {
+        state.tween.kill();
+        state.tween = null;
+      }
+
+      state.isActive = false;
+      /* 기본 layer는 현재 연도의 --archive_photo_layer에서 다시 읽습니다. */
+      state.figure.style.removeProperty("z-index");
+      state.figure.style.removeProperty("--archive_hover_y");
+      state.figure.style.removeProperty("--archive_hover_scale");
+      state.figure.style.removeProperty("will-change");
+    }
+
+    function reset() {
+      if (syncFrame !== null) {
+        window.cancelAnimationFrame(syncFrame);
+        syncFrame = null;
+      }
+
+      activeState = null;
+      foregroundLayer = 20;
+      states.forEach(clearState);
+    }
+
+    function leave(state) {
+      if (!state || !state.isActive) {
+        return;
+      }
+
+      state.isActive = false;
+
+      if (activeState === state) {
+        activeState = null;
+      }
+
+      if (state.tween) {
+        state.tween.kill();
+        state.tween = null;
+      }
+
+      if (reducedMotion.matches || !media.matches || isBlocked) {
+        clearState(state);
+        return;
+      }
+
+      state.tween = gsap.to(state.figure, {
+        "--archive_hover_y": "0px",
+        "--archive_hover_scale": 1,
+        duration: 0.48,
+        ease: "power3.out",
+        onComplete: function () {
+          state.tween = null;
+
+          if (!state.isActive) {
+            clearState(state);
+          }
+        }
+      });
+    }
+
+    function enter(state) {
+      if (!media.matches || isBlocked || state.figure.classList.contains("is_empty") ||
+        (activeState === state && state.isActive)) {
+        return;
+      }
+
+      leave(activeState);
+
+      if (state.tween) {
+        state.tween.kill();
+        state.tween = null;
+      }
+
+      activeState = state;
+      state.isActive = true;
+      /* 복귀 중인 카드와 같은 z-index를 쓰면 DOM 순서가 새 hover를 가립니다. */
+      foregroundLayer += 1;
+      state.figure.style.zIndex = String(foregroundLayer);
+
+      if (reducedMotion.matches) {
+        return;
+      }
+
+      state.figure.style.willChange = "transform";
+
+      if (!state.figure.style.getPropertyValue("--archive_hover_scale")) {
+        state.figure.style.setProperty("--archive_hover_scale", "1");
+        state.figure.style.setProperty("--archive_hover_y", "0px");
+      }
+
+      state.tween = gsap.to(state.figure, {
+        "--archive_hover_y": "-10px",
+        "--archive_hover_scale": 1.055,
+        duration: 0.42,
+        ease: "power3.out",
+        onComplete: function () {
+          state.tween = null;
+        }
+      });
+    }
+
+    function rememberPointer(event) {
+      if (event.pointerType === "touch") {
+        return false;
+      }
+
+      pointer = { x: event.clientX, y: event.clientY };
+      return true;
+    }
+
+    function syncPointer() {
+      syncFrame = null;
+
+      if (!media.matches || isBlocked || !pointer) {
+        return;
+      }
+
+      var target = document.elementFromPoint(pointer.x, pointer.y);
+      var figure = target && target.closest(".archive_photo");
+      var state = states.filter(function (item) {
+        return item.figure === figure;
+      })[0];
+
+      if (state && !state.figure.classList.contains("is_empty")) {
+        enter(state);
+      } else {
+        leave(activeState);
+      }
+    }
+
+    function scheduleSync() {
+      if (syncFrame !== null) {
+        window.cancelAnimationFrame(syncFrame);
+      }
+
+      syncFrame = window.requestAnimationFrame(syncPointer);
+    }
+
+    function handlePointerMove(event) {
+      rememberPointer(event);
+    }
+
+    function handleWindowLeave(event) {
+      if (!event.relatedTarget) {
+        pointer = null;
+        leave(activeState);
+      }
+    }
+
+    function handleBlur() {
+      pointer = null;
+      reset();
+    }
+
+    states.forEach(function (state) {
+      state.handleEnter = function (event) {
+        if (rememberPointer(event)) {
+          enter(state);
+        }
+      };
+      state.handleLeave = function (event) {
+        if (event.pointerType !== "touch") {
+          leave(state);
+        }
+      };
+    });
+
+    function handleMediaChange() {
+      reset();
+
+      if (media.matches !== isListening) {
+        isListening = media.matches;
+        var method = isListening ? "addEventListener" : "removeEventListener";
+
+        states.forEach(function (state) {
+          state.figure[method]("pointerenter", state.handleEnter);
+          state.figure[method]("pointerleave", state.handleLeave);
+        });
+        document[method]("pointermove", handlePointerMove, true);
+        document[method]("pointerout", handleWindowLeave);
+        window[method]("blur", handleBlur);
+      }
+
+      if (isListening) {
+        scheduleSync();
+      } else {
+        pointer = null;
+      }
+    }
+
+    [media, reducedMotion].forEach(function (query) {
+      if (query.addEventListener) {
+        query.addEventListener("change", handleMediaChange);
+      } else {
+        query.addListener(handleMediaChange);
+      }
+    });
+    handleMediaChange();
+
+    return {
+      setBlocked: function (blocked) {
+        isBlocked = blocked;
+        reset();
+
+        if (!blocked && media.matches) {
+          /* 전환 중 움직이지 않은 포인터도 새 사진이 놓인 즉시 반응합니다. */
+          scheduleSync();
+        }
+      }
+    };
   }
 
   function initArchive() {
@@ -1155,6 +1552,7 @@
 
     /* 연도 전환 때 이전 세트를 지우는 트윈. 연달아 누를 때 앞의 것을 끄려고 들고 있습니다. */
     var fadeTween = null;
+    var hoverController = null;
 
     var enterVars = archiveEnterVars(
       function () {
@@ -1184,11 +1582,23 @@
       currentYear = year;
       markActiveYear(buttons, year);
 
+      if (hoverController) {
+        hoverController.setBlocked(true);
+      }
+
       if (!timeline) {
         applyYearPhotos(figures, year);
         notifyYearChange();
+
+        if (hoverController) {
+          hoverController.setBlocked(false);
+        }
+
         return;
       }
+
+      /* 진행 중인 등장과 fade가 같은 img.opacity를 동시에 쓰지 않게 합니다. */
+      timeline.pause();
 
       /* 이전 세트를 먼저 지웁니다. 사라지는 동안 새 사진이 내려받기를 시작하고,
          타임라인은 opacity 0에서 출발하므로 이어서 다시 날아 들어옵니다.
@@ -1235,21 +1645,35 @@
     gsap.registerPlugin(window.ScrollTrigger);
 
     createRebuilder(gsap, function () {
-      timeline = buildArchiveTimeline(gsap, archive, images, enterVars);
+      hoverController.setBlocked(true);
+      timeline = buildArchiveTimeline(gsap, archive, images, enterVars, function () {
+        if (!fadeTween) {
+          hoverController.setBlocked(false);
+        }
+      }, function () {
+        /* 연도 fade 중 pin에 다시 진입해도 이전 등장 타임라인은 재생하지 않습니다. */
+        return !fadeTween;
+      });
 
       return function () {
         timeline = null;
+        hoverController.setBlocked(false);
 
         /* 연도 전환 fade와 다시보기는 이 context 밖에서 만들어져 자동 복구 대상이
            아닙니다. 전환 도중 조건이 어긋나도 사진이 숨은 채 남지 않도록 직접 끕니다. */
         if (fadeTween) {
           fadeTween.kill();
           fadeTween = null;
+          /* 클릭 직후 resize/모션 설정이 바뀌어도 선택 연도와 사진을 맞춥니다. */
+          applyYearPhotos(figures, currentYear);
+          notifyYearChange();
         }
 
         gsap.set(images, { clearProps: "all" });
       };
     });
+
+    hoverController = createArchiveHover(gsap, archive, figures);
   }
 
   /* =========================================================
@@ -2373,6 +2797,7 @@
     window.setInterval(syncHeroContrast, HERO_CONTRAST_INTERVAL);
   }
 
+  syncCollectionCanvasScale();
   initShowcaseScroll();
   initShowcaseCarousel();
   initArchive();
@@ -2384,4 +2809,5 @@
      initHeroContrast()가 영상의 올바른 자리를 읽습니다. */
   initHeroFit();
   initHeroContrast();
+  initResponsiveAnimations();
 })();
