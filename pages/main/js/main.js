@@ -76,7 +76,6 @@
     var video = section ? section.querySelector(".model_video") : null;
     var figure = section ? section.querySelector(".model_figure") : null;
     var text = section ? section.querySelector(".model_text") : null;
-    var detailHead = document.querySelector(".detail_head.common_container");
 
     /* 태블릿·모바일 고정형 구간 길이입니다.
        데스크탑 길이는 main.css의 --model_flow_height에서 조절합니다. */
@@ -121,17 +120,21 @@
     /* 원본 영상의 끝부분에 빈 프레임이 있어 실제 길이의 90%까지만 사용합니다.
        이 값은 스크롤 시점이 아니라 영상 파일에서 사용할 마지막 프레임 위치입니다. */
     var MODEL_VIDEO_END_FRAME_RATIO = 0.9;
-    /* ★ 데스크탑 모델 스크롤 감도 조절 위치
-       이 값은 모델이 현재 스크롤 위치를 따라잡는 시간입니다.
-       4처럼 크게 쓰면 약 4초 뒤처지므로 스크롤과 모델 위치가 어긋납니다.
-       현재 0.8은 부드러운 관성은 남기면서 사용자의 스크롤을 가깝게 따라옵니다.
-       느린 이동 속도는 main.css의 --model_flow_height에서 조절합니다. */
-    var MODEL_DESKTOP_SCRUB = 0.8;
-    /* 태블릿·모바일 고정 구간도 즉시 따라가지 않도록 완만하게 연결합니다. */
-    var MODEL_PINNED_SCRUB = 0.65;
-    /* ★ 마지막 모델이 detail_head 아래로 내려가는 거리(px)입니다.
-       값을 키우면 모델이 detail 제목 영역을 더 깊게 통과합니다. */
-    var MODEL_DETAIL_HEAD_OVERLAP = 24;
+    /* Lenis가 이미 실제 스크롤을 부드럽게 보간합니다. 여기에 숫자 scrub을 겹치면
+       모델의 세로 보정이 늦게 따라와 멈춘 뒤에도 혼자 미끄러집니다. true는 현재
+       스크롤 위치와 장면을 같은 프레임에 맞추고, 관성은 Lenis에만 맡깁니다. */
+    var MODEL_DESKTOP_SCRUB = true;
+    var MODEL_PINNED_SCRUB = true;
+    /* 다음 detail 화면이 올라오는 동안에도 모델이 계속 내려가도록 하강 구간을
+       거의 전체 진행률에 걸쳐 둡니다. */
+    var MODEL_VERTICAL_DRIFT_START_RATIO = 0.05;
+    var MODEL_VERTICAL_DRIFT_END_RATIO = 0.92;
+    /* 데스크탑 마지막 장면에서 모델 윗부분이 놓이는 화면 높이 비율입니다. */
+    var MODEL_END_TOP_RATIO = 0.32;
+    /* detail 제목이 올라올 때 인물 전체를 유지한 뒤, 원단 무대와 겹치기 전에
+       천천히 사라집니다. clip으로 자르지 않아 몸이 중간에서 끊기지 않습니다. */
+    var MODEL_EXIT_FADE_START_RATIO = 0.68;
+    var MODEL_EXIT_FADE_END_RATIO = 0.8;
 
     if (!section || !video || !figure || !text) {
       return;
@@ -309,41 +312,43 @@
 
     function measureDesktopModelMotion() {
       var sectionRect = section.getBoundingClientRect();
-      var figureRect = figure.getBoundingClientRect();
       var figureBaseTop = parseFloat(window.getComputedStyle(figure).top) || 0;
+      var preferredEndTop = window.innerHeight * MODEL_END_TOP_RATIO;
 
-      desktopSectionTravel = Math.max(0, sectionRect.height - window.innerHeight);
-
-      if (!detailHead) {
-        desktopEndDrift = window.innerHeight * 0.32;
-        return;
-      }
-
-      var sectionBottom = window.scrollY + sectionRect.top + sectionRect.height;
-      var detailHeadBottom = window.scrollY + detailHead.getBoundingClientRect().bottom;
-      var detailHeadBottomAtSectionEnd = window.innerHeight + detailHeadBottom - sectionBottom;
-
-      desktopEndDrift = Math.max(
-        0,
-        detailHeadBottomAtSectionEnd + MODEL_DETAIL_HEAD_OVERLAP - figureRect.height - figureBaseTop
-      );
+      /* 종료점이 bottom top이므로 실제 스크롤 거리는 섹션 전체 높이입니다.
+         이 항만 선형으로 상쇄해야 모델과 페이지가 서로 뒤처지지 않습니다. */
+      desktopSectionTravel = Math.max(0, sectionRect.height);
+      desktopEndDrift = Math.max(0, preferredEndTop - figureBaseTop);
     }
 
     if (isDesktopModelFlow) {
       measureDesktopModelMotion();
     }
 
+    function clampProgress(value) {
+      return Math.max(0, Math.min(1, value));
+    }
+
+    function smoothStep(value) {
+      return value * value * (3 - 2 * value);
+    }
+
+    /* 0과 1에서 속도뿐 아니라 가속도까지 0이 되어 하강의 시작과 끝이 부드럽습니다. */
+    function smootherStep(value) {
+      return value * value * value * (value * (value * 6 - 15) + 10);
+    }
+
     function applyDesktopModelMotion() {
       var progress = modelMotion.progress;
       var travelDistance = getModelTravelDistance();
       var horizontalPosition = 0;
+      var verticalDriftProgress = clampProgress(
+        (progress - MODEL_VERTICAL_DRIFT_START_RATIO) /
+          (MODEL_VERTICAL_DRIFT_END_RATIO - MODEL_VERTICAL_DRIFT_START_RATIO)
+      );
 
       /* 위치와 회전을 같은 progress에서 계산해야 둘 중 하나만 멈추지 않습니다. */
       updateModelVideoFromScrollProgress(progress);
-
-      function smoothStep(value) {
-        return value * value * (3 - 2 * value);
-      }
 
       /* 회전 완료 시점 전에는 중앙에서 왼쪽으로만 이동합니다.
          HOLD와 ROTATION_END 사이를 다시 0~1로 환산한 값이 leftProgress입니다. */
@@ -375,7 +380,10 @@
 
       gsap.set(figure, {
         x: horizontalPosition,
-        y: desktopSectionTravel * progress + desktopEndDrift * progress
+        /* 첫 항은 자연 스크롤과 반드시 1:1이어야 합니다. 의도한 추가 하강만
+           smootherstep으로 늦게 시작해 천천히 내려앉게 합니다. */
+        y: desktopSectionTravel * progress +
+          desktopEndDrift * smootherStep(verticalDriftProgress)
       });
     }
 
@@ -385,7 +393,8 @@
         start: "top top",
         end: function () {
           if (isDesktopModelFlow) {
-            return "bottom bottom";
+            /* 다음 detail 섹션이 화면 아래에서 올라오는 동안 모델 하강도 계속됩니다. */
+            return "bottom top";
           }
 
           return "+=" + window.innerHeight * getModelScrollLength();
@@ -394,7 +403,6 @@
         scrub: isDesktopModelFlow ? MODEL_DESKTOP_SCRUB : MODEL_PINNED_SCRUB,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        fastScrollEnd: true,
         onRefresh: function () {
           if (isDesktopModelFlow) {
             measureDesktopModelMotion();
@@ -422,6 +430,15 @@
           onUpdate: applyDesktopModelMotion
         },
         0
+      );
+      timeline.to(
+        figure,
+        {
+          autoAlpha: 0,
+          duration: MODEL_EXIT_FADE_END_RATIO - MODEL_EXIT_FADE_START_RATIO,
+          ease: "power1.out"
+        },
+        MODEL_EXIT_FADE_START_RATIO
       );
     } else {
       /* 태블릿·모바일도 데스크탑과 타이밍을 맞춥니다.

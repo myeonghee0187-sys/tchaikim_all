@@ -335,11 +335,12 @@
 @media (min-width: 1280px) {
   .model.is_model_flow {
     /* ★ 데스크탑 진행 길이 조절 위치입니다.
-       값을 줄이면 모델 섹션의 빈 여백과 도착까지 필요한 스크롤이 함께 짧아집니다.
-       현재 170dvh는 도착까지 필요한 스크롤을 더 줄여 움직임을 빠르게 보여줍니다. */
-    --model_flow_height: 170dvh;
+       다음 detail 화면이 인물 하강과 겹쳐 올라오도록 한 화면보다 조금만 깁니다.
+       ScrollTrigger의 bottom top 종료점과 합쳐져 두 장면이 동시에 진행됩니다. */
+    --model_flow_height: 120dvh;
     min-height: var(--model_flow_height);
-    /* 마지막 모델이 다음 detail_head 영역까지 이어져 보이도록 세로 클리핑만 해제합니다. */
+    /* 인물 전체가 detail 제목 구간까지 이어져야 하므로 경계에서 자르지 않습니다.
+       흰 영상 배경은 아래 multiply와 JS의 종료 페이드로 정리합니다. */
     overflow: visible;
   }
 
@@ -356,6 +357,12 @@
     z-index: 1;
     translate: -50% 0;
     pointer-events: none;
+  }
+
+  .model.is_model_flow .model_video {
+    /* model.mp4에는 알파 채널이 없습니다. 밝은 배경만 크림색 무대에 섞어
+       인물이 detail 제목 위로 이어질 때 흰 사각형이 드러나지 않게 합니다. */
+    mix-blend-mode: multiply;
   }
 
   .model.is_model_flow .model_text {
