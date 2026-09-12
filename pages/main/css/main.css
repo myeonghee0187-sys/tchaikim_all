@@ -619,11 +619,22 @@
   will-change: transform, opacity;
 }
 
-/* 중앙 카드 덱 카피 — 레퍼런스의 6개 텍스트 위계를 카드 주변에 배치합니다. */
+/* 중앙 카드 덱 카피 — 사진을 비운 가운데 열과 좌우 정보 레일을 하나의 그리드로
+   묶습니다. 화면 퍼센트마다 따로 놓지 않아 넓은 화면에서도 기준선이 흐트러지지 않습니다. */
 .brand_stack_copy {
   position: absolute;
   z-index: 21;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(360px, 32vw, 540px) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: clamp(32px, 4vw, 80px);
+  row-gap: clamp(28px, 4vh, 56px);
+  width: min(100%, 1600px);
+  padding: clamp(72px, 8vh, 120px) clamp(48px, 5vw, 96px);
+  transform: translateX(-50%);
   color: var(--color_text);
   font-family: var(--font_body);
   pointer-events: none;
@@ -649,40 +660,56 @@
 
 .brand_stack_intro,
 .brand_stack_statement {
-  position: absolute;
-  top: 15%;
-  width: 32%;
-  font-size: clamp(14px, 1.25vw, 24px);
-  line-height: 1.25;
+  position: relative;
+  align-self: start;
+  width: 100%;
+  max-width: 380px;
+  font-size: clamp(14px, 1vw, 18px);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 .brand_stack_intro {
-  left: 2%;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
 }
 
 .brand_stack_statement {
-  top: 36%;
-  right: 2%;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
   text-align: right;
 }
 
 .brand_stack_title {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 43%;
-  left: 27%;
-  width: 46%;
-  padding: 0 16px 8px;
-  border-bottom: 1px solid rgba(10, 10, 10, 0.18);
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: start;
+  width: 100%;
+  max-width: 380px;
+  padding: 0;
   font-family: var(--font_display);
-  font-size: clamp(24px, 2.5vw, 48px);
-  line-height: 1;
+  font-size: clamp(34px, 2.7vw, 52px);
+  line-height: 1.04;
+}
+
+.brand_stack_title::after {
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin-top: 18px;
+  background-color: rgba(10, 10, 10, 0.26);
+  content: "";
 }
 
 .brand_stack_title_item {
   position: absolute;
-  left: 16px;
-  bottom: 8px;
+  left: 0;
+  bottom: 0;
   opacity: 0;
   white-space: nowrap;
 }
@@ -699,26 +726,31 @@
 }
 
 .brand_stack_description {
-  position: absolute;
-  bottom: 18%;
-  left: 10%;
-  width: 20%;
-  font-size: clamp(13px, 1vw, 20px);
-  line-height: 1.25;
+  position: relative;
+  grid-column: 1;
+  grid-row: 3;
+  align-self: end;
+  justify-self: start;
+  width: 100%;
+  max-width: 340px;
+  font-size: clamp(14px, 0.95vw, 17px);
+  line-height: 1.4;
 }
 
 .brand_stack_count {
   --ring_progress: 25%;
-  position: absolute;
-  top: 52%;
-  left: 67%;
+  position: relative;
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: end;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(76px, 6vw, 116px);
+  width: clamp(68px, 4.6vw, 88px);
   aspect-ratio: 1;
   font-family: var(--font_display);
-  font-size: clamp(24px, 2.2vw, 42px);
+  font-size: clamp(22px, 1.7vw, 32px);
   line-height: 1;
 }
 
@@ -731,18 +763,17 @@
 
 .brand_stack_count::before {
   inset: 0;
-  border: 1px solid rgba(10, 10, 10, 0.12);
-}
-
-.brand_stack_count::after {
-  inset: 10%;
   background: conic-gradient(
     from 210deg,
     rgba(10, 10, 10, 0.48) 0 var(--ring_progress),
-    rgba(10, 10, 10, 0.08) var(--ring_progress) 100%
+    rgba(10, 10, 10, 0.1) var(--ring_progress) 100%
   );
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 0);
   mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 0);
+}
+
+.brand_stack_count::after {
+  display: none;
 }
 
 .brand_stack_count_current {
@@ -770,27 +801,20 @@
   z-index: 1;
 }
 
-/* ★ 기본을 딥그린으로 채웁니다. 예전에는 흰 바탕이라 배경(크림·사진) 위에서
-   그냥 흰 카드로 보여 "누를 수 있다"는 신호가 없었습니다.
-
-   버튼임을 알리는 장치를 겹쳐 두었습니다 — 실무에서 1차 CTA에 쓰는 조합입니다.
-     1. 채워진 브랜드 색 + 굵은 글씨   (주변 어떤 요소와도 다른 생김새)
-     2. 그림자                          (페이지 위에 떠 있는 물체로 읽힘)
-     3. 가만히 있을 때의 미세한 상하 움직임과 빛 스침 (시선을 끄는 신호)
-     4. 호버에서 살짝 뜨고 그림자가 커짐 (마우스에 반응한다)
-     5. 누르는 순간 내려앉음            (실제로 눌린다)
-   ★ 하나만 남기면 신호가 약해집니다. 특히 2·4·5는 세트입니다. */
+/* 카드 덱이 계속 움직이므로 CTA는 브랜드색·절제된 그림자·호버 채움만 남깁니다.
+   정지 상태의 부유와 빛 스침을 빼 사진보다 버튼이 먼저 보이는 현상을 막습니다. */
 .brand_stack_action {
-  --brand_stack_action_bottom: 12%; /* 숫자가 클수록 버튼이 위로 올라갑니다 */
   /* 호버에서 차오르는 더 짙은 초록. 기본색과 같으면 차오르는 게 안 보입니다 */
   --brand_stack_action_deep: #16332f;
 
-  position: absolute;
-  right: 18%;
-  bottom: var(--brand_stack_action_bottom);
-  width: min(248px, 18vw);
-  min-height: 64px;
-  padding: 16px;
+  position: relative;
+  grid-column: 3;
+  grid-row: 3;
+  align-self: end;
+  justify-self: end;
+  width: min(280px, 100%);
+  min-height: 60px;
+  padding: 16px 20px;
   border-radius: 8px;
   background-color: var(--color_point);
   /* 표면을 천천히 스치는 빛. 배경색 위에 얹는 그라디언트라 가짜 요소를 하나 더
@@ -804,7 +828,7 @@
   background-repeat: no-repeat;
   background-size: 250% 100%;
   background-position: 200% 0;
-  box-shadow: 0 10px 24px rgba(31, 67, 63, 0.28);
+  box-shadow: 0 8px 20px rgba(31, 67, 63, 0.2);
   color: var(--color_text_inverse);
   font-size: 14px;
   font-weight: 600;
@@ -814,11 +838,8 @@
   isolation: isolate;
   pointer-events: auto;
   cursor: pointer;
-  /* ★ 떠 있는 움직임은 translate, 호버 반응은 transform으로 나눠 씁니다.
-     둘은 서로 다른 CSS 속성이라 함께 적용돼도 덮어쓰지 않습니다. */
-  animation:
-    brand_stack_action_float 3.4s ease-in-out infinite,
-    brand_stack_action_sheen 4.6s ease-in-out infinite;
+  /* 주변 사진이 계속 움직이는 구간이므로 CTA에는 상시 부유·빛 스침을 겹치지 않습니다. */
+  animation: none;
   transition:
     transform 0.4s var(--easing_base),
     /* ★ background-color가 필요합니다. 카피가 김영진 ↔ 차이킴으로 바뀔 때 바탕색도
@@ -859,7 +880,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--color_text_inverse);
-  animation: brand_stack_action_dot_slide 1.6s ease-in-out infinite;
+  animation: none;
   transition:
     background-color 0.9s cubic-bezier(0.35, 0.35, 0, 1),
     scale 0.9s cubic-bezier(0.35, 0.35, 0, 1);
@@ -871,7 +892,6 @@
   transform: translateY(-3px);
   box-shadow: 0 18px 34px rgba(31, 67, 63, 0.38);
   color: var(--color_text_inverse);
-  animation-play-state: paused;
 }
 
 /* 누르는 순간 내려앉습니다 — 실제로 눌린다는 신호 */
@@ -890,11 +910,10 @@
 .brand_stack_action:hover::after,
 .brand_stack_action:focus-visible::after {
   scale: 0.85;
-  animation-play-state: paused;
 }
 
 /* 김영진 카피일 때의 핑크. 위 그린 버튼과 **구조는 완전히 같고 색만 바꿉니다** —
-   떠 있는 움직임, 빛 스침, 차오르는 층, 점, 누름 반응을 하나도 건드리지 않습니다.
+   호버 채움, 점, 누름 반응을 하나도 건드리지 않습니다.
 
    ★★ 선택자가 class가 아니라 [data-brand="youngjin"]입니다.
      이 버튼은 카드 덱 3/4 지점에서 카피가 "DISCOVER TCHAI KIM"으로 바뀝니다.
@@ -929,38 +948,6 @@
   box-shadow: 0 6px 14px rgba(150, 102, 88, 0.3);
 }
 
-@keyframes brand_stack_action_float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -6px;
-  }
-}
-
-/* 빛이 왼쪽으로 한 번 스치고, 화면 밖에 머물다가 다시 시작합니다.
-   양 끝 모두 버튼 밖이라 되돌아가는 순간은 보이지 않습니다. */
-@keyframes brand_stack_action_sheen {
-  0% {
-    background-position: 200% 0;
-  }
-  55%,
-  100% {
-    background-position: -60% 0;
-  }
-}
-
-@keyframes brand_stack_action_dot_slide {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: -5px 0;
-  }
-}
-
 .brand_stack_action:focus-visible {
   outline: 2px solid var(--color_text);
   outline-offset: 4px;
@@ -973,7 +960,7 @@
 
 .brand_stack_action .brand_stack_text_item:not(.is_active) {
   position: absolute;
-  inset: 16px;
+  inset: 16px 20px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1007,7 +994,7 @@
 
   .brand_collage_card,
   .brand_collage_card.is_size_sm {
-    width: min(14.0625vw, 287px);
+    width: min(15.625vw, 300px);
   }
 }
 
@@ -2238,31 +2225,33 @@
    ========================================================= */
 
 @media (max-width: 1279px) {
+  .brand_stack_copy {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 38vw) minmax(0, 1fr);
+    column-gap: clamp(28px, 3.5vw, 44px);
+    padding: clamp(64px, 8vh, 88px) 48px;
+  }
+
   .brand_stack_intro,
   .brand_stack_statement {
-    width: 30%;
+    width: 100%;
     font-size: clamp(13px, 1.5vw, 18px);
   }
 
   .brand_stack_title {
-    left: 22%;
-    width: 56%;
+    width: 100%;
     font-size: clamp(26px, 3.2vw, 40px);
   }
 
   .brand_stack_description {
-    bottom: 14%;
-    left: 5%;
-    width: 26%;
+    width: 100%;
   }
 
   .brand_stack_count {
-    left: 72%;
+    width: clamp(64px, 6vw, 76px);
   }
 
   .brand_stack_action {
-    right: 5%;
-    width: min(220px, 22vw);
+    width: min(220px, 100%);
   }
 
   .detail_stage {

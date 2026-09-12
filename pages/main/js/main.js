@@ -523,11 +523,41 @@
          두 브랜드명도 실제 렌더링 폭을 기준으로 좌우 화면 밖까지 보냅니다. */
       var isDesktop = window.innerWidth >= 1024;
       var revealOrder = [1, 2, 0, 3];
-      var viewportCenterX = window.innerWidth / 2;
-      var cardNaturalCenterX = cardItems.map(function (card) {
-        var cardBox = card.getBoundingClientRect();
-        return cardBox.left + cardBox.width / 2;
-      });
+      /* 완성된 덱은 한 장만 주인공으로 보이고 나머지는 작은 대각선 간격과
+         낮은 불투명도로 뒤를 받칩니다. offsetLeft를 쓰면 transform과 CSS zoom의
+         영향을 받지 않아 ScrollTrigger refresh 뒤에도 중앙축이 유지됩니다. */
+      var BRAND_DECK_FRONT_SCALE = 1.72;
+      var BRAND_DECK_SCALE_STEP = 0.12;
+
+      function getBrandDeckOffsetX() {
+        return Math.max(18, Math.min(30, collageStep.clientWidth * 0.016));
+      }
+
+      function getBrandDeckOffsetY() {
+        return Math.max(28, Math.min(42, window.innerHeight * 0.035));
+      }
+
+      function getBrandDeckX(card, order) {
+        var cardCenterX = card.offsetLeft + card.offsetWidth / 2;
+        return cards.clientWidth / 2 - cardCenterX + order * getBrandDeckOffsetX();
+      }
+
+      function getBrandDeckY(order) {
+        return order * getBrandDeckOffsetY();
+      }
+
+      function getBrandDeckScale(order) {
+        return BRAND_DECK_FRONT_SCALE - Math.abs(order) * BRAND_DECK_SCALE_STEP;
+      }
+
+      function getBrandDeckOpacity(order) {
+        if (order === 0) {
+          return 1;
+        }
+
+        return Math.abs(order) === 1 ? 0.58 : 0.32;
+      }
+
       var nameLeftBox = nameLeft ? nameLeft.getBoundingClientRect() : null;
       var nameRightBox = nameRight ? nameRight.getBoundingClientRect() : null;
       var nameLeftExitX = nameLeftBox ? -nameLeftBox.right - 40 : 0;
@@ -697,20 +727,21 @@
         tl.to(nameLeft, isDesktop ? { x: nameLeftExitX, duration: 1.15, ease: "none" } : { y: -70, duration: 1.15, ease: "none" }, 1.82)
           .to(nameRight, isDesktop ? { x: nameRightExitX, duration: 1.15, ease: "none" } : { y: 70, duration: 1.15, ease: "none" }, 1.82);
 
-        /* 레퍼런스의 다음 장면: 가로 한 줄이 중앙 카드 덱으로 모입니다.
-           세 번째 카드를 기준(order 0)으로 인접 카드는 7/8, 가장 먼 카드는 6/8,
-           세로 간격은 12vh이며 전체 기본 배율은 2배입니다. */
+        /* 가로 한 줄이 중앙 카드 덱으로 모입니다. 세 번째 카드를 기준(order 0)으로
+           앞장은 또렷하게, 뒤 카드는 작은 대각선 간격과 낮은 불투명도로 깊이를
+           구분합니다. 간격은 화면 크기에 맞춰 제한해 어느 해상도에서도 잘리지 않습니다. */
         cardItems.forEach(function (card, index) {
           var sequenceOrder = index - 2;
-          var stackScale = 2 * (1 - Math.abs(sequenceOrder) / 8);
+          var stackScale = getBrandDeckScale(sequenceOrder);
 
           /* z-index는 보간하면 겹치는 도중 앞뒤 순서가 프레임마다 바뀌어 깜빡입니다.
              집결 직전에 한 번만 확정하고 transform만 애니메이션합니다. */
           tl.set(card, { zIndex: 20 - Math.abs(sequenceOrder) }, 3.14);
           tl.to(card, {
-            x: viewportCenterX - cardNaturalCenterX[index],
-            y: sequenceOrder * window.innerHeight * 0.12,
+            x: function () { return getBrandDeckX(card, sequenceOrder); },
+            y: function () { return getBrandDeckY(sequenceOrder); },
             scale: stackScale,
+            opacity: getBrandDeckOpacity(sequenceOrder),
             force3D: true,
             duration: 1.25,
             ease: "power2.inOut"
@@ -743,7 +774,8 @@
 
           cardItems.forEach(function (card, cardIndex) {
             var targetOrder = slotOrders[cardIndex];
-            var targetScale = 2 * (1 - Math.abs(targetOrder) / 8);
+            var targetScale = getBrandDeckScale(targetOrder);
+            var targetOpacity = getBrandDeckOpacity(targetOrder);
             var targetZIndex = 20 - Math.abs(targetOrder);
             var isWrappingCard = cardIndex === wrappingCardIndexes[stepIndex];
 
@@ -751,21 +783,23 @@
               /* -2 슬롯에서 +1 슬롯으로 화면을 가로질러 내려오지 않도록,
                  덱 뒤에서 짧게 숨은 사이 아래쪽으로 위치를 넘깁니다. */
               tl.to(card, {
-                y: window.innerHeight * -0.3,
-                scale: 1.45,
+                y: function () { return getBrandDeckY(-3); },
+                scale: getBrandDeckScale(-2) - 0.08,
                 opacity: 0,
                 duration: 0.42,
                 ease: "sine.in"
               }, phaseStart)
                 .set(card, {
-                  y: window.innerHeight * 0.16,
-                  scale: 1.65,
+                  x: function () { return getBrandDeckX(card, targetOrder); },
+                  y: function () { return getBrandDeckY(targetOrder) + getBrandDeckOffsetY(); },
+                  scale: targetScale - 0.06,
                   zIndex: targetZIndex
                 }, phaseStart + 0.43)
                 .to(card, {
-                  y: targetOrder * window.innerHeight * 0.12,
+                  x: function () { return getBrandDeckX(card, targetOrder); },
+                  y: function () { return getBrandDeckY(targetOrder); },
                   scale: targetScale,
-                  opacity: 1,
+                  opacity: targetOpacity,
                   force3D: true,
                   duration: 0.47,
                   ease: "sine.out"
@@ -774,9 +808,10 @@
             }
 
             tl.to(card, {
-              y: targetOrder * window.innerHeight * 0.12,
+              x: function () { return getBrandDeckX(card, targetOrder); },
+              y: function () { return getBrandDeckY(targetOrder); },
               scale: targetScale,
-              opacity: 1,
+              opacity: targetOpacity,
               force3D: true,
               duration: 0.9,
               ease: "sine.inOut"
