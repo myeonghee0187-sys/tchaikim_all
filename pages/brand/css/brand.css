@@ -1602,16 +1602,20 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
    긴 줄이고, 폭이 넓어질수록 길어지는 구조였습니다.
    ★ .atelier_desc는 `text-align: center`라 max-width만 주면 왼쪽으로 붙습니다.
      반드시 margin-inline: auto와 함께 써야 가운데 정렬이 유지됩니다. */
-@media (max-width: 1849px) {
-  .atelier_desc {
-    max-width: var(--width_reading);
-    margin-inline: auto;
-  }
-
-  .youngjin_desc {
-    max-width: var(--width_reading);
-  }
+/* ★ 2026-09-13 (2차): 예전에는 이 블록이 `@media (max-width: 1849px)` 안에
+   있었습니다. 1차 작업이 "1920 픽셀 동일"을 목표로 삼아 1850~1990을
+   일부러 비켜 갔기 때문입니다. 2차에서 그 기준을 폐기했으므로
+   **모든 폭에 적용**합니다 — 그래야 1920·2048·2560에서도 한 줄이
+   길어지지 않습니다(실측: 이 제한이 없을 때 최대 97자). */
+.atelier_desc {
+  max-width: var(--width_reading);
+  margin-inline: auto;
 }
+
+.youngjin_desc {
+  max-width: var(--width_reading);
+}
+
 
 /* PHASE 5 — Brand: 탭 터치 영역 (2026-09-13)
    .tchaikim_tab이 110×36으로 세로가 8px 모자랐습니다. 탭 사이 간격이
@@ -1629,5 +1633,28 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
     height: max(100%, var(--touch_target));
     transform: translate(-50%, -50%);
     content: "";
+  }
+}
+
+/* ============================================================================
+   2차 — mood 카드 글자를 패널 축소에서 빼냅니다 (2026-09-13)
+   ----------------------------------------------------------------------------
+   `.mood_left` / `.mood_right`는 1920 절대좌표 아트 패널이라
+   `zoom: var(--mood_panel_scale)`(= 100vw/1920)로 함께 축소됩니다.
+   창문 사진과 카드 사진에는 맞지만, 카드의 **설명 글**까지 같이 줄어
+   실측 1280px에서 `.mood_word_desc`가 16px → **10.7px**였습니다(1440 12px).
+
+   제목·설명만 역보정해 어느 폭에서나 16px로 읽히게 합니다.
+   카드 사진과 카드 위치(편집적 어긋남)는 건드리지 않습니다.
+
+   ★ 대가: 글상자 폭은 캔버스 좌표 그대로라 글자가 커진 만큼 줄바꿈이
+     한 줄 늘어납니다("unmistakably Tchai kim."이 2줄 → 3줄). 카드가
+     세로로 어긋나 배치돼 있어 아래 공간이 충분하고, 옆 카드와 겹치지
+     않는 것을 실측으로 확인했습니다.
+   ★ 1920에서는 scale이 1이라 이 규칙은 아무 일도 하지 않습니다. */
+@media (min-width: 1280px) and (max-width: 1990px) {
+  .mood_right .mood_word_title,
+  .mood_right .mood_word_desc {
+    zoom: calc(1 / var(--mood_panel_scale));
   }
 }
