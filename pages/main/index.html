@@ -35,7 +35,14 @@
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
 <link rel="stylesheet" href="css/main.css?v=20">
 </head>
-<body data-page="main" data-header-variant="white" data-scroll-hint-mode="persistent">
+<!-- ★ 2026-09-14 (6차) — data-scroll-hint-mode="persistent"를 뗐습니다.
+     persistent는 페이지 끝까지 안내를 띄워 두는 모드인데, 실측(1920)에서
+     스크롤 2400px 지점의 `.detail_title` 위에 겹쳤습니다. 안내의 역할은
+     "이 페이지는 스크롤된다"를 첫 화면에서 알리는 것이므로, 다른 페이지와
+     같은 기본 모드(첫 화면을 지나면 사라짐)로 되돌립니다.
+     ★ 안내의 전역 위치는 건드리지 않았습니다(4차에서 왼쪽 아래로 옮겼다가
+       다른 겹침이 생겨 원래 자리로 되돌린 이력이 있습니다). -->
+<body data-page="main" data-header-variant="white">
 
 <div class="shop_transition" aria-hidden="true">
   <div class="shop_transition_steps" aria-hidden="true">
@@ -62,6 +69,12 @@
 </div>
 
 <main class="main" id="main_content">
+    <!-- 6차(2026-09-14): 이 페이지에 h1이 하나도 없었습니다(제목이 h2에서 시작).
+         제목 단계가 h2부터 시작하면 읽기 도구가 "이 문서가 무엇인가"를 알려 줄
+         첫 항목을 찾지 못합니다. 디자인을 바꾸지 않도록 이 페이지가 이미 쓰고 있는
+         `.a11y_hidden`(화면에서만 숨김, 낭독은 됨) 방식으로 넣었고, 문구는
+         <title>에 이미 있는 값을 그대로 씁니다 — 새로 지어낸 카피가 없습니다. -->
+    <h1 class="a11y_hidden">One house, two ways of wearing hanbok</h1>
 
   <!-- hero -->
   <section class="hero" aria-label="Tchai Kim and Tchai Kim Youngjin">

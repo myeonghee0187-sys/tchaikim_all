@@ -1185,3 +1185,78 @@ html.has_purchase_modal {
     content: "";
   }
 }
+
+/* ############################################################################
+   6차 — Shop Detail: 태블릿 룩 카드 잘림 + 조작부 글자 크기 (2026-09-14)
+   ############################################################################ */
+
+/* ① 룩 카드가 사진 밖으로 나가던 문제 (768~1100)
+   ----------------------------------------------------------------------------
+   실측(768): `.look_product[data-look-card="outer"]`의 왼쪽이
+   `calc(68.3% + pin + gap)` = 553px이고 카드 폭이 244px이라 오른쪽 끝이
+   **797px** — 화면 밖으로 29px 나가 가격($210)이 잘렸습니다(스크린샷 확인).
+   `body { overflow-x: hidden }`이 가로 스크롤만 막고 있었을 뿐 잘림은
+   그대로였습니다.
+
+   767 이하에는 이미 "사진 아래쪽에 가로로 눕히는" 처리가 있는데 768~1100에는
+   없어서 데스크톱 좌표를 그대로 쓰고 있었습니다.
+
+   ★ 여기서는 카드를 눕히지 않고 **사진의 좌우 끝에 붙입니다** — 이 구간은
+     사진이 아직 크고(768~1100) 카드가 핀 옆에 떠 있는 편집적인 구성이
+     성립합니다. 세로 위치(핀의 높이)는 그대로라 어느 핀을 눌렀는지
+     알 수 있고, 한 번에 한 장만 열리므로 좌우가 바뀌어도 헷갈리지 않습니다. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .look_product[data-look-card="top"],
+  .look_product[data-look-card="outer"] {
+    right: 24px;
+    left: auto;
+    transform: translate(-14px, -50%) scale(0.97);
+    transform-origin: right center;
+  }
+
+  .look_product[data-look-card="skirt"] {
+    right: auto;
+    left: 24px;
+    transform: translate(14px, -50%) scale(0.97);
+    transform-origin: left center;
+  }
+
+  /* ★ 이 규칙이 없으면 위 transform이 열린 카드까지 덮습니다
+     (`.look_product.is_active`가 파일 앞쪽에 있어 소스 순서에서 집니다). */
+  .look_product.is_active {
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+/* ② 조작부 글자 크기 — 태블릿·모바일만
+   ----------------------------------------------------------------------------
+   실측 <14px 목록: `.purchase_button` 11 · `.size_button` 11 ·
+   `.eyebrow` 10 · `.size_guide` 12 · `.purchase_benefits` 10(모바일 전용 규칙).
+
+   11px은 1920 시안값입니다. 데스크톱에서는 대문자 + 자간 0.22em이라 읽히지만,
+   손에 들고 보는 화면에서 **결제 버튼 글자가 11px**인 것은 그대로 둘 수 없습니다.
+   ★ 1280 이상은 건드리지 않습니다 — 시안 그대로입니다. */
+@media (max-width: 1279.98px) {
+  .purchase_button,
+  .size_button {
+    font-size: 13px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .size_guide {
+    font-size: 13px;
+    /* 0.65는 muted 회색 위에 다시 곱해져 대비가 2점대까지 떨어집니다. */
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 아래 PHASE 6 블록이 이 목록을 이미 1열로 폈습니다 — 10px로 줄여 3열에
+     맞출 이유가 없어졌습니다(그 규칙이 남아 글자만 작았습니다). */
+  .purchase_benefits {
+    font-size: 13px;
+  }
+}

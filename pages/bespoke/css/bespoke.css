@@ -100,18 +100,20 @@
 
 }
 
-/* Bespoke footer spacing differs from the shared Main/Shop footer. */
-.footer_inner {
-  gap: 80px;
-}
-
-.footer_wordmark {
-  margin: 0;
-}
-
+/* Bespoke footer spacing differs from the shared Main/Shop footer.
+   ★ 6차(2026-09-14): 이 두 규칙을 **1280 이상으로 좁혔습니다.**
+     폭 조건이 없어서 모바일·태블릿에서도 gap 80px이 세 번(240px) 들어가고
+     워드마크 마진이 0이 되어, bespoke 푸터만 다른 페이지보다 높았습니다
+     (390 실측 1044px = 화면의 124%). 좁은 화면에서는 공통 푸터(layout.css)의
+     리듬을 그대로 씁니다 — 푸터는 전 페이지가 같아야 하는 공통 컴포넌트입니다.
+     1920 데스크톱 모양은 그대로입니다. */
 @media (min-width: 1280px) {
+  .footer_inner {
+    gap: 80px;
+  }
+
   .footer_wordmark {
-    margin-left: -9px;
+    margin: 0 0 0 -9px;
   }
 }
 
@@ -2509,5 +2511,32 @@
     height: max(100%, var(--touch_target));
     transform: translate(-50%, -50%);
     content: "";
+  }
+}
+
+/* ############################################################################
+   6차 — Atelier 사진을 원본 크기 안으로 (2026-09-14)
+   ----------------------------------------------------------------------------
+   실측(1024): `.atelier_image` 안의 atelier.png가 **944 × 1104px**로
+   그려지고 있었습니다 — 화면 높이의 1.4배이고, 원본이 554 × 648이라
+   **1.7배로 늘려 흐려집니다.**
+   (docs/PROJECT_CONTEXT.md에도 "원본보다 크게 늘리지 않는다 — max-width:
+    554px + 가운데 정렬"이라는 결정이 기록돼 있는데, 태블릿 구간에는
+    그 상한이 걸려 있지 않았습니다.)
+
+   → 태블릿에서도 원본 폭을 넘지 않게 하고, 한 화면 안에 사진과 글이
+     함께 들어오도록 폭을 62%로 낮춥니다.
+   ############################################################################ */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .atelier_image {
+    width: min(62%, 554px);
+    max-width: 554px;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .atelier_image img {
+    width: 100%;
+    height: auto;
   }
 }

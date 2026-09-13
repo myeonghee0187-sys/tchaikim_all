@@ -491,7 +491,18 @@
     }
   })();
 
-  gsap.matchMedia().add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", function () {
+  /* ★★ 2026-09-14 (6차) — 게이트를 1024 → 1280으로 올렸습니다.
+
+     brand_word_pin(두 이름이 갈라지며 사진 네 장이 드러나는 연출)이
+     태블릿에서도 켜져 있었는데, 실측하니 이 pin 하나가 **8,448px
+     (1024 화면 기준 11개 분량)**의 스크롤 활주로를 차지했습니다.
+     detail pin(4,301) · model pin(3,100)까지 합치면 1024에서 문서
+     24,050px 중 **15,849px(66%)가 인터랙션 활주로**였습니다.
+
+     §PAGE 2 "Tablet에서 Desktop photo deck을 그대로 유지할 필요 없음"에
+     따라 태블릿에서는 끄고, CSS의 정적 편집 레이아웃을 그대로 씁니다.
+     데스크톱(≥1280)은 그대로입니다. */
+  gsap.matchMedia().add("(min-width: 1280px) and (prefers-reduced-motion: no-preference)", function () {
     var triggers = [];
     var resets = [];
 
@@ -1388,7 +1399,10 @@
   var DETAIL_PIN_SETTLE_RATIO = 0.06;
   /* 스크롤 연출을 켜는 조건. 좁은 화면에서는 사진 위에 겹치는 설명이 들어갈
      자리가 없어 버튼 방식을 그대로 씁니다. */
-  var DETAIL_SCROLL_MEDIA = "(min-width: 1024px) and (prefers-reduced-motion: no-preference)";
+  /* ★ 6차: 1024 → 1280. 태블릿에서는 돋보기 스크럽 대신 CSS 폴백
+     (부위 버튼 4개)을 씁니다 — 그 폴백은 원래부터 준비돼 있고
+     터치에서 더 다루기 쉽습니다. pin 4,301px이 사라집니다. */
+  var DETAIL_SCROLL_MEDIA = "(min-width: 1280px) and (prefers-reduced-motion: no-preference)";
 
   var section = document.querySelector(".detail");
   var pin = section && section.querySelector(".detail_pin");

@@ -2443,3 +2443,182 @@
     content: "";
   }
 }
+
+/* ############################################################################
+   6차 — Shop 모바일 상품 그리드: 균일 1열 → 편집적 mixed grid (2026-09-14)
+   ----------------------------------------------------------------------------
+   [문제] 479px 이하에서 두 그리드가 모두 1열이라, 상품 카드가 전부
+   화면의 90%를 차지한 채 세로로 늘어섰습니다.
+   실측(390px): 이미지 66장 중 **48장이 뷰포트의 85% 이상**,
+   문서 높이 17,635px = **화면 20.9개 분량**. 사이트에서 가장 긴 페이지였고
+   "모든 이미지 100%"(금지 항목)에 해당했습니다.
+
+   [지금] 각 그리드의 **첫 카드 한 장만 전체 폭**, 나머지는 2열.
+   상품 탐색성과 편집적 위계를 함께 가져갑니다.
+
+       1번   ████████████  full   ← 대표
+       2·3   ████  ████    2열
+       4·5   ████  ████    2열
+        6    ████          (홀수 하나는 반폭으로 남김 — 의도된 여백)
+
+   ★★★ 선택자 주의 — `.shop_row`가 `display: contents`입니다.
+     레이아웃에서는 카드가 그리드 아이템이 되지만 **선택자 매칭은 DOM
+     트리 그대로**라, `.shop_grid > :nth-child(...)`는 카드가 아니라
+     **row**를 가리킵니다(실측으로 확인: grid-column이 걸리지 않고
+     카드가 계속 반폭이었습니다). 그래서 row를 명시적으로 거쳐야 합니다.
+   ★ 카드 수: new_arrivals 2행 × 2장, shop 2행 × 3장.
+   ############################################################################ */
+@media (max-width: 479px) {
+  .new_arrivals_grid,
+  .shop_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* 행 간격은 넉넉히, 열 간격은 좁게 — 두 장이 한 쌍으로 읽힙니다. */
+    gap: 44px 14px;
+  }
+
+  /* 각 그리드의 첫 카드만 전체 폭. */
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child,
+  .shop_grid > .shop_row:first-child > .card_product:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* 2열 카드는 글자를 한 단계 줄입니다. 먼저 전부 줄이고, 바로 아래에서
+     전체 폭 카드만 원래 크기로 되돌립니다. */
+  .new_arrivals_grid .card_product_name,
+  .shop_grid .card_product_name {
+    font-size: 15px;
+  }
+
+  .new_arrivals_grid .card_product_price,
+  .shop_grid .card_product_price {
+    font-size: 14px;
+  }
+
+  .new_arrivals_grid .card_product_desc,
+  .shop_grid .card_product_desc {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* ★ 이름과 가격이 한 줄에서 space-between으로 마주 보는 구조라,
+     2열 카드(폭 약 168px)에서는 자리가 없어 **가격이 카드 밖으로 밀려
+     페이지에 31px 가로 넘침**이 생겼습니다(실측). 좁은 카드에서는
+     세로로 쌓습니다. */
+  .new_arrivals_grid .card_product_header,
+  .shop_grid .card_product_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  /* 좁은 카드에서 태그가 여러 줄로 쌓이면 카드 높이가 들쭉날쭉합니다.
+     ★ 처음에 `nowrap + overflow: hidden`으로 잘랐더니 두 번째 태그가
+       글자 중간에서 잘려("Dr…", "B C…") 고장난 것처럼 보였습니다.
+       잘라 보여주는 대신 **첫 태그 하나만** 남깁니다 — 나머지 정보는
+       상품 상세에 있습니다. */
+  .new_arrivals_grid .card_product_tags,
+  .shop_grid .card_product_tags {
+    flex-wrap: nowrap;
+  }
+
+  .new_arrivals_grid .card_product_tags > *:nth-child(n + 2),
+  .shop_grid .card_product_tags > *:nth-child(n + 2) {
+    display: none;
+  }
+
+  /* --- 전체 폭 대표 카드는 원래 크기 --- */
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_header,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_header {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_name,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_name {
+    font-size: 20px;
+  }
+
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_price,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_price {
+    font-size: 16px;
+  }
+
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_desc,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_tags,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_tags {
+    flex-wrap: wrap;
+  }
+
+  /* 대표 카드에서는 태그를 전부 보여줍니다. */
+  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_tags > *,
+  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_tags > * {
+    display: inline-flex;
+  }
+}
+
+/* ############################################################################
+   6차 — 360px에서 색상 점의 히트 영역이 페이지를 5px 넘치던 문제 (2026-09-14)
+   ----------------------------------------------------------------------------
+   `body { overflow-x: hidden }`을 강제로 visible로 되돌린 회귀 검사에서
+   **shop 360px만 5px**이 남았습니다. 범인을 좁힌 결과:
+
+       기본                     scrollWidth 365
+       `*::after` 전부 제거      → 360
+       `.card_product_swatches` 제거 → 360
+
+   즉 콘텐츠가 아니라 **색상 점의 44px 투명 히트 판**입니다. 점이 14px이라
+   판이 좌우로 15px씩 삐져나오는데, 360에서는 카드가 컨테이너 끝에 붙어 있어
+   그 15px이 그대로 문서 폭이 됩니다(390 이상에서는 여유가 있어 드러나지 않습니다).
+
+   ★ 판을 줄이지 않고 **줄 안에서만 자릅니다.** `clip`이라 세로(44px)는
+     그대로 visible이고, 양 끝 점도 14 + 15 = 29px의 가로 영역이 남습니다
+     (WCAG 2.5.8 AA 최소 24×24 통과). 가운데 점들은 44px 그대로입니다.
+   ★ `hidden`을 쓰면 안 됩니다 — 스크롤 컨테이너가 되어 세로 판까지 잘립니다.
+   ############################################################################ */
+@media (max-width: 1279px), (pointer: coarse) {
+  .card_product_swatches {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+}
+
+/* ############################################################################
+   6차 — "Freedom, worn" 세로 영상이 태블릿에서 화면보다 커지던 문제 (2026-09-14)
+   ----------------------------------------------------------------------------
+   이 영상은 원본이 1043 × 1826(세로 9:16에 가까운 0.571)입니다. 좁은 화면에서
+   `width: 100%; max-width: 720px`라 **폭이 커질수록 높이가 같이 커집니다.**
+
+   실측:
+        390   350 × 613    (화면의  73%)  ← 괜찮습니다
+        768   704 × 1233   (화면의 120%)
+       1024   720 × 1261   (화면의 **164%**)
+
+   영상 한 편이 화면 1.6개를 차지해서, 스크롤하는 동안 위아래 어느 쪽도
+   끝이 보이지 않습니다.
+
+   ★ 높이만 자르면(`max-height` + cover) **세로 영상의 위아래가 잘려** 옷의
+     전신 실루엣이 사라집니다. 그래서 비율은 그대로 두고 **폭을 화면 높이에서
+     역산**합니다 — 프레임 전체가 한 화면(88svh) 안에 들어옵니다.
+
+        width = min(100%, 720px, 88svh × 1043/1826)
+
+   ★ 모바일은 `100%`(350px)가 이미 더 작아 `min()`이 그대로 고릅니다 —
+     390 화면의 결과가 바뀌지 않습니다(실측 확인).
+   ★ 1280 이상은 시안 그대로입니다.
+   ############################################################################ */
+@media (max-width: 1279.98px) {
+  .motif_video {
+    flex: none;
+    width: min(100%, 720px, calc(88svh * 1043 / 1826));
+    max-width: none;
+    height: auto;
+    aspect-ratio: 1043 / 1826;
+    align-self: center;
+  }
+}
