@@ -176,21 +176,20 @@ body[data-header-variant="black"] .common_header_slot {
    공통 스크롤 안내 — 모든 페이지에서 common.js가 한 번만 생성합니다.
    페이지별 연출이 직접 제어할 때는 data-scroll-hint-mode="custom"을 사용합니다.
    ========================================================= */
-/* ★★ 2026-09-13 (2차) — 화면 왼쪽 "위"에서 왼쪽 "아래"로 옮겼습니다.
+/* ★ 2026-09-13 (3차) — 2차에서 화면 왼쪽 아래로 옮겼던 것을 **원래 자리(왼쪽 위)로
+   되돌렸습니다.**
 
-   이 안내는 `position: fixed`이고 `left: var(--layout_gutter)`라 **콘텐츠와
-   같은 왼쪽 기준선**에 섭니다. 예전에는 top에 있어서, 각 섹션의 큰 제목이
-   화면 위쪽을 지나갈 때마다 글자 위에 겹쳤습니다.
-   실측(1920): main `.detail_title`, brand `.mood_copy_title`,
-   bespoke `.bespoke_hero_eyebrow`와 겹침. html zoom을 걷어내면서 제목이
-   실제 크기로 커지자 더 두드러졌습니다.
+   2차에서 옮긴 이유는 1920에서 제목과 겹쳤기 때문인데, 반응형 작업 전
+   커밋(4a2a060)에서 같은 검사를 돌려 보니 brand `.mood_copy_title`,
+   bespoke `.bespoke_hero_eyebrow` 겹침은 **원래부터 있던 것**이었습니다.
+   반면 아래로 내리자 1024 brand에서 mood 카드 사진 위에 얹히는 **새로운**
+   겹침이 생겼습니다 — 원래 없던 문제를 만든 셈이라 되돌립니다.
 
-   화면 아래로 내리면 제목이 지나다니는 영역을 피하면서 "아래로 스크롤"이라는
-   뜻도 그대로 살아납니다. 오른쪽 아래는 TOP 버튼이 쓰고 있어 왼쪽입니다. */
+   ★ 원본 디자인이 기준입니다. 원래 있던 미세한 겹침까지 없애려고 위치를
+     바꾸면 다른 곳이 깨집니다. */
 .common_scroll_hint {
   position: fixed;
-  top: auto;
-  bottom: clamp(24px, 4svh, 48px);
+  top: calc(var(--header_height) + clamp(20px, 3svh, 36px));
   left: var(--layout_gutter);
   z-index: 42;
   display: flex;

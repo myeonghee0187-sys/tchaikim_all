@@ -275,22 +275,30 @@
 
         <div class="heritage_split">
           <div class="heritage_photos">
-            <div class="heritage_stage">
-              <figure class="heritage_figure">
-                <img loading="lazy" decoding="async" src="assets/images/heritage_past.png" alt="Hanbok as it was worn in the past">
-              </figure>
-            </div>
+            <!-- ★ .heritage_photos_frame은 1279px 이하에서만 실제 상자가 됩니다.
+                 brand.css가 그 폭에서 이 요소를 `position: sticky`로 붙잡아
+                 "사진 한 자리에서 세 장이 겹쳐 바뀌는" 레이아웃을 만듭니다.
+                 1280px 이상에서는 `display: contents`라 레이아웃에서 사라져
+                 기존 데스크톱 구조(.heritage_photos 안에 .heritage_stage가
+                 absolute로 포개짐)가 그대로 유지됩니다. -->
+            <div class="heritage_photos_frame">
+              <div class="heritage_stage">
+                <figure class="heritage_figure">
+                  <img loading="lazy" decoding="async" src="assets/images/heritage_past.png" alt="Hanbok as it was worn in the past">
+                </figure>
+              </div>
 
-            <div class="heritage_stage">
-              <figure class="heritage_figure">
-                <img loading="lazy" decoding="async" src="assets/images/heritage_ing.png" alt="Hanbok in transition, between tradition and today">
-              </figure>
-            </div>
+              <div class="heritage_stage">
+                <figure class="heritage_figure">
+                  <img loading="lazy" decoding="async" src="assets/images/heritage_ing.png" alt="Hanbok in transition, between tradition and today">
+                </figure>
+              </div>
 
-            <div class="heritage_stage">
-              <figure class="heritage_figure">
-                <img loading="lazy" decoding="async" src="assets/images/heritage_now.jpg" alt="Hanbok as Tchai Kim makes it today">
-              </figure>
+              <div class="heritage_stage">
+                <figure class="heritage_figure">
+                  <img loading="lazy" decoding="async" src="assets/images/heritage_now.jpg" alt="Hanbok as Tchai Kim makes it today">
+                </figure>
+              </div>
             </div>
           </div>
 

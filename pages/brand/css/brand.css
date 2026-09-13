@@ -1658,3 +1658,317 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
     zoom: calc(1 / var(--mood_panel_scale));
   }
 }
+
+/* ============================================================================
+   3차 — mood 축약 reveal의 시작 상태 (2026-09-13)
+   ----------------------------------------------------------------------------
+   `.is_compact_reveal`은 js/brand.js의 initMoodCompactReveal()이 붙입니다.
+   JS·GSAP이 없거나 모션 축소 설정이면 붙지 않고, 아래 값들도 적용되지
+   않아 **지금까지의 정적인 모습(문이 이미 다 열린 상태)** 그대로입니다.
+
+   ★ 여기에 시작 상태를 CSS로도 적어 두는 이유: GSAP의 fromTo가 첫 프레임을
+     칠하기 전에 완성된 그림이 한 번 비치는 것(FOUC)을 막습니다.
+     JS가 class를 붙이는 시점이 곧 트윈이 준비된 시점입니다.
+   ★ clip-path는 레이아웃을 바꾸지 않습니다 — 사진이 잘려 보일 뿐
+     아래 카드 위치는 그대로라, 열리는 동안 글이 밀리지 않습니다. */
+@media (max-width: 1279.98px) {
+  .mood.is_compact_reveal .mood_room {
+    clip-path: inset(0% 44% 0% 44%);
+  }
+
+  .mood.is_compact_reveal .mood_copy {
+    opacity: 0;
+  }
+
+  .mood.is_compact_reveal .mood_right .mood_word {
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+   3차 — Kim Young Jin: 태블릿 전용 비대칭 2열 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [원래 디자인(≥1280)]
+     group_first  : 큰 세로 사진 500×600  +  작은 가로 사진 403×269 + 글
+     group_second : 작은 가로 사진 + 글  +  큰 세로 사진 468×600
+     · `align-items: flex-end` — 두 열이 **아랫변**을 맞춥니다
+     · group_second는 `position: absolute; top: 1109px; right: 0` — 오른쪽으로
+       밀리고 아래로 어긋나 비대칭을 만듭니다
+     · 큰 사진 : 작은 사진 ≈ 55 : 45
+
+   [1279 이하에서 있던 일]
+     `.youngjin_group { flex-direction: column }`으로 **모두 세로 1열**이
+     됩니다. 이 규칙은 반응형 작업으로 생긴 것이 아니라 원래부터
+     있었습니다(4a2a060에서 확인). 1차에서 사진 폭에 위계(full bleed /
+     82% / 82% / 68%)를 준 것이 개선이긴 하지만, 여전히 **세로 나열**이라
+     원본의 "큰 사진 옆에 작은 사진 + 글" 관계는 사라집니다.
+
+   [지금 — 태블릿(768~1279)만]
+     원본의 2열 관계를 폭 비율로 옮깁니다. 모바일(≤767)은 세로가 맞으므로
+     1차의 위계를 그대로 씁니다.
+
+       group_first  : red 54%  +  (yellow + Origin) 42%      아랫변 정렬
+       group_second : (black + Traditional) 40%  +  blue 50%  오른쪽으로 밀림
+
+   ★ 이 블록은 파일 위쪽 `@media (max-width: 1279px)`(세로 1열)과
+     1차의 위계 블록보다 **뒤**에 있어야 합니다. 선택자 특정도가 같아
+     소스 순서로만 이깁니다.
+   ★ 사진 비율(세로 5:6 / 가로 3:2)은 위 블록에서 이미 정해 둔 것을
+     그대로 씁니다 — 크롭이 달라지면 안 됩니다.
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .kimyoungjin_frame {
+    gap: var(--space_section_xl);
+  }
+
+  /* 세로 1열을 되돌리고 원본처럼 아랫변을 맞춥니다. */
+  .youngjin_group {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 4%;
+  }
+
+  /* --- group 1 : 큰 세로 사진 + (작은 가로 사진 + Origin) --- */
+  .youngjin_group_first .youngjin_photo_red {
+    /* 1차의 full-bleed(거터를 뚫는 100%+)를 여기서만 되돌립니다. */
+    width: 54%;
+    margin-inline: 0;
+  }
+
+  .youngjin_group_first .youngjin_side {
+    width: 42%;
+    align-self: flex-end;
+  }
+
+  /* --- group 2 : (작은 가로 사진 + Traditional) + 큰 세로 사진 ---
+     원본의 `right: 0` 어긋남을 `margin-left: auto`로 옮깁니다. */
+  .youngjin_group_second {
+    width: 94%;
+    margin-left: auto;
+  }
+
+  .youngjin_group_second .youngjin_side {
+    width: 40%;
+    align-self: flex-end;
+    /* 1차에서 모바일용으로 준 오른쪽 정렬은 2열에서는 어색합니다. */
+    text-align: left;
+  }
+
+  .youngjin_group_second .youngjin_photo_blue {
+    width: 50%;
+    align-self: flex-end;
+  }
+}
+
+/* ============================================================================
+   3차 — oversized wordmark를 다시 "배경 타이포 레이어"로 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [원래 디자인(≥1280)]
+     `position: absolute; top: 1960px; left: 80px; font-size: 600px;`
+     `color: transparent; -webkit-text-stroke: 3px rgba(10,10,10,0.07);`
+     → 1920 캔버스에서 "TCHAI"가 약 1760px, 흐릿한 외곽선만 남은
+       **배경 타이포**입니다. 읽으라고 있는 문장이 아니라 구성 요소입니다.
+
+   [1279 이하에서 있던 일]
+     `position: static; justify-content: center; font-size: 22~30vw`
+     → 화면 안에 **딱 맞게 가운데 놓인 제목**이 됩니다. 잘리지도 않고
+       넘치지도 않아서, 배경 레이어가 아니라 그냥 큰 글자가 됩니다.
+     (이 규칙도 반응형 작업 이전부터 있던 것입니다.)
+
+   [지금]
+     크기를 키워 **좌우로 흘러넘치게** 해서 잘리도록 합니다. 원본처럼
+     "화면보다 큰 글자의 일부만 보이는" 인상이 됩니다.
+
+     "TCHAI"는 Trirong에서 대략 글자 크기의 2.9배 폭이라, 38vw면
+     약 110vw가 되어 양쪽이 잘립니다. 왼쪽으로 조금 더 밀어 크롭을
+     비대칭으로 만듭니다(가운데 정렬은 이 페이지의 성격과 맞지 않습니다).
+
+   ★ 흐름에서 빼지 않고(`position: relative`) 자기 줄은 그대로 차지합니다 —
+     `absolute`로 두면 아래 handmade 글과 겹쳐 읽을 수 없게 됩니다.
+   ★ 넘친 부분은 `.kimyoungjin`의 overflow로 잘립니다(아래 규칙).
+     페이지 가로 스크롤은 생기지 않습니다.
+   ========================================================================== */
+@media (max-width: 1279.98px) {
+  /* ★★ `overflow: hidden`을 쓰면 안 됩니다 — 이 섹션은 안쪽 프레임이
+     세로로도 넘칩니다(실측: frame offsetHeight 2327 vs scrollHeight 4146).
+     hidden으로 막으면 워드마크와 handmade 문구가 **잘려서 사라집니다.**
+     `overflow-x: clip`은 가로만 자르고 세로는 그대로 흘려보냅니다
+     (이 저장소가 collection `.archive`에서 이미 쓰는 방법입니다).
+     ★ `overflow-x: hidden`도 안 됩니다 — CSS 규칙상 overflow-y가
+       자동으로 auto가 되어 세로 스크롤 상자가 생깁니다. */
+  .kimyoungjin {
+    overflow-x: clip;
+  }
+
+  /* ★★★ `position: relative`로 두면 안 됩니다 — 기본 규칙(.youngjin_wordmark)의
+     `top: 1960px; left: 80px`가 **되살아납니다.** static일 때는 무시되던
+     값입니다. 실제로 이걸로 워드마크가 자기 섹션보다 1287px 아래(다음
+     섹션 위)로 밀려났습니다: 프레임 offsetHeight 2327인데 워드마크
+     offsetTop 3524, handmade(2093)보다도 뒤.
+     (이 저장소가 shop 히어로에서 이미 겪고 기록해 둔 함정입니다 —
+      docs/PROJECT_CONTEXT.md "position: relative를 주는 순간 기본 규칙의
+      left/top이 살아납니다")
+     → 원래대로 `static`을 유지하고, 왼쪽으로 미는 것은 margin으로 합니다. */
+  .youngjin_wordmark {
+    position: static;
+    height: auto;
+    justify-content: flex-start;
+    white-space: nowrap;
+    /* 화면보다 넓어져 양쪽이 잘립니다(≈110vw). */
+    font-size: 38vw;
+    /* 왼쪽으로 더 밀어 크롭을 비대칭으로. */
+    margin-left: -9vw;
+    padding-top: 0;
+    -webkit-text-stroke-width: 2px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .youngjin_wordmark {
+    font-size: 44vw;
+    margin-left: -12vw;
+    -webkit-text-stroke-width: 1.5px;
+  }
+}
+
+/* ============================================================================
+   3차 — Tchai Kim: 태블릿에서 2열 장면 구성 유지 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [원래 디자인(≥1280)]
+     `.tchaikim_con` : flex row · space-between · 1700px
+       · `.tchaikim_txt`   596px, **오른쪽 정렬**(align-items: flex-end)
+       · `.tchaikim_media` 1040 × 520
+     → 글이 왼쪽에서 오른쪽 끝으로 붙어 영상과 마주 봅니다. 36 : 64.
+
+   [1279 이하에서 있던 일]
+     `flex-direction: column; align-items: center` + `text-align: center`
+     → 제목·본문·영상이 **모두 가운데** 쌓입니다. 탭을 바꿔도 항상 같은
+       높이·같은 정렬이라 장면이 바뀌는 느낌이 약해집니다.
+       (§26이 금지하는 "모든 text center"에 해당합니다.)
+
+   [지금 — 768~1279만]
+     원본의 마주 보는 관계를 비율로 옮깁니다. 38 : 58(§8 권장 38/62·40/60).
+     글의 오른쪽 정렬을 그대로 살려 영상 쪽으로 붙게 합니다.
+     ≤767에서는 폭이 부족해 세로가 맞으므로 기존 column을 그대로 둡니다.
+
+   ★ 탭 전환 인터랙션(initTchaikimTabs)은 건드리지 않았습니다 —
+     폭 조건이 없어 전 구간에서 그대로 동작합니다.
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .tchaikim_con {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4%;
+  }
+
+  /* ★ 38%로 뒀더니 1024에서 글상자가 347px이라 시안에서 <br>로 나눠 둔
+     줄이 다시 접혀 10줄까지 늘어났습니다(실측). 데스크톱의 글상자는
+     596px입니다 — 비율(35%)보다 **읽히는 폭**을 우선해 46%로 넓히고
+     영상을 그만큼 줄입니다. */
+  .tchaikim_txt {
+    width: 46%;
+    max-width: none;
+    /* 원본처럼 영상 쪽(오른쪽)으로 붙입니다. */
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .tchaikim_media {
+    width: 50%;
+    max-width: none;
+  }
+
+  /* ★ 2열이 되면서 글상자가 좁아지는데 본문이 20px 고정이라 폭이 줄수록
+     줄 수가 급격히 늘었습니다(실측 820px에서 13줄 — 768px의 10줄보다도
+     많음. 768 이하는 17px로 내려가는데 그 사이 구간만 20px이 남아서).
+     글상자 폭에 맞춰 연속적으로 줄어들게 합니다.
+       1279 → 20px(데스크톱과 동일) · 1024 → 17.4px · 820 이하 → 16px */
+  .tchaikim_panel_desc {
+    font-size: clamp(16px, 1.7vw, 20px);
+  }
+
+  .tchaikim_panel_title {
+    font-size: clamp(20px, 2vw, 24px);
+  }
+}
+
+/* ============================================================================
+   3차 — Atelier: 작은 화면에서 "한 장 크게 + 다음 장 살짝" (2026-09-13)
+   ----------------------------------------------------------------------------
+   [원래 디자인] 사진 7장이 **서로 다른 크기**(380 / 220 / 300 / 460)로
+   흐르는 띠입니다. 크기 차이 자체가 이 섹션의 리듬입니다.
+
+   [문제] 1279 이하에서 전부 0.75배로 줄이기만 해서, 화면이 좁아질수록
+   **작은 사진이 한 화면에 여러 장** 들어왔습니다(실측 390px에서 152px
+   짜리가 4장 동시에, 768px에서 5장). 그러면 "옆으로 흐른다"는 느낌보다
+   "작은 썸네일 목록"으로 읽힙니다(§9).
+
+   [지금] 크기 **차이는 그대로 두고** 전체 배율만 화면 폭에 연동합니다.
+   가장 큰 사진(460)이 화면의 40%(태블릿) / 76%(모바일)를 차지하도록
+   역산한 비율입니다.
+
+     --atelier_scale = 목표폭 ÷ 460px
+
+   ★★ 분모에 **px를 반드시 붙입니다.** `÷ 460`으로 쓰면 "길이 ÷ 숫자 = 길이"가
+     되어 `calc(380px * <길이>)`가 무효가 됩니다(실측: 사진이 772px로 튀어
+     390 화면의 198%가 됐습니다). "길이 ÷ 길이 = 순수 숫자"여야 곱셈에
+     쓸 수 있습니다 — common.css의 zoom 계산과 같은 함정입니다.
+
+   ★ 마퀴(initAtelierMarquee)는 건드리지 않았습니다 — 전 구간에서 계속
+     흐릅니다(실측 확인). 여기서는 사진 크기만 바꿉니다.
+   ★ 높이는 각 사진의 원래 비율(507/380 등)을 곱해 유지합니다 —
+     크롭이 달라지면 안 됩니다.
+   ========================================================================== */
+@media (max-width: 1279.98px) {
+  .atelier_row {
+    /* 가장 큰 사진이 화면의 40%(상한 430px) */
+    --atelier_scale: calc(min(430px, 40vw) / 460px);
+  }
+
+  .atelier_photo_1,
+  .atelier_photo_7 {
+    width: calc(380px * var(--atelier_scale));
+    height: calc(507px * var(--atelier_scale));
+  }
+
+  .atelier_photo_2,
+  .atelier_photo_6 {
+    width: calc(220px * var(--atelier_scale));
+    height: calc(293px * var(--atelier_scale));
+  }
+
+  .atelier_photo_3,
+  .atelier_photo_5 {
+    width: calc(300px * var(--atelier_scale));
+    height: calc(400px * var(--atelier_scale));
+  }
+
+  .atelier_photo_4 {
+    width: calc(460px * var(--atelier_scale));
+    height: calc(613px * var(--atelier_scale));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .atelier_row {
+    /* 모바일에서는 가장 큰 사진이 화면의 76%(상한 340px) —
+       한 장이 화면을 지배하고 옆 장이 살짝 걸칩니다. */
+    --atelier_scale: calc(min(340px, 76vw) / 460px);
+  }
+}
+
+/* ============================================================================
+   3차 — heritage_photos_frame 기본값 (2026-09-13)
+   ----------------------------------------------------------------------------
+   이 래퍼는 **1279px 이하에서만** 실제 상자입니다(위쪽
+   `.heritage.is_photo_swap_ready .heritage_photos_frame` 규칙이 sticky 상자로
+   켭니다). 그 밖에서는 레이아웃에서 완전히 빼서, 데스크톱의 기존 구조
+   (.heritage_photos 안에서 .heritage_stage가 absolute로 포개지는 형태)를
+   한 픽셀도 바꾸지 않습니다.
+   ★ `display: contents`는 상자만 없애고 자식은 그대로 둡니다 — 그래서
+     `.heritage_photos .heritage_stage` 같은 자손 선택자와 JS 쿼리는
+     래퍼가 있든 없든 똑같이 동작합니다. */
+.heritage_photos_frame {
+  display: contents;
+}
