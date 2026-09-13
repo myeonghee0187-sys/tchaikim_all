@@ -132,15 +132,12 @@
      1920으로 올렸습니다 — CSS도 같은 값을 써야 합니다(brand.css
      "@media (max-width: 1919.98px)"의 mood 규칙 참고). 1920 미만에서는
      문이 이미 다 열린 정적인 모습(CSS 기본값)이라 pin이 필요 없습니다. */
+  /* 1920 → 1280. 노트북에서도 mood_left/right가 잘리지 않아 데스크톱
+     문 열림을 1280까지 켭니다. brand.css의 max-width: 1279.98px 규칙과 짝입니다.
+     ★ 5차에서 1279 이하 축약 reveal을 삭제하면서
+       MOOD_COMPACT_MAX_WIDTH · MOOD_COMPACT_PIN_LENGTH 두 상수도 함께
+       지웠습니다(더 이상 쓰는 곳이 없습니다). */
   var MOOD_MIN_WIDTH = 1280;
-  /* 1279.98 — brand.css의 "MOOD RESPONSIVE" 블록과 같은 상한입니다.
-     정수 1279를 쓰면 화면 배율이 정수 배가 아닐 때(예: Windows 175%)
-     실제 판정 폭이 1279.4처럼 소수로 떨어져 두 구간 사이에 틈이 생깁니다. */
-  var MOOD_COMPACT_MAX_WIDTH = 1279.98;
-  /* 좁은 화면 문 열림에 쓰는 pin 길이. 화면 높이의 70%입니다.
-     ★ 이 값만 바꾸면 열리는 속도가 조절됩니다. 너무 키우면 모바일에서
-       "스크롤해도 페이지가 안 내려간다"는 인상이 됩니다. */
-  var MOOD_COMPACT_PIN_LENGTH = "70%";  /* 1920 → 1280. 노트북에서도 zoom으로 1920 캔버스가 확보되므로 mood_left/right가 더 이상 잘리지 않습니다. brand.css의 max-width: 1279.98px 규칙과 짝입니다. */
 
   /* ★ "띠 모양"이 완성됐을 때의 높이 — 무대 높이의 비율입니다. 레퍼런스
      영상에서 세로가 화면 높이를 다 채우지 않고 60%만큼만 자란 뒤 멈춥니다.
@@ -274,9 +271,6 @@
      (scrub) 타임라인 하나가 4장면을 순서대로 재생합니다 —
      initHeritageReveal() 참고. */
   var HERITAGE_MIN_WIDTH = 1280;
-  /* 좁은 화면 사진 교체의 상한. brand.css의 `.heritage.is_photo_swap_ready`
-     블록(max-width: 1279px)과 짝입니다. */
-  var HERITAGE_SWAP_MAX_WIDTH = 1279.98;
 
   /* ★ 제목이 앞으로 커지며 사라질 때의 최종 배율. 1.5면 원래 크기의
      1.5배까지 커진 뒤 사라집니다. */
@@ -863,83 +857,18 @@ REVEAL_CLOSED_HEIGHT = 484;
      들어오는" 것처럼 보입니다. 오른쪽 텍스트(.heritage_info)는 사진과
      달리 겹치지 않는 고정 칼럼이라, 첫 사진이 뜨는 시점에 딱 한 번만
      나타나 그대로 있습니다. */
-  /* =========================================================
-     heritage — 1279px 이하 사진 교체 (2026-09-13, 3차)
-     ---------------------------------------------------------
-     ★★ brand.css에 `.heritage.is_photo_swap_ready` 규칙이 이미 있고
-        주석에 "js/brand.js가 이 폭에서 인터랙션을 켤 때만 붙이는
-        class"라고 적혀 있는데, **그 JS가 없었습니다.** 그래서 좁은
-        화면에서는 사진 세 장이 그냥 위아래로 쌓여 있었습니다.
-        CSS가 참조하는 `HERITAGE_SWAP_TRACK_VH`도 정의된 적이 없습니다.
-        여기서 그 빠진 쪽을 채웁니다.
+  /* ★ 2026-09-13 (5차) — 1279px 이하 heritage 사진 교체
+     (initHeritagePhotoSwap)을 **삭제했습니다.**
 
-     데스크톱(≥1280)은 pin + opacity 교차로 "제목 → 사진 → 설명" 순서를
-     만듭니다. 좁은 화면에서는 **pin 대신 CSS sticky**를 씁니다
-     (CSS가 이미 `position: sticky`로 준비해 둔 구조입니다) —
-     사진 한 자리가 화면에 붙어 있고 스크롤에 따라 그 안에서 사진만
-     바뀝니다. 세 장이 나란히 나열되지 않습니다.
-
-     ★ 이야기 순서(제목 → 사진 → 설명)는 문서 순서가 그대로 유지합니다.
-     ========================================================= */
-  function initHeritagePhotoSwap() {
-    if (
-      typeof window.gsap === "undefined" ||
-      typeof window.ScrollTrigger === "undefined"
-    ) {
-      return;
-    }
-
-    var gsap = window.gsap;
-    gsap.registerPlugin(window.ScrollTrigger);
-
-    var section = document.querySelector(".heritage");
-    var photos = document.querySelector(".heritage_photos");
-    var stages = Array.prototype.slice.call(
-      document.querySelectorAll(".heritage_photos .heritage_stage")
-    );
-
-    if (!section || !photos || stages.length < 2) {
-      return;
-    }
-
-    gsap.matchMedia().add(
-      "(max-width: " + HERITAGE_SWAP_MAX_WIDTH + "px) and (prefers-reduced-motion: no-preference)",
-      function () {
-        section.classList.add("is_photo_swap_ready");
-
-        /* 첫 장만 보이고 나머지는 투명. 뒤 사진이 HTML에서 나중에 오므로
-           저절로 위에 그려져, 앞 장을 지우지 않아도 겹쳐 들어옵니다
-           (데스크톱과 같은 방식). */
-        gsap.set(stages.slice(1), { opacity: 0 });
-
-        var timeline = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: photos,
-            /* CSS의 `position: sticky; top: 96px`과 같은 지점에서 시작해야
-               사진이 화면에 붙는 순간과 교체 시작이 맞습니다. */
-            start: "top top+=96",
-            end: "bottom bottom",
-            scrub: 0.4
-          }
-        });
-
-        /* 남은 장 수만큼 구간을 나눠 차례로 겹쳐 들어옵니다. */
-        var steps = stages.length - 1;
-        for (var i = 1; i < stages.length; i++) {
-          timeline.to(
-            stages[i],
-            { opacity: 1, duration: 0.62 },
-            (i - 1) * (1 / steps) + 0.12
-          );
-        }
-
-        return function () {
-          section.classList.remove("is_photo_swap_ready");
-        };
-      }
-    );
-  }
+     3차에서 250vh 트랙 + sticky 프레임으로 사진 세 장을 한 자리에서
+     교체하게 만들었는데, 실제로 보니 사진 한 장을 넘기려고 화면
+     2.5개 분량을 스크롤해야 했습니다. 바로 앞 mood의 pin과 이어지면서
+     "스크롤이 계속 붙잡힌다"는 피로가 생겼습니다.
+     5차 정책(§6 — 긴 sticky/pin 불필요)에 따라 걷어내고, 사진을
+     세로로 쌓되 크기에 위계를 준 **정적 편집 레이아웃**으로 바꿨습니다.
+     `.heritage.is_photo_swap_ready` CSS는 이제 아무도 붙이지 않으므로
+     자동으로 비활성입니다(규칙 자체는 되살릴 때를 위해 남겨 둡니다).
+     ★ 데스크톱(≥1280)의 initHeritageReveal(pin reveal)은 그대로입니다. */
 
   function initHeritageReveal() {
     var section = document.querySelector(".heritage");
@@ -1549,121 +1478,29 @@ REVEAL_CLOSED_HEIGHT = 484;
     }
   }
 
-  /* =========================================================
-     mood — 1279px 이하 축약 reveal (2026-09-13, 3차)
-     ---------------------------------------------------------
-     데스크톱(≥1280)의 문 열림은 `initMoodReveal()`이 pin + scrub으로
-     재생합니다. 1279 이하에서는 그 인터랙션이 **아예 없었습니다** —
-     반응형 작업으로 사라진 것이 아니라 처음부터 없었습니다(반응형
-     작업 전 커밋 4a2a060에서도 이 구간 pin 수는 0입니다).
+  /* ★ 2026-09-13 (5차) — 1279px 이하 mood 축약 reveal(initMoodCompactReveal)을
+     **삭제했습니다.**
 
-     여기서는 데스크톱 연출을 그대로 옮기지 않고 **개념만 번역**합니다.
-
-       데스크톱 : 좁은 문(30 × 484) → 무대 전체로 열림 → 글 → 무드 단어
-       좁은 화면 : 가운데 세로 슬릿 → 사진 전체로 열림 → 글 → 카드 3장
-
-     ★ pin을 쓰지 않습니다. 섹션이 화면을 지나가는 동안만 scrub하므로
-       스크롤이 길어지지 않습니다(§18 — 모바일에서 긴 pin 금지).
-     ★ `.is_compact_reveal`은 JS가 붙입니다. 스크립트·GSAP이 없거나
-       모션 축소 설정이면 붙지 않고, CSS 기본값(이미 다 열린 정적인
-       모습)이 그대로 보입니다 — 이 페이지의 다른 연출과 같은 방식입니다.
-     ========================================================= */
-  function initMoodCompactReveal() {
-    if (
-      typeof window.gsap === "undefined" ||
-      typeof window.ScrollTrigger === "undefined"
-    ) {
-      return;
-    }
-
-    var gsap = window.gsap;
-    gsap.registerPlugin(window.ScrollTrigger);
-
-    var section = document.querySelector(".mood");
-    var room = document.querySelector(".mood_room");
-    var copy = document.querySelector(".mood_copy");
-    var words = document.querySelectorAll(".mood_right .mood_word");
-
-    if (!section || !room || !copy || !words.length) {
-      return;
-    }
-
-    gsap.matchMedia().add(
-      "(max-width: " + MOOD_COMPACT_MAX_WIDTH + "px) and (prefers-reduced-motion: no-preference)",
-      function () {
-        section.classList.add("is_compact_reveal");
-
-        var timeline = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: section,
-            /* ★ mood는 문서 맨 위 섹션이라 "top 85% → top 15%" 같은
-               진입 구간을 쓸 수 없습니다 — 그 구간이 스크롤 0보다 위에
-               있어 처음부터 재생이 끝난 상태가 됩니다(실측으로 확인).
-
-               그래서 **짧은 pin**을 씁니다. 섹션이 화면 위에 붙어 있는
-               동안 문이 열리고, 다 열리면 바로 풀립니다.
-               §18이 허용하는 "short pinned reveal"이고, 데스크톱과 달리
-               길이를 화면 높이의 70%로 제한합니다
-               (1024 → 538px, 390 → 591px 추가 스크롤).
-               ★ 데스크톱 pin(MOOD_PIN_LENGTH 244svh)과 비교하면 약 1/3.5입니다. */
-            trigger: section,
-            start: "top top",
-            end: "+=" + MOOD_COMPACT_PIN_LENGTH,
-            pin: true,
-            anticipatePin: 1,
-            scrub: 0.5
-          }
-        });
-
-        /* 1) 문이 열립니다 — 가운데 슬릿(양옆 44%가 잘린 상태)에서
-              사진 전체로. clip-path는 레이아웃을 건드리지 않아
-              아래 카드 위치가 흔들리지 않습니다. */
-        timeline.fromTo(
-          room,
-          { clipPath: "inset(0% 44% 0% 44%)" },
-          { clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power2.out" },
-          0
-        );
-
-        /* 2) 사진 위 글 — 문이 절반쯤 열린 뒤에 들어옵니다. */
-        timeline.fromTo(
-          copy,
-          { opacity: 0, y: 18 },
-          { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
-          0.35
-        );
-
-        /* 3) 무드 단어 카드 3장 — 마지막에 차례로. */
-        timeline.fromTo(
-          words,
-          { opacity: 0, y: 22 },
-          { opacity: 1, y: 0, duration: 0.28, stagger: 0.08, ease: "power2.out" },
-          0.55
-        );
-
-        /* ★ matchMedia 컨텍스트를 벗어나면(창을 1280 이상으로 넓히거나
-           모션 축소를 켜면) GSAP이 위 트윈을 스스로 되돌립니다. 하지만
-           우리가 직접 붙인 class는 GSAP이 모르므로 여기서 지웁니다. */
-        return function () {
-          section.classList.remove("is_compact_reveal");
-        };
-      }
-    );
-  }
+     3차에서 데스크톱 문 열림을 좁은 화면으로 번역해 슬릿 reveal + 화면
+     높이 70% pin을 넣었는데, 실제 화면에서 확인하니
+       · 첫 섹션에서 사용자를 붙잡아 스크롤 피로를 만들고
+       · 그 아래 Heritage sticky와 연속돼 pin이 이어지고
+       · 정작 글은 9~11px로 읽히지 않았습니다.
+     5차 정책(1279 이하는 독립 디자인, motion보다 가독성 우선)에 따라
+     인터랙션을 걷어내고 **정적인 편집 레이아웃**으로 바꿨습니다.
+     시작 상태를 만들던 `.is_compact_reveal` CSS도 함께 지웠습니다.
+     ★ 데스크톱(≥1280)의 initMoodReveal은 그대로입니다. */
 
   /* mood는 첫 화면이라 한 프레임이라도 늦으면 문이 열리기 전에 완성된
      모습이 먼저 비칠 수 있습니다. 나머지는 DOM이 다 준비된 뒤에
      붙여도 됩니다. */
   initMoodReveal();
-  initMoodCompactReveal();
 
   function init() {
     initTchaikimPause();
     initYoungjinMotion();
     initAtelierMarquee();
     initHeritageReveal();
-    initHeritagePhotoSwap();
     initTchaikimTabs();
     initVideos();
   }
