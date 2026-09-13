@@ -1789,14 +1789,95 @@
   }
 }
 
+/* ★ 2026-09-13 반응형 재정비.
+   예전에는 이 구간에서 헤더를 `--collection_canvas_scale`(= 100vw/1920)만큼
+   줄였습니다. 그때는 **다른 모든 페이지가 html{zoom}으로 같이 줄어 있었기
+   때문에** 그래야 헤더 크기가 서로 맞았습니다.
+   이제 1280~1849에서 사이트 전체의 zoom을 걷어냈으므로, 여기서도 1로 두어야
+   Collection 헤더가 나머지 페이지와 같은 크기가 됩니다.
+   (실측: 이 줄이 있을 때 1280에서 헤더 43px / 다른 페이지 64px)
+   ★ 1850~1990(1920 발표 화면)은 그대로 0.75입니다 — 그 구간은 공통 zoom이
+     아직 살아 있어 예전과 똑같이 맞아야 합니다. */
 @media (min-width: 1280px) and (max-width: 1849px) {
   :root {
-    --collection_header_scale: var(--collection_canvas_scale);
+    --collection_header_scale: 1;
   }
 }
 
+/* ★ 공통 파일의 "경계 보정"과 같은 경사로를 씁니다. 여기만 0.75 고정으로
+   두면 1849 ↔ 1850에서 Collection 헤더만 64px → 48px로 튑니다.
+   --legacy_band_scale는 1920에서 정확히 0.75라 발표 화면은 그대로입니다.
+   (이 페이지는 --site_view_scale을 스스로 1로 덮어쓰므로 그 변수는 못 씁니다.) */
 @media (min-width: 1850px) and (max-width: 1990px) {
   :root {
-    --collection_header_scale: 0.75;
+    --collection_header_scale: var(--legacy_band_scale);
+  }
+}
+
+/* PHASE 8 — Collection: 탭 · 연도 목록 터치 영역 (2026-09-13)
+   실측: .brand_tab_link 142×27(세로 이웃 없음) · .archive_year_link 55×25(줄 간격 10)
+   ★ 두 페이지에 **똑같이** 넣습니다 — §24가 요구하는 "두 Collection의
+     반응형 동작 동일"을 지키기 위해서입니다. 한쪽만 고치면 오갈 때 튑니다.
+   ★ 연도 목록은 줄 간격이 10px뿐이라 판을 깔면 겹칩니다. 행을 키웁니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .brand_tab_link {
+    position: relative;
+  }
+
+  /* ★★ 여기서는 ::after를 쓰면 안 됩니다 —
+     `.brand_tab_item.is_active .brand_tab_link::after`가 이미 **활성 탭의
+     밑줄**입니다(js가 없을 때의 폴백). 같은 가짜 요소를 히트 영역으로
+     덮어쓰면 그 밑줄이 사라지거나 44px 투명 상자로 바뀝니다.
+     그래서 이 요소만 ::before를 씁니다(쓰는 곳이 없는 것을 확인했습니다). */
+  .brand_tab_link::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  /* 연도는 "2019"처럼 짧아 가로도 35~39px입니다. 세로뿐 아니라 가로도
+     최소치를 줍니다(가로 이웃 간격 16px이라 겹치지 않습니다 — 실측). */
+  .archive_year_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--touch_target);
+    min-height: var(--touch_target);
+  }
+
+  /* ★ 연도 칩이 25px → 44px로 커지면서 목록이 두 줄 기준 약 38px 길어집니다.
+     그대로 두면 바로 아래 배너의 "Shop Now" 링크와 8px 겹쳐(실측) 잘못
+     눌릴 수 있습니다. 늘어난 만큼 아래 여백을 확보합니다. */
+  .archive_year_list {
+    margin-bottom: var(--space_block);
+  }
+}
+
+/* As worn 태그(높이 37). 가로로 늘어선 pill이라 세로만 키우면 됩니다.
+   ★ 두 Collection에 동일하게 적용합니다(§24). */
+@media (max-width: 1279px), (pointer: coarse) {
+  .asworn_tag {
+    min-height: var(--touch_target);
+  }
+}
+
+/* 배너 크로스링크(140×18). 단독 링크라 44px 판을 깔아도 겹치지 않습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .banner_crosslink_link {
+    position: relative;
+  }
+
+  .banner_crosslink_link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
   }
 }

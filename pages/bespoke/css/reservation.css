@@ -524,3 +524,49 @@
 .reservation_submit .bespoke_button:not(:disabled) {
   cursor: pointer;
 }
+
+/* ============================================================================
+   PHASE 11 — Reservation: 터치 대응 (2026-09-13)
+   ----------------------------------------------------------------------------
+   실측 문제(§21 · §22 · §31, 목표 44×44):
+     .reservation_day         36 × 36  (전 구간 동일 — 모바일에서도 36)
+     .reservation_steps_link  높이 22~25
+     폼 입력                   높이 24~33
+
+   ★ 날짜 버튼은 **원 모양(border-radius:50%)이 곧 선택 표시**라 36px를
+     44px로 키우면 원이 커지면서 달력 그리드의 비례가 바뀝니다. 그래서
+     헤더·푸터와 같은 방법으로 **보이는 원은 36px 그대로 두고 누를 수 있는
+     판만 44px**로 깝니다.
+     격자 간격이 가로 50px · 세로 48px이라(390px 기준 실측) 44px 판이
+     이웃과 겹치지 않습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .reservation_day {
+    position: relative;
+  }
+
+  .reservation_day::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--touch_target);
+    height: var(--touch_target);
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  /* 단계 이동 링크(01 Design & Fabric …). 글자 크기는 그대로 두고
+     행 높이만 확보합니다. */
+  .reservation_steps_link {
+    display: flex;
+    align-items: center;
+    min-height: var(--touch_target);
+  }
+}
+
+/* 달력 이전/다음 달 버튼이 40×40으로 4px 모자랐습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .reservation_calendar_nav {
+    min-width: var(--touch_target);
+    min-height: var(--touch_target);
+  }
+}

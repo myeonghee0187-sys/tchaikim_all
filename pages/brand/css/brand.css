@@ -1527,3 +1527,107 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
     line-height: 1.4;
   }
 }
+
+/* ============================================================================
+   PHASE 5 — Brand: 좁은 화면 편집 위계 복원 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [문제] 1279px 이하에서 youngjin 사진 4장이 전부 `width: 100%`라, 데스크톱의
+   비대칭 콜라주가 **같은 폭 4장이 세로로 쌓인 목록**이 되어 있었습니다.
+   §11이 명시적으로 금지한 형태입니다("모든 이미지를 100% width", "image/text
+   반복"). 사진 사이에 위계가 없으니 어느 것이 여는 장면인지 알 수 없습니다.
+
+   [지금] 폭과 좌우 정렬에 위계를 줍니다 — 데스크톱 콜라주의 "비대칭이지만
+   통제된" 인상을 좁은 화면의 문법으로 옮긴 것입니다.
+
+       red    full bleed   거터를 뚫고 화면 끝까지   ← 여는 장면
+       yellow 82%  왼쪽    + Origin
+       black  82%  오른쪽  + Traditional
+       blue   68%  오른쪽                          ← 닫는 장면(가장 작게)
+
+   ★ 이 블록은 위쪽 `@media (max-width: 1279px)`보다 **뒤**에 있어야 하고
+     선택자도 (0,2,0)으로 한 단계 높습니다. 위 블록의 `.youngjin_photo_red,
+     .youngjin_photo_blue { width: 100% }`(0,1,0)를 이겨야 하기 때문입니다.
+   ★ aspect-ratio는 건드리지 않았습니다 — 사진의 크롭이 달라집니다.
+   ========================================================================== */
+@media (max-width: 1279px) {
+  /* 좌우 여백을 사이트 공통 거터로 맞춥니다(§12).
+     예전에는 56 / 32 / 20px을 이 페이지만 따로 들고 있었습니다. */
+  .kimyoungjin_frame {
+    padding: var(--space_section_xl) var(--layout_gutter);
+    gap: var(--space_section_lg);
+  }
+
+  /* 1) red — 여는 사진. 거터를 뚫고 화면 끝까지 나갑니다. */
+  .youngjin_group_first .youngjin_photo_red {
+    width: calc(100% + var(--layout_gutter) * 2);
+    margin-inline: calc(var(--layout_gutter) * -1);
+  }
+
+  /* 2) yellow + Origin — 왼쪽 */
+  .youngjin_group_first .youngjin_side {
+    width: 82%;
+    align-self: flex-start;
+  }
+
+  /* 3) black + Traditional — 오른쪽. 글도 사진을 따라갑니다. */
+  .youngjin_group_second .youngjin_side {
+    width: 82%;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  /* 4) blue — 닫는 사진. 가장 작고 오른쪽에 붙습니다. */
+  .youngjin_group_second .youngjin_photo_blue {
+    width: 68%;
+    align-self: flex-end;
+  }
+}
+
+/* 360~430에서는 68%가 너무 작아져(245px) 사진이 소품처럼 보입니다.
+   가장 좁은 구간에서만 한 단계씩 올립니다. */
+@media (max-width: 430px) {
+  .youngjin_group_first .youngjin_side,
+  .youngjin_group_second .youngjin_side {
+    width: 88%;
+  }
+
+  .youngjin_group_second .youngjin_photo_blue {
+    width: 76%;
+  }
+}
+
+/* ============================================================================
+   PHASE 5 — Brand: 본문 읽기 폭 (2026-09-13)
+   .atelier_desc가 한 줄에 최대 133자였습니다(1600px 기준). 페이지에서 가장
+   긴 줄이고, 폭이 넓어질수록 길어지는 구조였습니다.
+   ★ .atelier_desc는 `text-align: center`라 max-width만 주면 왼쪽으로 붙습니다.
+     반드시 margin-inline: auto와 함께 써야 가운데 정렬이 유지됩니다. */
+@media (max-width: 1849px) {
+  .atelier_desc {
+    max-width: var(--width_reading);
+    margin-inline: auto;
+  }
+
+  .youngjin_desc {
+    max-width: var(--width_reading);
+  }
+}
+
+/* PHASE 5 — Brand: 탭 터치 영역 (2026-09-13)
+   .tchaikim_tab이 110×36으로 세로가 8px 모자랐습니다. 탭 사이 간격이
+   10px이라 44px 판을 깔아도 겹치지 않습니다(실측). */
+@media (max-width: 1279px), (pointer: coarse) {
+  .tchaikim_tab {
+    position: relative;
+  }
+
+  .tchaikim_tab::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+}

@@ -893,3 +893,61 @@
     line-height: 1.5;
   }
 }
+
+/* ============================================================================
+   PHASE 7 — Bespoke 공통: 본문 읽기 폭 (2026-09-13)
+   .bespoke_section_desc는 자체 max-width(약 636px)를 갖고 있었지만, 그 폭이
+   16px 본문에는 넓어 한 줄이 실측 77자였습니다(권장 45~75).
+   공통 토큰으로 한 단계 좁힙니다 — index·reservation·reservation_done
+   세 페이지가 함께 쓰는 클래스라 한 곳만 고치면 셋 다 맞습니다.
+   ★ 1850~1990 제외 — 1920 원본 보존. */
+@media (max-width: 1849px) {
+  .bespoke_section_desc {
+    max-width: var(--width_reading);
+  }
+}
+
+/* ============================================================================
+   PHASE 11 — Bespoke 폼 입력 높이 (2026-09-13)
+   밑줄형 입력의 실제 높이가 24~33px이었습니다(§31 목표 44, --input_height 48).
+   ★ 밑줄 1px + 하단 padding이라는 **생김새는 그대로** 두고 높이만 확보합니다
+     — 테두리 상자를 씌우면 이 페이지의 조용한 폼 인상이 바뀝니다.
+   ★ textarea는 여러 줄이라 min-height를 덮어쓰지 않도록 따로 둡니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .bespoke_field_input,
+  .bespoke_field_select {
+    min-height: var(--input_height);
+  }
+
+  .bespoke_field_textarea {
+    min-height: calc(var(--input_height) * 2);
+  }
+}
+
+/* .bespoke_crosslink(210×22)도 행 높이를 확보합니다. 세 페이지 공용입니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .bespoke_crosslink {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch_target);
+  }
+}
+
+/* 동의 체크박스(18×18). 네모 표시 자체는 디자인이므로 크기를 그대로 두고
+   누를 수 있는 판만 넓힙니다. 체크박스는 세로로 두 개뿐이고 줄 간격이
+   넉넉해 겹치지 않습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .bespoke_check_input {
+    position: relative;
+  }
+
+  .bespoke_check_input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--touch_target);
+    height: var(--touch_target);
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+}

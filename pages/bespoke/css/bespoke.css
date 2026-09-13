@@ -2472,3 +2472,38 @@
     padding-block: calc(100 * var(--bespoke_unit));
   }
 }
+
+/* ============================================================================
+   PHASE 7 — Bespoke: 본문 읽기 폭 (2026-09-13)
+   .bespoke_hero_desc가 한 줄에 147자(1600px)로 이 사이트에서 가장 길었습니다.
+   .begin_desc도 96자입니다. 둘 다 왼쪽 정렬이라 max-width만 겁니다.
+   ★ 1850~1990은 제외 — 1920 원본 보존. */
+@media (max-width: 1849px) {
+  .bespoke_hero_desc,
+  .begin_desc {
+    max-width: var(--width_reading);
+  }
+}
+
+/* ★ .materials_intro의 읽기 폭 규칙은 여기 두면 안 됩니다 —
+   materials-editorial.css가 이 파일보다 **나중에** 로드되면서 같은 클래스를
+   다시 정의합니다. 그래서 그 파일 끝에 두었습니다. */
+
+/* PHASE 7 — Bespoke: begin 카드 링크 터치 영역 (2026-09-13)
+   .begin_card_link이 97×17이었습니다. 카드마다 하나씩이고 세로 간격이
+   294px이라 44px 판이 이웃과 겹치지 않습니다(실측). */
+@media (max-width: 1279px), (pointer: coarse) {
+  .begin_card_link {
+    position: relative;
+  }
+
+  .begin_card_link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+}

@@ -891,3 +891,75 @@ a.footer_policy_link:hover {
     gap: 70px;
   }
 }
+
+/* ============================================================================
+   PHASE 3 — 공통 Header / Footer 터치 대응 (2026-09-13)
+   ----------------------------------------------------------------------------
+   실측한 문제(§15 · §31, 목표 44×44):
+
+     .header_toggle            32 × 32
+     .header_cart              25 × 25
+     .header_currency_trigger  55 × 32
+     .footer_email_input       높이 24
+     .footer_email_submit      26 × 26
+     .footer_social_link       높이 24
+     .header_menu_link         높이 29 (모바일 패널)
+
+   ★ 방식: **보이는 크기는 그대로 두고 누를 수 있는 영역만 넓힙니다.**
+     아이콘을 44px로 키우면 편집적인 헤더 비례가 무너집니다. 그래서
+     `::after`로 투명한 판을 요소 중앙에 깔아 히트 영역만 확장합니다
+     — 레이아웃에 영향이 0입니다(절대배치).
+
+   ★ 적용 조건: `(max-width: 1279px), (pointer: coarse)`
+     - 1920 데스크톱(마우스)에는 **적용되지 않습니다** → 원본 디자인 보존
+     - 터치 노트북·태블릿·모바일에는 적용됩니다
+   ========================================================================== */
+@media (max-width: 1279px), (pointer: coarse) {
+  .header_logo,
+  .header_toggle,
+  .header_cart,
+  .header_currency_trigger,
+  .footer_email_submit,
+  .footer_social_link,
+  .footer_menu_link,
+  .footer_policy_link {
+    position: relative;
+  }
+
+  .header_logo::after,
+  .header_toggle::after,
+  .header_cart::after,
+  .header_currency_trigger::after,
+  .footer_email_submit::after,
+  .footer_social_link::after,
+  .footer_menu_link::after,
+  .footer_policy_link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  /* 밑줄형 입력의 생김새(1px 밑줄)는 그대로 두고 높이만 확보합니다. */
+  .footer_email_input {
+    min-height: var(--touch_target);
+  }
+
+  /* 모바일 메뉴 패널의 항목. 글자 크기는 그대로, 행 높이만 넓힙니다. */
+  .header_menu_link {
+    min-height: var(--touch_target);
+  }
+}
+
+/* ★ 히트 영역이 겹쳐 서로를 가리지 않도록 간격의 최솟값을 둡니다.
+   (헤더 오른쪽 묶음은 기본 gap 32px이라 안전하지만, 푸터 소셜 목록은
+    gap 10px이라 44px 판이 위아래로 맞닿습니다.) */
+@media (max-width: 1279px), (pointer: coarse) {
+  .footer_social,
+  .footer_menu {
+    gap: max(10px, calc(var(--touch_target) - 24px));
+  }
+}

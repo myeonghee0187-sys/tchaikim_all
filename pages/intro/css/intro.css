@@ -305,7 +305,9 @@ body {
     top: max(16px, env(safe-area-inset-top));
     right: max(16px, env(safe-area-inset-right));
     min-width: 108px;
-    height: 40px;
+    /* ★ 2026-09-13: 40px → 44px. 모바일 터치 최소 크기(§31)입니다.
+       인트로에서 사이트로 들어가는 유일한 버튼이라 가장 확실해야 합니다. */
+    height: var(--touch_target);
     padding: 0 14px;
     gap: 11px;
     font-size: 10px;
@@ -347,5 +349,33 @@ body {
 
   .scroll_overlay_book img {
     animation: none;
+  }
+}
+
+/* ============================================================================
+   PHASE 9 — Intro: 소셜 아이콘 터치 영역 (2026-09-13)
+   .scroll_overlay_social의 아이콘 링크에는 크기 지정이 없어 아이콘 크기
+   그대로(약 18~24px)였습니다. 보이는 아이콘은 그대로 두고 누를 수 있는
+   판만 44px로 넓힙니다 — 헤더·푸터와 같은 방법입니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .scroll_overlay_social a {
+    position: relative;
+  }
+
+  .scroll_overlay_social a::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  /* 44px 판끼리 맞닿지 않도록 간격을 둡니다(기본 6px). */
+  /* 아이콘이 약 24px이라 44px 히트 영역이 겹치지 않으려면 간격이 20px
+     이상이어야 합니다(24 + 20 = 44). */
+  .scroll_overlay_social {
+    gap: 22px;
   }
 }

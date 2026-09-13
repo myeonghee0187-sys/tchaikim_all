@@ -1728,10 +1728,32 @@
       end: "+=" + DETAIL_SCROLL_PER_PART * stops.length + "%",
       pin: pin,
       anticipatePin: 1.5,
-      onRefresh: function () {
+      onRefresh: function (self) {
         measure();
         /* 창 크기가 바뀌면 사진 크기도 다시 잡아야 배율이 유지됩니다 */
         applyLensImage();
+
+        /* ★★ 2026-09-13 — 창 크기를 바꾼 뒤 설명이 화면 밖으로 나가던 문제.
+
+           placeText()는 stageWidth를 기준으로 계산한 left/top을 **인라인
+           style에 직접** 씁니다. 그래서 다시 재기만 하고(measure) 다시 놓지
+           않으면, 넓은 화면에서 계산한 좌표가 그대로 남습니다.
+
+           실측(1920에서 연 뒤 창을 줄임): 1440 → 91px, 1280 → 184px,
+           1024 → 334px 만큼 .detail_text가 오른쪽으로 삐져나갔습니다.
+           ★ ScrollTrigger.refresh()를 직접 불러도 고쳐지지 않습니다 —
+             이 좌표는 GSAP이 만든 것이 아니라 우리가 쓴 것이기 때문입니다.
+
+           고정 구간 안이면 지금 진행도로 다시 놓고, 밖이면 좌표를 지웁니다
+           (밖에서는 어차피 보이지 않으므로 남겨 둘 이유가 없습니다). */
+        if (self.isActive) {
+          applyProgress(self.progress);
+        } else {
+          Array.prototype.forEach.call(texts, function (text) {
+            text.style.removeProperty("left");
+            text.style.removeProperty("top");
+          });
+        }
       },
       onUpdate: function (self) {
         applyPinSettle(self.progress);

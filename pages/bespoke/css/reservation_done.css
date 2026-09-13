@@ -399,3 +399,16 @@
 .done_back .bespoke_crosslink {
   font-size: var(--fs_ui_14);
 }
+
+/* PHASE 11 — Reservation Done: 연락 링크 터치 영역 (2026-09-13)
+   .done_contact_link이 170×19이고 **줄 사이 간격이 7px**뿐이라, 투명한
+   44px 판을 깔면 위아래 링크끼리 겹쳐 엉뚱한 항목이 눌립니다.
+   그래서 여기서는 판을 깔지 않고 **행 자체를 44px로 키웁니다** — 목록이
+   그만큼 길어지지만 간격이 함께 벌어져 오탭이 생기지 않습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .done_contact_link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch_target);
+  }
+}

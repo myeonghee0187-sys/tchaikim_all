@@ -2344,3 +2344,98 @@
     gap: 40px;
   }
 }
+
+/* ============================================================================
+   PHASE 6 — Shop: 본문 읽기 폭 (2026-09-13)
+   .garment_desc 안의 문단이 태블릿에서 한 줄에 90자였습니다(권장 45~75).
+   이 섹션은 768~1279에서 세로 1열이 되면서 글상자가 화면 폭을 그대로
+   받아 길어집니다. 공통 토큰으로 가둡니다.
+   ★ 1850~1990 제외 — 1920 원본 보존. */
+@media (max-width: 1849px) {
+  .garment_desc {
+    max-width: var(--width_reading);
+  }
+}
+
+/* ============================================================================
+   PHASE 6 — Shop: 모바일 필터 바를 2줄로 (2026-09-13)
+   ----------------------------------------------------------------------------
+   767px 이하에서 검색 / All / Filter 세 컨트롤이 **각각 한 줄씩 세 줄**을
+   차지해, 첫 상품이 보이기 전에 세로로 240px을 썼습니다(§19 — 모바일에서
+   제품 탐색성이 떨어지지 않게 한다).
+
+   원인: `.shop_filter_button`이 `flex: 1 1 100%`라 혼자 한 줄을 차지하면서
+   그 앞의 `.shop_select_wrap`까지 같이 밀어냈습니다.
+
+   지금: 검색은 한 줄(입력이라 넓을수록 좋습니다), 카테고리와 필터는 성격이
+   같은 짝이라 한 줄에 반반씩 놓습니다. 높이 56px은 그대로라 터치 영역은
+   줄지 않습니다. */
+@media (max-width: 767px) {
+  .shop_search {
+    flex: 1 1 100%;
+  }
+
+  /* gap이 12px이라 각 컬럼은 50% - 6px입니다. */
+  .shop_select_wrap,
+  .shop_filter_button {
+    flex: 1 1 calc(50% - 6px);
+    width: auto;
+    min-width: 0;
+  }
+
+  .shop_select {
+    width: 100%;
+  }
+}
+
+/* PHASE 6 — Shop: 히어로 카테고리 터치 영역 (2026-09-13)
+   .hero_nav_link이 86×22이고 줄 간격이 10px뿐이라, 44px 투명 판을 깔면
+   위아래 카테고리끼리 겹쳐 오탭이 납니다. 그래서 행 자체를 키웁니다.
+   ★ 글자 크기·자간은 그대로입니다 — 세로 여백만 늘어납니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .hero_nav_link {
+    display: inline-flex;
+    align-items: center;
+    /* "TOP" · "ACC"처럼 짧은 라벨은 가로가 29~34px입니다. 세로뿐 아니라
+       가로 최소치도 줍니다(가로 이웃 간격 20px이라 겹치지 않습니다). */
+    min-width: var(--touch_target);
+    min-height: var(--touch_target);
+  }
+
+  /* 상품 상세로 가는 링크. 실측 높이가 44에 못 미쳐 같은 처리를 합니다. */
+  .garment_details_button {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch_target);
+  }
+}
+
+/* 검색 입력(26px)과 상품 카드의 색상 점(16×16). 점은 카드 안에서 서로
+   붙어 있으므로 간격을 먼저 벌린 뒤 판을 깝니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  .shop_search_input {
+    min-height: var(--touch_target);
+  }
+
+  /* ★ 이 점들은 마크업에는 <span>이지만 shop.js가 <button>으로 바꿉니다
+     (점진적 향상). 그래서 실제로 누를 수 있는 컨트롤이 맞습니다.
+     점 16px + 44px 히트 영역이라, 간격이 28px 이상이어야 옆 점의 영역과
+     겹치지 않습니다(16 + 28 = 44). 점 자체 크기는 그대로입니다. */
+  .card_product_swatches {
+    gap: 28px;
+  }
+
+  .card_product_swatch {
+    position: relative;
+  }
+
+  .card_product_swatch::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+}

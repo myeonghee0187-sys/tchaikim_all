@@ -122,3 +122,110 @@
     --duration_base: 0.01ms;
   }
 }
+
+/* ============================================================================
+   RESPONSIVE DESIGN SYSTEM  (2026-09-13)
+   ----------------------------------------------------------------------------
+   이 블록은 **추가만** 합니다. 위의 기존 토큰은 이름·값 모두 그대로입니다
+   (9개 페이지가 이미 쓰고 있어 rename·삭제 금지 — docs/AGENTS.md).
+
+   ★ 값의 출처: 임의로 정한 숫자가 아니라 **현재 1920 디자인에서 실제로 쓰고
+     있는 값을 브라우저로 측정**해 그 분포의 중앙을 잡은 것입니다.
+     측정값(섹션 세로 padding, CSS px):
+       desktop  main 150 / shop_detail 120·140·160 / collection 200 / brand 400
+       tablet   bespoke 60 / shop 90·120 / collection 112 / brand 200
+       mobile   bespoke 40 / main 56·64·72 / shop 64·80 / brand 96
+     → 흩어진 값을 4단계 scale로 모읍니다.
+
+   ★ 구간 정책
+       0–767      mobile   : 이 블록의 기본값
+       768–1279   tablet   : 독립 구간(데스크톱 축소판이 아님)
+       1280–1849  desktop  : 신규 반응형 구간 (html zoom 제거됨)
+       1850–1990  legacy   : 1920 발표 화면. **건드리지 않습니다**
+       1991+      wide     : 기존 동작 유지
+   ========================================================================== */
+:root {
+  /* ---- Layout widths — §12의 네 종류를 구분합니다 --------------------------
+     1 Full bleed  : 섹션이 직접 100% (토큰 없음)
+     2 Editorial   : 비대칭 편집 레이아웃용 넓은 폭
+     3 Content     : 표준 콘텐츠 (기존 --layout_inner 1600px과 동일)
+     4 Reading     : 본문 읽기 폭. 측정에서 tablet 1024가 90~118ch까지
+                     퍼져 있었습니다(권장 45~75ch). 이 토큰으로 가둡니다. */
+  --width_content: var(--layout_inner);
+  --width_editorial: 1200px;
+  --width_reading: 56ch;
+
+  /* ---- Section rhythm (§13) ---- */
+  --space_section_xl: 96px;
+  --space_section_lg: 80px;
+  --space_section_md: 64px;
+  --space_section_sm: 48px;
+
+  /* ---- Block / grid / card ---- */
+  --space_block: 32px;
+  --gap_grid: 20px;
+  --gap_card: 16px;
+
+  /* ---- Controls (§31 — touch target 44px 이상) ---- */
+  --touch_target: 44px;
+  --control_height: 48px;
+  --input_height: 48px;
+
+  /* ---- Media (§26) ---- */
+  --media_gap: 20px;
+  --media_max: 100%;
+
+  /* ---- Typography roles (§14) ----
+     같은 역할의 글자는 페이지가 달라도 같은 위계를 갖습니다. */
+  --type_hero: clamp(36px, 9vw, 64px);
+  --type_section_title: clamp(26px, 5.2vw, 40px);
+  --type_subheading: clamp(18px, 2.6vw, 24px);
+  --type_body: 16px;
+  --type_caption: 13px;
+
+  /* 반응형 재구성 구간에서 쓰는 연속 스케일.
+     기본 1 — legacy 구간에는 영향이 없습니다. */
+  --rd_scale: 1;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space_section_xl: 140px;
+    --space_section_lg: 112px;
+    --space_section_md: 88px;
+    --space_section_sm: 64px;
+
+    --space_block: 40px;
+    --gap_grid: 28px;
+    --gap_card: 24px;
+
+    --media_gap: 28px;
+
+    --type_hero: clamp(44px, 6.4vw, 72px);
+    --type_section_title: clamp(30px, 3.6vw, 44px);
+    --type_subheading: clamp(20px, 2vw, 26px);
+    --type_body: 16px;
+    --type_caption: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --space_section_xl: 200px;
+    --space_section_lg: 160px;
+    --space_section_md: 120px;
+    --space_section_sm: 80px;
+
+    --space_block: 48px;
+    --gap_grid: 32px;
+    --gap_card: 28px;
+
+    --media_gap: 32px;
+
+    --type_hero: clamp(56px, 4.2vw, 80px);
+    --type_section_title: clamp(36px, 2.5vw, 48px);
+    --type_subheading: clamp(22px, 1.5vw, 28px);
+    --type_body: 16px;
+    --type_caption: 14px;
+  }
+}

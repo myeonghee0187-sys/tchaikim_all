@@ -1043,3 +1043,145 @@ html.has_purchase_modal {
   .look_heading > p { width: 100%; margin-top: 28px; }
   .look_caption span:last-child { display: none; }
 }
+
+/* ============================================================================
+   PHASE 6 — Shop Detail: 태블릿에서 구매 패널을 갤러리 옆으로 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [문제] §20 — "CTA가 지나치게 아래에 묻히지 않게 한다"
+   1100px 이하에서 `.product_hero_inner`가 `display: block`이 되면서 갤러리가
+   통째로 쌓이고 그 **아래**에 구매 패널이 옵니다. 갤러리는 2열 × 여러 장이라
+   매우 길어서, 실측한 기본 CTA 위치가:
+
+       1440  y=613   (2열 — 첫 화면 근처)
+       1024  y=2718  ← 약 3.5화면 아래
+        768  y=2718  ← 약 3.5화면 아래
+        390  y=1722
+
+   **태블릿이 모바일보다 더 깊습니다.** 1024에서는 갤러리 사진이 더 커서
+   그만큼 더 밀려 내려가기 때문입니다(§10 — 태블릿이 모바일 확대판이 된 경우).
+
+   [지금] 768~1100에서 데스크톱과 같은 2열 구성을 되살립니다. 폭이 남는
+   구간이라 갤러리와 구매 패널이 나란히 설 수 있습니다.
+
+   ★ `position: sticky`는 쓰지 않습니다 — "패널이 화면을 따라오지 않고
+     갤러리와 함께 스크롤되어 지나간다"는 기존 결정을 유지합니다
+     (docs/PROJECT_CONTEXT.md의 purchase_panel 항목).
+   ★ 1101px 이상의 JS 갤러리 스크롤 무대(is_gallery_scroll_ready)는 그
+     구간 전용이라 여기에 영향이 없습니다.
+   ★ 이 블록은 `@media (max-width: 1100px)`보다 **뒤**에 있어야 합니다 —
+     같은 특정도(0,1,0)라 소스 순서로만 이깁니다. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .product_hero_inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(288px, 360px);
+    gap: var(--space_block);
+    align-items: start;
+    width: min(100% - var(--layout_gutter) * 2, 1040px);
+    margin-inline: auto;
+  }
+
+  .product_gallery {
+    width: 100%;
+    margin-inline: 0;
+    padding: 0 0 var(--space_section_sm);
+  }
+
+  .purchase_panel {
+    width: 100%;
+    margin: 0 0 var(--space_section_md);
+    padding: 0;
+  }
+
+  /* 패널이 288~360px로 좁아지므로 3열 혜택 목록은 세로로 폅니다.
+     3열로 두면 한 칸이 약 96px이라 라벨이 두세 줄로 접힙니다. */
+  .purchase_benefits {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ============================================================================
+   PHASE 6 — Shop Detail: 모바일 갤러리를 가로 스와이프로 (2026-09-13)
+   ----------------------------------------------------------------------------
+   [문제] 767px 이하에서 갤러리가 2열 × 3장으로 세로로 쌓여 약 1600px입니다.
+   그 아래에 구매 패널이 오므로 기본 CTA가 y=1722(약 2화면 아래)였습니다
+   (§20 — CTA가 묻히지 않게, §11 — 지나치게 긴 vertical scroll 피하기).
+
+   [지금] 사진 6장을 가로 스냅 캐러셀로 바꿉니다. 갤러리 높이가 한 장
+   분량으로 줄어 CTA가 첫 화면 근처로 올라옵니다. 사진 6장은 그대로
+   전부 볼 수 있습니다(옆으로 넘김) — 숨기거나 지우지 않았습니다.
+
+   ★ §11은 "의미 없는 carousel 남발"을 금지합니다. 여기는 **상품 갤러리**라
+     가로 넘김이 이 콘텐츠의 표준 패턴이고, 세로 길이를 줄이는 유일한
+     방법이기도 합니다.
+   ★ `.product_gallery_column`을 `display: contents`로 없애 사진 6장을
+     갤러리의 직계 자식으로 올립니다. HTML을 건드리지 않고 두 열을 한 줄로
+     펴는 방법입니다(이 저장소가 shop 상품 그리드에서 이미 쓰는 기법).
+   ★ 스크롤바가 생기는 영역이라 키보드로도 닿아야 합니다 — index.html의
+     `.product_gallery`에 tabindex="0"을 함께 넣었습니다. */
+@media (max-width: 767px) {
+  .product_gallery {
+    display: flex;
+    grid-template-columns: none;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0 var(--layout_gutter) var(--space_section_sm);
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--layout_gutter);
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product_gallery_column,
+  .product_gallery_column.is_offset {
+    display: contents;
+    padding-top: 0;
+  }
+
+  /* 높이를 전부 같은 비율로 통일합니다. 세로로 쌓을 때는 높이가 제각각인
+     것이 편집적인 리듬이었지만, 가로로 넘길 때는 들쭉날쭉하면 산만합니다. */
+  .product_gallery_item,
+  .product_gallery_item.is_tall,
+  .product_gallery_item.is_short,
+  .product_gallery_item.is_long,
+  .product_gallery_item.is_medium,
+  .product_gallery_item.is_crop,
+  .product_gallery_item.is_skirt {
+    flex: 0 0 min(78%, 320px);
+    width: auto;
+    height: auto;
+    aspect-ratio: 348 / 464;
+    scroll-snap-align: center;
+  }
+}
+
+/* PHASE 6 — Shop Detail: 작은 컨트롤 터치 영역 (2026-09-13)
+   실측: .color_swatch 26×26(가로 간격 10) · .look_pin 36×36 · .size_guide 80×19
+   ★ .color_swatch는 가로 간격이 10px뿐이라 44px 판이 옆 칸을 침범합니다.
+     그래서 **간격을 먼저 20px로 벌린 뒤** 판을 깝니다(26 + 20 > 44).
+     색 원 자체의 크기는 그대로라 디자인이 바뀌지 않습니다. */
+@media (max-width: 1279px), (pointer: coarse) {
+  /* ★ 실제 컨테이너 클래스는 .color_options입니다(마크업 확인).
+     26px 점 + 44px 히트 영역이라 간격이 18px 이상이어야 겹치지 않습니다. */
+  .color_options {
+    gap: 20px;
+  }
+
+  .color_swatch,
+  .look_pin,
+  .size_guide {
+    position: relative;
+  }
+
+  .color_swatch::after,
+  .look_pin::after,
+  .size_guide::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, var(--touch_target));
+    height: max(100%, var(--touch_target));
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+}
