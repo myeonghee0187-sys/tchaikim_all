@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../../common/css/common.css">
   <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
-  <link rel="stylesheet" href="css/brand.css?v=13">
+  <link rel="stylesheet" href="css/brand.css?v=14">
 </head>
 
 <body data-page="brand" data-header-variant="white">
@@ -68,7 +68,7 @@
          드러나며, 그 자체는 움직이지 않습니다(좌표는 Figma node 1962:6954
          그대로: mood_left 768px에 글, mood_right 1152px에 무드 단어
          Unique / Modern / Elegant). -->
-    <section class="mood" data-header-theme="white" aria-labelledby="mood_title">
+    <section class="mood mood_desktop" data-header-theme="white" aria-labelledby="mood_title">
       <h2 class="a11y_hidden" id="mood_title">A quiet balance of restraint and originality</h2>
 
       <div class="mood_stage">
@@ -128,6 +128,36 @@
 
     <!-- kimyoungjin — 브랜드의 출발점. 시안 좌표(1920 기준)를 그대로 쓰는
          구간이라 고정 폭 프레임으로 감싸고 가운데 정렬합니다. -->
+
+    <!-- Compact Mood reuses the exact desktop keyword assets, in editorial order. -->
+    <section class="mood_responsive" data-header-theme="white" aria-labelledby="mood_responsive_title">
+      <h2 class="a11y_hidden" id="mood_responsive_title">A quiet balance of restraint and originality</h2>
+      <div class="mood_slides" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Tchai Kim moods" data-lenis-prevent-wheel>
+        <article class="mood_slide mood_slide_unique is_active" role="group" aria-roledescription="slide" aria-label="01 of 03: UNIQUE">
+          <div class="mood_slide_media"><img src="assets/images/unique.jpg" width="260" height="180" alt="An embroidered black dress with a flowing red train" decoding="async"></div>
+          <div class="mood_slide_caption"><p class="mood_slide_number" aria-hidden="true">01</p><h3 class="mood_slide_keyword">UNIQUE</h3><p class="mood_slide_description">Unmistakably hanbok, unmistakably Tchai kim.</p></div>
+        </article>
+        <article class="mood_slide mood_slide_elegant" role="group" aria-roledescription="slide" aria-label="02 of 03: ELEGANT">
+          <div class="mood_slide_media"><img src="assets/images/elegant.jpg" width="260" height="180" alt="A hand lifting softly pleated ivory fabric" decoding="async"></div>
+          <div class="mood_slide_caption"><p class="mood_slide_number" aria-hidden="true">02</p><h3 class="mood_slide_keyword">ELEGANT</h3><p class="mood_slide_description">Elegance, without excess.</p></div>
+        </article>
+        <article class="mood_slide mood_slide_modern" role="group" aria-roledescription="slide" aria-label="03 of 03: MODERN">
+          <div class="mood_slide_media"><img src="assets/images/modern.jpg" width="200" height="240" alt="A woman in an ivory blouse and navy skirt beside flowering branches" decoding="async"></div>
+          <div class="mood_slide_caption"><p class="mood_slide_number" aria-hidden="true">03</p><h3 class="mood_slide_keyword">MODERN</h3><p class="mood_slide_description">Tradition, worn for today.</p></div>
+        </article>
+      </div>
+      <div class="mood_navigation" aria-label="Mood navigation">
+        <button class="mood_arrow" type="button" data-mood-direction="prev" aria-label="Previous mood" disabled><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M22 9H2m7-7L2 9l7 7"/></svg></button>
+        <p class="mood_counter" aria-hidden="true"><span class="mood_current">01</span><span class="mood_counter_total"> / 03</span></p>
+        <button class="mood_arrow" type="button" data-mood-direction="next" aria-label="Next mood"><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M2 9h20m-7-7 7 7-7 7"/></svg></button>
+      </div>
+      <p class="mood_status a11y_hidden" aria-live="polite" aria-atomic="true">UNIQUE, 1 of 3</p>
+      <div class="mood_intro">
+        <p class="mood_intro_title">Refined into elegance</p>
+        <div class="mood_intro_body"><p>A quiet balance of restraint and originality.</p><p>Tradition, held onto. Modernity, let in.</p><p>That’s the direction Tchai kim moves toward.</p></div>
+      </div>
+    </section>
+
     <section class="kimyoungjin" data-header-theme="black" aria-labelledby="kimyoungjin_title">
       <h2 class="a11y_hidden" id="kimyoungjin_title">Tchai Kimyoungjin, where it begins</h2>
 
@@ -142,7 +172,7 @@
             </div>
             <div class="youngjin_txt">
               <h3 class="youngjin_title">Origin</h3>
-              <p class="youngjin_desc">Before Tchai Kim,<br>there was Tchai Kimyoungjin.</p>
+              <p class="youngjin_desc">Before Tchai Kim, <br>there was Tchai Kimyoungjin.</p>
             </div>
           </div>
         </div>
@@ -154,7 +184,7 @@
             </div>
             <div class="youngjin_txt">
               <h3 class="youngjin_title">Traditional</h3>
-              <p class="youngjin_desc">This is where it begins &mdash;<br>hanbok made the traditional way,<br>true to its original form.</p>
+              <p class="youngjin_desc">This is where it begins &mdash; <br>hanbok made the traditional way, <br>true to its original form.</p>
             </div>
           </div>
           <div class="youngjin_photo youngjin_photo_blue">
@@ -166,7 +196,7 @@
 
         <div class="youngjin_handmade">
           <h3 class="youngjin_title youngjin_title_center">Handmade</h3>
-          <p class="youngjin_desc youngjin_desc_center">Every piece starts with a conversation,<br>and takes shape by hand, one stitch at a time.</p>
+          <p class="youngjin_desc youngjin_desc_center">Every piece starts with a conversation, <br>and takes shape by hand, one stitch at a time.</p>
         </div>
       </div>
     </section>
@@ -188,7 +218,7 @@
           <div class="tchaikim_con">
             <div class="tchaikim_txt">
               <h3 class="tchaikim_panel_title">Everyday</h3>
-              <p class="tchaikim_panel_desc">Hanbok wasn&rsquo;t always something set aside<br>for holidays and ceremonies.<br>Long before it became formalwear,<br>it was simply what people reached for every morning &mdash;<br>to work in, to walk in, to move through an ordinary day.<br>It belonged to daily life, not to display.</p>
+              <p class="tchaikim_panel_desc">Hanbok wasn&rsquo;t always something set aside <br>for holidays and ceremonies. <br>Long before it became formalwear, <br>it was simply what people reached for every morning &mdash; <br>to work in, to walk in, to move through an ordinary day. <br>It belonged to daily life, not to display.</p>
             </div>
             <div class="tchaikim_media">
               <video class="tchaikim_video" src="assets/images/everyday.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -200,7 +230,7 @@
           <div class="tchaikim_con">
             <div class="tchaikim_txt">
               <h3 class="tchaikim_panel_title">Forward</h3>
-              <p class="tchaikim_panel_desc">Somewhere along the way, hanbok drifted from<br>that everyday role into something reserved<br>for special occasions only.<br>Tchai Kim brings it back to where it started,<br>reshaping the silhouette so it can be worn<br>the way it was always meant to be &mdash;<br>with ease, and with room to move.</p>
+              <p class="tchaikim_panel_desc">Somewhere along the way, hanbok drifted from <br>that everyday role into something reserved <br>for special occasions only. <br>Tchai Kim brings it back to where it started, <br>reshaping the silhouette so it can be worn <br>the way it was always meant to be &mdash; <br>with ease, and with room to move.</p>
             </div>
             <div class="tchaikim_media">
               <video class="tchaikim_video" src="assets/images/forward.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -212,7 +242,7 @@
           <div class="tchaikim_con">
             <div class="tchaikim_txt">
               <h3 class="tchaikim_panel_title">Seasons</h3>
-              <p class="tchaikim_panel_desc">Long before it shaped fashion,<br>color in Korea followed the seasons.<br>The soft green of new spring leaves,<br>the deep red of summer&rsquo;s fullest bloom,<br>the warm gold of autumn&rsquo;s last harvest &mdash;<br>each color carried a season within it,<br>long before it ever touched a piece of cloth.</p>
+              <p class="tchaikim_panel_desc">Long before it shaped fashion, <br>color in Korea followed the seasons. <br>The soft green of new spring leaves, <br>the deep red of summer&rsquo;s fullest bloom, <br>the warm gold of autumn&rsquo;s last harvest &mdash; <br>each color carried a season within it, <br>long before it ever touched a piece of cloth.</p>
             </div>
             <div class="tchaikim_media">
               <video class="tchaikim_video" src="assets/images/seasons.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -224,7 +254,7 @@
           <div class="tchaikim_con">
             <div class="tchaikim_txt">
               <h3 class="tchaikim_panel_title">Obangsaek</h3>
-              <p class="tchaikim_panel_desc">Blue, red, yellow, white, and black &mdash;<br>Korea&rsquo;s five directional colors have carried<br>meaning for centuries, each tied to a direction,<br>an element, a way of seeing the world.<br>Tchai Kim carries that same palette forward,<br>letting it move quietly through every piece we make.</p>
+              <p class="tchaikim_panel_desc">Blue, red, yellow, white, and black &mdash; <br>Korea&rsquo;s five directional colors have carried <br>meaning for centuries, each tied to a direction, <br>an element, a way of seeing the world. <br>Tchai Kim carries that same palette forward, <br>letting it move quietly through every piece we make.</p>
             </div>
             <div class="tchaikim_media">
               <video class="tchaikim_video" src="assets/images/obangsaek.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -236,7 +266,7 @@
           <div class="tchaikim_con">
             <div class="tchaikim_txt">
               <h3 class="tchaikim_panel_title">Woven</h3>
-              <p class="tchaikim_panel_desc">Some things can&rsquo;t be added after the fact.<br>The color in our fabric isn&rsquo;t printed on the surface &mdash;<br>it&rsquo;s woven into the thread itself,<br>present from the very first stitch.<br>What you see is what the fabric has always been,<br>from the inside out.</p>
+              <p class="tchaikim_panel_desc">Some things can&rsquo;t be added after the fact. <br>The color in our fabric isn&rsquo;t printed on the surface &mdash; <br>it&rsquo;s woven into the thread itself, <br>present from the very first stitch. <br>What you see is what the fabric has always been, <br>from the inside out.</p>
             </div>
             <div class="tchaikim_media">
               <video class="tchaikim_video" src="assets/images/woven.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -264,7 +294,7 @@
         <div class="atelier_photo atelier_photo_7"><img loading="lazy" decoding="async" src="assets/images/atelier_7.jpg" alt="A finished hanbok hanging in the studio"></div>
       </div>
 
-      <p class="atelier_desc">Where craftsmanship lives.<br>Every piece begins here, in a quiet atelier in Seoul.</p>
+      <p class="atelier_desc">Where craftsmanship lives. <br>Every piece begins here, in a quiet atelier in Seoul.</p>
     </section>
 
     <!-- heritage — 제목 한 장면 + [왼쪽 사진 세 장 / 오른쪽 고정 텍스트 + 버튼].
@@ -281,12 +311,7 @@
 
         <div class="heritage_split">
           <div class="heritage_photos">
-            <!-- ★ .heritage_photos_frame은 1279px 이하에서만 실제 상자가 됩니다.
-                 brand.css가 그 폭에서 이 요소를 `position: sticky`로 붙잡아
-                 "사진 한 자리에서 세 장이 겹쳐 바뀌는" 레이아웃을 만듭니다.
-                 1280px 이상에서는 `display: contents`라 레이아웃에서 사라져
-                 기존 데스크톱 구조(.heritage_photos 안에 .heritage_stage가
-                 absolute로 포개짐)가 그대로 유지됩니다. -->
+            <!-- Shared photos retain their desktop staging; small screens use normal flow. -->
             <div class="heritage_photos_frame">
               <div class="heritage_stage">
                 <figure class="heritage_figure">
@@ -310,11 +335,11 @@
 
           <div class="heritage_info">
             <h3 class="heritage_info_title">The Original Line</h3>
-            <p class="heritage_info_desc">Drawn from the silhouette of an 18th-century portrait &mdash;<br>
-              the perfect proportion, the straight sleeve, the jar-shaped line.<br>
-              Informed by costume unearthed from ancient tombs,<br>
-              shaped in fabrics from French lace to mosi and Sangju silk.<br>
-              Many materials. One restrained beauty.</p>
+            <p class="heritage_info_desc"><span class="heritage_copy_origin">Drawn from the silhouette of an 18th-century portrait &mdash; <br>
+              the perfect proportion, the straight sleeve, the jar-shaped line.</span> <br>
+              <span class="heritage_copy_materials">Informed by costume unearthed from ancient tombs, <br>
+              shaped in fabrics from French lace to mosi and Sangju silk. <br>
+              Many materials. One restrained beauty.</span></p>
             <a class="heritage_button" href="../bespoke/index.html">Visit Bespoke</a>
           </div>
         </div>
@@ -333,7 +358,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
-  <script src="js/brand.js?v=10"></script>
+  <script src="js/brand.js?v=11"></script>
 </body>
 
 </html>

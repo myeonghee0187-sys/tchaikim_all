@@ -1,63 +1,10 @@
-/* brand 페이지 스크립트
+/* Brand interaction ownership
 
-   1. mood 문 열림 — 화면을 붙잡아 둔(pin) 채로 스크롤량에 그대로
-      연결됩니다(scrub, MOOD_PIN_LENGTH). 페이지를 열면 처음 상태(닫힌
-      문)가 고정되어 그대로 보이고, 스크롤해야 진행됩니다 — 자동 재생이
-      아닙니다. 가운데 얇은 띠(30 × 484)에서 문(.mood_reveal)이
-      **세로 → 가로** 순서로 커집니다. 세로가 먼저 무대 높이의 60%만큼만
-      자라 "띠 모양"이 완성되고(화면을 다 채우지 않고 멈춤), 잠깐 뒤에
-      가로로 펼쳐지며 남은 세로(60% → 100%)도 함께 자라 배경 사진이 다
-      드러납니다(레퍼런스 영상 순서). "초록 띠"로 보이는 건 mood_inner.png
-      사진 한가운데의 좁은 부분(올리브색 벽)이고, 문이 넓어질수록 사진에서
-      보이는 범위가 늘어날 뿐 사진 자체는 한 번도 움직이지 않습니다.
-      **사진이 다 드러난 뒤에야** 글(.mood_copy)이 오른쪽에서 왼쪽으로
-      슬라이드해 들어오고, 무드 단어(.mood_right)가 아래에서 떠오릅니다 —
-      그 전까지는 둘 다 투명합니다.
-      조절 값은 파일 위쪽 MOOD_PIN_LENGTH·REVEAL_* 상수에 모아 두었습니다.
-
-   2. kimyoungjin — 그룹이 화면을 지나가는 동안 스크롤량에 그대로
-      연결됩니다(scrub, pin은 쓰지 않음 — 이유는 YOUNGJIN_SCRUB_START
-      주석 참고). 자동 재생이 아니라 스크롤한 만큼만 진행되고 멈추면
-      그 자리에 멈춰 있습니다. 셋이 동시에 뜨지 않고 **완전히 순서대로**
-      진행됩니다 — 솔로 사진(red/blue, 아래에서 느리고 우아하게
-      페이드인) → 곁사진(yellow/black, 오른쪽에서 슬라이드) → 그 텍스트
-      (Origin/Traditional, 아래에서 떠오르며 페이드인) 순으로 하나가
-      끝나야 다음이 시작합니다. 두 그룹은 화면상 위치가 서로 멀리
-      떨어져 있어(그룹2가 그룹1보다 1109px 아래) 각자 자기 구간을
-      지나갈 때만 재생되고 겹치지 않습니다. 이어서 wordmark(TCHAI 큰
-      글자) → handmade 문구도 같은 방식(scrub, pin 없음)으로 wordmark가
-      다 올라온 뒤에야 handmade가 시작하도록 순서대로 재생됩니다.
-      조절 값은 파일 위쪽 YOUNGJIN_* 상수에 있습니다.
-
-   3. tchaikim(5장면) — 장면 전환은 탭 클릭으로만 이뤄집니다(initTchaikimTabs).
-      스크롤로 이 섹션을 지나갈 때는 아무것도 움직이지 않고 화면이 그대로
-      TCHAIKIM_PAUSE_LENGTH만큼 잠깐 멈췄다가 아래로 이어집니다
-      (initTchaikimPause, 순수 pin — 스크럽·트윈 없음). 멈추는 지점은 섹션
-      맨 위가 아니라 TCHAIKIM_PAUSE_START_OFFSET만큼 더 스크롤한 뒤
-      — 탭+콘텐츠가 실제로 뷰포트 안에 다 보이는 지점입니다(섹션 위쪽의
-      600px 여백만 보이는 채로 멈추지 않도록). initHorizontalSection/
-      initHorizontal은 트랙을 가로로 미는 코드가 남아 있지만 init()에서
-      부르지 않아 실행되지 않습니다 — 스크롤에 맞춰 장면이 가로로
-      넘어가는 동작은 "화면이 옮겨다닌다"는 피드백으로 원치 않는 것으로
-      확인돼 껐습니다.
-
-   4. atelier 사진 7장 — 왼쪽으로 계속 흐르는 무한 마퀴(CSS 애니메이션 +
-      JS의 사진 복제/폭 측정). 속도는 ATELIER_SPEED 하나로 조절합니다.
-      커서로 눌러서 좌우로 당기면 그만큼 따라 움직이고, 놓으면 그
-      자리에서 자동 흐름이 이어집니다.
-
-   5. heritage — CSS sticky로 화면을 제자리에 고정한 채 제목이 커지며
-      사라지고, 왼쪽 사진 세 장이 순서대로 겹쳐 들어옵니다. 오른쪽 고정
-      텍스트는 첫 사진과 함께 한 번만 나타나고, 마지막 사진 뒤에 Bespoke
-      버튼이 뜹니다. 조절 값은 파일 위쪽 HERITAGE_* 상수에 모아 두었습니다.
-
-   6. tchaikim 영상 5개는 그 섹션을 보고 있을 때만 재생합니다.
-
-   (scroll 두루마기 영상 섹션은 메인 페이지의 인트로로 옮겼습니다 —
-    pages/main/의 index.html · main.css · main.js에 있습니다.)
-
-   HTML/CSS의 기본 상태는 전부 "다 끝난 모습"입니다. 이 스크립트는 시작 상태로
-   되돌린 뒤 재생합니다. 그래서 JS나 GSAP이 없으면 완성된 화면이 그대로 보입니다.
+   Desktop (1280+): existing Mood door / slide, Youngjin scrub, Tchai Kim
+   pause, and Heritage sequence. Their geometry and timing stay unchanged.
+   Tablet / Mobile: native Mood paging, five story tabs, and a quieter Atelier
+   marquee. Editorial story content remains in normal document flow.
+   Breakpoint and reduced-motion changes clean up the behavior they disable.
 */
 
 (function () {
@@ -125,18 +72,7 @@
      넘어갑니다. */
   var MOOD_PIN_LENGTH = "+=10";
 
-  /* ★ 이 너비 미만에서는 pin+scrub 인트로를 켜지 않습니다. 1280(다른
-     섹션과 같은 기준)에서 켜면 1280~1919 구간에서 mood_left/mood_right
-     같은 1920 기준 고정폭 콘텐츠가 뷰포트보다 넓어 오른쪽 무드 단어가
-     .mood의 overflow-x: clip에 잘려 나갑니다. 그래서 mood만 기준을
-     1920으로 올렸습니다 — CSS도 같은 값을 써야 합니다(brand.css
-     "@media (max-width: 1919.98px)"의 mood 규칙 참고). 1920 미만에서는
-     문이 이미 다 열린 정적인 모습(CSS 기본값)이라 pin이 필요 없습니다. */
-  /* 1920 → 1280. 노트북에서도 mood_left/right가 잘리지 않아 데스크톱
-     문 열림을 1280까지 켭니다. brand.css의 max-width: 1279.98px 규칙과 짝입니다.
-     ★ 5차에서 1279 이하 축약 reveal을 삭제하면서
-       MOOD_COMPACT_MAX_WIDTH · MOOD_COMPACT_PIN_LENGTH 두 상수도 함께
-       지웠습니다(더 이상 쓰는 곳이 없습니다). */
+  // Desktop Mood is separate from the responsive native-scrolling rail.
   var MOOD_MIN_WIDTH = 1280;
 
   /* ★ "띠 모양"이 완성됐을 때의 높이 — 무대 높이의 비율입니다. 레퍼런스
@@ -230,15 +166,6 @@
 
   /* ---- tchaikim 가로 스크롤 --------------------------------------------- */
   var HORIZONTAL_MIN_WIDTH = 1280;
-  var PANEL_WIDTH = 1920;
-
-  /* ★ initHorizontalSection()(가로로 트랙을 미는 인터랙션)은 코드는 있지만
-     init()에서 부르지 않아 실제로는 동작하지 않는 상태였습니다. 스크롤
-     중 이 섹션이 잠깐 멈췄다 내려가길 원해서 한 번 연결해 봤지만, 5장면이
-     스크롤에 맞춰 가로로 넘어가는 동작 자체가 의도한 것과 달라("화면이
-     가로로 옮겨다닌다") 다시 끄기로 했습니다 — 탭 클릭으로만 장면을
-     바꾸는 지금 동작(initTchaikimTabs)은 그대로 둡니다. "멈췄다 내려가는"
-     연출은 아래 initTchaikimPause()로 따로 구현했습니다. */
 
   /* ★ 이 섹션에서 잠깐 멈췄다가(화면은 그대로, 아무것도 움직이지 않음)
      내려가는 여유 구간입니다. 뷰포트 높이 대비 %로, 늘리면 더 오래
@@ -372,12 +299,15 @@
     var gsap = window.gsap;
     gsap.registerPlugin(window.ScrollTrigger);
 
-    var section = document.querySelector(".mood");
-    var reveal = document.querySelector(".mood_reveal");
-    var room = document.querySelector(".mood_room");
-    var moodInner = document.querySelector(".mood_inner");
-    var copy = document.querySelector(".mood_copy");
-    var wordPanel = document.querySelector(".mood_right");
+    var section = document.querySelector(".mood_desktop");
+    if (!section) {
+      return;
+    }
+    var reveal = section.querySelector(".mood_reveal");
+    var room = section.querySelector(".mood_room");
+    var moodInner = section.querySelector(".mood_inner");
+    var copy = section.querySelector(".mood_copy");
+    var wordPanel = section.querySelector(".mood_right");
 
     if (!section || !reveal || !room || !moodInner || !copy || !wordPanel) {
       return;
@@ -459,6 +389,10 @@ REVEAL_CLOSED_HEIGHT = 484;
            도중이었던 경우). activeHandleWheel에 현재 리스너를 기억해
            뒀다가, 이 함수가 맨 끝에 돌려주는 정리 함수에서 직접 뗍니다. */
         var activeHandleWheel = null;
+        var moodAnimations = [];
+        var moodTrigger = null;
+        var isDisposed = false;
+        var hasStarted = false;
 
         /* room(배경 사진)이 아직 안 왔는데 pin을 만들면 빈 칸이 드러납니다
            — 아래 playAndRefresh 주석 참고. 그래서 이 안의 모든 상태·
@@ -471,6 +405,10 @@ REVEAL_CLOSED_HEIGHT = 484;
            재생이 안 끝난 채로 또 휠을 굴려도 무시됩니다(참고 사이트의
            setAllowScrolling(false)와 같은 역할). */
         function play() {
+        if (isDisposed || hasStarted) {
+          return;
+        }
+        hasStarted = true;
         var step = 0;
         var wheelArmed = false;
 
@@ -505,6 +443,7 @@ REVEAL_CLOSED_HEIGHT = 484;
               onDone();
             }
           });
+          moodAnimations.push(tl);
 
           tl.to(reveal, {
             height: REVEAL_STAGE_HEIGHT * REVEAL_BAND_HEIGHT_RATIO,
@@ -544,6 +483,7 @@ REVEAL_CLOSED_HEIGHT = 484;
               onDone();
             }
           });
+          moodAnimations.push(tl);
 
           tl.to(moodInner, {
             x: REVEAL_PANEL_SHIFT + REVEAL_TEXT_SETTLE,
@@ -576,7 +516,7 @@ REVEAL_CLOSED_HEIGHT = 484;
            화면 밖에서 자기 자리로 동시에 들어옵니다. */
         function playSlide(onDone) {
           lockScroll();
-          gsap.to(moodInner, {
+          moodAnimations.push(gsap.to(moodInner, {
             x: 0,
             duration: REVEAL_SLIDE_DURATION,
             ease: "power1.out",
@@ -584,21 +524,21 @@ REVEAL_CLOSED_HEIGHT = 484;
               step = 2;
               onDone();
             }
-          });
+          }));
           /* 배경 사진도 같은 시간·같은 이징으로 확대 — 창문이 텍스트
              자리에서 화면 밖으로 밀려나는 것과 카드 패널이 들어오는
              것이 한 동작처럼 보이도록 duration·ease를 맞췄습니다. */
-          gsap.to(room, {
+          moodAnimations.push(gsap.to(room, {
             scale: MOOD_ROOM_PAN_SCALE,
             duration: REVEAL_SLIDE_DURATION,
             ease: "power1.out"
-          });
+          }));
         }
 
         /* 위로 스크롤해 슬라이드를 되돌릴 때(reverse). */
         function playUnslide(onDone) {
           lockScroll();
-          gsap.to(moodInner, {
+          moodAnimations.push(gsap.to(moodInner, {
             x: REVEAL_PANEL_SHIFT,
             duration: REVEAL_SLIDE_DURATION,
             ease: "power1.out",
@@ -606,12 +546,12 @@ REVEAL_CLOSED_HEIGHT = 484;
               step = 1;
               onDone();
             }
-          });
-          gsap.to(room, {
+          }));
+          moodAnimations.push(gsap.to(room, {
             scale: 1,
             duration: REVEAL_SLIDE_DURATION,
             ease: "power1.out"
-          });
+          }));
         }
 
         /* window에 직접 겁니다 — pin된 섹션이 화면 대부분을 차지하지만,
@@ -653,7 +593,7 @@ REVEAL_CLOSED_HEIGHT = 484;
 
         activeHandleWheel = handleWheel;
 
-        window.ScrollTrigger.create({
+        moodTrigger = window.ScrollTrigger.create({
           trigger: section,
           start: "top top",
           end: MOOD_PIN_LENGTH,
@@ -715,6 +655,11 @@ REVEAL_CLOSED_HEIGHT = 484;
            refreshScrollTriggers 주석에 있습니다 — 안 부르면 배포에서
            아래 섹션들이 통째로 겹칩니다. */
         function playAndRefresh() {
+          if (isDisposed || hasStarted) {
+            return;
+          }
+          room.removeEventListener("load", playAndRefresh);
+          room.removeEventListener("error", playAndRefresh);
           play();
           refreshScrollTriggers();
         }
@@ -727,70 +672,20 @@ REVEAL_CLOSED_HEIGHT = 484;
         }
 
         return function () {
+          isDisposed = true;
+          room.removeEventListener("load", playAndRefresh);
+          room.removeEventListener("error", playAndRefresh);
+          moodAnimations.forEach(function (animation) {
+            animation.kill();
+          });
+          if (moodTrigger) {
+            moodTrigger.kill();
+          }
           if (activeHandleWheel) {
             window.removeEventListener("wheel", activeHandleWheel);
           }
           if (window.tchaikimmLenis) {
             window.tchaikimmLenis.start();
-          }
-        };
-      }
-    );
-  }
-
-  function initHorizontalSection(gsap, sectionSelector, trackSelector) {
-    var section = document.querySelector(sectionSelector);
-    var track = document.querySelector(trackSelector);
-
-    if (!section || !track) {
-      return;
-    }
-
-    var panelCount = track.children.length;
-
-    if (panelCount < 2) {
-      return;
-    }
-
-    section.classList.add("is_horizontal");
-
-    /* 마지막 패널이 화면에 다 들어올 때까지 밀어야 하는 거리. */
-    var travel = PANEL_WIDTH * (panelCount - 1);
-
-    gsap.to(track, {
-      x: -travel,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "+=" + travel,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true
-      }
-    });
-  }
-
-  function initHorizontal() {
-    if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") {
-      return;
-    }
-
-    var gsap = window.gsap;
-    gsap.registerPlugin(window.ScrollTrigger);
-
-    /* matchMedia를 쓰면 조건이 어긋날 때 GSAP이 스스로 원래 상태로
-       되돌립니다. is_horizontal도 같이 떼어 CSS를 원상복구합니다. */
-    gsap.matchMedia().add(
-      "(min-width: " + HORIZONTAL_MIN_WIDTH + "px) and (prefers-reduced-motion: no-preference)",
-      function () {
-        initHorizontalSection(gsap, ".tchaikim", ".tchaikim_track");
-
-        return function () {
-          var section = document.querySelector(".tchaikim");
-
-          if (section) {
-            section.classList.remove("is_horizontal");
           }
         };
       }
@@ -857,18 +752,6 @@ REVEAL_CLOSED_HEIGHT = 484;
      들어오는" 것처럼 보입니다. 오른쪽 텍스트(.heritage_info)는 사진과
      달리 겹치지 않는 고정 칼럼이라, 첫 사진이 뜨는 시점에 딱 한 번만
      나타나 그대로 있습니다. */
-  /* ★ 2026-09-13 (5차) — 1279px 이하 heritage 사진 교체
-     (initHeritagePhotoSwap)을 **삭제했습니다.**
-
-     3차에서 250vh 트랙 + sticky 프레임으로 사진 세 장을 한 자리에서
-     교체하게 만들었는데, 실제로 보니 사진 한 장을 넘기려고 화면
-     2.5개 분량을 스크롤해야 했습니다. 바로 앞 mood의 pin과 이어지면서
-     "스크롤이 계속 붙잡힌다"는 피로가 생겼습니다.
-     5차 정책(§6 — 긴 sticky/pin 불필요)에 따라 걷어내고, 사진을
-     세로로 쌓되 크기에 위계를 준 **정적 편집 레이아웃**으로 바꿨습니다.
-     `.heritage.is_photo_swap_ready` CSS는 이제 아무도 붙이지 않으므로
-     자동으로 비활성입니다(규칙 자체는 되살릴 때를 위해 남겨 둡니다).
-     ★ 데스크톱(≥1280)의 initHeritageReveal(pin reveal)은 그대로입니다. */
 
   function initHeritageReveal() {
     var section = document.querySelector(".heritage");
@@ -1060,8 +943,7 @@ REVEAL_CLOSED_HEIGHT = 484;
   function initYoungjinMotion() {
     if (
       typeof window.gsap === "undefined" ||
-      typeof window.ScrollTrigger === "undefined" ||
-      isReducedMotion()
+      typeof window.ScrollTrigger === "undefined"
     ) {
       return;
     }
@@ -1069,100 +951,107 @@ REVEAL_CLOSED_HEIGHT = 484;
     var gsap = window.gsap;
     gsap.registerPlugin(window.ScrollTrigger);
 
-    /* 그룹 하나(솔로 사진 + 곁사진 + 텍스트)를 시작 상태로 되돌린 뒤, 그 그룹이
-       뷰포트를 지나가는 구간(YOUNGJIN_SCRUB_START~END) 동안 스크롤량에 맞춰
-       (scrub) 솔로 사진 → 곁사진 → 텍스트 순서로 진행되는 타임라인을 만듭니다. */
-    function playGroup(groupSelector, soloSelector, sideSelector) {
-      var group = document.querySelector(groupSelector);
-      var solo = group ? group.querySelector(soloSelector) : null;
-      var side = group ? group.querySelector(sideSelector) : null;
-      var text = group ? group.querySelector(".youngjin_txt") : null;
+    // Small screens use normal document flow. Crossing either the desktop
+    // breakpoint or the motion preference reverts all three desktop timelines.
+    gsap.matchMedia().add(
+      "(min-width: 1280px) and (prefers-reduced-motion: no-preference)",
+      function () {
+        /* 그룹 하나(솔로 사진 + 곁사진 + 텍스트)를 시작 상태로 되돌린 뒤, 그 그룹이
+           뷰포트를 지나가는 구간(YOUNGJIN_SCRUB_START~END) 동안 스크롤량에 맞춰
+           (scrub) 솔로 사진 → 곁사진 → 텍스트 순서로 진행되는 타임라인을 만듭니다. */
+        function playGroup(groupSelector, soloSelector, sideSelector) {
+          var group = document.querySelector(groupSelector);
+          var solo = group ? group.querySelector(soloSelector) : null;
+          var side = group ? group.querySelector(sideSelector) : null;
+          var text = group ? group.querySelector(".youngjin_txt") : null;
 
-      if (!group || !solo || !side || !text) {
-        return;
+          if (!group || !solo || !side || !text) {
+            return;
+          }
+
+          gsap.set(solo, { y: YOUNGJIN_SOLO_RISE, opacity: 0 });
+          gsap.set(side, { x: YOUNGJIN_SIDE_SLIDE, opacity: 0 });
+          gsap.set(text, { y: YOUNGJIN_TEXT_RISE, opacity: 0 });
+
+          var timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: group,
+              start: YOUNGJIN_SCRUB_START,
+              end: YOUNGJIN_SCRUB_END,
+              scrub: 1
+            }
+          });
+
+          /* 셋이 동시에 올라오지 않고 완전히 순서대로 진행됩니다 — 솔로 사진이
+             다 올라온 뒤(+YOUNGJIN_STEP_GAP만큼 쉬고) 곁사진이 시작하고, 곁사진이
+             다 끝난 뒤에야 텍스트가 시작합니다. 위치를 숫자로 안 주고 "+=간격"만
+             쓰면 GSAP이 자동으로 "바로 앞 트윈이 끝난 지점"부터 이어 붙입니다. */
+          timeline.to(solo, {
+            y: 0,
+            opacity: 1,
+            duration: YOUNGJIN_SOLO_DURATION,
+            ease: "power2.out",
+            force3D: true
+          });
+
+          timeline.to(side, {
+            x: 0,
+            opacity: 1,
+            duration: YOUNGJIN_SIDE_DURATION,
+            ease: "power2.out",
+            force3D: true
+          }, "+=" + YOUNGJIN_STEP_GAP);
+
+          timeline.to(text, {
+            y: 0,
+            opacity: 1,
+            duration: YOUNGJIN_TEXT_DURATION,
+            ease: "power2.out",
+            force3D: true
+          }, "+=" + YOUNGJIN_STEP_GAP);
+        }
+
+        playGroup(".youngjin_group_first", ".youngjin_photo_red", ".youngjin_photo_yellow");
+        playGroup(".youngjin_group_second", ".youngjin_photo_blue", ".youngjin_photo_black");
+
+        /* 두 그룹 다음으로 wordmark(TCHAI 큰 글자) → handmade가 이어서
+           나오도록, 그룹과 같은 방식(pin 없이 scrub만)으로 순서대로
+           재생합니다 — wordmark가 다 올라온 뒤에야 handmade가 시작합니다. */
+        var wordmark = document.querySelector(".youngjin_wordmark");
+        var handmade = document.querySelector(".youngjin_handmade");
+
+        if (wordmark && handmade) {
+          gsap.set(wordmark, { y: YOUNGJIN_WORDMARK_RISE, opacity: 0 });
+          gsap.set(handmade, { y: YOUNGJIN_HANDMADE_RISE, opacity: 0 });
+
+          var wordmarkTimeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: wordmark,
+              start: YOUNGJIN_SCRUB_START,
+              endTrigger: handmade,
+              end: YOUNGJIN_SCRUB_END,
+              scrub: 1
+            }
+          });
+
+          wordmarkTimeline.to(wordmark, {
+            y: 0,
+            opacity: 1,
+            duration: YOUNGJIN_WORDMARK_DURATION,
+            ease: "power3.out",
+            force3D: true
+          });
+
+          wordmarkTimeline.to(handmade, {
+            y: 0,
+            opacity: 1,
+            duration: YOUNGJIN_HANDMADE_DURATION,
+            ease: "power3.out",
+            force3D: true
+          }, "+=" + YOUNGJIN_STEP_GAP);
+        }
       }
-
-      gsap.set(solo, { y: YOUNGJIN_SOLO_RISE, opacity: 0 });
-      gsap.set(side, { x: YOUNGJIN_SIDE_SLIDE, opacity: 0 });
-      gsap.set(text, { y: YOUNGJIN_TEXT_RISE, opacity: 0 });
-
-      var timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: group,
-          start: YOUNGJIN_SCRUB_START,
-          end: YOUNGJIN_SCRUB_END,
-          scrub: 1
-        }
-      });
-
-      /* 셋이 동시에 올라오지 않고 완전히 순서대로 진행됩니다 — 솔로 사진이
-         다 올라온 뒤(+YOUNGJIN_STEP_GAP만큼 쉬고) 곁사진이 시작하고, 곁사진이
-         다 끝난 뒤에야 텍스트가 시작합니다. 위치를 숫자로 안 주고 "+=간격"만
-         쓰면 GSAP이 자동으로 "바로 앞 트윈이 끝난 지점"부터 이어 붙입니다. */
-      timeline.to(solo, {
-        y: 0,
-        opacity: 1,
-        duration: YOUNGJIN_SOLO_DURATION,
-        ease: "power2.out",
-        force3D: true
-      });
-
-      timeline.to(side, {
-        x: 0,
-        opacity: 1,
-        duration: YOUNGJIN_SIDE_DURATION,
-        ease: "power2.out",
-        force3D: true
-      }, "+=" + YOUNGJIN_STEP_GAP);
-
-      timeline.to(text, {
-        y: 0,
-        opacity: 1,
-        duration: YOUNGJIN_TEXT_DURATION,
-        ease: "power2.out",
-        force3D: true
-      }, "+=" + YOUNGJIN_STEP_GAP);
-    }
-
-    playGroup(".youngjin_group_first", ".youngjin_photo_red", ".youngjin_photo_yellow");
-    playGroup(".youngjin_group_second", ".youngjin_photo_blue", ".youngjin_photo_black");
-
-    /* 두 그룹 다음으로 wordmark(TCHAI 큰 글자) → handmade가 이어서
-       나오도록, 그룹과 같은 방식(pin 없이 scrub만)으로 순서대로
-       재생합니다 — wordmark가 다 올라온 뒤에야 handmade가 시작합니다. */
-    var wordmark = document.querySelector(".youngjin_wordmark");
-    var handmade = document.querySelector(".youngjin_handmade");
-
-    if (wordmark && handmade) {
-      gsap.set(wordmark, { y: YOUNGJIN_WORDMARK_RISE, opacity: 0 });
-      gsap.set(handmade, { y: YOUNGJIN_HANDMADE_RISE, opacity: 0 });
-
-      var wordmarkTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: wordmark,
-          start: YOUNGJIN_SCRUB_START,
-          endTrigger: handmade,
-          end: YOUNGJIN_SCRUB_END,
-          scrub: 1
-        }
-      });
-
-      wordmarkTimeline.to(wordmark, {
-        y: 0,
-        opacity: 1,
-        duration: YOUNGJIN_WORDMARK_DURATION,
-        ease: "power3.out",
-        force3D: true
-      });
-
-      wordmarkTimeline.to(handmade, {
-        y: 0,
-        opacity: 1,
-        duration: YOUNGJIN_HANDMADE_DURATION,
-        ease: "power3.out",
-        force3D: true
-      }, "+=" + YOUNGJIN_STEP_GAP);
-    }
+    );
   }
 
   /* atelier 섹션의 사진 7장을 왼쪽으로 계속 흘려보내는 무한 마퀴입니다.
@@ -1187,13 +1076,7 @@ REVEAL_CLOSED_HEIGHT = 484;
      ★ 마우스/터치로 눌러서 좌우로 당기면(pointerdown/move/up) 그만큼
        띠가 따라 움직이고, 손을 떼면 그 자리에서 자동 흐름이 다시
        이어집니다 — 자세한 구현은 아래 드래그 블록 주석 참고. */
-  function initAtelierMarquee() {
-    var row = document.querySelector(".atelier_row");
-
-    if (!row || isReducedMotion()) {
-      return;
-    }
-
+  function createAtelierMarquee(row) {
     var originals = Array.prototype.slice.call(row.children);
 
     if (originals.length < 2) {
@@ -1221,11 +1104,15 @@ REVEAL_CLOSED_HEIGHT = 484;
       /* 폭을 하나도 못 쟀으면(레이아웃이 아직 안 잡힌 특수한 경우) 마퀴를
          켜지 않습니다 — 끊기는 애니메이션보다 정지 화면이 낫습니다. */
       row.classList.remove("is_marquee");
+      Array.prototype.slice.call(row.children, originals.length).forEach(function (node) {
+        node.remove();
+      });
       return;
     }
 
+    var speed = window.innerWidth < 1280 ? 22 : ATELIER_SPEED;
     row.style.setProperty("--atelier_period", period + "px");
-    row.style.setProperty("--atelier_duration", (period / ATELIER_SPEED) + "s");
+    row.style.setProperty("--atelier_duration", (period / speed) + "s");
 
     /* 넓은 화면(예: 2560px)에서 이음매가 화면 밖으로 나가도록, 화면 폭 +
        한 벌을 채울 때까지 계속 복제해 둡니다. */
@@ -1244,7 +1131,7 @@ REVEAL_CLOSED_HEIGHT = 484;
        한 벌만큼씩 이어붙여 뒀으니 이 범위 안에서는 어느 지점이든
        이음매 없이 자연스럽게 보입니다. 그래서 아무리 세게/오래
        당겨도(왼쪽이든 오른쪽이든) 끊기지 않습니다. */
-    var duration = period / ATELIER_SPEED;
+    var duration = period / speed;
     var isDragging = false;
     var pointerStartX = 0;
     var xAtDragStart = 0;
@@ -1362,6 +1249,254 @@ REVEAL_CLOSED_HEIGHT = 484;
     row.addEventListener("pointermove", handlePointerMove);
     row.addEventListener("pointerup", handlePointerUp);
     row.addEventListener("pointercancel", handlePointerUp);
+
+    // The original images change size at responsive breakpoints. Measure their
+    // actual repeat distance again, preserving the current point in the cycle.
+    function updateMetrics() {
+      if (isDragging) {
+        handlePointerUp();
+      }
+      var nextPeriod = firstClone.getBoundingClientRect().left - firstOriginal.getBoundingClientRect().left;
+      var nextSpeed = window.innerWidth < 1280 ? 22 : ATELIER_SPEED;
+      if (!(nextPeriod > 0) || (Math.abs(nextPeriod - period) < 0.5 && nextSpeed === speed)) {
+        return;
+      }
+      var progress = -wrapX(readCurrentX()) / period;
+      period = nextPeriod;
+      speed = nextSpeed;
+      duration = period / speed;
+      // Restart the CSS clock at the preserved cycle position. Changing its
+      // duration alone would also keep the old elapsed time and jump forward.
+      row.classList.add("is_dragging");
+      row.style.setProperty("--atelier_period", period + "px");
+      row.style.setProperty("--atelier_duration", duration + "s");
+      row.style.animationDelay = "-" + (progress * duration) + "s";
+      void row.offsetWidth;
+      row.classList.remove("is_dragging");
+      while (row.scrollWidth < window.innerWidth + period) {
+        appendOneSet();
+      }
+    }
+
+    var resizeObserver = typeof window.ResizeObserver !== "undefined"
+      ? new window.ResizeObserver(updateMetrics) : null;
+    if (resizeObserver) {
+      resizeObserver.observe(row);
+    }
+    window.addEventListener("resize", updateMetrics);
+
+    return function () {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+      window.removeEventListener("resize", updateMetrics);
+      row.removeEventListener("pointerdown", handlePointerDown);
+      row.removeEventListener("pointermove", handlePointerMove);
+      row.removeEventListener("pointerup", handlePointerUp);
+      row.removeEventListener("pointercancel", handlePointerUp);
+      row.classList.remove("is_marquee", "is_dragging");
+      row.style.removeProperty("--atelier_period");
+      row.style.removeProperty("--atelier_duration");
+      row.style.removeProperty("transform");
+      row.style.removeProperty("animation-delay");
+      Array.prototype.slice.call(row.children, originals.length).forEach(function (node) {
+        node.remove();
+      });
+    };
+  }
+
+  function initAtelierMarquee() {
+    var row = document.querySelector(".atelier_row");
+    if (!row) {
+      return;
+    }
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var cleanup = null;
+
+    function handleMotionChange() {
+      if (cleanup) {
+        cleanup();
+        cleanup = null;
+      }
+      if (!motion.matches) {
+        cleanup = createAtelierMarquee(row);
+      }
+    }
+
+    motion.addEventListener("change", handleMotionChange);
+    handleMotionChange();
+  }
+
+  // Responsive Mood is a native three-page scroll-snap rail. No clones,
+  // touch interception, autoplay or desktop GSAP selectors are involved.
+  function initMoodSlider() {
+    var section = document.querySelector(".mood_responsive");
+    if (!section) {
+      return;
+    }
+    var viewport = section.querySelector(".mood_slides");
+    var slides = Array.prototype.slice.call(section.querySelectorAll(".mood_slide"));
+    var previous = section.querySelector('[data-mood-direction="prev"]');
+    var next = section.querySelector('[data-mood-direction="next"]');
+    var counter = section.querySelector(".mood_current");
+    var status = section.querySelector(".mood_status");
+    if (!viewport || !slides.length || !previous || !next) {
+      return;
+    }
+    var media = window.matchMedia("(max-width: 1279px)");
+    var currentIndex = 0;
+    var cleanup = null;
+
+    function mount() {
+      var measuredWidth = viewport.clientWidth;
+      var frame = null;
+      var settleTimer = null;
+      var requestedIndex = null;
+      var renderedIndex = -1;
+      section.classList.add("is_slider_ready");
+
+      function offsetFor(index) {
+        return slides[index].offsetLeft - slides[0].offsetLeft;
+      }
+
+      function render() {
+        if (renderedIndex === currentIndex) {
+          return;
+        }
+        renderedIndex = currentIndex;
+        section.dataset.activeIndex = String(currentIndex);
+        slides.forEach(function (slide, index) {
+          var isActive = index === currentIndex;
+          slide.classList.toggle("is_active", isActive);
+          slide.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+        previous.disabled = currentIndex === 0;
+        next.disabled = currentIndex === slides.length - 1;
+        previous.setAttribute("aria-disabled", String(previous.disabled));
+        next.setAttribute("aria-disabled", String(next.disabled));
+        if (counter) {
+          counter.textContent = String(currentIndex + 1).padStart(2, "0");
+        }
+        if (status) {
+          var keyword = slides[currentIndex].querySelector("h3");
+          status.textContent = (currentIndex + 1) + " / " + slides.length
+            + (keyword ? ": " + keyword.textContent.trim() : "");
+        }
+      }
+
+      function readIndex() {
+        var nearestIndex = 0;
+        var nearestDistance = Infinity;
+        slides.forEach(function (slide, index) {
+          var distance = Math.abs(offsetFor(index) - viewport.scrollLeft);
+          if (distance < nearestDistance) {
+            nearestDistance = distance;
+            nearestIndex = index;
+          }
+        });
+        return nearestIndex;
+      }
+
+      function settle() {
+        window.clearTimeout(settleTimer);
+        if (viewport.clientWidth !== measuredWidth) {
+          return;
+        }
+        requestedIndex = null;
+        currentIndex = readIndex();
+        render();
+      }
+
+      function handleScroll() {
+        window.clearTimeout(settleTimer);
+        if (frame === null) {
+          frame = window.requestAnimationFrame(function () {
+            frame = null;
+            if (viewport.clientWidth === measuredWidth && requestedIndex === null) {
+              currentIndex = readIndex();
+              render();
+            }
+          });
+        }
+        settleTimer = window.setTimeout(settle, 140);
+      }
+
+      function goTo(index) {
+        currentIndex = Math.max(0, Math.min(slides.length - 1, index));
+        requestedIndex = currentIndex;
+        render();
+        viewport.scrollTo({
+          left: offsetFor(currentIndex),
+          behavior: isReducedMotion() ? "instant" : "smooth"
+        });
+      }
+
+      function handlePrevious() { goTo(currentIndex - 1); }
+      function handleNext() { goTo(currentIndex + 1); }
+      function handleUserInput() { requestedIndex = null; }
+      function handleKeydown(event) {
+        var index;
+        if (event.key === "ArrowLeft") index = currentIndex - 1;
+        else if (event.key === "ArrowRight") index = currentIndex + 1;
+        else if (event.key === "Home") index = 0;
+        else if (event.key === "End") index = slides.length - 1;
+        else return;
+        event.preventDefault();
+        goTo(index);
+      }
+
+      function alignCurrentSlide() {
+        measuredWidth = viewport.clientWidth;
+        requestedIndex = null;
+        viewport.scrollTo({ left: offsetFor(currentIndex), behavior: "instant" });
+        render();
+      }
+
+      var resizeObserver = typeof window.ResizeObserver !== "undefined"
+        ? new window.ResizeObserver(function () {
+          if (viewport.clientWidth !== measuredWidth) alignCurrentSlide();
+        }) : null;
+      if (resizeObserver) resizeObserver.observe(viewport);
+      else window.addEventListener("resize", alignCurrentSlide);
+      viewport.addEventListener("scroll", handleScroll, { passive: true });
+      viewport.addEventListener("scrollend", settle);
+      viewport.addEventListener("pointerdown", handleUserInput, { passive: true });
+      viewport.addEventListener("wheel", handleUserInput, { passive: true });
+      viewport.addEventListener("keydown", handleKeydown);
+      previous.addEventListener("click", handlePrevious);
+      next.addEventListener("click", handleNext);
+      alignCurrentSlide();
+
+      return function () {
+        if (frame !== null) window.cancelAnimationFrame(frame);
+        window.clearTimeout(settleTimer);
+        if (resizeObserver) resizeObserver.disconnect();
+        else window.removeEventListener("resize", alignCurrentSlide);
+        viewport.removeEventListener("scroll", handleScroll);
+        viewport.removeEventListener("scrollend", settle);
+        viewport.removeEventListener("pointerdown", handleUserInput);
+        viewport.removeEventListener("wheel", handleUserInput);
+        viewport.removeEventListener("keydown", handleKeydown);
+        previous.removeEventListener("click", handlePrevious);
+        next.removeEventListener("click", handleNext);
+        section.classList.remove("is_slider_ready");
+      };
+    }
+
+    function handleBreakpointChange() {
+      if (cleanup) {
+        cleanup();
+        cleanup = null;
+      }
+      if (media.matches) {
+        cleanup = mount();
+      }
+    }
+    media.addEventListener("change", handleBreakpointChange);
+    handleBreakpointChange();
   }
 
   function initTchaikimTabs() {
@@ -1390,6 +1525,16 @@ REVEAL_CLOSED_HEIGHT = 484;
         panel.hidden = !isSelected;
       });
 
+      if (window.innerWidth < 1280) {
+        var tabBounds = nextTab.getBoundingClientRect();
+        var listBounds = tablist.getBoundingClientRect();
+        if (tabBounds.left < listBounds.left || tabBounds.right > listBounds.right) {
+          tablist.scrollBy({
+            left: tabBounds.left - listBounds.left - (listBounds.width - tabBounds.width) / 2,
+            behavior: isReducedMotion() ? "instant" : "smooth"
+          });
+        }
+      }
       tablist.dispatchEvent(new window.CustomEvent("tchaikimchange"));
     }
 
@@ -1411,7 +1556,7 @@ REVEAL_CLOSED_HEIGHT = 484;
       event.preventDefault();
       var direction = event.key === "ArrowRight" ? 1 : -1;
       var nextTab = tabs[(currentIndex + direction + tabs.length) % tabs.length];
-      nextTab.focus();
+      nextTab.focus({ preventScroll: true });
       selectTab(nextTab);
     }
 
@@ -1422,7 +1567,7 @@ REVEAL_CLOSED_HEIGHT = 484;
   function initVideos() {
     var section = document.querySelector(".tchaikim");
 
-    if (!section || isReducedMotion()) {
+    if (!section) {
       return;
     }
 
@@ -1435,8 +1580,20 @@ REVEAL_CLOSED_HEIGHT = 484;
     function setPlaying(shouldPlay) {
       videos.forEach(function (video) {
         var panel = video.closest(".tchaikim_panel");
-        var shouldPlayVideo = shouldPlay && panel && !panel.hidden;
+        var isActive = panel && !panel.hidden;
+        var shouldPlayVideo = shouldPlay && isActive && !isReducedMotion() && !document.hidden;
 
+        if (isActive && isReducedMotion() && video.preload === "none") {
+          // Decode the existing asset's first frame instead of leaving an empty
+          // video box. No extra poster asset or automatic playback is needed.
+          video.preload = "metadata";
+          video.addEventListener("loadedmetadata", function () {
+            if (video.currentTime === 0 && Number.isFinite(video.duration)) {
+              video.currentTime = Math.min(0.01, video.duration / 2);
+            }
+          }, { once: true });
+          video.load();
+        }
         if (shouldPlayVideo) {
           var played = video.play();
 
@@ -1452,44 +1609,34 @@ REVEAL_CLOSED_HEIGHT = 484;
       });
     }
 
-    if (typeof window.IntersectionObserver === "undefined") {
-      setPlaying(true);
-      return;
-    }
-
-    var observer = new window.IntersectionObserver(
+    var observer = typeof window.IntersectionObserver !== "undefined"
+      ? new window.IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           setPlaying(entry.isIntersecting);
         });
       },
       { rootMargin: "200px 0px" }
-    );
+    ) : null;
+    if (observer) {
+      observer.observe(section);
+    }
 
-    observer.observe(section);
+    function updatePlaying() {
+      var bounds = section.getBoundingClientRect();
+      setPlaying(bounds.bottom > -200 && bounds.top < window.innerHeight + 200);
+    }
 
     var tablist = section.querySelector(".tchaikim_tabs");
 
     if (tablist) {
-      tablist.addEventListener("tchaikimchange", function () {
-        var bounds = section.getBoundingClientRect();
-        setPlaying(bounds.bottom > 0 && bounds.top < window.innerHeight);
-      });
+      tablist.addEventListener("tchaikimchange", updatePlaying);
     }
+    window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", updatePlaying);
+    document.addEventListener("visibilitychange", updatePlaying);
+    updatePlaying();
   }
 
-  /* ★ 2026-09-13 (5차) — 1279px 이하 mood 축약 reveal(initMoodCompactReveal)을
-     **삭제했습니다.**
-
-     3차에서 데스크톱 문 열림을 좁은 화면으로 번역해 슬릿 reveal + 화면
-     높이 70% pin을 넣었는데, 실제 화면에서 확인하니
-       · 첫 섹션에서 사용자를 붙잡아 스크롤 피로를 만들고
-       · 그 아래 Heritage sticky와 연속돼 pin이 이어지고
-       · 정작 글은 9~11px로 읽히지 않았습니다.
-     5차 정책(1279 이하는 독립 디자인, motion보다 가독성 우선)에 따라
-     인터랙션을 걷어내고 **정적인 편집 레이아웃**으로 바꿨습니다.
-     시작 상태를 만들던 `.is_compact_reveal` CSS도 함께 지웠습니다.
-     ★ 데스크톱(≥1280)의 initMoodReveal은 그대로입니다. */
 
   /* mood는 첫 화면이라 한 프레임이라도 늦으면 문이 열리기 전에 완성된
      모습이 먼저 비칠 수 있습니다. 나머지는 DOM이 다 준비된 뒤에
@@ -1497,6 +1644,7 @@ REVEAL_CLOSED_HEIGHT = 484;
   initMoodReveal();
 
   function init() {
+    initMoodSlider();
     initTchaikimPause();
     initYoungjinMotion();
     initAtelierMarquee();

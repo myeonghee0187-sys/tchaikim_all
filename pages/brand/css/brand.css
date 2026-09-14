@@ -655,11 +655,7 @@ heritage
   gap: 60px;
 }
 
-/* 1280px 미만에서 사진 세 장이 겹쳐 크로스페이드되는 인터랙션의 래퍼입니다
-   (js/brand.js initHeritageResponsiveReveal 참고). 기본값은 display:contents라
-   레이아웃에 아무 영향이 없습니다 — 데스크톱(.is_pinned)과 JS가 없을 때의
-   정적 스택 레이아웃 둘 다 이 래퍼가 없는 것처럼 동작합니다. 아래
-   ".heritage.is_photo_swap_ready" 규칙에서만 실제 박스로 켜집니다. */
+/* Layout-transparent photo wrapper; responsive layout is defined below. */
 .heritage_photos_frame {
   display: contents;
 }
@@ -785,492 +781,7 @@ heritage
 
 
 
-/* =========================================================
-반응형 — 1024 / 768 / 390
-
-이 페이지는 전부 1920px 캔버스 기준 절대좌표라, 반응형은 폭이 좁아질수록
-"같은 자리를 그대로 축소"하지 않고 정상적인 흐름(위아래로 쌓기)으로
-바꿉니다. 자리를 다시 잡을 때 시안 좌표를 그대로 옮길 수 없는 경우가
-많아, 잘리거나 겹치지 않는 선에서 간격·정렬을 다시 판단했습니다.
-
-mood/kimyoungjin/tchaikim의 스크롤 인터랙션(문 열림 pin+scrub, kimyoungjin
-scrub, tchaikim 정지 pin)은 js/brand.js에서 1280px 미만이면 켜지지 않습니다
-(gsap.matchMedia — heritage/scroll과 같은 기준). 그래서 1024/768/390에서는
-전부 "다 끝난 정적인 모습"만 CSS로 배치하면 됩니다.
-
-★ 첫 블록 기준을 1024가 아니라 1279로 잡았습니다. JS는 1280 미만에서
-바로 꺼지는데 CSS가 1024까지 기다리면, 그 사이(1025~1279px)에 아무
-규칙도 없어 1920 고정 레이아웃이 그대로 남습니다. heritage_headline
-("Find Your Difference", 138px nowrap)이 이 틈에서 overflow-x: clip에
-실제로 잘렸던 문제입니다. 1279로 맞춰 그 틈을 없앴습니다 — 값 자체는
-1024 기준으로 잡은 것을 그대로 씁니다(1025~1279 구간은 약간 여유 있게
-보일 뿐, 잘리지는 않습니다).
-
-mood는 이 섹션들과 별도로, 파일 맨 끝의 "MOOD RESPONSIVE" 블록
-(1920 / 767 / 390 기준)에서 다룹니다. mood_stage는 1920px 고정 캔버스라
-다른 섹션과 같은 1280 기준을 쓰면 1280~1919 구간에서 무대가 뷰포트보다
-넓어져 무드 단어가 잘려 나갑니다 — 그래서 mood만 JS 게이트(js/brand.js의
-MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
-상한으로 씁니다. 여기서는 mood를 건드리지 않습니다. */
-
-@media (max-width: 1279px) {
-  /* ---- kimyoungjin -------------------------------------------------------
-     솔로 사진 + 곁사진/텍스트 → 그룹2 → wordmark → handmade 순서로
-     위아래로 쌓습니다. initYoungjinMotion()의 스크럽 등장은 좁은 화면에서도
-     그대로 재생됩니다(가벼운 페이드/슬라이드라 pin과 달리 폭 제한이
-     없습니다) — 여기서는 자리만 다시 잡습니다. */
-  .kimyoungjin_frame {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-    padding: 96px 56px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 96px;
-  }
-
-  .youngjin_group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    height: auto;
-  }
-
-  .youngjin_group_first {
-    width: 100%;
-  }
-
-  .youngjin_group_second {
-    position: static;
-    top: auto;
-    right: auto;
-    width: 100%;
-  }
-
-  .youngjin_side {
-    width: 100%;
-  }
-
-  .youngjin_photo_red,
-  .youngjin_photo_blue {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 5 / 6;
-  }
-
-  .youngjin_photo_yellow,
-  .youngjin_photo_black {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-  }
-
-  .youngjin_wordmark {
-    position: static;
-    height: auto;
-    font-size: 22vw;
-    justify-content: center;
-    padding-top: 0;
-    -webkit-text-stroke-width: 2px;
-  }
-
-  .youngjin_handmade {
-    position: static;
-    width: 100%;
-    max-width: 480px;
-    margin-inline: auto;
-  }
-
-  /* ---- tchaikim ----------------------------------------------------------
-     탭 + 장면(글 위, 영상 아래)으로 세로 배치. tchaikim_media는 1040×520
-     고정 대신 비율만 유지한 유동 폭으로 바꿉니다. */
-  .tchaikim_track {
-    width: 100%;
-    margin-left: 0;
-    padding: 160px 56px 120px;
-    box-sizing: border-box;
-  }
-
-  .tchaikim_tabs {
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 64px;
-  }
-
-  .tchaikim_panel {
-    width: 100%;
-  }
-
-  .tchaikim_con {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .tchaikim_txt {
-    width: 100%;
-    max-width: 640px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .tchaikim_media {
-    width: 100%;
-    max-width: 720px;
-    height: auto;
-    aspect-ratio: 1040 / 520;
-  }
-
-  /* ---- atelier -------------------------------------------------------------
-     흐르는 마퀴(JS)는 그대로 동작하고, 사진 크기만 줄입니다.
-     .atelier_row의 width·margin-left는 줄어든 사진 합계에 맞춘 값입니다
-     (JS/모션이 꺼졌을 때의 정지 크롭 화면 전용 — is_marquee가 켜지면
-     width: max-content로 덮어써 무시됩니다). */
-  .atelier {
-    padding-block: 200px;
-  }
-
-  .atelier_row {
-    width: 1791px;
-    margin-left: calc(50% - 896px);
-    gap: 16px;
-  }
-
-  .atelier_photo_1,
-  .atelier_photo_7 {
-    width: 285px;
-    height: 380px;
-  }
-
-  .atelier_photo_2,
-  .atelier_photo_6 {
-    width: 165px;
-    height: 220px;
-  }
-
-  .atelier_photo_3,
-  .atelier_photo_5 {
-    width: 225px;
-    height: 300px;
-  }
-
-  .atelier_photo_4 {
-    width: 345px;
-    height: 460px;
-  }
-
-  .atelier_desc {
-    margin-top: 64px;
-    font-size: 20px;
-  }
-
-  /* ---- heritage --------------------------------------------------------
-     1280 미만은 이미 pin 없이 위아래로 쌓인 정적 레이아웃입니다(JS 게이트).
-     여기서는 그 정적 레이아웃의 여백·글자 크기만 줄입니다 — 원래 패딩
-     (240px)과 사진 폭(400px)이 이미 1024보다 좁은 화면에서 넘칩니다. */
-  .heritage_stage,
-  .heritage_split {
-    padding: 96px 56px;
-  }
-
-  .heritage_stage {
-    height: auto;
-  }
-
-  /* ★ .heritage_photos는 원래 .heritage.is_pinned일 때만(1280px 이상,
-     JS가 붙이는 class) width:400px를 받습니다 — 1280 미만에서는 이
-     class가 절대 안 붙으므로 폭이 없는 채로 남습니다. 부모
-     (.heritage_split)의 align-items:center가 기본 stretch를 막아서,
-     폭 없는 flex 컨테이너 안에서는 .heritage_figure의 퍼센트 폭(390px
-     이하 구간, 아래 참고)이 기준으로 삼을 폭이 없어 붕괴합니다
-     (실측: 20×36px까지 찌그러짐). .heritage_photos 자신뿐 아니라 그
-     안의 .heritage_stage(사진 하나를 감싸는 상자)도 같은 이유로
-     한 단계 더 붕괴하고 있어서(align-items:center가 여기서도 다시
-     막음) 두 단계 모두 폭을 줘야 합니다. */
-  .heritage_photos {
-    width: 100%;
-  }
-
-  /* .heritage_stage의 기본 padding(100px 240px, 위 규칙에서 96px 56px로
-     축소)은 title 화면(.heritage_stage_title) 전용입니다. 사진을 감싸는
-     .heritage_stage(.heritage_photos 안)에도 같은 선택자라 그대로
-     상속되어, 사진(.heritage_figure) 위아래에 96px씩 빈 여백이 더 붙고
-     .heritage_photos의 gap(60px)과 합쳐져 사진 사이가 총 252px(96+60+96)
-     이나 벌어졌습니다. 사진 간 간격은 .heritage_photos의 gap 하나로만
-     맞추고, 이 안쪽 stage는 padding을 지웁니다. */
-  .heritage_photos .heritage_stage {
-    width: 100%;
-    padding: 0;
-  }
-
-  .heritage_headline {
-    font-size: 96px;
-    white-space: normal;
-  }
-
-  .heritage_figure {
-    width: 320px;
-    height: auto;
-    aspect-ratio: 400 / 714;
-  }
-
-  /* is_pinned(1280px 이상, JS pin)일 때만 .heritage_info가 text-align:left로
-     바뀌고 버튼도 왼쪽 텍스트에 맞춰 왼쪽에 붙습니다. 여기(1280 미만,
-     text-align:center)에서는 버튼도 같이 가운데로 와야 하는데, flex
-     자식이라 auto margin이 없으면 왼쪽에 붙어 위 문단(가운데 정렬)과
-     어긋나 보였습니다. */
-  .heritage_button {
-    margin-inline: auto;
-  }
-
-  /* ★ "세 장이 나란히 하나씩 나타나는 게 아니라 한 자리에서 사진만
-     바뀌어야 한다"는 요청 — js/brand.js가 이 폭에서 인터랙션을 켤 때만
-     .heritage에 붙이는 class입니다. 위 기본 반응형 규칙(사진 세 장을
-     위아래로 쌓기)을 이 class로 덮어써, 사진 한 장 자리만 화면에
-     붙잡아 두고(position: sticky) 그 안에서 스크롤에 따라 사진이
-     겹쳐 바뀌는 레이아웃으로 바꿉니다. */
-  .heritage.is_photo_swap_ready .heritage_photos {
-    position: relative;
-    display: block;
-    width: 100%;
-    /* js/brand.js의 HERITAGE_SWAP_TRACK_VH와 같은 값이어야 합니다 —
-       사진을 넘기는 스크롤 구간의 실제 길이입니다. */
-    height: 250vh;
-  }
-
-  /* sticky는 뷰포트 기준 위치라, 공통 헤더(66px) 밑에 여백을 조금 더
-     둡니다. */
-  .heritage.is_photo_swap_ready .heritage_photos_frame {
-    display: block;
-    position: sticky;
-    top: 96px;
-    width: 320px;
-    aspect-ratio: 400 / 714;
-    margin-inline: auto;
-  }
-
-  .heritage.is_photo_swap_ready .heritage_photos_frame .heritage_stage {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-  }
-
-  .heritage.is_photo_swap_ready .heritage_figure {
-    width: 100%;
-    height: 100%;
-  }
-
-}
-
-@media (max-width: 768px) {
-  /* mood는 파일 맨 끝 "MOOD RESPONSIVE" 블록(767px 기준)에서 다룹니다. */
-
-  /* ---- kimyoungjin ------------------------------------------------------- */
-  .kimyoungjin_frame {
-    padding: 80px 32px;
-    gap: 72px;
-  }
-
-  .youngjin_wordmark {
-    font-size: 26vw;
-    -webkit-text-stroke-width: 1.5px;
-  }
-
-  /* ---- tchaikim ----------------------------------------------------------- */
-  .tchaikim_track {
-    padding: 120px 32px 96px;
-  }
-
-  .tchaikim_panel_title {
-    font-size: 20px;
-  }
-
-  .tchaikim_panel_desc {
-    font-size: 17px;
-  }
-
-  /* ---- atelier -------------------------------------------------------------- */
-  .atelier {
-    padding-block: 140px;
-  }
-
-  .atelier_row {
-    width: 1315px;
-    margin-left: calc(50% - 658px);
-    gap: 12px;
-  }
-
-  .atelier_photo_1,
-  .atelier_photo_7 {
-    width: 209px;
-    height: 279px;
-  }
-
-  .atelier_photo_2,
-  .atelier_photo_6 {
-    width: 121px;
-    height: 161px;
-  }
-
-  .atelier_photo_3,
-  .atelier_photo_5 {
-    width: 165px;
-    height: 220px;
-  }
-
-  .atelier_photo_4 {
-    width: 253px;
-    height: 337px;
-  }
-
-  /* ---- heritage ------------------------------------------------------------- */
-  .heritage_stage,
-  .heritage_split {
-    padding: 80px 32px;
-  }
-
-  .heritage_headline {
-    font-size: 64px;
-  }
-
-  .heritage_figure {
-    width: 280px;
-  }
-
-  .heritage_info_title {
-    font-size: 22px;
-  }
-
-  .heritage_info_desc {
-    font-size: 17px;
-  }
-
-
-}
-
-@media (max-width: 390px) {
-  /* mood는 파일 맨 끝 "MOOD RESPONSIVE" 블록(390px 기준)에서 다룹니다. */
-
-  /* ---- kimyoungjin --------------------------------------------------------- */
-  .kimyoungjin_frame {
-    padding: 64px 20px;
-    gap: 56px;
-  }
-
-  .youngjin_wordmark {
-    font-size: 30vw;
-    -webkit-text-stroke-width: 1px;
-  }
-
-  .youngjin_title {
-    font-size: 20px;
-  }
-
-  .youngjin_desc {
-    font-size: 16px;
-  }
-
-  /* ---- tchaikim ------------------------------------------------------------- */
-  .tchaikim_track {
-    padding: 96px 20px 64px;
-  }
-
-  .tchaikim_tabs {
-    gap: 10px;
-  }
-
-  .tchaikim_tab {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-
-  .tchaikim_panel_title {
-    font-size: 18px;
-  }
-
-  .tchaikim_panel_desc {
-    font-size: 15px;
-  }
-
-  /* ---- atelier ---------------------------------------------------------------- */
-  .atelier {
-    padding-block: 96px;
-  }
-
-  .atelier_row {
-    width: 952px;
-    margin-left: calc(50% - 476px);
-    gap: 8px;
-  }
-
-  .atelier_photo_1,
-  .atelier_photo_7 {
-    width: 152px;
-    height: 203px;
-  }
-
-  .atelier_photo_2,
-  .atelier_photo_6 {
-    width: 88px;
-    height: 117px;
-  }
-
-  .atelier_photo_3,
-  .atelier_photo_5 {
-    width: 120px;
-    height: 160px;
-  }
-
-  .atelier_photo_4 {
-    width: 184px;
-    height: 245px;
-  }
-
-  .atelier_desc {
-    margin-top: 48px;
-    font-size: 16px;
-  }
-
-  /* ---- heritage ----------------------------------------------------------------- */
-  .heritage_stage,
-  .heritage_split {
-    padding: 64px 20px;
-  }
-
-  .heritage_headline {
-    font-size: 40px;
-    letter-spacing: -0.8px;
-  }
-
-  .heritage_figure {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .heritage_button {
-    width: 100%;
-    max-width: 240px;
-  }
-
-
-}
-
-/* =========================================================
-접근성
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .atelier_row.is_marquee {
-    animation: none;
-    transform: none;
-  }
-}
-
-/* 1920px 발표 화면에서는 공통 html zoom을 Brand 영역에서 보정합니다. */ 
+/* Existing desktop canvas geometry and reading widths. */
 @media (min-width: 1280px) and (max-width: 1990px) { 
   body[data-page="brand"] 
   .main { zoom: var(--canvas_gain); } 
@@ -1284,329 +795,12 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
       /* * 카드 3개의 기존 상대 좌표는 그대로 유지하고 * 카드 묶음 전체만 세로 중앙 보정. */ 
       .mood_right .mood_word { transform: translateY( calc( ( 1920px * (100vh / 100vw) - 700px ) / 2 ) ); } 
       .pin-spacer:has(> .mood) { zoom: var(--brand_screen_gain); } }
-
-/* ★★★ 2026-08-26 — 위 블록과 아래 "MOOD RESPONSIVE" 블록 사이에 뚫려 있던
-   구멍을 막습니다. 위는 max-width:1990px까지, 아래는 max-width:1279.98px
-   까지만 `.mood_stage`에 height를 줍니다 — **1990.02px 이상은 어느 쪽도
-   안 걸려 `.mood_stage`가 높이 0으로 무너졌습니다.**
-
-   `.mood_stage`(기본 규칙, 51행)는 애초에 height가 없고, 유일한 자식인
-   `.mood_reveal`은 `position: absolute`라 부모의 auto height에 아무것도
-   보태지 못합니다. 그래서 2000px 이상 폭(흔한 데스크톱 모니터 — 예:
-   2560 × 1440 창을 그대로 최대화한 경우)에서 실측하면 `.mood`/`.mood_stage`
-   가 정확히 0px, pin-spacer도 10px(= MOOD_PIN_LENGTH)뿐이라 **문이 열려도
-   무대 자체가 없어 바로 아래 kimyoungjin 섹션이 헤더 밑에 거의 밀착해
-   따라붙습니다** — "mood 섹션이 화면 최상단에 눌려 거의 안 보인다"는
-   리포트의 실제 원인이었습니다(첨부 스크린샷 폭이 이 구간이었습니다).
-
-   `--canvas_gain`은 1990px 밖에서 1로 돌아오므로(공통 파일) 여기는 배수
-   계산 없이 그냥 700px입니다. `.main`의 zoom·`--mood_panel_scale`·
-   pin-spacer 역보정은 1990px까지만 유효한 "발표 줌" 전용 장치라 이 구간까지
-   끌고 오지 않았습니다. */
 @media (min-width: 1990.02px) {
   .mood_stage,
   .mood_reveal {
     height: 700px;
   }
 }
-
-/* =========================================================
-   MOOD RESPONSIVE
-   Breakpoint — 1919.98px 하나뿐입니다
-
-   JS 인터랙션(문 열림 scrub)은 js/brand.js의 MOOD_MIN_WIDTH(1920)로
-   "min-width: 1920px"일 때만 켜집니다. 이 블록은 정수 1919px이 아니라
-   1919.98px을 상한으로 씁니다 — 화면 배율이 정수 배(100%/150%/200%)가
-   아니면(예: Windows 175%) 실제 뷰포트 CSS px 폭이 소수로 떨어져,
-   정수 innerWidth가 1919로 읽혀도 실제 media query 판정 폭은 1920에
-   더 가까운 값(예: 1919.4~1919.9px)일 수 있습니다.
-
-   ★ 예전에는 이 아래로 767.98px/390.98px 두 단계를 더 두고 각 단계마다
-   padding·gap·font-size를 다른 고정 px로 다시 썼습니다. 창 폭을
-   천천히 줄이면 그 경계(767.98↔768, 390.98↔391)에서 값이 툭 튀어
-   "뚝뚝 끊기며 전환된다"는 지적을 받았습니다. 지금은 그 두 단계를
-   없애고 이 블록 하나만 남겨, 모든 값을 vw/clamp로 이어지게 했습니다
-   — 1920px에서 390px까지 창을 천천히 줄이면 글자 크기·좌표·카드
-   폭·여백이 전부 같은 속도로 매끄럽게 줄어들고, 어디에도 값이
-   튀는 경계가 없습니다.
-
-   ★ 텍스트(mood_left)는 1920px 좌표를 px 그대로 축소하지 않고 vw로
-   옮겨 씁니다 — "1920px에서 본 위치와 같은 비율로 줄어들어야 한다"는
-   요청입니다. 1920px 캔버스 기준 값 ÷ 1920 × 100을 vw로 쓰면 화면
-   폭이 얼마든 1920px에서 본 것과 정확히 같은 비율(글자 크기·좌표·
-   사진 높이까지)로 줄어듭니다(계산은 각 규칙 옆 주석). 다만 순수
-   vw만 쓰면 390px에서 본문이 5px대까지 줄어들어 읽을 수 없어서,
-   최소 크기만 clamp()로 막아 두었습니다(제목 18px / 본문 11px) —
-   1920 비율은 화면이 그 아래로 좁아지기 전까지는 그대로 유지되고,
-   그 아래에서도 vw → 고정 최소값으로 값 자체는 clamp()가 연속적으로
-   이어줍니다(끊기지 않습니다).
-
-   ★ 무드 단어(mood_right)는 더 이상 사진 위에 겹치는 코너 카드가
-   아니라 사진·텍스트 아래로 내려간 별도 블록입니다("아래로 내려가게
-   해달라"는 요청). .mood_reveal을 세로 flex로 바꿔 mood_left(사진 위
-   텍스트) → mood_right(카드, 자기 배경 #585a4d) 순서로 쌓습니다.
-   사진(.mood_room)은 이 세로 배치와 별개로 위쪽 자리에만 높이가
-   고정돼(아래 56.25vw 참고) mood_right 밑까지 늘어나지 않습니다.
-   mood_right는 더 이상 폭에 상한(max-width)을 두지 않습니다 — "화면이
-   좁아질수록 mood_right도 너비를 채워서 보여야 한다"는 요청으로,
-   화면 폭 그대로(100%) 채웁니다.
-   ========================================================= */
-
-@media (max-width: 1279.98px) {
-
-  .mood {
-    width: 100%;
-    overflow: hidden;
-  }
-
-.mood_stage { 
-  position: relative; 
-  width: 100%; 
-  height: 700px; 
-  background-color: var(--brand_black); } 
-
-.mood_reveal { 
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  width: 100%; 
-  height: 700px; 
-  transform: translate(-50%, -50%); 
-  overflow: hidden; }
-
-  /* 사진 — 1080 ÷ 1920 × 100 = 56.25vw(= 1920:1080과 같은 16:9 비율).
-     세로 flex의 첫 자리(mood_left)와 같은 높이만큼만 차지하고 그 아래
-     mood_right로 이어집니다. */
-  .mood_reveal .mood_room {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 56.25vw;
-
-    max-width: none;
-
-    object-fit: cover;
-    object-position: center center;
-
-    z-index: 0;
-  }
-
-  .mood_reveal .mood_inner {
-    display: contents;
-  }
-
-  /* 사진 위 텍스트. flex-column의 첫 항목이라 자연히 맨 위(사진과 같은
-     자리)에서 시작합니다. min-height를 사진과 같은 56.25vw로 둬 글이
-     짧아도 mood_right가 사진 영역을 침범하지 않고 그 아래에서
-     시작합니다. */
-  .mood_reveal .mood_left {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-    /* base(desktop) 규칙의 height: 700px를 풀지 않으면 mood_right가
-       사진 바로 아래가 아니라 700px 아래로 밀려납니다. */
-    height: auto;
-    min-height: 56.25vw;
-  }
-
-  /* mood_copy/mood_copy_title/mood_copy_body — 1920px 좌표를 그대로
-     ÷ 1920 × 100 = vw로 옮깁니다. mood_left(사진과 같은 폭) 기준
-     absolute라 desktop과 같은 자리(왼쪽 위)에 비율 그대로 놓입니다.
-     white-space는 처음부터 normal입니다 — 비율이 유지되는 동안은
-     줄바꿈이 필요 없고(1920에서 이미 <br>로 줄이 나뉘어 있음), 아래쪽
-     clamp() 최소값 구간에서만 필요할 때 자연스럽게 줄바꿈됩니다 —
-     별도 breakpoint 없이 이어집니다. */
-  .mood_reveal .mood_copy {
-    position: absolute;
-    top: 11.3542vw;    /* 218px */
-    /* base(desktop) 규칙의 left: 0을 풀지 않으면 left/width/right가
-       모두 지정된 상태(over-constrained)가 되어 CSS 규칙상 right가
-       무시되고 계속 왼쪽에 붙습니다. */
-    left: auto;
-    right: 0;
-    width: 40vw;       /* 768px */
-    height: auto;
-  }
-
-  .mood_reveal .mood_copy_title {
-    position: absolute;
-    top: 0;
-    left: 3.75vw;      /* 72px */
-    margin: 0;
-
-    font-size: clamp(18px, 3.3333vw, 64px);   /* 64px */
-    line-height: 1.13;
-    letter-spacing: -0.0667vw;                /* -1.28px */
-    white-space: normal;
-  }
-
-  .mood_reveal .mood_copy_body {
-    position: absolute;
-    top: 7.5521vw;     /* 145px */
-    left: 19.375vw;    /* 372px */
-    margin-top: 0;
-
-    font-size: clamp(11px, 1.25vw, 24px);     /* 24px */
-    line-height: 1.58;
-    white-space: normal;
-  }
-
-  /* Unique / Modern / Elegant — flex-column의 두 번째 항목으로 사진·
-     텍스트 아래에 내려옵니다. 상한(max-width) 없이 화면 폭 그대로
-     채웁니다. padding·gap도 vw/clamp라 창 폭에 맞춰 매끄럽게 줄어들고,
-     767px·390px 같은 별도 경계에서 값이 튀지 않습니다. */
-  .mood_reveal .mood_right {
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    flex-wrap: nowrap;
-    gap: clamp(8px, 1.5vw, 16px);
-
-    padding: clamp(20px, 4vw, 40px) clamp(16px, 5vw, 64px);
-    box-sizing: border-box;
-  }
-
-  /* 카드 3장(.mood_word_unique/modern/elegant)의 desktop 좌표(top:88px/
-     350px/229px, left:171px/466px/788px)는 base 규칙(.mood_word)의
-     position: absolute를 그대로 물려받습니다. 여기서 static으로 풀어야
-     .mood_right의 flex 행 위에 순서대로 놓입니다. */
-  .mood_reveal .mood_word {
-    position: static;
-    flex: 1;
-    width: auto;
-    min-width: 0;
-  }
-
-  .mood_reveal .mood_word_unique,
-  .mood_reveal .mood_word_modern,
-  .mood_reveal .mood_word_elegant {
-    top: auto;
-    left: auto;
-    width: auto;
-  }
-
-  /* mood_word_media도 base 규칙에서 고정 px 크기(260×180 등)를 물려받아
-     카드 폭보다 넓어져 옆 카드와 겹쳤습니다. 카드 폭을 그대로 채우도록
-     비율만 유지합니다 — 비율은 실제 사진 파일(unique/elegant.jpg
-     260×180, modern.jpg 200×240)과 정확히 같은 값입니다. */
-  .mood_reveal .mood_word_media {
-    width: 100%;
-    height: auto;
-  }
-
-  .mood_reveal .mood_word_unique .mood_word_media {
-    aspect-ratio: 260 / 180;
-  }
-
-  .mood_reveal .mood_word_modern .mood_word_media {
-    aspect-ratio: 200 / 240;
-  }
-
-  .mood_reveal .mood_word_elegant .mood_word_media {
-    aspect-ratio: 260 / 180;
-  }
-
-  /* 카드 제목·설명 — 예전에는 767.98px에서 고정 11px로 튀고, 설명은
-     아예 display:none으로 사라졌습니다(가장 눈에 띄는 "뚝뚝 끊김").
-     지금은 clamp()로 계속 줄어들기만 하고 사라지지 않습니다. */
-  .mood_reveal .mood_word_title {
-    margin-top: clamp(4px, 1vw, 12px);
-    font-size: clamp(10px, 1.25vw, 24px);
-    line-height: 1.25;
-  }
-
-  .mood_reveal .mood_word_desc {
-    font-size: clamp(9px, 0.85vw, 16px);
-    line-height: 1.4;
-  }
-}
-
-/* ============================================================================
-   PHASE 5 — Brand: 좁은 화면 편집 위계 복원 (2026-09-13)
-   ----------------------------------------------------------------------------
-   [문제] 1279px 이하에서 youngjin 사진 4장이 전부 `width: 100%`라, 데스크톱의
-   비대칭 콜라주가 **같은 폭 4장이 세로로 쌓인 목록**이 되어 있었습니다.
-   §11이 명시적으로 금지한 형태입니다("모든 이미지를 100% width", "image/text
-   반복"). 사진 사이에 위계가 없으니 어느 것이 여는 장면인지 알 수 없습니다.
-
-   [지금] 폭과 좌우 정렬에 위계를 줍니다 — 데스크톱 콜라주의 "비대칭이지만
-   통제된" 인상을 좁은 화면의 문법으로 옮긴 것입니다.
-
-       red    full bleed   거터를 뚫고 화면 끝까지   ← 여는 장면
-       yellow 82%  왼쪽    + Origin
-       black  82%  오른쪽  + Traditional
-       blue   68%  오른쪽                          ← 닫는 장면(가장 작게)
-
-   ★ 이 블록은 위쪽 `@media (max-width: 1279px)`보다 **뒤**에 있어야 하고
-     선택자도 (0,2,0)으로 한 단계 높습니다. 위 블록의 `.youngjin_photo_red,
-     .youngjin_photo_blue { width: 100% }`(0,1,0)를 이겨야 하기 때문입니다.
-   ★ aspect-ratio는 건드리지 않았습니다 — 사진의 크롭이 달라집니다.
-   ========================================================================== */
-@media (max-width: 1279px) {
-  /* 좌우 여백을 사이트 공통 거터로 맞춥니다(§12).
-     예전에는 56 / 32 / 20px을 이 페이지만 따로 들고 있었습니다. */
-  .kimyoungjin_frame {
-    padding: var(--space_section_xl) var(--layout_gutter);
-    gap: var(--space_section_lg);
-  }
-
-  /* 1) red — 여는 사진. 거터를 뚫고 화면 끝까지 나갑니다. */
-  .youngjin_group_first .youngjin_photo_red {
-    width: calc(100% + var(--layout_gutter) * 2);
-    margin-inline: calc(var(--layout_gutter) * -1);
-  }
-
-  /* 2) yellow + Origin — 왼쪽 */
-  .youngjin_group_first .youngjin_side {
-    width: 82%;
-    align-self: flex-start;
-  }
-
-  /* 3) black + Traditional — 오른쪽. 글도 사진을 따라갑니다. */
-  .youngjin_group_second .youngjin_side {
-    width: 82%;
-    align-self: flex-end;
-    text-align: right;
-  }
-
-  /* 4) blue — 닫는 사진. 가장 작고 오른쪽에 붙습니다. */
-  .youngjin_group_second .youngjin_photo_blue {
-    width: 68%;
-    align-self: flex-end;
-  }
-}
-
-/* 360~430에서는 68%가 너무 작아져(245px) 사진이 소품처럼 보입니다.
-   가장 좁은 구간에서만 한 단계씩 올립니다. */
-@media (max-width: 430px) {
-  .youngjin_group_first .youngjin_side,
-  .youngjin_group_second .youngjin_side {
-    width: 88%;
-  }
-
-  .youngjin_group_second .youngjin_photo_blue {
-    width: 76%;
-  }
-}
-
-/* ============================================================================
-   PHASE 5 — Brand: 본문 읽기 폭 (2026-09-13)
-   .atelier_desc가 한 줄에 최대 133자였습니다(1600px 기준). 페이지에서 가장
-   긴 줄이고, 폭이 넓어질수록 길어지는 구조였습니다.
-   ★ .atelier_desc는 `text-align: center`라 max-width만 주면 왼쪽으로 붙습니다.
-     반드시 margin-inline: auto와 함께 써야 가운데 정렬이 유지됩니다. */
-/* ★ 2026-09-13 (2차): 예전에는 이 블록이 `@media (max-width: 1849px)` 안에
-   있었습니다. 1차 작업이 "1920 픽셀 동일"을 목표로 삼아 1850~1990을
-   일부러 비켜 갔기 때문입니다. 2차에서 그 기준을 폐기했으므로
-   **모든 폭에 적용**합니다 — 그래야 1920·2048·2560에서도 한 줄이
-   길어지지 않습니다(실측: 이 제한이 없을 때 최대 97자). */
 .atelier_desc {
   max-width: var(--width_reading);
   margin-inline: auto;
@@ -1616,11 +810,13 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
   max-width: var(--width_reading);
 }
 
-
-/* PHASE 5 — Brand: 탭 터치 영역 (2026-09-13)
-   .tchaikim_tab이 110×36으로 세로가 8px 모자랐습니다. 탭 사이 간격이
-   10px이라 44px 판을 깔아도 겹치지 않습니다(실측). */
-@media (max-width: 1279px), (pointer: coarse) {
+@media (min-width: 1280px) and (max-width: 1990px) {
+  .mood_right .mood_word_title,
+  .mood_right .mood_word_desc {
+    zoom: calc(1 / var(--mood_panel_scale));
+  }
+}
+@media (min-width: 1280px) and (pointer: coarse) {
   .tchaikim_tab {
     position: relative;
   }
@@ -1636,832 +832,204 @@ MOOD_MIN_WIDTH=1920, "min-width: 1920px")와 맞물리는 max-width: 1920px을
   }
 }
 
-/* ============================================================================
-   2차 — mood 카드 글자를 패널 축소에서 빼냅니다 (2026-09-13)
-   ----------------------------------------------------------------------------
-   `.mood_left` / `.mood_right`는 1920 절대좌표 아트 패널이라
-   `zoom: var(--mood_panel_scale)`(= 100vw/1920)로 함께 축소됩니다.
-   창문 사진과 카드 사진에는 맞지만, 카드의 **설명 글**까지 같이 줄어
-   실측 1280px에서 `.mood_word_desc`가 16px → **10.7px**였습니다(1440 12px).
+/* Responsive Mood is independent of the desktop door-reveal canvas. */
+.mood_responsive { display: none; }
 
-   제목·설명만 역보정해 어느 폭에서나 16px로 읽히게 합니다.
-   카드 사진과 카드 위치(편집적 어긋남)는 건드리지 않습니다.
-
-   ★ 대가: 글상자 폭은 캔버스 좌표 그대로라 글자가 커진 만큼 줄바꿈이
-     한 줄 늘어납니다("unmistakably Tchai kim."이 2줄 → 3줄). 카드가
-     세로로 어긋나 배치돼 있어 아래 공간이 충분하고, 옆 카드와 겹치지
-     않는 것을 실측으로 확인했습니다.
-   ★ 1920에서는 scale이 1이라 이 규칙은 아무 일도 하지 않습니다. */
-@media (min-width: 1280px) and (max-width: 1990px) {
-  .mood_right .mood_word_title,
-  .mood_right .mood_word_desc {
-    zoom: calc(1 / var(--mood_panel_scale));
-  }
-}
-
-/* ★ 5차에서 mood 축약 reveal을 삭제하면서 이 블록(.is_compact_reveal 시작
-   상태)도 함께 제거했습니다. 해당 class를 붙이는 JS가 더 이상 없습니다. */
-
-/* ============================================================================
-   3차 — Kim Young Jin: 태블릿 전용 비대칭 2열 (2026-09-13)
-   ----------------------------------------------------------------------------
-   [원래 디자인(≥1280)]
-     group_first  : 큰 세로 사진 500×600  +  작은 가로 사진 403×269 + 글
-     group_second : 작은 가로 사진 + 글  +  큰 세로 사진 468×600
-     · `align-items: flex-end` — 두 열이 **아랫변**을 맞춥니다
-     · group_second는 `position: absolute; top: 1109px; right: 0` — 오른쪽으로
-       밀리고 아래로 어긋나 비대칭을 만듭니다
-     · 큰 사진 : 작은 사진 ≈ 55 : 45
-
-   [1279 이하에서 있던 일]
-     `.youngjin_group { flex-direction: column }`으로 **모두 세로 1열**이
-     됩니다. 이 규칙은 반응형 작업으로 생긴 것이 아니라 원래부터
-     있었습니다(4a2a060에서 확인). 1차에서 사진 폭에 위계(full bleed /
-     82% / 82% / 68%)를 준 것이 개선이긴 하지만, 여전히 **세로 나열**이라
-     원본의 "큰 사진 옆에 작은 사진 + 글" 관계는 사라집니다.
-
-   [지금 — 태블릿(768~1279)만]
-     원본의 2열 관계를 폭 비율로 옮깁니다. 모바일(≤767)은 세로가 맞으므로
-     1차의 위계를 그대로 씁니다.
-
-       group_first  : red 54%  +  (yellow + Origin) 42%      아랫변 정렬
-       group_second : (black + Traditional) 40%  +  blue 50%  오른쪽으로 밀림
-
-   ★ 이 블록은 파일 위쪽 `@media (max-width: 1279px)`(세로 1열)과
-     1차의 위계 블록보다 **뒤**에 있어야 합니다. 선택자 특정도가 같아
-     소스 순서로만 이깁니다.
-   ★ 사진 비율(세로 5:6 / 가로 3:2)은 위 블록에서 이미 정해 둔 것을
-     그대로 씁니다 — 크롭이 달라지면 안 됩니다.
-   ========================================================================== */
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  .kimyoungjin_frame {
-    gap: var(--space_section_xl);
-  }
-
-  /* 세로 1열을 되돌리고 원본처럼 아랫변을 맞춥니다. */
-  .youngjin_group {
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 4%;
-  }
-
-  /* --- group 1 : 큰 세로 사진 + (작은 가로 사진 + Origin) --- */
-  .youngjin_group_first .youngjin_photo_red {
-    /* 1차의 full-bleed(거터를 뚫는 100%+)를 여기서만 되돌립니다. */
-    width: 54%;
-    margin-inline: 0;
-  }
-
-  .youngjin_group_first .youngjin_side {
-    width: 42%;
-    align-self: flex-end;
-  }
-
-  /* --- group 2 : (작은 가로 사진 + Traditional) + 큰 세로 사진 ---
-     원본의 `right: 0` 어긋남을 `margin-left: auto`로 옮깁니다. */
-  .youngjin_group_second {
-    width: 94%;
-    margin-left: auto;
-  }
-
-  .youngjin_group_second .youngjin_side {
-    width: 40%;
-    align-self: flex-end;
-    /* 1차에서 모바일용으로 준 오른쪽 정렬은 2열에서는 어색합니다. */
-    text-align: left;
-  }
-
-  .youngjin_group_second .youngjin_photo_blue {
-    width: 50%;
-    align-self: flex-end;
-  }
-}
-
-/* ============================================================================
-   3차 — oversized wordmark를 다시 "배경 타이포 레이어"로 (2026-09-13)
-   ----------------------------------------------------------------------------
-   [원래 디자인(≥1280)]
-     `position: absolute; top: 1960px; left: 80px; font-size: 600px;`
-     `color: transparent; -webkit-text-stroke: 3px rgba(10,10,10,0.07);`
-     → 1920 캔버스에서 "TCHAI"가 약 1760px, 흐릿한 외곽선만 남은
-       **배경 타이포**입니다. 읽으라고 있는 문장이 아니라 구성 요소입니다.
-
-   [1279 이하에서 있던 일]
-     `position: static; justify-content: center; font-size: 22~30vw`
-     → 화면 안에 **딱 맞게 가운데 놓인 제목**이 됩니다. 잘리지도 않고
-       넘치지도 않아서, 배경 레이어가 아니라 그냥 큰 글자가 됩니다.
-     (이 규칙도 반응형 작업 이전부터 있던 것입니다.)
-
-   [지금]
-     크기를 키워 **좌우로 흘러넘치게** 해서 잘리도록 합니다. 원본처럼
-     "화면보다 큰 글자의 일부만 보이는" 인상이 됩니다.
-
-     "TCHAI"는 Trirong에서 대략 글자 크기의 2.9배 폭이라, 38vw면
-     약 110vw가 되어 양쪽이 잘립니다. 왼쪽으로 조금 더 밀어 크롭을
-     비대칭으로 만듭니다(가운데 정렬은 이 페이지의 성격과 맞지 않습니다).
-
-   ★ 흐름에서 빼지 않고(`position: relative`) 자기 줄은 그대로 차지합니다 —
-     `absolute`로 두면 아래 handmade 글과 겹쳐 읽을 수 없게 됩니다.
-   ★ 넘친 부분은 `.kimyoungjin`의 overflow로 잘립니다(아래 규칙).
-     페이지 가로 스크롤은 생기지 않습니다.
-   ========================================================================== */
-@media (max-width: 1279.98px) {
-  /* ★★ `overflow: hidden`을 쓰면 안 됩니다 — 이 섹션은 안쪽 프레임이
-     세로로도 넘칩니다(실측: frame offsetHeight 2327 vs scrollHeight 4146).
-     hidden으로 막으면 워드마크와 handmade 문구가 **잘려서 사라집니다.**
-     `overflow-x: clip`은 가로만 자르고 세로는 그대로 흘려보냅니다
-     (이 저장소가 collection `.archive`에서 이미 쓰는 방법입니다).
-     ★ `overflow-x: hidden`도 안 됩니다 — CSS 규칙상 overflow-y가
-       자동으로 auto가 되어 세로 스크롤 상자가 생깁니다. */
-  .kimyoungjin {
-    overflow-x: clip;
-  }
-
-  /* ★★★ `position: relative`로 두면 안 됩니다 — 기본 규칙(.youngjin_wordmark)의
-     `top: 1960px; left: 80px`가 **되살아납니다.** static일 때는 무시되던
-     값입니다. 실제로 이걸로 워드마크가 자기 섹션보다 1287px 아래(다음
-     섹션 위)로 밀려났습니다: 프레임 offsetHeight 2327인데 워드마크
-     offsetTop 3524, handmade(2093)보다도 뒤.
-     (이 저장소가 shop 히어로에서 이미 겪고 기록해 둔 함정입니다 —
-      docs/PROJECT_CONTEXT.md "position: relative를 주는 순간 기본 규칙의
-      left/top이 살아납니다")
-     → 원래대로 `static`을 유지하고, 왼쪽으로 미는 것은 margin으로 합니다. */
-  .youngjin_wordmark {
-    position: static;
-    height: auto;
-    justify-content: flex-start;
-    white-space: nowrap;
-    /* 화면보다 넓어져 양쪽이 잘립니다(≈110vw). */
-    font-size: 38vw;
-    /* 왼쪽으로 더 밀어 크롭을 비대칭으로. */
-    margin-left: -9vw;
-    padding-top: 0;
-    -webkit-text-stroke-width: 2px;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .youngjin_wordmark {
-    font-size: 44vw;
-    margin-left: -12vw;
-    -webkit-text-stroke-width: 1.5px;
-  }
-}
-
-/* ============================================================================
-   3차 — Tchai Kim: 태블릿에서 2열 장면 구성 유지 (2026-09-13)
-   ----------------------------------------------------------------------------
-   [원래 디자인(≥1280)]
-     `.tchaikim_con` : flex row · space-between · 1700px
-       · `.tchaikim_txt`   596px, **오른쪽 정렬**(align-items: flex-end)
-       · `.tchaikim_media` 1040 × 520
-     → 글이 왼쪽에서 오른쪽 끝으로 붙어 영상과 마주 봅니다. 36 : 64.
-
-   [1279 이하에서 있던 일]
-     `flex-direction: column; align-items: center` + `text-align: center`
-     → 제목·본문·영상이 **모두 가운데** 쌓입니다. 탭을 바꿔도 항상 같은
-       높이·같은 정렬이라 장면이 바뀌는 느낌이 약해집니다.
-       (§26이 금지하는 "모든 text center"에 해당합니다.)
-
-   [지금 — 768~1279만]
-     원본의 마주 보는 관계를 비율로 옮깁니다. 38 : 58(§8 권장 38/62·40/60).
-     글의 오른쪽 정렬을 그대로 살려 영상 쪽으로 붙게 합니다.
-     ≤767에서는 폭이 부족해 세로가 맞으므로 기존 column을 그대로 둡니다.
-
-   ★ 탭 전환 인터랙션(initTchaikimTabs)은 건드리지 않았습니다 —
-     폭 조건이 없어 전 구간에서 그대로 동작합니다.
-   ========================================================================== */
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  .tchaikim_con {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4%;
-  }
-
-  /* ★ 38%로 뒀더니 1024에서 글상자가 347px이라 시안에서 <br>로 나눠 둔
-     줄이 다시 접혀 10줄까지 늘어났습니다(실측). 데스크톱의 글상자는
-     596px입니다 — 비율(35%)보다 **읽히는 폭**을 우선해 46%로 넓히고
-     영상을 그만큼 줄입니다. */
-  .tchaikim_txt {
-    width: 46%;
-    max-width: none;
-    /* 원본처럼 영상 쪽(오른쪽)으로 붙입니다. */
-    align-items: flex-end;
-    text-align: right;
-  }
-
-  .tchaikim_media {
-    width: 50%;
-    max-width: none;
-  }
-
-  /* ★ 2열이 되면서 글상자가 좁아지는데 본문이 20px 고정이라 폭이 줄수록
-     줄 수가 급격히 늘었습니다(실측 820px에서 13줄 — 768px의 10줄보다도
-     많음. 768 이하는 17px로 내려가는데 그 사이 구간만 20px이 남아서).
-     글상자 폭에 맞춰 연속적으로 줄어들게 합니다.
-       1279 → 20px(데스크톱과 동일) · 1024 → 17.4px · 820 이하 → 16px */
-  .tchaikim_panel_desc {
-    font-size: clamp(16px, 1.7vw, 20px);
-  }
-
-  .tchaikim_panel_title {
-    font-size: clamp(20px, 2vw, 24px);
-  }
-}
-
-/* ============================================================================
-   3차 — Atelier: 작은 화면에서 "한 장 크게 + 다음 장 살짝" (2026-09-13)
-   ----------------------------------------------------------------------------
-   [원래 디자인] 사진 7장이 **서로 다른 크기**(380 / 220 / 300 / 460)로
-   흐르는 띠입니다. 크기 차이 자체가 이 섹션의 리듬입니다.
-
-   [문제] 1279 이하에서 전부 0.75배로 줄이기만 해서, 화면이 좁아질수록
-   **작은 사진이 한 화면에 여러 장** 들어왔습니다(실측 390px에서 152px
-   짜리가 4장 동시에, 768px에서 5장). 그러면 "옆으로 흐른다"는 느낌보다
-   "작은 썸네일 목록"으로 읽힙니다(§9).
-
-   [지금] 크기 **차이는 그대로 두고** 전체 배율만 화면 폭에 연동합니다.
-   가장 큰 사진(460)이 화면의 40%(태블릿) / 76%(모바일)를 차지하도록
-   역산한 비율입니다.
-
-     --atelier_scale = 목표폭 ÷ 460px
-
-   ★★ 분모에 **px를 반드시 붙입니다.** `÷ 460`으로 쓰면 "길이 ÷ 숫자 = 길이"가
-     되어 `calc(380px * <길이>)`가 무효가 됩니다(실측: 사진이 772px로 튀어
-     390 화면의 198%가 됐습니다). "길이 ÷ 길이 = 순수 숫자"여야 곱셈에
-     쓸 수 있습니다 — common.css의 zoom 계산과 같은 함정입니다.
-
-   ★ 마퀴(initAtelierMarquee)는 건드리지 않았습니다 — 전 구간에서 계속
-     흐릅니다(실측 확인). 여기서는 사진 크기만 바꿉니다.
-   ★ 높이는 각 사진의 원래 비율(507/380 등)을 곱해 유지합니다 —
-     크롭이 달라지면 안 됩니다.
-   ========================================================================== */
-@media (max-width: 1279.98px) {
-  .atelier_row {
-    /* 가장 큰 사진이 화면의 40%(상한 430px) */
-    --atelier_scale: calc(min(430px, 40vw) / 460px);
-  }
-
-  .atelier_photo_1,
-  .atelier_photo_7 {
-    width: calc(380px * var(--atelier_scale));
-    height: calc(507px * var(--atelier_scale));
-  }
-
-  .atelier_photo_2,
-  .atelier_photo_6 {
-    width: calc(220px * var(--atelier_scale));
-    height: calc(293px * var(--atelier_scale));
-  }
-
-  .atelier_photo_3,
-  .atelier_photo_5 {
-    width: calc(300px * var(--atelier_scale));
-    height: calc(400px * var(--atelier_scale));
-  }
-
-  .atelier_photo_4 {
-    width: calc(460px * var(--atelier_scale));
-    height: calc(613px * var(--atelier_scale));
-  }
-}
-
-@media (max-width: 767.98px) {
-  .atelier_row {
-    /* 모바일에서는 가장 큰 사진이 화면의 76%(상한 340px) —
-       한 장이 화면을 지배하고 옆 장이 살짝 걸칩니다. */
-    --atelier_scale: calc(min(340px, 76vw) / 460px);
-  }
-}
-
-/* ============================================================================
-   3차 — heritage_photos_frame 기본값 (2026-09-13)
-   ----------------------------------------------------------------------------
-   이 래퍼는 **1279px 이하에서만** 실제 상자입니다(위쪽
-   `.heritage.is_photo_swap_ready .heritage_photos_frame` 규칙이 sticky 상자로
-   켭니다). 그 밖에서는 레이아웃에서 완전히 빼서, 데스크톱의 기존 구조
-   (.heritage_photos 안에서 .heritage_stage가 absolute로 포개지는 형태)를
-   한 픽셀도 바꾸지 않습니다.
-   ★ `display: contents`는 상자만 없애고 자식은 그대로 둡니다 — 그래서
-     `.heritage_photos .heritage_stage` 같은 자손 선택자와 JS 쿼리는
-     래퍼가 있든 없든 똑같이 동작합니다. */
-.heritage_photos_frame {
-  display: contents;
-}
-
-/* ############################################################################
-   5차 — Brand Tablet / Mobile 전면 재설계 (2026-09-13)
-   ----------------------------------------------------------------------------
-   정책 변경: 1279px 이하는 **데스크톱을 번역한 화면이 아니라 독립된 디자인**
-   입니다. pin·sticky·긴 scrub·1920 절대좌표를 유지할 의무가 없습니다.
-   1280px 이상(데스크톱)은 한 줄도 바꾸지 않습니다.
-
-   이 블록은 파일 맨 끝에 있습니다 — 위쪽 반응형 규칙들과 선택자 특정도가
-   같거나 낮아도 **소스 순서로** 이깁니다.
-   ############################################################################ */
-
-/* ============================================================================
-   5차 MOOD — 1920 절대좌표를 버리고 일반 흐름으로
-   ----------------------------------------------------------------------------
-   [무엇이 문제였나 — 390px 실측]
-   `.mood_copy`(width 40vw = 156px) 안에서 제목과 본문이 **둘 다
-   `position: absolute`**였습니다. 1920 캔버스 좌표를 vw로 환산해 둔 것이라
-   폭이 좁아질수록 두 상자가 같은 자리로 모입니다.
-     · 제목 "Refined into elegance"와 본문 "A quiet balance…"가 **겹침**
-     · 본문 11px · 무드 카드 설명 9px (목표 15~17px)
-     · `.mood_stage`가 700px 고정이라 내용 아래로 **검은 빈 블록**이 남음
-
-   [지금]
-   좁은 화면에서는 절대좌표를 전부 풀고 **위에서 아래로 읽는 한 덩어리**로
-   다시 짭니다. 데스크톱의 "문이 열린다"는 연출은 여기서 재현하지 않고,
-   대표 사진 → 제목 → 짧은 글 → 무드 카드라는 **의미만** 남깁니다.
-   ========================================================================== */
-@media (max-width: 1279.98px) {
-  .mood {
-    width: 100%;
-    overflow: hidden;
-    background-color: var(--brand_black);
-  }
-
-  /* 700px 고정을 풀어 내용만큼만 차지하게 합니다(검은 빈 블록 제거). */
-  .mood_stage,
-  .mood_reveal {
-    position: static;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    transform: none;
-    overflow: visible;
-  }
-
-  /* 대표 사진 — 흐름 안의 히어로. absolute·56.25vw 고정을 풉니다. */
-  .mood_reveal .mood_room {
-    position: static;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    max-width: none;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  /* display:contents를 풀어 글 묶음이 자기 자리를 갖게 합니다.
-     ★ 기본 규칙의 `width: 1920px`(데스크톱 캔버스)도 반드시 함께 풀어야
-       합니다 — 안 그러면 글 묶음이 화면보다 5배 넓어져 글이 엉뚱한
-       자리에 놓입니다(실측: 390 화면에서 1920px). */
-  .mood_reveal .mood_inner {
+/* Tablet / compact foundation: one native swipe surface, then static stories. */
+@media (max-width: 1279px) {
+  .main { --brand_gutter: clamp(32px, 5.47vw, 64px); }
+  .mood_desktop { display: none; }
+  body[data-page="brand"] .common_scroll_hint { display: none; }
+  .mood_responsive {
     display: block;
-    position: static;
-    width: 100%;
-    height: auto;
-    transform: none;
+    position: relative;
+    padding: 104px var(--brand_gutter) 0;
+    color: var(--color_text_inverse);
+    background: var(--brand_black);
   }
-
-  .mood_reveal .mood_left {
-    position: static;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    min-height: 0;
-    margin: 0;
-    padding: var(--space_section_md) var(--layout_gutter) 0;
-    box-sizing: border-box;
-  }
-
-  /* ★ 여기가 핵심 — 절대좌표를 전부 풉니다.
-     ★★ `transform: none`을 빼먹으면 안 됩니다. 데스크톱 기본 규칙의
-       `.mood_copy { transform: translateY(-50%) }`(세로 가운데 맞춤)가
-       그대로 남아, 흐름 배치로 바꿔도 글 묶음이 자기 높이의 절반만큼
-       **위로 올라가 사진 위에 겹칩니다**(실측 390px에서 -202px).
-       position만 풀고 transform을 안 푸는 것이 이 파일에서 반복되는
-       함정입니다. */
-  .mood_reveal .mood_copy,
-  .mood_reveal .mood_copy_title,
-  .mood_reveal .mood_copy_body {
-    position: static;
-    top: auto;
-    right: auto;
-    left: auto;
-    width: auto;
-    height: auto;
-    transform: none;
-  }
-
-  .mood_reveal .mood_copy {
+  .mood_slides {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 34rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
   }
-
-  .mood_reveal .mood_copy_title {
-    margin: 0;
-    font-size: clamp(30px, 5.4vw, 46px);
-    line-height: 1.16;
-    letter-spacing: -0.01em;
-  }
-
-  .mood_reveal .mood_copy_body {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 0;
-    font-size: clamp(15px, 1.7vw, 17px);
-    line-height: 1.7;
-  }
-
-  /* ---- 무드 카드 3장 ------------------------------------------------------
-     태블릿: 가로 3열 editorial grid
-     모바일: 사진 옆에 글이 오는 가로형 카드를 세로로 쌓고 좌우를 교차 */
-  .mood_reveal .mood_right {
-    position: static;
-    z-index: auto;
+  .mood_slides::-webkit-scrollbar { display: none; }
+  /* Lenis applies two-axis containment to its wheel-exclusion attribute.
+     This native horizontal rail must still pass vertical gestures to the page. */
+  body[data-page="brand"] .mood_responsive .mood_slides { overscroll-behavior-y: auto; }
+  .mood_slide {
+    position: relative;
+    flex: 0 0 100%;
+    min-width: 0;
+    height: clamp(420px, 63svh, 530px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     display: grid;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    margin: 0;
-    padding: var(--space_section_md) var(--layout_gutter) var(--space_section_lg);
-    box-sizing: border-box;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-columns: 36% 64%;
+    align-items: center;
+    background: #252622;
   }
-
-  .mood_reveal .mood_word,
-  .mood_reveal .mood_word_unique,
-  .mood_reveal .mood_word_modern,
-  .mood_reveal .mood_word_elegant {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    width: auto;
-    margin: 0;
-    transform: none;
-  }
-
-  /* ★ 카드별 규칙(`.mood_reveal .mood_word_unique .mood_word_media` 등)이
-     특정도 (0,3,0)이라, (0,2,0)으로는 이깁니다 못합니다. 세 개를 모두
-     같은 특정도로 다시 적어야 비율이 통일됩니다 — 안 그러면 가운데
-     카드만 세로로 길어져 좌우 교차 리듬이 깨집니다(실측). */
-  .mood_reveal .mood_word_media,
-  .mood_reveal .mood_word_unique .mood_word_media,
-  .mood_reveal .mood_word_modern .mood_word_media,
-  .mood_reveal .mood_word_elegant .mood_word_media {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-  }
-
-  .mood_reveal .mood_word_media img {
+  .mood_slide_media {
+    grid-column: 2;
+    grid-row: 1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-  }
-
-  .mood_reveal .mood_word_title {
-    margin-top: 14px;
-    font-size: clamp(18px, 1.9vw, 22px);
-  }
-
-  /* 9px이었습니다. */
-  .mood_reveal .mood_word_desc {
-    margin-top: 6px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .mood_reveal .mood_room {
-    /* 모바일에서는 세로로 조금 더 길게 — 한 화면의 주인공 한 장. */
-    aspect-ratio: 4 / 3;
-  }
-
-  /* 카드는 [사진 | 글] 가로형으로 쌓고 좌우를 교차해 리듬을 만듭니다.
-     사진을 화면 가득 채우지 않습니다(§8 — 모든 이미지 100% 금지). */
-  .mood_reveal .mood_right {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .mood_reveal .mood_word {
-    display: grid;
-    grid-template-columns: 46% 1fr;
+    min-height: 0;
+    padding: 32px;
+    display: flex;
     align-items: center;
-    gap: 18px;
-  }
-
-  .mood_reveal .mood_word:nth-child(even) {
-    grid-template-columns: 1fr 46%;
-  }
-
-  .mood_reveal .mood_word:nth-child(even) .mood_word_media {
-    order: 2;
-  }
-
-  .mood_reveal .mood_word:nth-child(even) .mood_word_txt {
-    order: 1;
-    text-align: right;
-  }
-
-  .mood_reveal .mood_word_title {
-    margin-top: 0;
-  }
-}
-
-/* ============================================================================
-   5차 KIM YOUNG JIN — 이미지 크기 위계 (§2)
-   ----------------------------------------------------------------------------
-   실측 문제(390px): red **100%**, yellow 79%, black 79%, blue 68%
-   → 사진 네 장이 전부 화면을 가득 채워, 스크롤하는 내내 "큰 사진만
-     계속 지나가는" 인상이었습니다(§8이 금지하는 형태).
-   3차의 full-bleed(거터를 뚫는 100%+)도 여기서 걷어냅니다.
-
-   목표 위계
-     primary portrait(red)     78vw   ← 이 섹션의 주인공
-     secondary landscape(yellow/black) 62vw
-     secondary portrait(blue)  66vw
-   ========================================================================== */
-@media (max-width: 767.98px) {
-  .kimyoungjin_frame {
-    gap: var(--space_section_lg);
-  }
-
-  .youngjin_group {
-    gap: 28px;
-  }
-
-  /* 3차의 full bleed를 되돌립니다. */
-  .youngjin_group_first .youngjin_photo_red {
-    width: 78vw;
-    max-width: 360px;
-    margin-inline: 0;
-  }
-
-  /* ★ side는 폭을 **주지 않습니다**(100%). 예전에는 side를 62vw로 묶어
-     그 안의 글까지 같이 좁아져, 본문이 화면 한가운데(x=128)에서 시작하는
-     어정쩡한 들여쓰기가 됐습니다(실측).
-     → 사진에만 폭을 주고, 글은 거터에서 시작해 읽기 폭(34ch)까지 씁니다. */
-  .youngjin_group_first .youngjin_side,
-  .youngjin_group_second .youngjin_side {
-    width: 100%;
-    max-width: none;
-    gap: 20px;
-  }
-
-  /* 좌우 교차는 이 두 줄이 만듭니다 — 첫 그룹은 왼쪽(거터), 둘째 그룹은
-     오른쪽. align-self를 명시하지 않으면 부모의 정렬을 따라 어중간한
-     자리(실측 x110)에 놓입니다. */
-  .youngjin_group_first .youngjin_photo_yellow {
-    width: 62vw;
-    max-width: 300px;
-    align-self: flex-start;
-  }
-
-  .youngjin_group_second .youngjin_photo_black {
-    width: 62vw;
-    max-width: 300px;
-    align-self: flex-end;
-  }
-
-  .youngjin_group_first .youngjin_txt,
-  .youngjin_group_second .youngjin_txt {
-    width: 100%;
-    max-width: 34ch;
-  }
-
-  .youngjin_group_second .youngjin_photo_blue {
-    width: 66vw;
-    max-width: 320px;
-    align-self: flex-end;
-  }
-
-  /* 좌우 교차는 **사진으로만** 만듭니다. 본문은 항상 왼쪽 거터에서
-     시작해야 읽기 흐름이 끊기지 않습니다. */
-  .youngjin_group_second .youngjin_side {
-    align-self: stretch;
-    text-align: left;
-  }
-
-
-
-  .youngjin_group_second .youngjin_photo_blue {
-    align-self: flex-end;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  /* 태블릿 secondary가 39~43%로 §2 권장(28~38%)보다 컸습니다. */
-  .youngjin_group_first .youngjin_side {
-    width: 36%;
-  }
-
-  .youngjin_group_second .youngjin_side {
-    width: 34%;
-  }
-
-  .youngjin_group_second .youngjin_photo_blue {
-    width: 44%;
-  }
-
-  .youngjin_group_first .youngjin_txt,
-  .youngjin_group_second .youngjin_txt {
-    max-width: 42ch;
-  }
-}
-
-/* ============================================================================
-   5차 WORDMARK — 배경 장식 수준으로 낮춤 (§3)
-   ----------------------------------------------------------------------------
-   3차에서 화면의 117~135%로 키워 양쪽이 잘리게 했는데, 실제로 보니
-   콘텐츠보다 강해서 시선을 뺏습니다. §3에 따라 강도를 낮춥니다.
-     태블릿 : 화면 폭에 거의 맞춰(약 100%) 잘림 없이 배경 장식으로
-     모바일 : 92vw · 외곽선 1px — section divider에 가까운 밝기
-   ========================================================================== */
-@media (max-width: 1279.98px) {
-  .youngjin_wordmark {
-    font-size: 33vw;
-    margin-left: 0;
     justify-content: center;
-    -webkit-text-stroke-width: 1.5px;
   }
+  /* The originals are 260×180 / 200×240. Keep their entire composition:
+     a portrait cover crop would discard the red train, hand, or flowering branch. */
+  .mood_slide_media img { width: 100%; height: 100%; object-fit: contain; }
+  .mood_slide_caption { grid-column: 1; grid-row: 1; align-self: end; padding: 36px 0 40px 32px; z-index: 1; }
+  .mood_slide_number { font-size: 12px; letter-spacing: .16em; line-height: 1.5; }
+  .mood_slide_keyword { margin-top: 10px; font: 400 clamp(36px, 4vw, 52px)/1.2 var(--font_display); white-space: nowrap; }
+  .mood_slide_description { margin-top: 16px; min-block-size: 3.3em; max-width: 24ch; font-size: 16px; line-height: 1.65; }
+  .mood_navigation { display: flex; justify-content: flex-end; align-items: center; gap: 16px; padding-top: 12px; }
+  .mood_arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; cursor: pointer; }
+  .mood_arrow svg { width: 23px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1; }
+  .mood_arrow:disabled { opacity: .28; cursor: default; }
+  .mood_counter { font-size: 12px; letter-spacing: .1em; font-variant-numeric: tabular-nums; }
+  .mood_counter_total { opacity: .5; }
+  .mood_intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 28px; padding-bottom: 48px; }
+  .mood_intro_title { max-width: 16ch; font: 400 28px/1.35 var(--font_display); }
+  .mood_intro_body { max-width: 43ch; font-size: 16px; line-height: 1.65; }
+  .mood_intro_body p + p { margin-top: 12px; }
+  /* This end color is the computed first stop of .kimyoungjin, not the page white. */
+  .mood_responsive::after {
+    content: "";
+    display: block;
+    height: 150px;
+    margin-inline: calc(-1 * var(--brand_gutter));
+    background: linear-gradient(to bottom, var(--brand_black), var(--brand_olive));
+  }
+
+  .kimyoungjin_frame { width: 100%; height: auto; margin: 0; padding: 72px var(--brand_gutter) 96px; display: flex; flex-direction: column; gap: 112px; }
+  .youngjin_group { position: static; width: 100%; height: auto; gap: 8%; align-items: end; }
+  .youngjin_group_first .youngjin_photo_red { width: 52%; }
+  .youngjin_group_first .youngjin_side { width: 34%; }
+  .youngjin_group_second { justify-content: flex-end; }
+  .youngjin_group_second .youngjin_side { width: 34%; }
+  .youngjin_group_second .youngjin_photo_blue { width: 46%; }
+  .youngjin_side { gap: 28px; }
+  .youngjin_photo { height: auto; flex-shrink: 0; }
+  .youngjin_photo_red { aspect-ratio: 5 / 6; }
+  .youngjin_photo_blue { aspect-ratio: 468 / 600; }
+  .youngjin_photo_yellow, .youngjin_photo_black { width: 100%; aspect-ratio: 403 / 269; }
+  .youngjin_title { font-size: 28px; line-height: 1.3; }
+  .youngjin_desc { margin-top: 12px; font-size: 17px; line-height: 1.7; max-width: 38ch; }
+  .youngjin_wordmark { position: absolute; inset: auto 0 12px; justify-content: center; height: auto; padding: 0; font-size: 23vw; line-height: 1; -webkit-text-stroke-width: 1px; pointer-events: none; }
+  .youngjin_handmade { position: relative; inset: auto; width: min(100%, 440px); margin: 0 auto; padding-block: 20px 32px; }
+
+  .tchaikim_track { width: 100%; margin: 0; padding: 88px var(--brand_gutter) 48px; }
+  .tchaikim_tabs { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 12px; margin-bottom: 48px; padding: 2px; }
+  .tchaikim_tabs::-webkit-scrollbar { display: none; }
+  .tchaikim_tab { min-height: 44px; padding: 10px 16px; font-size: 14px; letter-spacing: .05em; }
+  .tchaikim_panel { width: 100%; }
+  .tchaikim_con { width: 100%; flex-direction: column; align-items: flex-start; gap: 36px; }
+  .tchaikim_txt { width: 100%; max-width: 46ch; align-items: flex-start; text-align: left; gap: 18px; }
+  .tchaikim_panel_title { font-size: 32px; line-height: 1.3; }
+  .tchaikim_panel_desc { min-height: 0; font-size: 17px; line-height: 1.7; }
+  .tchaikim_media { width: 80%; height: auto; aspect-ratio: 2 / 1; align-self: flex-end; }
+  .tchaikim_panel_desc br, .youngjin_desc br, .heritage_info_desc br { display: none; }
+
+  .atelier { padding-block: 112px 104px; }
+  .atelier_row { --atelier_scale: calc(min(390px, 35vw) / 460px); gap: 18px; width: max-content; margin-left: 0; }
+  .atelier_photo_1, .atelier_photo_7 { width: calc(380px * var(--atelier_scale)); height: calc(507px * var(--atelier_scale)); }
+  .atelier_photo_2, .atelier_photo_6 { width: calc(220px * var(--atelier_scale)); height: calc(293px * var(--atelier_scale)); }
+  .atelier_photo_3, .atelier_photo_5 { width: calc(300px * var(--atelier_scale)); height: calc(400px * var(--atelier_scale)); }
+  .atelier_photo_4 { width: calc(460px * var(--atelier_scale)); height: calc(613px * var(--atelier_scale)); }
+  .atelier_desc { margin-top: 44px; padding-inline: var(--brand_gutter); font-size: 17px; line-height: 1.7; }
+
+  .heritage { padding: 32px var(--brand_gutter) 120px; }
+  .heritage_frame { display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 64px; align-items: center; }
+  .heritage_stage { display: block; height: auto; padding: 0; }
+  .heritage_stage_title { grid-column: 1 / -1; }
+  .heritage_headline { max-width: 18ch; font-size: clamp(42px, 5.5vw, 64px); line-height: 1.18; letter-spacing: -.03em; white-space: normal; text-align: left; }
+  .heritage_split, .heritage_photos, .heritage_photos_frame { display: contents; }
+  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 2; width: 100%; }
+  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 3; width: 66%; justify-self: end; }
+  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 2; grid-row: 3; width: 86%; align-self: end; }
+  .heritage_figure { width: 100%; height: auto; aspect-ratio: 400 / 714; padding: 0; }
+  .heritage_figure img { object-fit: contain; }
+  .heritage_info { grid-column: 2; grid-row: 2; width: 100%; max-width: 38ch; text-align: left; gap: 20px; }
+  .heritage_info_title { font-size: 28px; line-height: 1.3; }
+  .heritage_info_desc { font-size: 17px; line-height: 1.7; }
+  .heritage_copy_materials { display: block; margin-top: 20px; }
+  .heritage_button { width: 190px; height: 52px; font-size: 13px; letter-spacing: .12em; margin-top: 12px; }
+  .mood_slides:focus-visible, .mood_arrow:focus-visible, .tchaikim_tab:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
 }
 
-@media (max-width: 767.98px) {
-  .youngjin_wordmark {
-    font-size: 31vw;
-    -webkit-text-stroke-width: 1px;
-  }
+/* Mobile: a single editorial plate, intimate detail pairs, and a quiet narrative. */
+@media (max-width: 767px) {
+  .main { --brand_gutter: 22px; }
+  .mood_responsive { padding-top: 88px; }
+  .mood_slide { height: clamp(520px, 65svh, 590px); grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .mood_slide_media { grid-column: 1; height: 100%; padding: 24px 0 0; }
+  .mood_slide_media img { max-height: 340px; }
+  .mood_slide_caption { grid-row: 2; padding: 24px 24px 28px; }
+  .mood_slide_keyword { font-size: 34px; margin-top: 8px; }
+  .mood_slide_description { margin-top: 12px; max-width: 26ch; font-size: 15px; line-height: 1.65; }
+  .mood_navigation { gap: 12px; padding-top: 8px; }
+  .mood_intro { display: block; margin-top: 24px; padding-bottom: 36px; }
+  .mood_intro_title { max-width: none; font-size: 23px; }
+  .mood_intro_body { margin-top: 20px; max-width: 34ch; font-size: 15px; line-height: 1.7; }
+  .mood_intro_body p + p { margin-top: 10px; }
+  .mood_responsive::after { height: 104px; }
+
+  .kimyoungjin_frame { padding-top: 64px; padding-bottom: 64px; gap: 64px; }
+  .youngjin_group { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .youngjin_group_first .youngjin_photo_red { width: min(74vw, 380px); }
+  .youngjin_group_first .youngjin_side, .youngjin_group_second .youngjin_side { width: 100%; gap: 28px; }
+  .youngjin_group_first .youngjin_txt { order: -1; }
+  .youngjin_group_first .youngjin_photo_yellow { width: min(58vw, 300px); align-self: flex-end; }
+  .youngjin_group_second .youngjin_photo_black { width: min(52vw, 280px); }
+  .youngjin_group_second .youngjin_photo_blue { width: min(64vw, 340px); align-self: flex-end; }
+  .youngjin_title { font-size: 25px; }
+  .youngjin_desc { margin-top: 10px; max-width: 33ch; font-size: 16px; line-height: 1.7; }
+  .youngjin_wordmark { display: none; }
+  .youngjin_handmade { width: 100%; margin: 0; padding: 0; align-items: flex-start; }
+  .youngjin_title_center, .youngjin_desc_center { text-align: left; }
+
+  .tchaikim_track { padding-top: 48px; padding-bottom: 24px; }
+  .tchaikim_tabs { gap: 8px; margin-bottom: 32px; }
+  .tchaikim_tab { padding-inline: 13px; font-size: 13px; }
+  .tchaikim_con { gap: 28px; }
+  .tchaikim_txt { max-width: 34ch; gap: 16px; }
+  .tchaikim_panel_title { font-size: 28px; }
+  .tchaikim_panel_desc { font-size: 16px; line-height: 1.7; }
+  .tchaikim_media { width: 94%; }
+
+  .atelier { padding-top: 72px; padding-bottom: 80px; }
+  .atelier_row { --atelier_scale: calc(min(320px, 60vw) / 460px); gap: 14px; }
+  .atelier_desc { max-width: 36ch; margin-top: 32px; font-size: 16px; line-height: 1.7; text-align: left; }
+  .atelier_desc br { display: none; }
+
+  .heritage { padding-top: 16px; padding-bottom: 88px; }
+  .heritage_frame { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 1; width: min(72vw, 360px); }
+  .heritage_stage_title { grid-row: 2; margin-top: 8px; }
+  .heritage_headline { max-width: 14ch; font-size: 38px; line-height: 1.18; }
+  .heritage_info, .heritage_info_desc { display: contents; }
+  .heritage_info_title { grid-row: 3; font-size: 24px; }
+  .heritage_copy_origin { grid-row: 4; }
+  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 5; width: min(54vw, 280px); justify-self: end; margin-block: 8px; }
+  .heritage_copy_materials { grid-row: 6; margin-top: 0; }
+  .heritage_copy_origin, .heritage_copy_materials { max-width: 34ch; font-size: 16px; line-height: 1.7; text-align: left; }
+  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 1; grid-row: 7; width: min(50vw, 260px); margin-top: 8px; }
+  .heritage_button { grid-row: 8; margin-top: 8px; }
 }
 
-/* ============================================================================
-   5차 TCHAI KIM — 태블릿도 세로로 (§4)
-   ----------------------------------------------------------------------------
-   3차에서 태블릿에 데스크톱의 2열(글 46% ↔ 영상 50%)을 되살렸는데,
-   좁은 글상자에 긴 본문이 들어가 1024에서 8줄·820에서 9줄이 됐습니다.
-   §4는 "긴 본문을 좁은 2-column에 넣어 8~10줄 되는 구조는 피한다"입니다.
-   → 태블릿도 제목·본문 위 / 영상 아래로 바꾸고, 영상은 full width 대신
-     82% 정도의 editorial width를 씁니다. 본문은 32~38ch로 제한합니다.
-   ========================================================================== */
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  .tchaikim_con {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space_block);
-  }
-
-  /* ★ `ch`는 "0" 글자 폭 기준이라 실제 글자 수보다 넉넉하게 잡힙니다 —
-     38ch로 뒀더니 실측 한 줄이 49자였습니다(§4 목표 32~38자).
-     실측해서 30ch로 맞췄습니다. */
-  .tchaikim_txt {
-    width: 100%;
-    max-width: 30ch;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .tchaikim_media {
-    width: 82%;
-    max-width: none;
-    /* 글이 왼쪽 정렬이라 영상은 오른쪽으로 흘려 비대칭을 만듭니다. */
-    align-self: flex-end;
-  }
+/* Reduced motion has no hidden story, no autonomous marquee, and native paging. */
+@media (prefers-reduced-motion: reduce) {
+  .atelier_row.is_marquee { animation: none; transform: none; }
+  .mood_slides { scroll-behavior: auto; }
 }
-
-@media (max-width: 767.98px) {
-  /* 34ch = 실측 44자였습니다. 28ch로 낮춰 36자 근처로 맞춥니다. */
-  .tchaikim_txt {
-    max-width: 28ch;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .tchaikim_con {
-    align-items: flex-start;
-  }
-
-  .tchaikim_media {
-    width: 100%;
-  }
-}
-
-/* ============================================================================
-   5차 ATELIER — 더 작게, 더 느리게 (§5)
-   ----------------------------------------------------------------------------
-   3차에서 가장 큰 사진을 태블릿 40% / 모바일 76%로 키웠는데 §5 권장은
-   태블릿 32~38vw · 모바일 58~68vw입니다. 한 단계 낮춥니다.
-   ========================================================================== */
-@media (max-width: 1279.98px) {
-  .atelier_row {
-    --atelier_scale: calc(min(390px, 35vw) / 460px);
-  }
-}
-
-@media (max-width: 767.98px) {
-  .atelier_row {
-    --atelier_scale: calc(min(300px, 64vw) / 460px);
-  }
-}
-
-/* ============================================================================
-   5차 HERITAGE — 정적 편집 스택 (§6)
-   ----------------------------------------------------------------------------
-   3차의 250vh sticky 사진 교체를 걷어냈습니다(JS 삭제). 이제 기본
-   반응형 규칙대로 사진 세 장이 세로로 쌓입니다. 여기서는 **크기 위계와
-   여백만** 정리합니다.
-
-   실측 문제: `.heritage_figure`가 320px 고정이라 390px에서 **82%**로
-   세 장이 연달아 화면을 가득 채웠습니다(§8 금지 — 연속된 full-width image).
-
-     태블릿 : 대표 1장(56%) + 아래 작은 2장(각 34%) — §6 권장 구성
-     모바일 : 대표 1장(74vw) + 작은 2장(각 56vw), 좌우 교차
-   ========================================================================== */
-@media (min-width: 768px) and (max-width: 1279.98px) {
-  .heritage_photos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
-    gap: var(--space_block);
-    width: 100%;
-  }
-
-  /* 대표 사진 — 두 칸을 차지하고 가운데. */
-  .heritage_photos .heritage_stage:first-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-
-  .heritage_photos .heritage_stage:first-child .heritage_figure {
-    width: 56%;
-    min-width: 280px;
-  }
-
-  /* 아래 두 장은 나란히, 더 작게. */
-  .heritage_photos .heritage_stage:not(:first-child) .heritage_figure {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .heritage_photos .heritage_stage:nth-child(2) {
-    justify-self: end;
-  }
-
-  .heritage_photos .heritage_stage:nth-child(3) {
-    justify-self: start;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .heritage_photos {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space_section_md);
-    width: 100%;
-  }
-
-  .heritage_photos .heritage_stage {
-    display: flex;
-  }
-
-  /* 대표 사진 */
-  .heritage_photos .heritage_stage:first-child .heritage_figure {
-    width: 74vw;
-    max-width: 330px;
-  }
-
-  /* 나머지 두 장은 작게 + 좌우 교차로 리듬 */
-  .heritage_photos .heritage_stage:not(:first-child) .heritage_figure {
-    width: 56vw;
-    max-width: 250px;
-  }
-
-  /* ★ 좌우 교차는 stage의 `justify-content`로는 걸리지 않았습니다(실측:
-     jc를 flex-start로 줘도 figure가 가운데에 놓임). figure 쪽에 auto
-     margin을 직접 주는 편이 컨테이너의 display와 무관하게 확실합니다.
-       1번(대표) 왼쪽 · 2번 오른쪽 · 3번 왼쪽 */
-  .heritage_photos .heritage_stage:nth-child(odd) .heritage_figure {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  .heritage_photos .heritage_stage:nth-child(even) .heritage_figure {
-    margin-left: auto;
-    margin-right: 0;
-  }
-}
-
-/* ############################################################################
-   6차 — Brand: 태블릿·모바일에서 CTA 글자 크기 (2026-09-14)
-   ----------------------------------------------------------------------------
-   `.heritage_button`("Visit Bespoke")이 390·1024 양쪽에서 **11px**이었습니다.
-   이 섹션의 유일한 이동 수단인데 손에 들고 보는 화면에서 11px입니다.
-   1280 이상은 시안 그대로 둡니다.
-   ############################################################################ */
-@media (max-width: 1279.98px) {
-  .heritage_button {
-    font-size: 13px;
-  }
+@media (max-width: 1279px) and (prefers-reduced-motion: reduce) {
+  .atelier { overflow: visible; }
+  .atelier_row { width: 100%; overflow-x: auto; padding-inline: var(--brand_gutter); }
+  .tchaikim_panel, .mood_slide_keyword { animation: none; transition: none; }
 }
