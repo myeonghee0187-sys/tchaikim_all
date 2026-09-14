@@ -1,6 +1,5 @@
-/* 스크롤 인터랙션 — model 영상 스크럽, brand_01~04 고정+텍스트 전환,
-   brand_05/06 스크롤 리빌.
-   model은 모든 화면에서 동작하고 나머지 장면은 768px 이상에서만 동작합니다. */
+/* Main의 고정·스크럽 장면은 1280px 이상에서만 실행합니다.
+   작은 화면은 정적인 편집 구성으로 읽고, 데스크톱 연출은 원래 타이밍을 유지합니다. */
 (function () {
   "use strict";
 
@@ -77,16 +76,10 @@
     var figure = section ? section.querySelector(".model_figure") : null;
     var text = section ? section.querySelector(".model_text") : null;
 
-    /* 태블릿·모바일 고정형 구간 길이입니다.
-       데스크탑 길이는 main.css의 --model_flow_height에서 조절합니다. */
-    var MODEL_SCROLL_LENGTH_TABLET = 2.8;
-    var MODEL_SCROLL_LENGTH_MOBILE = 2.2;
     /* ★ 모델 좌우 이동 폭 조절 위치
        현재 화면 너비에 곱하는 비율입니다. 값을 줄이면 좌우 움직임이 차분해집니다.
        권장 범위: 0.14 ~ 0.22 / 현재 데스크탑 0.14 */
     var MODEL_TRAVEL_DESKTOP = 0.14;
-    var MODEL_TRAVEL_TABLET = 0.16;
-    var MODEL_TRAVEL_MOBILE = 0.1;
     /* =========================================================
        ★ 모델 회전·좌우 이동 타이밍 조절값
 
@@ -124,7 +117,6 @@
        모델의 세로 보정이 늦게 따라와 멈춘 뒤에도 혼자 미끄러집니다. true는 현재
        스크롤 위치와 장면을 같은 프레임에 맞추고, 관성은 Lenis에만 맡깁니다. */
     var MODEL_DESKTOP_SCRUB = true;
-    var MODEL_PINNED_SCRUB = true;
     /* 다음 detail 화면이 올라오는 동안에도 모델이 계속 내려가도록 하강 구간을
        거의 전체 진행률에 걸쳐 둡니다. */
     var MODEL_VERTICAL_DRIFT_START_RATIO = 0.05;
@@ -140,24 +132,8 @@
       return;
     }
 
-    function getModelScrollLength() {
-      if (window.innerWidth >= 768) {
-        return MODEL_SCROLL_LENGTH_TABLET;
-      }
-
-      return MODEL_SCROLL_LENGTH_MOBILE;
-    }
-
     function getModelTravelDistance() {
-      var travelRatio = MODEL_TRAVEL_MOBILE;
-
-      if (window.innerWidth >= 1280) {
-        travelRatio = MODEL_TRAVEL_DESKTOP;
-      } else if (window.innerWidth >= 768) {
-        travelRatio = MODEL_TRAVEL_TABLET;
-      }
-
-      return document.documentElement.clientWidth * travelRatio;
+      return document.documentElement.clientWidth * MODEL_TRAVEL_DESKTOP;
     }
 
     video.pause();
@@ -168,24 +144,17 @@
        preload="metadata"(moov만, 수 KB)로 두고, 첫 화면이 다 그려진 뒤인
        window load 시점에 여기서 auto로 올려 미리 받아 둡니다.
        사용자가 이 섹션에 닿기까지는 스크롤 한 화면 분량의 시간이 있습니다. */
-    /* ★ load()는 재생 위치를 0으로 되돌립니다. 이 시점에는 아래 primeModelFirstFrame()
-       (또는 모션 감소일 때 seekToRestPose())이 이미 위치를 잡아 둔 뒤라, 그냥 부르면
-       모델이 첫 프레임으로 튑니다. 그래서 위치를 기억했다가 다시 맞춥니다. */
+    /* load()는 탐색 중인 영상도 0으로 되돌립니다. currentTime을 저장하면 아직
+       탐색되지 않은 0초를 기억할 수 있으므로, 메타데이터가 다시 준비된 순간의
+       최신 요청값을 복원합니다. 그 사이 폭·모션 설정이 바뀌어도 현재 장면을 따릅니다. */
     function warmModelVideo() {
       if (video.preload === "auto") {
         return;
       }
 
-      var resumeTime = video.currentTime;
-
+      video.addEventListener("loadedmetadata", applyRequestedVideoTime, { once: true });
       video.preload = "auto";
       video.load();
-
-      if (resumeTime > 0) {
-        video.addEventListener("loadedmetadata", function () {
-          requestVideoTime(resumeTime);
-        }, { once: true });
-      }
     }
 
     if (document.readyState === "complete") {
@@ -257,16 +226,28 @@
     }
 
     function seekToRestPose() {
-      video.currentTime = video.duration * MODEL_VIDEO_END_FRAME_RATIO;
+      if (Number.isFinite(video.duration) && video.duration > 0) {
+        requestVideoTime(video.duration * MODEL_VIDEO_END_FRAME_RATIO);
+      }
     }
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.matchMedia().add({
+      desktop: "(min-width: 1280px)",
+      motion: "(prefers-reduced-motion: no-preference)",
+      all: "all"
+    }, function (context) {
+    /* 폭·모션 설정을 바꿀 때마다 선택합니다. 작은 화면에서는 pin 없이
+       마지막 정면 프레임을 사용하고, 데스크톱 복귀 시 첫 프레임부터 다시 잽니다. */
+    if (!context.conditions.desktop || !context.conditions.motion) {
+      video.pause();
       if (video.readyState >= 1) {
         seekToRestPose();
       } else {
         video.addEventListener("loadedmetadata", seekToRestPose, { once: true });
       }
-      return;
+      return function cleanupStaticModel() {
+        video.removeEventListener("loadedmetadata", seekToRestPose);
+      };
     }
 
     /* 포스터에서 영상 프레임으로 바뀌는 작업을 첫 스크롤까지 미루면
@@ -297,18 +278,14 @@
        그래서 핀은 처음부터 만들고, duration이 필요한 재생 위치 계산만
        매 프레임 그때의 값으로 미룹니다. */
     section.classList.add("is_scroll_ready");
-    var isDesktopModelFlow = window.matchMedia("(min-width: 1280px)").matches;
-    var modelPlayhead = { progress: 0 };
     var modelMotion = { progress: 0 };
     var desktopSectionTravel = 0;
     var desktopEndDrift = 0;
 
-    if (isDesktopModelFlow) {
-      section.classList.add("is_model_flow");
-      /* CSS의 left: 50% 기준과 GSAP 이동 좌표를 처음부터 분리합니다.
-         xPercent는 중앙정렬, x는 스크롤 좌우 이동만 담당해 첫 입력 때 기준점이 바뀌지 않습니다. */
-      gsap.set(figure, { xPercent: -50, x: 0, y: 0 });
-    }
+    section.classList.add("is_model_flow");
+    /* CSS의 left: 50% 기준과 GSAP 이동 좌표를 처음부터 분리합니다.
+       xPercent는 중앙정렬, x는 스크롤 좌우 이동만 담당해 첫 입력 때 기준점이 바뀌지 않습니다. */
+    gsap.set(figure, { xPercent: -50, x: 0, y: 0 });
 
     function measureDesktopModelMotion() {
       var sectionRect = section.getBoundingClientRect();
@@ -321,9 +298,7 @@
       desktopEndDrift = Math.max(0, preferredEndTop - figureBaseTop);
     }
 
-    if (isDesktopModelFlow) {
-      measureDesktopModelMotion();
-    }
+    measureDesktopModelMotion();
 
     function clampProgress(value) {
       return Math.max(0, Math.min(1, value));
@@ -391,23 +366,13 @@
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: function () {
-          if (isDesktopModelFlow) {
-            /* 다음 detail 섹션이 화면 아래에서 올라오는 동안 모델 하강도 계속됩니다. */
-            return "bottom top";
-          }
-
-          return "+=" + window.innerHeight * getModelScrollLength();
-        },
-        pin: !isDesktopModelFlow,
-        scrub: isDesktopModelFlow ? MODEL_DESKTOP_SCRUB : MODEL_PINNED_SCRUB,
+        /* 다음 detail 섹션이 화면 아래에서 올라오는 동안 모델 하강도 계속됩니다. */
+        end: "bottom top",
+        pin: false,
+        scrub: MODEL_DESKTOP_SCRUB,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        onRefresh: function () {
-          if (isDesktopModelFlow) {
-            measureDesktopModelMotion();
-          }
-        }
+        onRefresh: measureDesktopModelMotion
       }
     });
 
@@ -418,7 +383,6 @@
         MODEL_TEXT_HOLD_RATIO
       );
 
-    if (isDesktopModelFlow) {
       /* 좌우는 왼쪽 한 번, 오른쪽 한 번만 이동합니다.
          y는 실제 섹션 길이를 따라 내려가고 마지막에 화면 아래쪽으로 조금 더 이동합니다. */
       timeline.to(
@@ -440,55 +404,18 @@
         },
         MODEL_EXIT_FADE_START_RATIO
       );
-    } else {
-      /* 태블릿·모바일도 데스크탑과 타이밍을 맞춥니다.
-         회전 완료 전까지 왼쪽으로 이동하고, 2/3 이후에만 오른쪽으로 갑니다. */
-      timeline
-        .to(
-          figure,
-          {
-            x: function () { return -getModelTravelDistance(); },
-            duration: MODEL_ROTATION_END_RATIO - MODEL_HORIZONTAL_HOLD_RATIO,
-            ease: "sine.inOut"
-          },
-          MODEL_HORIZONTAL_HOLD_RATIO
-        )
-        .to(
-          figure,
-          {
-            x: function () { return getModelTravelDistance(); },
-            duration: 1 - MODEL_ROTATION_END_RATIO,
-            ease: "sine.inOut"
-          },
-          MODEL_ROTATION_END_RATIO
-        );
-    }
 
-    /* 데스크탑 영상은 위 applyDesktopModelMotion()에서 위치와 함께 갱신합니다.
-       아래 별도 playhead는 pin 구조를 사용하는 태블릿·모바일에서만 필요합니다. */
-    if (!isDesktopModelFlow) {
-      timeline.to(
-        modelPlayhead,
-        {
-          progress: 1,
-          /* 이 tween은 전체 타임라인의 2/3 지점에서 끝납니다.
-             이후 ScrollTrigger가 계속 진행되어도 modelPlayhead는 1로 고정되므로
-             마지막 1/3에서는 영상이 더 돌지 않고 오른쪽 이동만 보입니다. */
-          duration: MODEL_ROTATION_END_RATIO - MODEL_VIDEO_START_RATIO,
-          ease: "none",
-          onUpdate: function () {
-            /* 메타데이터가 아직 안 왔으면 duration이 NaN이라 건너뜁니다. */
-            if (!video.duration) {
-              return;
-            }
-            requestVideoTime(
-              video.duration * MODEL_VIDEO_END_FRAME_RATIO * modelPlayhead.progress
-            );
-          }
-        },
-        MODEL_VIDEO_START_RATIO
-      );
-    }
+    return function cleanupModelScroll() {
+      if (timeline.scrollTrigger) {
+        timeline.scrollTrigger.kill();
+      }
+      timeline.kill();
+      video.removeEventListener("loadedmetadata", primeModelFirstFrame);
+      video.pause();
+      section.classList.remove("is_scroll_ready", "is_model_flow");
+      gsap.set([figure, text], { clearProps: "transform,opacity,visibility" });
+    };
+    });
   })();
 
   /* ★★ 2026-09-14 (6차) — 게이트를 1024 → 1280으로 올렸습니다.
@@ -978,7 +905,7 @@
     var RIGHT_SWITCH_RATIO = 0.56;
     var SWITCH_INTENT_DELAY_MS = 100;
     var MIN_VISIBLE_RATIO = 0.65;
-    var HERO_HOVER_MEDIA = "(min-width: 768px) and (hover: hover) and (prefers-reduced-motion: no-preference)";
+    var HERO_HOVER_MEDIA = "(min-width: 1280px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
     var canUseHoverVideo = window.matchMedia(HERO_HOVER_MEDIA).matches;
 
     /* 히어로 영상은 두 파일을 합쳐 약 1.9MB이고, **호버해야만 쓰입니다.**
@@ -1842,6 +1769,9 @@
   var isDragging = false;
   var shouldSuppressClick = false;
   var inertiaFrameId = null;
+  var marqueeMotion = window.matchMedia(
+    "(min-width: 1280px) and (prefers-reduced-motion: no-preference)"
+  );
 
   function getMarqueeAnimation() {
     var animations = track.getAnimations();
@@ -1908,7 +1838,7 @@
   }
 
   function handlePointerDown(event) {
-    if (event.button !== 0 || activePointerId !== null) {
+    if (!marqueeMotion.matches || event.button !== 0 || activePointerId !== null) {
       return;
     }
 
@@ -1975,6 +1905,22 @@
   viewport.addEventListener("pointermove", handlePointerMove);
   viewport.addEventListener("pointerup", finishPointerInteraction);
   viewport.addEventListener("pointercancel", finishPointerInteraction);
+  viewport.addEventListener("lostpointercapture", finishPointerInteraction);
+  marqueeMotion.addEventListener("change", function () {
+    if (marqueeMotion.matches) {
+      return;
+    }
+    stopInertia();
+    if (activePointerId !== null && viewport.hasPointerCapture(activePointerId)) {
+      viewport.releasePointerCapture(activePointerId);
+    }
+    activePointerId = null;
+    marqueeAnimation = null;
+    isDragging = false;
+    shouldSuppressClick = false;
+    velocityX = 0;
+    viewport.classList.remove("is_dragging");
+  });
   viewport.addEventListener("dragstart", function (event) {
     event.preventDefault();
   });
@@ -1987,21 +1933,18 @@
 })();
 
 /* =========================================================
-   collection — 중앙 뒤에서 좌우 앞으로 흐르는 무한 반복
+   collection — 데스크톱 스크롤 원근 연출 / 작은 화면 정적 편집 갤러리
    ========================================================= */
 (function () {
   "use strict";
 
-  var CARD_INTERVAL = 620;
   var MAX_VISIBLE_CARDS = 9;
-  /* 좁은 화면의 시간 기반 자동 재생에서만 사용하는 첫 카드 대기 시간입니다. */
-  var CARD_INTRO_DELAY = 100;
   var RIGHT_STREAM_OFFSET = 0.5;
   /* 컬렉션이 고정된 채 사진을 드러내는 실제 스크롤 거리입니다.
      wheel 이벤트를 가로채지 않고 이 거리의 진행률을 카드 움직임에 연결합니다. */
   var COLLECTION_STICKY_HOLD = 160;
   /* 고정 연출을 켜는 조건. 좁은 화면에서는 무대가 낮아 고정할 이점이 없습니다. */
-  var COLLECTION_SCROLL_MEDIA = "(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
+  var COLLECTION_SCROLL_MEDIA = "(min-width: 1280px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
   var COLLECTION_REVEAL_START = 0.06;
   var COLLECTION_REVEAL_END = 0.76;
   var COLLECTION_REVEAL_PHASE = 7.2;
@@ -2033,10 +1976,16 @@
     return;
   }
 
-  /* 모션 감소 설정이면 시안의 가로 나열을 그대로 둡니다 */
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  var section = row.closest(".collection");
+  var container = section ? section.querySelector(".collection_container") : null;
+  var scrollStage = section ? section.closest(".collection_scroll") : null;
+  var isGsapReady = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+
+  if (!section || !container || !scrollStage || !isGsapReady) {
     return;
   }
+
+  window.gsap.matchMedia().add(COLLECTION_SCROLL_MEDIA, function () {
 
   var orderedItems = STREAM_ORDER.filter(function (index) {
     return index < sourceItems.length;
@@ -2065,28 +2014,6 @@
   sourceItems.forEach(function (element) {
     element.style.opacity = "0";
   });
-
-  var frameId = null;
-  var startTime = null;
-  var pausedAt = null;
-  var isInView = false;
-  var hasStarted = false;
-
-  function startCollectionStream(initialPhase) {
-    if (hasStarted) {
-      return;
-    }
-
-    hasStarted = true;
-    /* 지정한 위치에서 자동 재생이 이어지도록 시간을 역산합니다.
-       initialPhase가 없으면 기존 시작 타이밍을 유지합니다. */
-    startTime = Number.isFinite(initialPhase)
-      ? performance.now() - CARD_INTRO_DELAY - initialPhase * CARD_INTERVAL
-      : performance.now();
-    pausedAt = null;
-    row.classList.add("is_interaction_started");
-    syncPlayState();
-  }
 
   function setCardPosition(element, progress, direction) {
     /* x는 일정하게 이동하고 깊이만 smoothstep으로 변화시켜
@@ -2123,8 +2050,8 @@
     setCardPosition(element, position / visibleCardCount, direction);
   }
 
-  /* 두 줄을 한 시점(phase)으로 그립니다. 시간 기반 반복과 스크롤 연출이 같은
-     경로를 쓰도록 분리해 두었습니다 — 어느 쪽이 밀든 화면 결과는 같습니다. */
+  /* 두 줄을 같은 스크롤 진행도로 그립니다. 시간 기반 RAF를 함께 돌리지 않아
+     breakpoint 복귀 후 카드 위치를 두 재생 방식이 덮어쓰지 않습니다. */
   function renderPhase(phase) {
     leftItems.forEach(function (element, index) {
       renderStreamCard(element, index, phase, -1, leftItems.length);
@@ -2134,69 +2061,12 @@
     });
   }
 
-  function render(time) {
-    var elapsed = time - startTime;
-
-    renderPhase((elapsed - CARD_INTRO_DELAY) / CARD_INTERVAL);
-
-    if (isInView && !document.hidden) {
-      frameId = window.requestAnimationFrame(render);
-    }
-  }
-
-  function syncPlayState() {
-    if (isInView && hasStarted && !document.hidden) {
-      if (pausedAt !== null) {
-        startTime += performance.now() - pausedAt;
-        pausedAt = null;
-      }
-
-      if (frameId === null) {
-        frameId = window.requestAnimationFrame(render);
-      }
-    } else if (frameId !== null) {
-      window.cancelAnimationFrame(frameId);
-      frameId = null;
-      pausedAt = performance.now();
-    }
-  }
-
-  /* 화면 밖이거나 다른 탭에 가 있으면 돌리지 않습니다 */
-  if (typeof window.IntersectionObserver === "function") {
-    new window.IntersectionObserver(function (entries) {
-      isInView = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.15;
-
-      /* 데스크탑은 스크롤 진행률로 재생합니다. 모바일·터치 화면은 기존처럼
-         화면에 들어왔을 때 자동으로 재생해 빈 무대가 남지 않게 합니다. */
-      if (isInView && !hasStarted && !window.matchMedia(COLLECTION_SCROLL_MEDIA).matches) {
-        startCollectionStream();
-      }
-
-      syncPlayState();
-    }, { threshold: [0, 0.15] }).observe(row);
-  } else {
-    isInView = true;
-    startCollectionStream();
-  }
-
-  document.addEventListener("visibilitychange", syncPlayState);
-
   /* =========================================================
      스크롤 연동 + native sticky — 카드는 진행률로 흐르고 섹션은 CSS로 머뭅니다.
 
      GSAP pin이 section을 fixed로 바꾸던 순간의 "착 붙는" 느낌을 없애기 위해
      바깥 collection_scroll의 높이만 늘리고 브라우저 기본 sticky를 사용합니다.
      ========================================================= */
-  var section = row.closest(".collection");
-  var container = section ? section.querySelector(".collection_container") : null;
-  var scrollStage = section ? section.closest(".collection_scroll") : null;
-  var isGsapReady = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
-
-  if (!section || !container || !scrollStage || !isGsapReady) {
-    return;
-  }
-
-  window.gsap.matchMedia().add(COLLECTION_SCROLL_MEDIA, function () {
     section.classList.add("is_scroll_ready");
     scrollStage.classList.add("is_scroll_ready");
     scrollStage.style.setProperty(
@@ -2277,9 +2147,8 @@
 
     window.addEventListener("scroll", handleCollectionScroll, { passive: true });
     window.addEventListener("resize", handleCollectionScroll);
+    window.ScrollTrigger.addEventListener("refresh", handleCollectionScroll);
     handleCollectionScroll();
-
-    syncPlayState();
 
     /* ★ GSAP은 자기가 만든 것만 되돌립니다. 카드의 transform·opacity·z-index는
        renderStreamCard가 element.style에 직접 쓰므로 여기서 손으로 지웁니다.
@@ -2290,6 +2159,7 @@
          컨테이너가 120px 내려간 채(또는 opacity 0으로) 굳습니다. */
       window.removeEventListener("scroll", handleCollectionScroll);
       window.removeEventListener("resize", handleCollectionScroll);
+      window.ScrollTrigger.removeEventListener("refresh", handleCollectionScroll);
 
       if (settle.scrollTrigger) {
         settle.scrollTrigger.kill();
@@ -2305,18 +2175,10 @@
 
       sourceItems.forEach(function (element) {
         element.removeAttribute("style");
-        element.style.opacity = "0";
       });
-
-      /* breakpoint가 바뀌어도 시간 기반 반복을 새 좌표에서 다시 시작합니다 */
-      row.classList.remove("is_interaction_started");
-      hasStarted = false;
-      startTime = null;
-      pausedAt = null;
-      if (isInView) {
-        startCollectionStream();
-      } else {
-        syncPlayState();
+      row.classList.remove("is_perspective_ready", "is_interaction_started");
+      if (hintText) {
+        hintText.textContent = "Scroll to reveal";
       }
     };
   });
@@ -2344,6 +2206,7 @@
   var PROMO_VIEW_MARGIN_RATIO = 0.6;
   /* 첫 프레임을 뽑아낼 시각(초). 0으로 두면 이미 0이라 seek이 일어나지 않습니다. */
   var PROMO_FIRST_FRAME_TIME = 0.04;
+  var promoReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   var videos = PROMO_VIDEO_IDS
     .map(function (id) {
@@ -2412,6 +2275,12 @@
   }
 
   function syncPromoVideo(video) {
+    if (promoReducedMotion.matches || document.hidden) {
+      video.pause();
+      primeFirstFrame(video);
+      return;
+    }
+
     if (isNearViewport(video)) {
       playPromoVideo(video);
       return;
@@ -2455,12 +2324,30 @@
      - visibilitychange: 백그라운드 탭에서 열렸다가 넘어온 경우. */
   window.addEventListener("pageshow", syncPromoVideos);
   window.addEventListener("load", syncPromoVideos);
-  document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) {
-      syncPromoVideos();
-    }
-  });
+  document.addEventListener("visibilitychange", syncPromoVideos);
+  promoReducedMotion.addEventListener("change", syncPromoVideos);
 
   videos.forEach(primeFirstFrame);
   syncPromoVideos();
+})();
+
+/* 공통 Lenis의 설정을 Main에서만 동기화합니다. stop()으로 입력을 잠그지 않고
+   휠 보간만 끄므로 모션 감소 환경에서도 기본 스크롤과 메뉴가 그대로 동작합니다. */
+(function setupMainMotionPreference() {
+  "use strict";
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function syncMainMotionPreference() {
+    var lenis = window.tchaikimmLenis;
+    if (!lenis) {
+      return;
+    }
+    lenis.options.smoothWheel = !reducedMotion.matches;
+    if (reducedMotion.matches) {
+      lenis.scrollTo(window.scrollY, { immediate: true, force: true });
+    }
+  }
+
+  reducedMotion.addEventListener("change", syncMainMotionPreference);
+  syncMainMotionPreference();
 })();

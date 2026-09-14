@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="../../common/css/common.css?v=5">
 <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
-<link rel="stylesheet" href="css/main.css?v=20">
+<link rel="stylesheet" href="css/main.css?v=21">
 </head>
 <!-- ★ 2026-09-14 (6차) — data-scroll-hint-mode="persistent"를 뗐습니다.
      persistent는 페이지 끝까지 안내를 띄워 두는 모드인데, 실측(1920)에서
@@ -83,7 +83,7 @@
            src="assets/main/hero/tchai_kyj2.jpg"
            data-hero-edge="right"
            data-hero-width-ratio="0.5"
-           fetchpriority="high" alt="A model wearing a vivid pink couture hanbok and a wide woven hat">
+           fetchpriority="high" alt="A model wearing a vivid pink couture hanbok and a wide woven hat" width="657" height="986">
       <!-- Bespoke 영상 속도: data-playback-rate의 숫자만 조절합니다. 1 = 원속도, 0.8 = 20% 느리게. -->
       <video class="hero_panel_video" src="assets/main/hero/bespoke.mp4" data-playback-rate="0.75" muted loop playsinline preload="none" aria-hidden="true"></video>
       <div class="hero_panel_body">
@@ -101,7 +101,7 @@
                    assets/main/hero/hero_shop4_1600.jpg 1600w,
                    assets/main/hero/hero_shop4_web.jpg 3072w"
            sizes="100vw"
-           fetchpriority="high" alt="A model wearing an everyday modern hanbok in soft daylight">
+           fetchpriority="high" alt="A model wearing an everyday modern hanbok in soft daylight" width="1024" height="808">
       <video class="hero_panel_video" src="assets/main/hero/shop.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <div class="hero_panel_body">
         <h2 class="hero_panel_title">Tchai Kim</h2>
@@ -141,7 +141,7 @@
        .detail_pin이 배경 없는 요소라 판정이 흔들립니다. 여기서 검정으로 못박습니다. -->
   <section class="detail" data-header-theme="black" aria-labelledby="detail_title">
     <header class="detail_head common_container">
-      <h2 class="detail_title" id="detail_title">Traditional motifs,<br>reimagined</h2>
+      <h2 class="detail_title" id="detail_title">Traditional motifs,<br> reimagined</h2>
       <p class="detail_subtitle">A Joseon-era silhouette, reinterpreted into modern fashion through Tchai Kim's own hand.</p>
     </header>
 
@@ -161,7 +161,7 @@
            바꾸지만, 스크립트가 없어도 이 초기값 덕분에 Collar 설명이 그대로 보입니다.
            스크롤 연출에서는 이 속성을 쓰는 규칙이 없어 아무 영향이 없습니다. -->
       <div class="detail_stage" data-active-part="collar">
-        <img loading="lazy" decoding="async" class="detail_img" src="assets/main/detail/img.webp" alt="A Joseon-era cheollik robe laid flat with its sleeves spread wide">
+        <img loading="lazy" decoding="async" class="detail_img" src="assets/main/detail/img.webp" alt="A Joseon-era cheollik robe laid flat with its sleeves spread wide" width="4380" height="1905">
 
         <!-- 돋보기가 들를 네 지점. 스크롤 연출에서만 보이며, 눌리는 요소가 아니라
              표식이라 읽기 도구에서는 감춥니다 — 같은 내용을 아래 설명이 글로 전합니다.
@@ -210,12 +210,12 @@
              background-position을 매 프레임 바꿨는데, 그건 합성만으로 처리되지 않아
              확대된 사진 전체를 다시 칠하게 만들어 스크롤이 버벅였습니다. -->
         <div class="detail_lens" aria-hidden="true">
-          <img class="detail_lens_img detail_lens_base" src="assets/main/detail/img.webp" alt="" loading="lazy" decoding="async">
+          <img class="detail_lens_img detail_lens_base" src="assets/main/detail/img.webp" alt="" loading="lazy" decoding="async" width="4380" height="1905">
           <span class="detail_lens_crop_matte"></span>
-          <img class="detail_lens_crop" data-part="collar" src="assets/main/detail/collar/zoom_upscale.webp" alt="" loading="lazy" decoding="async">
-          <img class="detail_lens_crop" data-part="sleeve" src="assets/main/detail/sleeve/zoom_upscale.webp" alt="" loading="lazy" decoding="async">
-          <img class="detail_lens_crop" data-part="body" src="assets/main/detail/body/zoom_upscale.webp" alt="" loading="lazy" decoding="async">
-          <img class="detail_lens_crop" data-part="skirt" src="assets/main/detail/skirt/zoom_upscale.webp" alt="" loading="lazy" decoding="async">
+          <img class="detail_lens_crop" data-part="collar" src="assets/main/detail/collar/zoom_upscale.webp" alt="" loading="lazy" decoding="async" width="640" height="640">
+          <img class="detail_lens_crop" data-part="sleeve" src="assets/main/detail/sleeve/zoom_upscale.webp" alt="" loading="lazy" decoding="async" width="600" height="600">
+          <img class="detail_lens_crop" data-part="body" src="assets/main/detail/body/zoom_upscale.webp" alt="" loading="lazy" decoding="async" width="600" height="600">
+          <img class="detail_lens_crop" data-part="skirt" src="assets/main/detail/skirt/zoom_upscale.webp" alt="" loading="lazy" decoding="async" width="600" height="600">
         </div>
       </div>
     </div>
@@ -224,15 +224,15 @@
   <!-- brand_story — 글과 배너를 한 덩어리로 읽히게 검은 배경이 배너까지 감쌉니다 -->
   <section class="brand_story">
     <div class="brand_story_textbox">
-      <h2 class="brand_story_title">One house,<br>two ways of wearing hanbok</h2>
+      <h2 class="brand_story_title">One house,<br> two ways of wearing hanbok</h2>
       <p class="brand_story_desc">Tchai Kim is ready-to-wear, Tchai Kim Youngjin is bespoke — two expressions of the same aesthetic</p>
       <a class="brand_story_link" href="../brand/index.html">
         Discover Our Story
-        <img loading="lazy" decoding="async" class="brand_story_link_icon" src="assets/icons/arrow_right_white.svg" alt="">
+        <img loading="lazy" decoding="async" class="brand_story_link_icon" src="assets/icons/arrow_right_white.svg" alt="" width="26" height="26">
       </a>
     </div>
     <img loading="lazy" decoding="async" class="brand_story_banner" src="assets/main/banner.webp"
-         alt="A man in a hanbok coat walking past a large ink landscape painting in a gallery">
+         alt="A man in a hanbok coat walking past a large ink landscape painting in a gallery" width="1024" height="384">
   </section>
 
   <!-- 브랜드 분기 — 스크롤에 따라 두 이름이 중앙에서 나타난 뒤 좌우로 벌어지고,
@@ -250,11 +250,11 @@
                SSIM 0.988~0.999 / PSNR 42~47dB), 원본은 전부 그대로 있습니다.
                scarf·coat는 크기는 그대로 두고 PNG → JPEG 변환만 했습니다(알파 없음).
                shop 폴더의 원본 PNG는 shop 페이지가 쓰고 있어 건드리지 않았습니다. -->
-          <li class="brand_collage_card is_size_sm is_dim is_ready"><img loading="lazy" decoding="async" src="../shop/assets/images/scarf_web.jpg" alt=""></li>
-          <li class="brand_collage_card is_size_lg is_ready"><img loading="lazy" decoding="async" src="../shop/assets/images/coat_web.jpg" alt=""></li>
+          <li class="brand_collage_card is_size_sm is_dim is_ready"><img loading="lazy" decoding="async" src="../shop/assets/images/scarf_web.jpg" alt="" width="960" height="1200"></li>
+          <li class="brand_collage_card is_size_lg is_ready"><img loading="lazy" decoding="async" src="../shop/assets/images/coat_web.jpg" alt="" width="1024" height="1024"></li>
           <li class="brand_collage_group_title is_bespoke">Tchai Kim Youngjin</li>
-          <li class="brand_collage_card is_size_lg is_bespoke"><img loading="lazy" decoding="async" src="assets/main/brand/brand_06/kyj1_c.webp" alt=""></li>
-          <li class="brand_collage_card is_size_sm is_dim is_bespoke"><img loading="lazy" decoding="async" src="assets/main/brand/brand_06/kyj2_c.webp" alt=""></li>
+          <li class="brand_collage_card is_size_lg is_bespoke"><img loading="lazy" decoding="async" src="assets/main/brand/brand_06/kyj1_c.webp" alt="" width="560" height="764"></li>
+          <li class="brand_collage_card is_size_sm is_dim is_bespoke"><img loading="lazy" decoding="async" src="assets/main/brand/brand_06/kyj2_c.webp" alt="" width="560" height="706"></li>
         </ul>
       </div>
       <p class="brand_collage_name">
@@ -326,7 +326,7 @@
         </div>
         <figure class="promo_figure">
           <img loading="lazy" decoding="async" class="promo_img" src="assets/main/bespoke/younjinimg.webp"
-               alt="Hand-painted silk hanbok pieces laid out in the atelier">
+               alt="Hand-painted silk hanbok pieces laid out in the atelier" width="1454" height="912">
         </figure>
       </div>
     </div>
@@ -342,7 +342,7 @@
       <div class="promo promo_shop">
         <figure class="promo_figure">
           <img loading="lazy" decoding="async" class="promo_img" src="assets/main/shop/img.webp"
-               alt="A model in a Tchai Kim vest and skirt seated by a window">
+               alt="A model in a Tchai Kim vest and skirt seated by a window" width="1454" height="912">
         </figure>
         <div class="promo_text">
           <h2 class="promo_title" id="promo_shop_title">Tchai Kim</h2>
@@ -357,21 +357,21 @@
         </div>
       </div>
 
-      <div class="shop_products_viewport" role="region" aria-label="Featured products carousel">
+      <div class="shop_products_viewport" role="region" aria-label="Featured products carousel" tabindex="0">
         <div class="shop_products_track">
           <ul class="shop_products">
-            <li class="shop_product is_dim"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look1.webp" alt="A Tchai Kim look, faded"></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look2.webp" alt="A blue silk ruffled vest dress"></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look3.webp" alt="A taupe long coat"></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look4.webp" alt="A pair of olive green wide trousers"></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look5.webp" alt="A white eyelet cotton dress"></a></li>
+            <li class="shop_product is_dim"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look1.webp" alt="A Tchai Kim look, faded" width="469" height="625"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look2.webp" alt="A blue silk ruffled vest dress" width="556" height="694"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look3.webp" alt="A taupe long coat" width="482" height="616"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look4.webp" alt="A pair of olive green wide trousers" width="496" height="622"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look5.webp" alt="A white eyelet cotton dress" width="524" height="774"></a></li>
           </ul>
           <ul class="shop_products" aria-hidden="true">
-            <li class="shop_product is_dim"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look1.webp" alt=""></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look2.webp" alt=""></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look3.webp" alt=""></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look4.webp" alt=""></a></li>
-            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look5.webp" alt=""></a></li>
+            <li class="shop_product is_dim"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look1.webp" alt="" width="469" height="625"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look2.webp" alt="" width="556" height="694"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look3.webp" alt="" width="482" height="616"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look4.webp" alt="" width="496" height="622"></a></li>
+            <li class="shop_product"><a class="shop_product_link" href="../shop_detail/index.html" tabindex="-1"><img loading="lazy" decoding="async" src="assets/main/shop/shop_look5.webp" alt="" width="524" height="774"></a></li>
           </ul>
         </div>
       </div>
@@ -396,18 +396,18 @@
       </div>
 
       <ul class="collection_row">
-        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg2_c.webp" alt="Five models in white hanbok-inspired gowns"></li>
-        <li class="collection_item is_size_bts"><img loading="lazy" decoding="async" src="assets/main/collection/colimg3_c.webp" alt="Seven members of a band in blue and grey hanbok"></li>
-        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg6_c.webp" alt="A woman wearing a pale pink hanbok among pine trees"></li>
-        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg8_c.webp" alt="A woman wearing a white sheer hanbok for an editorial portrait"></li>
-        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg9_c.webp" alt="Five women wearing black and white contemporary hanbok"></li>
-        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg10_c.webp" alt="Two women wearing white contemporary hanbok against a black background"></li>
-        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg11_c.webp" alt="A man wearing a grey hanbok in a moonlit portrait"></li>
-        <li class="collection_item is_size_bts"><img loading="lazy" decoding="async" src="assets/main/collection/colimg12_c.webp" alt="Five women wearing pastel hanbok at a traditional house"></li>
-        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg13_c.webp" alt="Five women wearing pastel hanbok on a wooden porch"></li>
-        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg14_c.webp" alt="A woman wearing a blue and white hanbok outdoors"></li>
-        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg15_c.webp" alt="A woman wearing a grey hanbok in a shaded garden"></li>
-        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg16_c.webp" alt="A woman framed by an ivory pleated veil"></li>
+        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg2_c.webp" alt="Five models in white hanbok-inspired gowns" width="640" height="800"></li>
+        <li class="collection_item is_size_bts"><img loading="lazy" decoding="async" src="assets/main/collection/colimg3_c.webp" alt="Seven members of a band in blue and grey hanbok" width="640" height="960"></li>
+        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg6_c.webp" alt="A woman wearing a pale pink hanbok among pine trees" width="640" height="800"></li>
+        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg8_c.webp" alt="A woman wearing a white sheer hanbok for an editorial portrait" width="640" height="800"></li>
+        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg9_c.webp" alt="Five women wearing black and white contemporary hanbok" width="640" height="800"></li>
+        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg10_c.webp" alt="Two women wearing white contemporary hanbok against a black background" width="640" height="800"></li>
+        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg11_c.webp" alt="A man wearing a grey hanbok in a moonlit portrait" width="580" height="870"></li>
+        <li class="collection_item is_size_bts"><img loading="lazy" decoding="async" src="assets/main/collection/colimg12_c.webp" alt="Five women wearing pastel hanbok at a traditional house" width="640" height="360"></li>
+        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg13_c.webp" alt="Five women wearing pastel hanbok on a wooden porch" width="468" height="656"></li>
+        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg14_c.webp" alt="A woman wearing a blue and white hanbok outdoors" width="640" height="962"></li>
+        <li class="collection_item is_size_md"><img loading="lazy" decoding="async" src="assets/main/collection/colimg15_c.webp" alt="A woman wearing a grey hanbok in a shaded garden" width="640" height="640"></li>
+        <li class="collection_item is_size_lg"><img loading="lazy" decoding="async" src="assets/main/collection/colimg16_c.webp" alt="A woman framed by an ivory pleated veil" width="640" height="640"></li>
       </ul>
 
       <div class="collection_bottom">
@@ -431,8 +431,8 @@
         <p class="closing_desc">Every difference makes the finest cloth</p>
       </div>
       <div class="closing_icons">
-        <img loading="lazy" decoding="async" class="closing_icon closing_icon_people" src="assets/main/closing/people.webp" alt="" aria-hidden="true">
-        <img loading="lazy" decoding="async" class="closing_icon closing_icon_dog" src="assets/main/closing/dog.webp" alt="" aria-hidden="true">
+        <img loading="lazy" decoding="async" class="closing_icon closing_icon_people" src="assets/main/closing/people.webp" alt="" aria-hidden="true" width="226" height="293">
+        <img loading="lazy" decoding="async" class="closing_icon closing_icon_dog" src="assets/main/closing/dog.webp" alt="" aria-hidden="true" width="113" height="80">
       </div>
     </div>
   </section>
@@ -448,6 +448,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
-<script src="js/main.js?v=31"></script>
+<script src="js/main.js?v=32"></script>
 </body>
 </html>

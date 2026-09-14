@@ -2269,398 +2269,284 @@
    responsive — 1920px 데스크톱 규칙은 유지하고 작은 화면에서만 재배치
    ========================================================= */
 
-@media (max-width: 1279px) {
-  .brand_stack_copy {
-    grid-template-columns: minmax(0, 1fr) minmax(340px, 38vw) minmax(0, 1fr);
-    column-gap: clamp(28px, 3.5vw, 44px);
-    padding: clamp(64px, 8vh, 88px) 48px;
-  }
-
-  .brand_stack_intro,
-  .brand_stack_statement {
-    width: 100%;
-    font-size: clamp(13px, 1.5vw, 18px);
-  }
-
-  .brand_stack_title {
-    width: 100%;
-    font-size: clamp(26px, 3.2vw, 40px);
-  }
-
-  .brand_stack_description {
-    width: 100%;
-  }
-
-  .brand_stack_count {
-    width: clamp(64px, 6vw, 76px);
-  }
-
-  .brand_stack_action {
-    width: min(220px, 100%);
-  }
-
-  .detail_stage {
-    width: 86%;
-    margin-left: 7%;
-  }
-
-  .promo {
-    gap: 32px;
-  }
-
-  .promo_bespoke_wrap {
-    margin-top: clamp(160px, 32vw, 420px);
-  }
-
-  .shop_products_track {
-    /* 1024~1279px에서 최종 적용 — 위의 데스크톱 간격을 덮어씁니다. */
-    --shop_products_gap: 48px;
-  }
-
-  .collection_row {
-    gap: 20px;
-  }
+/* MAIN responsive compositions. Desktop motion geometry above remains unchanged.
+   A static gallery is also the readable fallback for reduced motion / no GSAP. */
+.collection_row:not(.is_perspective_ready) {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  gap: 36px 24px;
+  width: 100%;
+  margin-inline: 0;
+  overflow: visible;
+}
+.collection_row:not(.is_perspective_ready) .collection_item {
+  grid-column: span 4;
+  width: 100%;
+  border-radius: 0;
+}
+.collection_row:not(.is_perspective_ready) .collection_item img {
+  width: 100%;
+  height: auto;
 }
 
-@media (max-width: 1023px) {
-  .brand_word_pin {
-    padding: 32px 0;
+@media (max-width: 1279px) {
+  .hero_panel_shop .hero_panel_img {
+    object-position: 54% center;
+    transform: none;
   }
-
+  .hero_panel_video { display: none; }
+  .hero_panel_bespoke::before {
+    inset: 0;
+    height: auto;
+    background: linear-gradient(180deg, rgba(0,0,0,.28), transparent 22%, transparent 46%, rgba(0,0,0,.56));
+  }
+  .model, .model_container { min-height: 0; }
+  .model { padding: 96px 0 48px; }
+  .model_figure { width: 100%; margin: 0; }
+  .model_video { aspect-ratio: 544 / 720; height: auto; mix-blend-mode: multiply; }
+  .model_text { align-items: flex-start; text-align: left; }
+  .model_title { text-align: left; }
+  .model_desc, .detail_subtitle, .brand_story_desc, .promo_desc, .collection_desc {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .detail { padding: 64px 0 88px; gap: 44px; }
+  .detail_subtitle { max-width: 46ch; }
+  .detail:not(.is_scroll_ready) .detail_stage {
+    width: calc(100% - var(--layout_gutter) * 2);
+    margin-inline: auto;
+  }
+  .detail_part_tab { min-height: 44px; }
+  .detail_part_title { font-size: 32px; line-height: 1.2; }
+  .detail_part_lead { font-size: 18px; }
+  .detail_part_desc { font-size: 16px; line-height: 1.65; }
+  .brand_story_textbox { padding: 64px var(--layout_gutter) 36px; gap: 20px; }
+  .brand_story_desc { max-width: 48ch; }
+  .brand_story_link { min-height: 44px; font-size: 12px; }
+  .brand_word_pin { padding: 0; }
   .brand_collage {
-    flex-direction: column;
-    min-height: auto;
-    padding: 72px var(--layout_gutter);
+    display: block;
+    min-height: 0;
+    padding: 88px var(--layout_gutter) 0;
+    overflow: visible;
   }
-
-  .brand_collage_cards {
-    order: 2;
-    max-width: 680px;
-  }
-
+  .brand_collage_cards { max-width: 1040px; margin-inline: auto; }
   .brand_collage_row {
-    flex-wrap: wrap;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
   }
-
   .brand_collage_group_title {
     display: block;
-    flex: 0 0 100%;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    width: auto;
+    padding: 0;
+    border: 0;
     font-family: var(--font_display);
-    font-size: clamp(30px, 5vw, 46px);
-    line-height: 1.15;
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
     text-align: left;
   }
-
-  .brand_collage_group_title.is_bespoke {
-    order: 1;
+  .brand_collage_group_title.is_bespoke { grid-column: 1 / 9; grid-row: 1; }
+  .brand_collage_group_title.is_ready { grid-column: 7 / 13; grid-row: 5; align-self: end; }
+  .brand_collage_card, .brand_collage_card.is_size_sm {
+    width: 100%; max-width: none; aspect-ratio: 3 / 4;
   }
-
-  .brand_collage_card.is_bespoke {
-    order: 2;
-  }
-
-  .brand_collage_group_title.is_ready {
-    order: 3;
-    margin-top: 40px;
-  }
-
-  .brand_collage_card.is_ready {
-    order: 4;
-  }
-
-  .brand_collage_card,
-  .brand_collage_card.is_size_sm {
-    width: calc(50% - 8px);
-    max-width: 260px;
-  }
-
-  .brand_collage_name {
-    display: none;
-  }
-
-  .brand_stack_copy {
-    display: none;
-  }
-
-  /* 이 폭에서는 스크롤 연출을 걸지 않습니다(js/main.js가 1024px 이상에서만
-     .is_scroll_ready를 붙입니다). 버튼 방식 레이아웃은 기본 규칙에 있고,
-     여기서는 섹션 여백만 좁힙니다. */
-  .detail {
-    gap: 36px;
-    padding: 80px 0;
-  }
-
-  .promo {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  .promo_text,
-  .promo_figure {
-    flex: none;
-    width: 100%;
-    max-width: none;
-  }
-
-  .promo_bespoke,
-  .promo_shop {
-    padding: 80px 0;
-  }
-
-  .promo_bespoke .promo_text,
-  .promo_shop .promo_text {
-    margin-top: 0;
-  }
-
-  .promo_shop .promo_text {
-    order: -1;
-  }
-
-  .promo_media {
-    aspect-ratio: 16 / 10;
-  }
-
-  .shop {
-    margin-top: clamp(96px, 14vw, 160px);
-    padding-bottom: 96px;
-  }
-
-  .shop_products_track {
-    /* 1023px 이하에서 적용 — 1279px 규칙보다 아래라 이 값이 최종 승리합니다. */
-    --shop_products_gap: 36px;
-  }
-
-  .shop_product {
-    flex-basis: clamp(150px, 24vw, 200px);
-  }
-
-  .collection {
-    padding: 96px 0;
-  }
-
-  .collection_row {
-    justify-content: flex-start;
-    gap: 24px;
+  .brand_collage_card.is_bespoke.is_size_lg { grid-column: 1 / 8; grid-row: 2 / 5; }
+  .brand_collage_card.is_bespoke.is_size_sm { grid-column: 9 / 13; grid-row: 2 / 4; }
+  .brand_collage_card.is_ready.is_size_lg { grid-column: 7 / 10; grid-row: 6; }
+  .brand_collage_card.is_ready.is_size_sm { grid-column: 10 / 13; grid-row: 6; }
+  .brand_collage_name, .brand_stack_copy { display: none; }
+  .promo_bespoke_wrap { margin-top: 96px; }
+  .promo_media { width: 90%; margin-inline: auto; aspect-ratio: 16 / 9; }
+  .promo { gap: 40px; }
+  .promo_bespoke { padding: 64px 0 48px; }
+  .promo_shop { padding: 64px 0 0; }
+  .promo_bespoke .promo_text, .promo_shop .promo_text { margin-top: 0; max-width: none; }
+  .promo_title { margin-bottom: 24px; font-size: clamp(30px, 3.5vw, 42px); line-height: 1.2; }
+  .promo_lead_group { gap: 12px; margin-bottom: 28px; }
+  .promo_lead { font-size: 19px; line-height: 1.55; }
+  .promo_desc { max-width: 42ch; }
+  .shop { margin-top: 64px; padding-bottom: 96px; }
+  .shop_products_viewport {
     overflow-x: auto;
-    padding: 0 var(--layout_gutter) 16px;
-    scroll-padding-inline: var(--layout_gutter);
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    width: 100%;
+    margin: 72px 0 0;
+    padding-bottom: 16px;
+    cursor: auto;
+    touch-action: pan-x pan-y;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color_border) transparent;
   }
+  .shop_products_track { --shop_products_gap: 32px; animation: none; will-change: auto; }
+  .shop_products[aria-hidden="true"] { display: none; }
+  .shop_product { flex-basis: clamp(160px, 20vw, 220px); scroll-snap-align: start; }
+  .shop_product.is_dim { opacity: 1; }
+  .collection { padding: 88px 0 80px; text-align: left; overflow: visible; }
+  .collection_container { align-items: stretch; --collection_gap_title_links: 28px; --collection_gap_links_stage: 52px; --collection_gap_stage_bottom: 40px; }
+  .collection_title { font-size: clamp(32px, 4.2vw, 48px); line-height: 1.25; text-align: left; }
+  .collection_links { justify-content: flex-start; gap: 24px 48px; }
+  .collection_row:not(.is_perspective_ready) { gap: 40px 24px; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(1) { grid-column: span 6; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(2),
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(3),
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(7),
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(9) { grid-column: span 3; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(8) { grid-column: span 6; }
+  .collection_bottom { align-items: flex-start; }
+  .collection_desc { max-width: 48ch; font-weight: 400; letter-spacing: 0; }
+  .collection_desc br { display: none; }
+  .closing { padding: 96px 0 72px; }
+  .closing_title { font-size: clamp(32px, 4.5vw, 48px); line-height: 1.3; }
+  .closing_desc { font-size: 17px; line-height: 1.65; }
+  .closing_inner { gap: 40px; }
+  .closing_icon_people { width: 160px; }
+  .closing_icon_dog { width: 96px; }
+  /* Real 44px controls: never turn the underline pseudo-element into a solid hit box. */
+  .main_button { min-height: 44px; }
+}
 
-  .collection_row::-webkit-scrollbar {
-    display: none;
-  }
-
-  .collection_item,
-  .collection_item.is_size_md,
-  .collection_item.is_size_bts {
-    flex: 0 0 min(38vw, 320px);
-    scroll-snap-align: center;
-  }
-
-  .collection_links {
-    gap: 24px 64px;
-  }
-
-  .closing {
-    padding: 100px 0;
-  }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero_panel { min-height: 680px; height: min(92svh, 880px); }
+  .hero_panel_bespoke { width: 54%; }
+  .hero_panel_shop { width: 46%; }
+  .hero_panel_body { left: 32px; right: 28px; bottom: 48px; }
+  .hero_panel_title { font-size: clamp(27px, 3.35vw, 40px); line-height: 1.2; }
+  .hero_panel_desc { font-size: 16px; line-height: 1.6; max-width: 28ch; }
+  .hero_panel_button { min-height: 44px; margin-top: 24px; font-size: 14px; }
+  .model_container { display: grid; grid-template-columns: .95fr 1.05fr; gap: 36px; align-items: center; }
+  .model_figure { max-width: 420px; }
+  .model_text { gap: 20px; }
+  .model_title { font-size: clamp(32px, 4vw, 46px); line-height: 1.2; }
+  .model_desc { max-width: 36ch; }
+  .detail_head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+  .detail_title { font-size: clamp(34px, 4.2vw, 48px); line-height: 1.2; }
+  .detail:not(.is_scroll_ready) .detail_stage { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; width: 86%; }
+  .detail_img { grid-column: 1 / -1; }
+  .detail_parts { align-self: start; margin-top: 0; gap: 8px; }
+  .detail:not(.is_scroll_ready) .detail_text { margin-top: 0; min-height: 155px; }
+  .brand_story_title { max-width: 22ch; font-size: clamp(36px, 4.5vw, 50px); line-height: 1.25; }
+  .brand_story_banner { aspect-ratio: 2.65; }
+  .promo { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; }
+  .promo_figure, .promo_text { width: 100%; }
+  .promo_bespoke .promo_figure { width: 84%; margin-left: auto; }
+  .promo_shop { grid-template-columns: 1.15fr .85fr; }
+  .promo_shop .promo_figure { width: 100%; }
+  .promo_shop .promo_title { text-transform: none; }
 }
 
 @media (max-width: 767px) {
-  .hero_panel {
-    min-height: 560px;
-    height: 80svh;
+  /* Two entrances, two scales: full-bleed couture and an inset ready-to-wear portrait. */
+  .hero { display: block; }
+  .hero_panel_bespoke { min-height: 540px; height: min(156vw, 680px); }
+  .hero_panel_body { left: 24px; right: 24px; bottom: 36px; }
+  .hero_panel_title { font-size: clamp(28px, 8.2vw, 35px); line-height: 1.2; }
+  .hero_panel_desc { font-size: 15px; line-height: 1.65; max-width: 28ch; }
+  .hero_panel_button { min-height: 44px; margin-top: 20px; padding: 10px 16px; font-size: 14px; }
+  .hero_panel_shop {
+    width: 86%; min-height: 0; height: auto;
+    margin: 32px 0 0 auto;
+    overflow: visible;
   }
+  .hero_panel_shop .hero_panel_img { position: static; height: auto; width: 100%; }
+  .hero_panel_shop .hero_panel_body { position: static; padding: 24px 24px 0 0; }
+  .hero_panel_shop .hero_panel_title, .hero_panel_shop .hero_panel_desc { color: var(--color_text); text-shadow: none; }
+  .hero_panel_shop .hero_panel_button { color: var(--color_point); border-color: var(--color_point); }
+  .hero_panel_shop::before, .hero_panel_shop::after { display: none; }
+  .model { padding: 80px 0 32px; }
+  .model_container { gap: 28px; padding-inline: var(--layout_gutter); align-items: stretch; }
+  .model_figure { width: 76vw; max-width: 330px; margin-inline: auto; }
+  .model_text { max-width: 32ch; gap: 16px; margin-left: 5%; }
+  .model_title { font-size: clamp(28px, 7.7vw, 34px); line-height: 1.25; text-align: left; }
+  .model_desc, .detail_subtitle, .brand_story_desc, .promo_desc, .collection_desc {
+    font-size: 15px; line-height: 1.7;
+  }
+  .detail { padding: 48px 0 72px; gap: 32px; }
+  .detail_head { gap: 20px; }
+  .detail_title, .brand_story_title, .promo_title, .collection_title {
+    font-size: clamp(28px, 8.2vw, 35px); line-height: 1.25;
+  }
+  .detail_title { max-width: 15ch; }
+  .detail_title br { display: none; }
+  .detail_subtitle { max-width: 34ch; }
+  .detail:not(.is_scroll_ready) .detail_stage { width: calc(100% - var(--layout_gutter) * 2); margin-top: 0; }
+  .detail_parts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 28px; }
+  .detail:not(.is_scroll_ready) .detail_parts { display: grid; }
+  .detail_part_tab { padding: 10px 6px; font-size: 13px; }
+  .detail:not(.is_scroll_ready) .detail_text { margin-top: 28px; min-height: 142px; max-width: 34ch; }
+  .detail_part_title { font-size: 28px; margin-bottom: 4px; }
+  .detail_part_lead { font-size: 17px; }
+  .detail_part_desc { font-size: 15px; line-height: 1.7; }
+  .brand_story_textbox { padding: 56px var(--layout_gutter) 32px; gap: 24px; }
+  .brand_story_title { max-width: 17ch; }
+  .brand_story_title br { display: none; }
+  .brand_story_desc { max-width: 34ch; }
+  .brand_story_banner { min-height: 0; height: auto; aspect-ratio: 2.1; object-position: 68% center; }
+  .brand_collage { padding: 72px var(--layout_gutter) 0; }
+  .brand_collage_row { gap: 20px 14px; }
+  .brand_collage_group_title { font-size: clamp(26px, 7.2vw, 32px); line-height: 1.2; }
+  .brand_collage_group_title.is_bespoke { grid-column: 1 / 13; grid-row: 1; }
+  .brand_collage_card.is_bespoke.is_size_lg { grid-column: 1 / 11; grid-row: 2; }
+  .brand_collage_card.is_bespoke.is_size_sm { grid-column: 7 / 13; grid-row: 3; margin-top: 4px; }
+  .brand_collage_group_title.is_ready { grid-column: 1 / 13; grid-row: 4; margin-top: 24px; }
+  .brand_collage_card.is_ready.is_size_lg { grid-column: 1 / 8; grid-row: 5; }
+  .brand_collage_card.is_ready.is_size_sm { grid-column: 8 / 13; grid-row: 5; align-self: end; }
+  .promo_bespoke_wrap { margin-top: 80px; }
+  .promo_media { width: 86%; margin-left: 0; margin-right: auto; aspect-ratio: 4 / 5; }
+  .promo_media_video { object-position: center; }
+  .promo { display: flex; flex-direction: column; gap: 32px; }
+  .promo_bespoke, .promo_shop { padding: 36px 0 0; }
+  .promo .promo_text, .promo .promo_figure { flex: none; }
+  .promo .promo_text { width: 100%; max-width: 34ch; }
+  .promo_title { max-width: 17ch; margin-bottom: 24px; }
+  .promo_lead_group { margin-bottom: 20px; gap: 12px; }
+  .promo_lead { font-size: 17px; line-height: 1.6; }
+  .promo_figure { width: 64%; max-width: 320px; align-self: flex-end; }
+  .shop { margin-top: 88px; padding-bottom: 72px; }
+  .shop .promo_media { width: 82%; margin-left: auto; margin-right: 0; }
+  .promo_shop .promo_text { order: 0; }
+  .promo_shop .promo_figure { order: 1; width: 80%; align-self: flex-start; }
+  .shop_products_viewport { margin-top: 48px; }
+  .shop_products_track { --shop_products_gap: 24px; }
+  .shop_product { flex-basis: 42vw; }
+  .collection { padding: 64px 0; }
+  .collection_container { --collection_gap_title_links: 24px; --collection_gap_links_stage: 40px; --collection_gap_stage_bottom: 32px; }
+  .collection_title { max-width: 20ch; }
+  .collection_links { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .collection_links .main_button { font-size: 14px; }
+  /* Keep two-column details, but introduce a larger opening portrait and a wide group. */
+  .collection_row:not(.is_perspective_ready) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(n) { grid-column: span 1; width: 100%; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(1) { grid-column: 1 / -1; width: 88%; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(8) { grid-column: 1 / -1; width: 94%; justify-self: end; }
+  .collection_row:not(.is_perspective_ready) .collection_item:nth-child(12) { grid-column: 1 / -1; width: 58%; margin-top: 4px; }
+  .collection_desc { max-width: 34ch; }
+  .closing { padding: 80px 0 64px; }
+  .closing_inner { align-items: stretch; gap: 32px; }
+  .closing_head { align-items: flex-start; text-align: left; gap: 20px; }
+  .closing_title { max-width: 14ch; font-size: clamp(32px, 9vw, 40px); line-height: 1.25; }
+  .closing_desc { max-width: 30ch; font-size: 15px; line-height: 1.7; }
+  .closing_icons { justify-content: flex-end; }
+  .closing_icon_people { width: 112px; }
+  .closing_icon_dog { width: 68px; }
+}
 
-  .hero_panel_body {
-    bottom: 120px;
-  }
+/* Fine hover only. Touch links keep their underline and have a genuine 44px box. */
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .main_button:hover, .brand_stack_action:hover { transform: none; }
+  .main_button:hover .main_button_arrow { transform: none; }
+  .main_button::after { transition: none; }
+}
 
-  .hero_panel_title {
-    font-size: clamp(32px, 10vw, 44px);
-  }
-
-  .hero_panel_desc {
-    font-size: 16px;
-  }
-
-  .hero_panel_button {
-    margin-top: 24px;
-    font-size: 16px;
-  }
-
-  .model_container {
-    padding-inline: var(--layout_gutter);
-  }
-
-  .model_title {
-    font-size: clamp(30px, 10vw, 42px);
-    text-align: center;
-  }
-
-  .brand_story_textbox {
-    padding: 56px var(--layout_gutter) 24px;
-  }
-
-  .brand_story_title,
-  .detail_title,
-  .promo_title,
-  .collection_title {
-    font-size: clamp(32px, 10vw, 44px);
-  }
-
-  .brand_story_banner {
-    min-height: 240px;
-  }
-
-  .brand_collage {
-    padding: 56px var(--layout_gutter);
-  }
-
-  .brand_collage_row {
-    gap: 10px;
-  }
-
-  .brand_collage_group_title {
-    padding-bottom: 10px;
-    font-size: clamp(28px, 9vw, 38px);
-  }
-
-  .brand_collage_group_title.is_ready {
-    margin-top: 32px;
-  }
-
-  .brand_collage_card,
-  .brand_collage_card.is_size_sm {
-    width: calc(50% - 5px);
-  }
-
-  .detail {
-    padding: 64px 0;
-  }
-
-  .detail_head {
-    gap: 12px;
-  }
-
-  .detail_subtitle,
-  .promo_desc,
-  .collection_desc {
-    font-size: 16px;
-  }
-
-  /* 기본 규칙이 .detail:not(.is_scroll_ready) .detail_stage로 걸려 있어
-     선택자를 맞춰야 덮을 수 있습니다(우선순위 문제 — !important 대신). */
-  .detail:not(.is_scroll_ready) .detail_stage {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .promo_bespoke_wrap {
-    margin-top: 120px;
-  }
-
-  .promo_media {
-    aspect-ratio: 4 / 5;
-  }
-
-  .promo_bespoke,
-  .promo_shop {
-    padding: 64px 0;
-  }
-
-  .promo_title {
-    margin-bottom: 24px;
-  }
-
-  .promo_lead_group {
-    margin-bottom: 36px;
-  }
-
-  /* .promo_link는 공통 버튼(.main_button)이 되면서 이 목록에서 빠졌습니다 —
-     collection 쪽 버튼과 같은 크기를 유지해야 하기 때문입니다. */
-  .promo_lead {
-    font-size: 18px;
-  }
-
-  .shop {
-    margin-top: 96px;
-    padding-bottom: 72px;
-  }
-
-  .shop_products_viewport {
-    margin-top: 64px;
-  }
-
-  .shop_products_track {
-    /* 모바일에서 적용되는 최종 간격입니다. */
-    --shop_products_gap: 24px;
-  }
-
-  .shop_product {
-    flex-basis: 140px;
-  }
-
-  .collection {
-    padding: 72px 0;
-  }
-
-  .collection_container {
-    --collection_gap_title_links: 40px;
-    --collection_gap_links_stage: 40px;
-    --collection_gap_stage_bottom: 40px;
-  }
-
-  /* 이 폭에는 줌이 걸리지 않지만, full-bleed 계산을 한 가지로 통일해 둡니다 */
-  .collection_row {
-    width: var(--full_bleed_width);
-    margin-inline: calc(50% - var(--full_bleed_width) / 2);
-  }
-
-  .collection_item,
-  .collection_item.is_size_md,
-  .collection_item.is_size_bts {
-    flex-basis: 72vw;
-  }
-
-  .collection_desc br {
-    display: none;
-  }
-
-  .collection_links {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .closing {
-    padding: 72px 0;
-  }
-
-  .closing_inner {
-    gap: 40px;
-  }
-
-  .closing_title {
-    font-size: clamp(36px, 12vw, 48px);
-    line-height: 1.25;
-  }
-
-  .closing_icons {
-    justify-content: center;
-  }
-
-  .closing_icon_people {
-    width: 140px;
-  }
-
-  .closing_icon_dog {
-    width: 84px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  /* Stopping the marquee must not make its remaining products unreachable. */
+  .shop_products_viewport { overflow-x: auto; cursor: auto; touch-action: pan-x pan-y; }
+  .shop_products_track { animation: none; will-change: auto; }
+  .shop_products[aria-hidden="true"] { display: none; }
+  .shop_product.is_dim { opacity: 1; }
 }
 
 /* ============================================================================
@@ -2678,27 +2564,4 @@
 .detail_subtitle,
 .brand_story_desc {
   max-width: var(--width_reading);
-}
-
-
-/* PHASE 4 — Main: 터치 영역 (2026-09-13)
-   .brand_story_link(193×21) · .main_button(140×41)이 44px에 못 미쳤습니다.
-   두 요소 모두 위아래로 20px 이상 떨어져 있어(실측) 44px 판을 깔아도
-   이웃과 겹치지 않습니다. 보이는 크기는 그대로입니다. */
-@media (max-width: 1279px), (pointer: coarse) {
-  .brand_story_link,
-  .main_button {
-    position: relative;
-  }
-
-  .brand_story_link::after,
-  .main_button::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: max(100%, var(--touch_target));
-    height: max(100%, var(--touch_target));
-    transform: translate(-50%, -50%);
-    content: "";
-  }
 }
