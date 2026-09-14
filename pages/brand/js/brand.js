@@ -1483,6 +1483,12 @@ REVEAL_CLOSED_HEIGHT = 484;
         previous.removeEventListener("click", handlePrevious);
         next.removeEventListener("click", handleNext);
         section.classList.remove("is_slider_ready");
+        /* 1280 이상으로 넓히면 이 섹션은 display:none이 되지만, 슬라이더가
+           남긴 표시는 DOM에 그대로 있습니다. 다시 좁혔을 때 render()가
+           renderedIndex === currentIndex로 판단해 건너뛰지 않도록,
+           그리고 데스크톱에서 죽은 상태값이 남지 않도록 되돌립니다. */
+        delete section.dataset.activeIndex;
+        renderedIndex = -1;
       };
     }
 
