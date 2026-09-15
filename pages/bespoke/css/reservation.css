@@ -669,12 +669,21 @@
   }
 
   /* 자간 0.08 → 0.05em, 좌우 여백 12 → 8px: 이 두 값으로 "Visit the Atelier"가
-     375 이상에서 한 줄에 들어갑니다(390에서 두 줄 · 한 줄로 짝이 어긋났습니다).
-     360 · 320은 두 줄로 접히고 두 버튼 높이가 함께 66px로 늘어납니다(실측). */
+     375 이상에서 한 줄에 들어갑니다(0.08em 그대로면 375에서 두 줄로 접힘 — 실측).
+     374 이하는 아래 블록에서 한 줄씩 쌓습니다. */
   .reservation_mode_option .bespoke_button {
     min-width: 0;
     padding-inline: 8px;
     letter-spacing: 0.05em;
+  }
+}
+
+/* 2-1) 374 이하(360 · 320) — 두 칸이면 "Visit the / Atelier"만 두 줄로 접혀
+   한 줄짜리 "Phone Call"과 짝이 어긋났습니다(Before/After 비교에서 확인).
+   같은 무게를 지키면서 둘 다 한 줄로 읽히도록 전체 폭으로 쌓습니다. */
+@media (max-width: 374.98px) {
+  .reservation_mode {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
