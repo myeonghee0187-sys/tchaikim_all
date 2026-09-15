@@ -601,3 +601,90 @@
     gap: 20px;
   }
 }
+
+/* ############################################################################
+   최종 반응형 — 예약 태블릿·모바일 마감 (2026-09-15)
+   ----------------------------------------------------------------------------
+   1280 이상은 한 줄도 바꾸지 않습니다. 전부 1279.98 / 767.98 이하입니다.
+   ############################################################################ */
+
+/* 1) 모바일 진행 띠 — 2 × 2(131px) → 한 줄(49px)
+   실측(390 × 844): 띠가 **131px**로 화면의 15.5%를 붙잡고, 위로 스크롤해
+   헤더가 나오면 헤더 64px과 합쳐 **23%**였습니다. 폼을 채우는 동안 내내
+   붙어 있는 요소라 한 줄로 줄입니다.
+   켜진 단계만 "02 Schedule"처럼 이름을 펴고, 나머지는 번호만 둡니다
+   (이름은 clip으로 읽기 도구에만 남깁니다). 새 JS 없이 기존 is_active만 씁니다.
+   ★ 번호 칸도 48px 이상이라 터치 목표를 지킵니다. */
+@media (max-width: 767.98px) {
+  .reservation_steps .bespoke_steps {
+    display: flex;
+  }
+
+  .reservation_steps .bespoke_steps_item {
+    flex: 0 0 auto;
+    min-width: 48px;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .reservation_steps .bespoke_steps_item.is_active {
+    flex: 1 1 auto;
+  }
+
+  .reservation_steps_link {
+    justify-content: center;
+    min-height: 48px;
+    padding-inline: 12px;
+    white-space: nowrap;
+  }
+
+  .reservation_steps .bespoke_steps_item.is_active .reservation_steps_link {
+    justify-content: flex-start;
+  }
+
+  .reservation_steps .bespoke_steps_item:not(.is_active) .reservation_steps_label {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+  }
+
+  /* 2) 회의 방식 두 버튼 — 같은 무게로 나란히
+     실측(390): 글자 폭이 달라 195 / 180px로 **두 줄에 따로 쌓여** 한 쌍의
+     선택지로 읽히지 않았습니다(min-width 180 + padding 24 때문).
+     같은 폭 두 칸으로 두고, 360처럼 좁으면 글자가 두 줄로 접히게 둡니다
+     (label이 flex라 두 버튼 높이가 함께 늘어납니다). */
+  .reservation_mode {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .reservation_mode_option {
+    display: flex;
+  }
+
+  /* 자간 0.08 → 0.05em, 좌우 여백 12 → 8px: 이 두 값으로 "Visit the Atelier"가
+     375 이상에서 한 줄에 들어갑니다(390에서 두 줄 · 한 줄로 짝이 어긋났습니다).
+     360 · 320은 두 줄로 접히고 두 버튼 높이가 함께 66px로 늘어납니다(실측). */
+  .reservation_mode_option .bespoke_button {
+    min-width: 0;
+    padding-inline: 8px;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* 3) 고정 SCROLL 안내 — 1279 이하 가로 화면에서 제목 위에 겹침
+   1280 이상은 콘텐츠가 거터 안쪽에서 시작해 안내와 떨어져 있지만(1920:
+   안내 x64 / 글 x160), 1024 × 768에서는 둘 다 x40에 서서 안내 선이
+   "Reservation" 머리말을 가로질렀습니다. 폼 페이지라 안내가 없어도
+   다음 내용이 바로 보이므로 이 페이지에서만 끕니다(공통 CSS는 그대로). */
+@media (max-width: 1279.98px) {
+  .common_scroll_hint {
+    display: none;
+  }
+}

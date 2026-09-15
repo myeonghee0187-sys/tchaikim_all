@@ -54,9 +54,14 @@
       });
     }
 
+    // Step sections reserve header + bar in scroll-margin-top even while the
+    // header is hidden, so the line must too — otherwise a clicked section
+    // lands below the line and the previous step wins once the header hides.
     function activationLine() {
       var topValue = parseFloat(getComputedStyle(nav).top) || 0;
-      return topValue + nav.getBoundingClientRect().height + 36;
+      var header = document.querySelector(".header");
+      var headerHeight = header ? header.getBoundingClientRect().height : 0;
+      return Math.max(topValue, headerHeight) + nav.getBoundingClientRect().height + 36;
     }
 
     function syncFromScroll() {

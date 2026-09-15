@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
 <link rel="stylesheet" href="css/bespoke_base.css">
-<link rel="stylesheet" href="css/reservation.css?v=2">
+<link rel="stylesheet" href="css/reservation.css?v=3">
 </head>
 <body class="page_bespoke" data-page="bespoke" data-header-variant="black">
 
@@ -56,10 +56,14 @@
     <nav class="reservation_steps" aria-label="Reservation progress">
       <div class="common_container">
         <ol class="bespoke_steps" id="reservation_steps">
-          <li class="bespoke_steps_item is_active" data-step_for="step_design"><a class="reservation_steps_link" href="#step_design">01 Design &amp; Fabric</a></li>
-          <li class="bespoke_steps_item" data-step_for="step_schedule"><a class="reservation_steps_link" href="#step_schedule">02 Schedule</a></li>
-          <li class="bespoke_steps_item" data-step_for="step_details"><a class="reservation_steps_link" href="#step_details">03 Your Details</a></li>
-          <li class="bespoke_steps_item" data-step_for="step_confirm"><a class="reservation_steps_link" href="#step_confirm">04 Confirm</a></li>
+          <!-- 번호 뒤 이름은 span으로 나눕니다 — 767px 이하에서 켜지지 않은 단계는
+               번호만 보이고 이름은 읽기 도구에만 남깁니다(reservation.css 최종 블록).
+               ★ 사이 공백은 &nbsp;여야 합니다. 링크가 flex인 폭(≤1279)에서 일반 공백은
+               flex 항목 사이라 사라져 "01Design"이 됩니다. -->
+          <li class="bespoke_steps_item is_active" data-step_for="step_design"><a class="reservation_steps_link" href="#step_design">01<span class="reservation_steps_label">&nbsp;Design &amp; Fabric</span></a></li>
+          <li class="bespoke_steps_item" data-step_for="step_schedule"><a class="reservation_steps_link" href="#step_schedule">02<span class="reservation_steps_label">&nbsp;Schedule</span></a></li>
+          <li class="bespoke_steps_item" data-step_for="step_details"><a class="reservation_steps_link" href="#step_details">03<span class="reservation_steps_label">&nbsp;Your Details</span></a></li>
+          <li class="bespoke_steps_item" data-step_for="step_confirm"><a class="reservation_steps_link" href="#step_confirm">04<span class="reservation_steps_label">&nbsp;Confirm</span></a></li>
         </ol>
       </div>
     </nav>
@@ -387,6 +391,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
-<script src="js/reservation.js?v=2"></script>
+<script src="js/reservation.js?v=3"></script>
 </body>
 </html>
