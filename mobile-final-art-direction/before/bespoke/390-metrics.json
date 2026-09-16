@@ -1,0 +1,281 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 7665,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 1,
+  "pins": 0,
+  "images": [],
+  "media": [
+    {
+      "src": "./assets/main/beskpokehero_web.mp4",
+      "width": 1920,
+      "height": 1080,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/main_reservation.mp4",
+      "width": 1008,
+      "height": 384,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "class": "bespoke_hero",
+      "x": 0,
+      "y": 64,
+      "w": 390,
+      "h": 627.765625,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "class": "bespoke_hero_title",
+      "x": 20,
+      "y": 168,
+      "w": 350,
+      "h": 122.015625,
+      "font": "36px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "philosophy is_motion_ready",
+      "x": 0,
+      "y": 691.765625,
+      "w": 390,
+      "h": 844,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "philosophy_title",
+      "x": 20,
+      "y": 942.1875,
+      "w": 350,
+      "h": 140,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "atelier is_zoom_ready is_text_ready",
+      "x": 0,
+      "y": 1535.765625,
+      "w": 390,
+      "h": 1025.578125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "atelier_title",
+      "x": 20,
+      "y": 1595.765625,
+      "w": 350,
+      "h": 33.734375,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "quote",
+      "x": 0,
+      "y": 2561.34375,
+      "w": 390,
+      "h": 320,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "process",
+      "x": 0,
+      "y": 2881.34375,
+      "w": 390,
+      "h": 1065.984375,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "class": "process_stage_title",
+      "x": 20,
+      "y": 3708.0625,
+      "w": 350,
+      "h": 28.796875,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "process_stage_title",
+      "x": 20,
+      "y": 3718.0625,
+      "w": 350,
+      "h": 28.796875,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "process_stage_title",
+      "x": 20,
+      "y": 3718.0625,
+      "w": 350,
+      "h": 28.796875,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "process_stage_title",
+      "x": 20,
+      "y": 3718.0625,
+      "w": 350,
+      "h": 28.796875,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "process_stage_title",
+      "x": 20,
+      "y": 3718.0625,
+      "w": 350,
+      "h": 28.796875,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "materials",
+      "x": 0,
+      "y": 3947.328125,
+      "w": 390,
+      "h": 1455.0625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "materials_title",
+      "x": 20,
+      "y": 4018.328125,
+      "w": 350,
+      "h": 33.734375,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 58.1875,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 104.890625,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 90.3125,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 98.296875,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 239.84375,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "materials_selected_name",
+      "x": 20,
+      "y": 4766.109375,
+      "w": 236.515625,
+      "h": 36.71875,
+      "font": "34px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "reservation",
+      "x": 0,
+      "y": 5402.390625,
+      "w": 390,
+      "h": 252.734375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "reservation_title",
+      "x": 20,
+      "y": 5430.390625,
+      "w": 350,
+      "h": 33.734375,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "begin",
+      "x": 0,
+      "y": 5655.125,
+      "w": 390,
+      "h": 1157.703125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "begin_title",
+      "x": 20,
+      "y": 5695.125,
+      "w": 350,
+      "h": 33.734375,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "begin_card_title",
+      "x": 41,
+      "y": 5928.859375,
+      "w": 308,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "begin_card_title",
+      "x": 41,
+      "y": 6239.515625,
+      "w": 308,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "begin_card_title",
+      "x": 41,
+      "y": 6550.171875,
+      "w": 308,
+      "h": 30,
+      "font": "24px"
+    }
+  ],
+  "errors": []
+}

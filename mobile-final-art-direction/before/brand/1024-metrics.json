@@ -1,0 +1,221 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 5896,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 0,
+  "pins": 0,
+  "images": [],
+  "media": [
+    {
+      "src": "assets/images/everyday.mp4",
+      "width": 864,
+      "height": 432,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/images/forward.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/seasons.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/obangsaek.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/woven.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "H1",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -1,
+      "w": 1,
+      "h": 1,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 772,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": 55,
+      "y": 103,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 497.734375,
+      "y": 345.03125,
+      "w": 276.078125,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 1263.5625,
+      "y": 345.03125,
+      "w": 276.078125,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 2029.390625,
+      "y": 345.03125,
+      "w": 276.078125,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "kimyoungjin",
+      "x": 0,
+      "y": 772,
+      "w": 1024,
+      "h": 1618.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 771,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 603.1875,
+      "y": 1170.203125,
+      "w": 364.796875,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 201.9375,
+      "y": 1881.078125,
+      "w": 310.078125,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title youngjin_title_center",
+      "x": 439.3125,
+      "y": 2152.140625,
+      "w": 145.359375,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "tchaikim",
+      "x": 0,
+      "y": 2390.3125,
+      "w": 1024,
+      "h": 493.890625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 2389.3125,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "tchaikim_panel_title",
+      "x": 56,
+      "y": 2574.3125,
+      "w": 139.375,
+      "h": 41.59375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "atelier",
+      "x": 0,
+      "y": 2884.203125,
+      "w": 1024,
+      "h": 808.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 2979.203125,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "heritage",
+      "x": 0,
+      "y": 3692.515625,
+      "w": 1024,
+      "h": 1540.234375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "heritage_headline",
+      "x": 56,
+      "y": 3724.515625,
+      "w": 624.46875,
+      "h": 66.4375,
+      "font": "56.32px"
+    },
+    {
+      "tag": "H3",
+      "class": "heritage_info_title",
+      "x": 621.421875,
+      "y": 3990.796875,
+      "w": 346.546875,
+      "h": 36.390625,
+      "font": "28px"
+    }
+  ],
+  "errors": []
+}

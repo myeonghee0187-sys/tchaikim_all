@@ -1,0 +1,148 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 6100,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 0,
+  "pins": 0,
+  "images": [],
+  "media": [
+    {
+      "src": null,
+      "width": 1920,
+      "height": 1080,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "class": "collection_hero",
+      "x": 0,
+      "y": 72,
+      "w": 1024,
+      "h": 575.984375,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "class": "collection_hero_title is_on_dark",
+      "x": 186.875,
+      "y": 323.828125,
+      "w": 650.25,
+      "h": 72.3125,
+      "font": "64px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "showcase",
+      "x": 0,
+      "y": 647.984375,
+      "w": 1024,
+      "h": 2248.859375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "showcase_quote",
+      "x": 282,
+      "y": 1817.75,
+      "w": 460,
+      "h": 190.71875,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "archive is_hover_ready",
+      "x": 0,
+      "y": 2896.84375,
+      "w": 1024,
+      "h": 1530,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "archive_title",
+      "x": 40,
+      "y": 3181.0625,
+      "w": 348.828125,
+      "h": 123.8125,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "asworn",
+      "x": 0,
+      "y": 4426.84375,
+      "w": 1024,
+      "h": 1009.921875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "asworn_title",
+      "x": 414.703125,
+      "y": 4539.46875,
+      "w": 194.59375,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": -728.10400390625,
+      "y": 5111.5,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": -312.10400390625,
+      "y": 5136.25,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 103.89599609375,
+      "y": 5111.5,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 519.89599609375,
+      "y": 5111.5,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 935.89599609375,
+      "y": 5136.25,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 1351.89599609375,
+      "y": 5111.5,
+      "w": 320,
+      "h": 23.75,
+      "font": "19px"
+    }
+  ],
+  "errors": []
+}

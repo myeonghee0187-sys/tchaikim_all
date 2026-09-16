@@ -1,0 +1,194 @@
+[
+  {
+    "name": "R validation initially blocked 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 390 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "R validation initially blocked 390 phone",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 390 phone",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 390 phone",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 390 phone",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 390 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 390 phone",
+    "pass": true
+  },
+  {
+    "name": "R validation initially blocked 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 768 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "R validation initially blocked 768 phone",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 768 phone",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 768 phone",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 768 phone",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 768 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 768 phone",
+    "pass": true
+  },
+  {
+    "name": "R validation initially blocked 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 1024 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "R validation initially blocked 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "R weekends ignored 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "R mode round-trip 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "R agreement required 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "R Done transfer 1024 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-17",
+    "dateLabel": "Thursday, September 17, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "R Done mode 1024 phone",
+    "pass": true
+  }
+]

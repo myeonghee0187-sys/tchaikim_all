@@ -1,0 +1,1046 @@
+[
+  {
+    "name": "Lifecycle main 1024",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 390",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 1024",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 2
+  },
+  {
+    "name": "Lifecycle main 1024",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 390",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 1024",
+    "pass": true,
+    "signals": [
+      "dragstart",
+      "dragstart",
+      "focusin",
+      "focusin",
+      "focusout",
+      "keydown",
+      "keydown",
+      "keydown",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointercancel",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointerdown",
+      "pointermove",
+      "pointermove",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "pointerup",
+      "visibilitychange",
+      "wheel"
+    ],
+    "timers": [
+      7500
+    ],
+    "animations": [
+      "animate"
+    ],
+    "clones": 24,
+    "title": 1,
+    "hero": 1,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle main 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 2
+  },
+  {
+    "name": "No accumulated resources main",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 4,
+      "pins": 2
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 4,
+      "pins": 2
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored main",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  },
+  {
+    "name": "Lifecycle brand 1024",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 390",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 1024",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 6,
+    "pins": 2
+  },
+  {
+    "name": "Lifecycle brand 1024",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 390",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 1024",
+    "pass": true,
+    "signals": [
+      "resize",
+      "scroll"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle brand 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 6,
+    "pins": 2
+  },
+  {
+    "name": "No accumulated resources brand",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 6,
+      "pins": 2
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 6,
+      "pins": 2
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored brand",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  },
+  {
+    "name": "Lifecycle bespoke 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 390",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 390",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle bespoke 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 4,
+    "pins": 0
+  },
+  {
+    "name": "No accumulated resources bespoke",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 4,
+      "pins": 0
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 4,
+      "pins": 0
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored bespoke",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  },
+  {
+    "name": "Lifecycle reservation 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 390",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 390",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 1024",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle reservation 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 0,
+    "pins": 0
+  },
+  {
+    "name": "No accumulated resources reservation",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 0,
+      "pins": 0
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 0,
+      "pins": 0
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored reservation",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  },
+  {
+    "name": "Lifecycle collection 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 390",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 1,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 3,
+    "pins": 2
+  },
+  {
+    "name": "Lifecycle collection 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 390",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 1,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 3,
+    "pins": 2
+  },
+  {
+    "name": "No accumulated resources collection",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 3,
+      "pins": 2
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 3,
+      "pins": 2
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored collection",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 390",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 1,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 3,
+    "pins": 2
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 390",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 5,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1024",
+    "pass": true,
+    "signals": [
+      "keydown",
+      "pointercancel",
+      "pointerdown",
+      "pointerup",
+      "wheel"
+    ],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 1,
+    "pins": 0
+  },
+  {
+    "name": "Lifecycle collection-youngjin 1920",
+    "pass": true,
+    "signals": [],
+    "timers": [],
+    "animations": [],
+    "clones": 0,
+    "title": 0,
+    "hero": 0,
+    "st": 3,
+    "pins": 2
+  },
+  {
+    "name": "No accumulated resources collection-youngjin",
+    "pass": true,
+    "first": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 3,
+      "pins": 2
+    },
+    "last": {
+      "width": 1920,
+      "signals": [],
+      "timers": [],
+      "animations": [],
+      "clones": 0,
+      "title": 0,
+      "hero": 0,
+      "st": 3,
+      "pins": 2
+    }
+  },
+  {
+    "name": "Desktop copy/DOM/style restored collection-youngjin",
+    "pass": true,
+    "text": true,
+    "order": true,
+    "lens": "",
+    "fades": false
+  }
+]

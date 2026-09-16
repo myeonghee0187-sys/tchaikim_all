@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Vertical touch allowed .brand_collage_row",
+    "pass": true,
+    "old": 1919,
+    "now": 2084
+  },
+  {
+    "name": "Vertical touch allowed .collection_row",
+    "pass": true,
+    "old": 3933,
+    "now": 4159
+  },
+  {
+    "name": "Rail keyboard main 390",
+    "pass": true
+  },
+  {
+    "name": "Rail trackpad main 390",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .mood_slides",
+    "pass": true,
+    "old": 0,
+    "now": 165
+  },
+  {
+    "name": "Rail keyboard brand 390",
+    "pass": true
+  },
+  {
+    "name": "Rail trackpad brand 390",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .bespoke_choice_grid.is_three_up",
+    "pass": true,
+    "old": 576,
+    "now": 741
+  },
+  {
+    "name": "Vertical touch allowed .showcase_carousel_viewport",
+    "pass": true,
+    "old": 1126,
+    "now": 1291
+  },
+  {
+    "name": "Vertical touch allowed .archive_deck",
+    "pass": true,
+    "old": 1945,
+    "now": 2110
+  },
+  {
+    "name": "Showcase first image reachable collection 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase last image reachable collection 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase first image reachable collection 390",
+    "pass": true
+  },
+  {
+    "name": "Archive trackpad collection 390",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .showcase_carousel_viewport",
+    "pass": true,
+    "old": 1126,
+    "now": 1291
+  },
+  {
+    "name": "Vertical touch allowed .archive_deck",
+    "pass": true,
+    "old": 1989,
+    "now": 2154
+  },
+  {
+    "name": "Showcase first image reachable collection-youngjin 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase last image reachable collection-youngjin 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase first image reachable collection-youngjin 390",
+    "pass": true
+  },
+  {
+    "name": "Archive trackpad collection-youngjin 390",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .brand_collage_row",
+    "pass": true,
+    "old": 3152,
+    "now": 3379
+  },
+  {
+    "name": "Vertical touch allowed .collection_row",
+    "pass": true,
+    "old": 6424,
+    "now": 6643
+  },
+  {
+    "name": "Rail keyboard main 1024",
+    "pass": true
+  },
+  {
+    "name": "Rail trackpad main 1024",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .mood_slides",
+    "pass": true,
+    "old": 0,
+    "now": 165
+  },
+  {
+    "name": "Rail keyboard brand 1024",
+    "pass": true
+  },
+  {
+    "name": "Rail trackpad brand 1024",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .bespoke_choice_grid.is_three_up",
+    "pass": true,
+    "old": 735,
+    "now": 964
+  },
+  {
+    "name": "Vertical touch allowed .showcase_carousel_viewport",
+    "pass": true,
+    "old": 1972,
+    "now": 2137
+  },
+  {
+    "name": "Vertical touch allowed .archive_deck",
+    "pass": true,
+    "old": 2969,
+    "now": 3134
+  },
+  {
+    "name": "Showcase first image reachable collection 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase last image reachable collection 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase first image reachable collection 1024",
+    "pass": true
+  },
+  {
+    "name": "Archive trackpad collection 1024",
+    "pass": true
+  },
+  {
+    "name": "Vertical touch allowed .showcase_carousel_viewport",
+    "pass": true,
+    "old": 1972,
+    "now": 2137
+  },
+  {
+    "name": "Vertical touch allowed .archive_deck",
+    "pass": true,
+    "old": 3064,
+    "now": 3229
+  },
+  {
+    "name": "Showcase first image reachable collection-youngjin 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase last image reachable collection-youngjin 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase first image reachable collection-youngjin 1024",
+    "pass": true
+  },
+  {
+    "name": "Archive trackpad collection-youngjin 1024",
+    "pass": true
+  }
+]

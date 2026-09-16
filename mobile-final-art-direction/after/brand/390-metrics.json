@@ -1,0 +1,203 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 5447,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 0,
+  "pins": 0,
+  "images": [],
+  "media": [
+    {
+      "src": "assets/images/everyday.mp4",
+      "width": 864,
+      "height": 432,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/images/forward.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/seasons.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/obangsaek.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/woven.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "H1",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -1,
+      "w": 1,
+      "h": 1,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 692.59375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": 21,
+      "y": 87,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 22,
+      "y": 400,
+      "w": 325.234375,
+      "h": 39.09375,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 359.234375,
+      "y": 400,
+      "w": 325.234375,
+      "h": 39.09375,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_slide_keyword",
+      "x": 696.46875,
+      "y": 400,
+      "w": 325.234375,
+      "h": 39.09375,
+      "font": "34px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "kimyoungjin",
+      "x": 0,
+      "y": 692.59375,
+      "w": 390,
+      "h": 1581.15625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 691.59375,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 22,
+      "y": 1320.21875,
+      "w": 288.59375,
+      "h": 32.5,
+      "font": "25px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 22,
+      "y": 1634.03125,
+      "w": 346,
+      "h": 32.5,
+      "font": "25px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title youngjin_title_center",
+      "x": 22,
+      "y": 2112.875,
+      "w": 129.78125,
+      "h": 32.5,
+      "font": "25px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "tchaikim",
+      "x": 0,
+      "y": 2273.75,
+      "w": 390,
+      "h": 482.59375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 2272.75,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "atelier",
+      "x": 0,
+      "y": 2756.34375,
+      "w": 390,
+      "h": 530.828125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": 22,
+      "y": 2828.34375,
+      "w": 346,
+      "h": 39,
+      "font": "30px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "heritage",
+      "x": 0,
+      "y": 3287.171875,
+      "w": 390,
+      "h": 1308.1875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "heritage_headline",
+      "x": 22,
+      "y": 3303.171875,
+      "w": 327.703125,
+      "h": 89.65625,
+      "font": "38px"
+    }
+  ],
+  "errors": []
+}

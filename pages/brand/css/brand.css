@@ -845,7 +845,7 @@ heritage
     position: relative;
     padding: 104px var(--brand_gutter) 0;
     color: var(--color_text_inverse);
-    background: var(--brand_black);
+    background: var(--brand_olive);
   }
   .mood_slides {
     display: flex;
@@ -864,11 +864,12 @@ heritage
     /* 판을 82%로 좁혀 다음 장이 걸쳐 보이게 합니다(1024에서 약 146px).
        100%면 "넘길 수 있다"는 신호가 화살표뿐이라, 터치에서 스와이프를
        시도할 이유가 화면에 없었습니다. */
-    flex: 0 0 82%;
+    flex: 0 0 88%;
     min-width: 0;
     /* 사진 상한이 300px이라 판이 높을수록 위쪽만 빕니다 — 1024에서
        판 407 · 사진 263이라 위 189px이 비어 있었습니다(실측). */
-    height: clamp(340px, 45svh, 400px);
+    min-height: 320px;
+    height: auto;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     display: grid;
@@ -876,9 +877,9 @@ heritage
        트랙 폭이 달라져 넘길 때 키워드 자리가 좌우로 흔들립니다.
        ★ 사진이 왼쪽입니다(데스크톱과 반대) — 걸쳐 보이는 것이 다음 장의
        글이 아니라 다음 장의 **사진**이어야 넘기고 싶어집니다. */
-    grid-template-columns: 58% 42%;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     align-items: end;
-    background: #252622;
+    background: transparent;
   }
   /* 마지막 장은 start로 스냅할 자리가 없습니다(레일 끝이 먼저 옵니다).
      end면 최대 스크롤에서 오른쪽 변이 정확히 맞고, JS의 readIndex()는
@@ -887,7 +888,7 @@ heritage
   /* 걸쳐 보이는 장의 글까지 또렷하면 키워드 둘이 동시에 읽혀 위계가
      무너집니다. JS가 이미 붙이는 is_active를 그대로 씁니다. */
   .mood_slide_caption { transition: opacity var(--duration_base, .4s) ease; }
-  .mood_slide:not(.is_active) .mood_slide_caption { opacity: .3; }
+  .mood_slide:not(.is_active) .mood_slide_caption { opacity: 0; }
   /* 사진 아랫변과 캡션 아랫변을 같은 선(판 아래에서 40px)에 둡니다 —
      가운데 띄워 두면 둘이 서로 무관하게 떠 있는 것처럼 보였습니다. */
   .mood_slide_media {
@@ -896,7 +897,7 @@ heritage
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 32px 16px 36px 32px;
+    padding: 0;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -906,13 +907,14 @@ heritage
      상한을 두어 확대를 1.5배 안으로 묶고, 남는 자리는 여백으로 둡니다.
      ★ object-fit은 contain이어야 합니다 — cover로 자르면 빨간 자락·손·
      꽃가지처럼 이 사진들이 말하려는 부분이 잘려 나갑니다. */
-  .mood_slide_media img { width: 100%; height: 100%; max-width: 380px; max-height: 300px; object-fit: contain; }
-  .mood_slide_caption { grid-column: 2; grid-row: 1; align-self: end; padding: 32px 30px 36px 8px; z-index: 1; }
+  .mood_slide_media img { width: 100%; height: auto; max-width: 420px; max-height: 420px; object-fit: contain; object-position: left bottom; }
+  .mood_slide_caption { grid-column: 2; grid-row: 1; align-self: end; padding: 0 12px 12px 32px; z-index: 1; }
+  .mood_slide_number, .mood_arrow { display: none; }
   .mood_slide_number { font-size: 12px; letter-spacing: .16em; line-height: 1.5; }
   .mood_slide_keyword { margin-top: 10px; font: 400 clamp(40px, 4.6vw, 60px)/1.15 var(--font_display); white-space: nowrap; }
   .mood_slide_description { margin-top: 16px; min-block-size: 3.3em; max-width: 24ch; font-size: 16px; line-height: 1.65; }
-  .mood_navigation { display: flex; justify-content: flex-end; align-items: center; gap: 16px; padding-top: 12px; }
-  .mood_arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; cursor: pointer; }
+  .mood_navigation { display: flex; justify-content: center; align-items: center; gap: 0; padding-top: 24px; }
+  .mood_arrow { display: none; }
   .mood_arrow svg { width: 23px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1; }
   .mood_arrow:disabled { opacity: .28; cursor: default; }
   .mood_counter { font-size: 12px; letter-spacing: .1em; font-variant-numeric: tabular-nums; }
@@ -936,7 +938,7 @@ heritage
        (--brand_black = 그라디언트 시작색)으로 채웁니다. */
     margin-top: 44px;
     margin-inline: calc(-1 * var(--brand_gutter));
-    background: linear-gradient(to bottom, var(--brand_black), var(--brand_olive));
+    background: linear-gradient(to bottom, #585a4d, #606255 50%, var(--brand_olive));
   }
 
   .kimyoungjin_frame { width: 100%; height: auto; margin: 0; padding: 72px var(--brand_gutter) 96px; display: flex; flex-direction: column; gap: 112px; }
@@ -955,7 +957,7 @@ heritage
   /* WHY(위계): red 474 vs blue 419 — 폭이 1.13배라 어느 쪽도 이끌지
      못했습니다. blue를 38%로 낮춰 1.37배로 벌립니다. 두 번째 묶음은
      아랫변 정렬을 그대로 두어 첫 묶음(윗변)과 리듬이 교차합니다. */
-  .youngjin_group_second .youngjin_photo_blue { width: 42%; }
+  .youngjin_group_second .youngjin_photo_blue { width: 38%; }
   .youngjin_side { gap: 28px; }
   .youngjin_photo { height: auto; flex-shrink: 0; }
   .youngjin_photo_red { aspect-ratio: 5 / 6; }
@@ -969,7 +971,7 @@ heritage
   .youngjin_wordmark { position: absolute; inset: auto 0 20px; z-index: 0; justify-content: center; height: auto; padding: 0; font-size: 16vw; line-height: 1; -webkit-text-stroke: 1px rgba(10, 10, 10, 0.075); pointer-events: none; }
   .youngjin_handmade { position: relative; z-index: 1; inset: auto; width: min(100%, 440px); margin: 0 auto; padding-block: 24px 36px; }
 
-  .tchaikim_track { width: 100%; margin: 0; padding: 88px var(--brand_gutter) 48px; }
+  .tchaikim_track { width: 100%; margin: 0; padding: 88px var(--brand_gutter) 88px; }
   .tchaikim_tabs { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 12px; margin-bottom: 48px; padding: 2px; }
   .tchaikim_tabs::-webkit-scrollbar { display: none; }
   .tchaikim_tab { min-height: 44px; padding: 10px 16px; font-size: 14px; letter-spacing: .05em; }
@@ -1004,22 +1006,24 @@ heritage
   .atelier_photo_4 { width: var(--atelier_unit); height: calc(var(--atelier_unit) * 613 / 460); }
   .atelier_desc { margin-top: 48px; padding-inline: var(--brand_gutter); font-size: 17px; line-height: 1.7; }
 
-  .heritage { padding: 32px var(--brand_gutter) 88px; }
-  .heritage_frame { display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 44px; align-items: center; }
+  .heritage { height: 155svh; padding: 32px var(--brand_gutter) 64px; }
+  .heritage_frame { position: sticky; top: calc(var(--header_height) + 16px); display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 28px; align-items: center; }
   .heritage_stage { display: block; height: auto; padding: 0; }
   .heritage_stage_title { grid-column: 1 / -1; }
   .heritage_headline { max-width: 18ch; font-size: clamp(42px, 5.5vw, 64px); line-height: 1.18; letter-spacing: -.03em; white-space: normal; text-align: left; }
-  .heritage_split, .heritage_photos, .heritage_photos_frame { display: contents; }
+  .heritage_split { display: contents; }
+  .heritage_photos { display: block; grid-column: 1; grid-row: 2; }
+  .heritage_photos_frame { display: block; position: relative; height: min(52svh, 480px); width: 100%; }
   /* 사진 비율이 400 / 714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
      짧아집니다. 1024에서 첫 장이 492 × 879였습니다 — 화면보다 높았습니다. */
-  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 2; width: 80%; }
+  .heritage_photos .heritage_stage:nth-child(n) { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: var(--heritage_fade, 0); }
+  .heritage_photos .heritage_stage:first-child { opacity: var(--heritage_fade, 1); }
   /* WHY: 둘 다 가운데 거터 쪽에 붙어 있어(58% 오른쪽 정렬 + 78% 왼쪽 정렬)
      바깥 양쪽이 비고, 285 vs 270으로 크기도 거의 같아 "썸네일 두 장"으로
      읽혔습니다. 각각 페이지 좌/우 거터에 붙이고 폭 차를 1.28배로 벌린 뒤
      작은 쪽을 아랫변에 맞춰 대각 리듬을 만듭니다. */
-  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 3; width: 64%; justify-self: start; }
-  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 2; grid-row: 3; width: 64%; justify-self: end; align-self: end; }
-  .heritage_figure { width: 100%; height: auto; aspect-ratio: 400 / 714; padding: 0; }
+  .heritage_figure { width: 100%; height: 100%; padding: 0; margin: 0; }
+  .heritage_figure img { width: 100%; height: 100%; object-position: left center; }
   .heritage_figure img { object-fit: contain; }
   .heritage_info { grid-column: 2; grid-row: 2; width: 100%; max-width: 38ch; text-align: left; gap: 20px; }
   .heritage_info_title { font-size: 28px; line-height: 1.3; }
@@ -1035,69 +1039,66 @@ heritage
   .mood_responsive { padding-top: 88px; }
   /* 한 장이 화면을 꽉 채우지 않습니다 — 84%면 오른쪽에 43px이 남아
      "다음 장이 있다"가 보입니다. */
-  .mood_slide { flex: 0 0 84%; height: clamp(452px, 56svh, 520px); grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .mood_slide { flex: 0 0 94%; min-height: 0; height: auto; grid-template-columns: minmax(0,1fr); grid-template-rows: 280px auto; }
   .mood_slides { gap: 12px; }
   /* ★ justify-content를 되돌려야 합니다 — 태블릿 블록의 flex-end를 그대로
      물려받으면, 상한(440px)이 걸리는 500~767 구간에서 사진이 오른쪽 끝에
      붙고 왼쪽에만 최대 303px이 비어 어긋나 보입니다(실측). */
-  .mood_slide_media { grid-column: 1; height: 100%; padding: 24px 0 0; justify-content: center; }
+  .mood_slide_media { grid-column: 1; height: 100%; padding: 0; justify-content: flex-start; align-items: flex-end; }
   /* 태블릿에서 캡션을 2열로 보냈으므로 1열 그리드에서 되돌려야 합니다 —
      안 되돌리면 존재하지 않는 2열이 암시적으로 생겨 판이 넓어집니다. */
   .mood_slide_caption { grid-column: 1; }
   /* 402 이하에서는 판 폭을 그대로 채웁니다(1.38배). 넓은 폰에서만 상한이 걸립니다. */
-  .mood_slide_media img { max-width: min(100%, 440px); max-height: 312px; }
-  .mood_slide_caption { grid-row: 2; padding: 24px 24px 28px; }
+  .mood_slide_media img { width: 100%; max-width: 380px; max-height: 280px; }
+  .mood_slide_caption { grid-row: 2; padding: 24px 0 0; }
   .mood_slide_keyword { font-size: 34px; margin-top: 8px; }
   .mood_slide_description { margin-top: 12px; max-width: 26ch; font-size: 15px; line-height: 1.65; }
-  .mood_navigation { gap: 12px; padding-top: 8px; }
+  .mood_navigation { justify-content: center; gap: 0; padding-top: 24px; }
   .mood_responsive::after { height: 118px; margin-top: 32px; }
 
   .kimyoungjin_frame { padding-top: 64px; padding-bottom: 64px; gap: 64px; }
   .youngjin_group { flex-direction: column; align-items: flex-start; gap: 28px; }
   .youngjin_group_first .youngjin_photo_red { width: min(74vw, 380px); }
   .youngjin_group_first .youngjin_side, .youngjin_group_second .youngjin_side { width: 100%; gap: 28px; }
-  .youngjin_group_first .youngjin_txt { order: -1; }
-  .youngjin_group_first .youngjin_photo_yellow { width: min(58vw, 300px); align-self: flex-end; }
-  .youngjin_group_second .youngjin_photo_black { width: min(52vw, 280px); }
-  .youngjin_group_second .youngjin_photo_blue { width: min(64vw, 340px); align-self: flex-end; }
+  .youngjin_group_first .youngjin_txt { order: 0; width: min(74vw,380px); align-self: flex-start; }
+  .youngjin_group_first .youngjin_photo_yellow { width: min(54vw, 280px); align-self: flex-end; }
+  .youngjin_group_second .youngjin_photo_black { width: min(48vw, 260px); }
+  .youngjin_group_second .youngjin_photo_blue { width: min(58vw, 310px); align-self: flex-end; }
   .youngjin_title { font-size: 25px; }
   .youngjin_desc { margin-top: 10px; max-width: 33ch; font-size: 16px; line-height: 1.7; }
   .youngjin_wordmark { display: none; }
   .youngjin_handmade { width: 100%; margin: 0; padding: 0; align-items: flex-start; }
   .youngjin_title_center, .youngjin_desc_center { text-align: left; }
 
-  .tchaikim_track { padding-top: 48px; padding-bottom: 24px; }
+  .tchaikim_track { padding-top: 48px; padding-bottom: 72px; }
   .tchaikim_tabs { gap: 8px; margin-bottom: 32px; }
   .tchaikim_tab { padding-inline: 13px; font-size: 13px; }
   .tchaikim_con { gap: 28px; }
   .tchaikim_txt { max-width: 34ch; gap: 16px; }
-  .tchaikim_panel_title { font-size: 28px; }
+  .tchaikim_panel_title { display: none; }
   /* 402에서 가장 긴 장면이 7줄입니다(360은 8줄 — 거기서만 한 줄 튑니다). */
-  .tchaikim_panel_desc { min-height: 11.9em; font-size: 16px; line-height: 1.7; }
-  .tchaikim_media { width: 90%; }
+  .tchaikim_panel_desc { min-height: 5.1em; font-size: 16px; line-height: 1.7; }
+  .tchaikim_media { order: -1; width: 100%; }
 
   .atelier { padding-top: 72px; padding-bottom: 80px; }
   .atelier_row { --atelier_unit: min(320px, 60vw); gap: 14px; }
   /* 기본 규칙의 margin-inline: auto를 풀어 글 왼쪽 끝을 페이지 거터에 맞춥니다. */
-  .atelier_desc { max-width: 36ch; margin-top: 28px; margin-inline: 0; font-size: 16px; line-height: 1.7; text-align: left; }
+  .atelier_desc { display: none; }
+  .atelier #atelier_title { position: static; width: auto; height: auto; margin: 0 var(--brand_gutter) 28px; overflow: visible; clip: auto; clip-path: none; white-space: normal; font: 400 30px/1.3 var(--font_display); }
   .atelier_desc br { display: none; }
 
-  .heritage { padding-top: 16px; padding-bottom: 72px; }
+  .heritage { height: 155svh; padding-top: 16px; padding-bottom: 48px; }
   /* WHY: 사진 비율이 400/714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
      짧아집니다. 64/48/44vw는 크기 차가 작아 위계도 약했습니다 —
      56/42/38로 낮춰 길이를 줄이면서 차이를 벌립니다. */
   .heritage_frame { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 1; width: min(56vw, 288px); }
-  .heritage_stage_title { grid-row: 2; margin-top: 8px; }
+  .heritage_photos { grid-column: 1; grid-row: 2; }
+  .heritage_photos_frame { height: min(48svh, 420px); }
+  .heritage_stage_title { grid-row: 1; margin-top: 0; }
   .heritage_headline { max-width: 14ch; font-size: 38px; line-height: 1.18; }
-  .heritage_info, .heritage_info_desc { display: contents; }
-  .heritage_info_title { grid-row: 3; font-size: 24px; }
-  .heritage_copy_origin { grid-row: 4; }
-  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 5; width: min(42vw, 226px); justify-self: end; margin-block: 8px; }
-  .heritage_copy_materials { grid-row: 6; margin-top: 0; }
-  .heritage_copy_origin, .heritage_copy_materials { max-width: 34ch; font-size: 16px; line-height: 1.7; text-align: left; }
-  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 1; grid-row: 7; width: min(38vw, 204px); margin-top: 8px; }
-  .heritage_button { grid-row: 8; margin-top: 8px; }
+  .heritage_info { display: contents; }
+  .heritage_info_title, .heritage_info_desc { display: none; }
+  .heritage_button { grid-row: 3; margin-top: 0; }
 }
 
 /* 좁은 폰(≤374: iPhone SE / Galaxy S 계열)에서만 가장 긴 장면이 한 줄 더
@@ -1129,7 +1130,7 @@ heritage
 }
 
 @media (max-width: 374px) {
-  .tchaikim_panel_desc { min-height: 13.6em; }
+  .tchaikim_panel_desc { min-height: 5.1em; }
 }
 
 /* Reduced motion has no hidden story, no autonomous marquee, and native paging. */
@@ -1138,6 +1139,9 @@ heritage
   .mood_slides { scroll-behavior: auto; }
 }
 @media (max-width: 1279px) and (prefers-reduced-motion: reduce) {
+  .heritage { height: auto; }
+  .heritage_frame { position: static; }
+  .heritage_photos .heritage_stage:not(:first-child) { display: none; }
   .atelier { overflow: visible; }
   .atelier_row { width: 100%; overflow-x: auto; padding-inline: var(--brand_gutter); }
   .tchaikim_panel, .mood_slide_keyword { animation: none; transition: none; }

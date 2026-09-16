@@ -1,0 +1,754 @@
+[
+  {
+    "name": "Hero focus pauses 390",
+    "pass": true
+  },
+  {
+    "name": "Hero resumes 390",
+    "pass": true
+  },
+  {
+    "name": "Seamless rail boundary 390",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg2_c.webp",
+        "x": 25
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg3_c.webp",
+        "x": 265
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg2_c.webp",
+        "x": 25
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg3_c.webp",
+        "x": 265
+      }
+    ]
+  },
+  {
+    "name": "Archive image/index collection 390 2019 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2019 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2019 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2019 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2019 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 390 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2020 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2020 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2020 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2020 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2020 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 390 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2021 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2021 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2021 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 390 2021 3",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 390 2021",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2019 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2019 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2019 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2019 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2019 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 390 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2020 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2020 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2020 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2020 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2020 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 390 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2021 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2021 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2021 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2021 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 390 2021 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 390 2021",
+    "pass": true
+  },
+  {
+    "name": "Touched controls >=44 main 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "Book a private fitting",
+        "w": 183.09375,
+        "h": 44
+      },
+      {
+        "label": "Collar",
+        "w": 83,
+        "h": 44
+      },
+      {
+        "label": "Sleeve",
+        "w": 83,
+        "h": 44
+      },
+      {
+        "label": "Body",
+        "w": 83,
+        "h": 44
+      },
+      {
+        "label": "Skirt",
+        "w": 83,
+        "h": 44
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 brand 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "#Everyday",
+        "w": 102.671875,
+        "h": 44
+      },
+      {
+        "label": "#Forward",
+        "w": 97.390625,
+        "h": 44
+      },
+      {
+        "label": "#Seasons",
+        "w": 96.09375,
+        "h": 44
+      },
+      {
+        "label": "#Obangsaek",
+        "w": 119.1875,
+        "h": 44
+      },
+      {
+        "label": "#Woven",
+        "w": 86.921875,
+        "h": 44
+      },
+      {
+        "label": "Visit Bespoke",
+        "w": 190,
+        "h": 52
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 bespoke 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "01\n              Consultation",
+        "w": 350,
+        "h": 53.59375
+      },
+      {
+        "label": "02\n              Design selectio",
+        "w": 350,
+        "h": 53.59375
+      },
+      {
+        "label": "03\n              Fabric & measur",
+        "w": 350,
+        "h": 53.59375
+      },
+      {
+        "label": "04\n              Tailoring",
+        "w": 350,
+        "h": 53.59375
+      },
+      {
+        "label": "05\n              Completion",
+        "w": 350,
+        "h": 53.59375
+      },
+      {
+        "label": "[01]\n                Silk",
+        "w": 104.65625,
+        "h": 163.8125
+      },
+      {
+        "label": "[02]\n                Cotton",
+        "w": 104.671875,
+        "h": 163.828125
+      },
+      {
+        "label": "[03]\n                Linen",
+        "w": 104.65625,
+        "h": 163.8125
+      },
+      {
+        "label": "[04]\n                Ramie (Mosi",
+        "w": 104.65625,
+        "h": 181.59375
+      },
+      {
+        "label": "[05]\n                Seasonal",
+        "w": 104.671875,
+        "h": 163.828125
+      },
+      {
+        "label": "[06]\n                Sangju Myun",
+        "w": 104.65625,
+        "h": 181.59375
+      },
+      {
+        "label": "Request a reservation",
+        "w": 202.640625,
+        "h": 48
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 reservation 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "Jeogori & Chima\n                ",
+        "w": 283.71875,
+        "h": 415.71875
+      },
+      {
+        "label": "Durumagi\n                  A str",
+        "w": 283.71875,
+        "h": 415.71875
+      },
+      {
+        "label": "Modern Hanbok\n                  ",
+        "w": 283.71875,
+        "h": 415.71875
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 collection 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "2021",
+        "w": 55.40625,
+        "h": 44
+      },
+      {
+        "label": "2020",
+        "w": 44,
+        "h": 44
+      },
+      {
+        "label": "2019",
+        "w": 44,
+        "h": 44
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 collection-youngjin 390",
+    "pass": true,
+    "controls": [
+      {
+        "label": "2021",
+        "w": 55.40625,
+        "h": 44
+      },
+      {
+        "label": "2020",
+        "w": 44,
+        "h": 44
+      },
+      {
+        "label": "2019",
+        "w": 44,
+        "h": 44
+      }
+    ]
+  },
+  {
+    "name": "Hero focus pauses 1024",
+    "pass": true
+  },
+  {
+    "name": "Hero resumes 1024",
+    "pass": true
+  },
+  {
+    "name": "Seamless rail boundary 1024",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg2_c.webp",
+        "x": 45
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg3_c.webp",
+        "x": 331
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg6_c.webp",
+        "x": 526
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg8_c.webp",
+        "x": 812
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg2_c.webp",
+        "x": 45
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg3_c.webp",
+        "x": 331
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg6_c.webp",
+        "x": 526
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/main/assets/main/collection/colimg8_c.webp",
+        "x": 812
+      }
+    ]
+  },
+  {
+    "name": "Archive image/index collection 1024 2019 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2019 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2019 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2019 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2019 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 1024 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2020 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2020 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2020 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2020 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2020 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 1024 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2021 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2021 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2021 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection 1024 2021 3",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection 1024 2021",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2019 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2019 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2019 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2019 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2019 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 1024 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2020 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2020 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2020 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2020 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2020 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 1024 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2021 0",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2021 1",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2021 2",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2021 3",
+    "pass": true
+  },
+  {
+    "name": "Archive image/index collection-youngjin 1024 2021 4",
+    "pass": true
+  },
+  {
+    "name": "Archive wraps collection-youngjin 1024 2021",
+    "pass": true
+  },
+  {
+    "name": "Touched controls >=44 main 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "Book a private fitting",
+        "w": 191.09375,
+        "h": 44
+      },
+      {
+        "label": "Collar",
+        "w": 78.453125,
+        "h": 47
+      },
+      {
+        "label": "Sleeve",
+        "w": 82.953125,
+        "h": 47
+      },
+      {
+        "label": "Body",
+        "w": 74.296875,
+        "h": 47
+      },
+      {
+        "label": "Skirt",
+        "w": 70.265625,
+        "h": 47
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 brand 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "#Everyday",
+        "w": 114.40625,
+        "h": 44
+      },
+      {
+        "label": "#Forward",
+        "w": 108.71875,
+        "h": 44
+      },
+      {
+        "label": "#Seasons",
+        "w": 107.328125,
+        "h": 44
+      },
+      {
+        "label": "#Obangsaek",
+        "w": 132.203125,
+        "h": 44
+      },
+      {
+        "label": "#Woven",
+        "w": 97.453125,
+        "h": 44
+      },
+      {
+        "label": "Visit Bespoke",
+        "w": 190,
+        "h": 52
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 bespoke 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "01\n              Consultation",
+        "w": 444.8125,
+        "h": 61.59375
+      },
+      {
+        "label": "02\n              Design selectio",
+        "w": 444.8125,
+        "h": 61.59375
+      },
+      {
+        "label": "03\n              Fabric & measur",
+        "w": 444.8125,
+        "h": 61.59375
+      },
+      {
+        "label": "04\n              Tailoring",
+        "w": 444.8125,
+        "h": 61.59375
+      },
+      {
+        "label": "05\n              Completion",
+        "w": 444.8125,
+        "h": 61.59375
+      },
+      {
+        "label": "[01]\n                Silk",
+        "w": 144.328125,
+        "h": 213.40625
+      },
+      {
+        "label": "[02]\n                Cotton",
+        "w": 144.328125,
+        "h": 213.40625
+      },
+      {
+        "label": "[03]\n                Linen",
+        "w": 144.328125,
+        "h": 213.40625
+      },
+      {
+        "label": "[04]\n                Ramie (Mosi",
+        "w": 144.34375,
+        "h": 213.421875
+      },
+      {
+        "label": "[05]\n                Seasonal",
+        "w": 144.328125,
+        "h": 213.40625
+      },
+      {
+        "label": "[06]\n                Sangju Myun",
+        "w": 144.328125,
+        "h": 231.1875
+      },
+      {
+        "label": "Request a reservation",
+        "w": 480,
+        "h": 67
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 reservation 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "Jeogori & Chima\n                ",
+        "w": 304,
+        "h": 409.046875
+      },
+      {
+        "label": "Durumagi\n                  A str",
+        "w": 304,
+        "h": 409.046875
+      },
+      {
+        "label": "Modern Hanbok\n                  ",
+        "w": 304,
+        "h": 409.046875
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 collection 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "2021",
+        "w": 55.40625,
+        "h": 44
+      },
+      {
+        "label": "2020",
+        "w": 44,
+        "h": 44
+      },
+      {
+        "label": "2019",
+        "w": 44,
+        "h": 44
+      }
+    ]
+  },
+  {
+    "name": "Touched controls >=44 collection-youngjin 1024",
+    "pass": true,
+    "controls": [
+      {
+        "label": "2021",
+        "w": 55.40625,
+        "h": 44
+      },
+      {
+        "label": "2020",
+        "w": 44,
+        "h": 44
+      },
+      {
+        "label": "2019",
+        "w": 44,
+        "h": 44
+      }
+    ]
+  }
+]

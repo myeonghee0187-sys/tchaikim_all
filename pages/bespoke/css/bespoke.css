@@ -2135,7 +2135,26 @@
    전부 `max-width` 안에 있어 **768px 이상은 한 픽셀도 바뀌지 않습니다.**
    ========================================================= */
 
+@media (max-width: 1279px) {
+  .quote { min-height: 0; padding: 88px var(--layout_gutter); }
+  .quote_body { width: min(100%, 680px); max-width: 34ch; margin-inline: auto; align-items: center; text-align: center; }
+  .quote_text { max-width: 28ch; margin-inline: auto; text-align: center; }
+  .quote_cite { text-align: center; }
+  .main .begin { padding-bottom: 0; }
+  .main .begin + .reservation { margin-top: 120px; margin-bottom: 80px; }
+  .process_stage_desc { max-width: 42ch; }
+}
+
 @media (max-width: 767px) {
+  .bespoke_hero_desc br, .philosophy_desc br { display: none; }
+  .atelier_head, .atelier_body > :not(.atelier_button) { display: none; }
+  .atelier_body { gap: 0; }
+  .quote { padding-block: 72px; }
+  .quote_body { max-width: 29ch; }
+  .process_stage_title { display: none; }
+  .process_stage_item { gap: 12px; }
+  .main .begin + .reservation { margin-top: 80px; margin-bottom: 64px; }
+  .reservation_button { width: auto; min-height: 48px; height: auto; padding: 14px 20px; font-size: 13px; align-self: flex-start; }
 
   /* ※ 여기에 히어로 관련 규칙은 없습니다. 이 폭대는 화면 비율이 1.333 아래라
      위쪽 `@media (max-aspect-ratio: 1332/1000)` 블록이 이미 영상을 16:9로

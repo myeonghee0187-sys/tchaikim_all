@@ -1,0 +1,2042 @@
+[
+  {
+    "name": "M4 editorial four-photo rail 390",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 20,
+        "y": 2567.109375,
+        "w": 334.890625,
+        "h": 79.9375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2675.046875,
+        "w": 350,
+        "h": 224.59375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2927.640625,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3065.828125,
+        "w": 140.15625,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 20,
+        "y": 3197.828125,
+        "w": 334.890625,
+        "h": 39.96875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3265.796875,
+        "w": 350,
+        "h": 196.875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3490.671875,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3628.859375,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583692778628078,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    },
+    "products": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    }
+  },
+  {
+    "name": "M5/6 original video ratio and order 390",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 20,
+        "y": 2567.109375,
+        "w": 334.890625,
+        "h": 79.9375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2675.046875,
+        "w": 350,
+        "h": 224.59375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2927.640625,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3065.828125,
+        "w": 140.15625,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 20,
+        "y": 3197.828125,
+        "w": 334.890625,
+        "h": 39.96875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3265.796875,
+        "w": 350,
+        "h": 196.875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3490.671875,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3628.859375,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583692778628078,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    },
+    "products": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    }
+  },
+  {
+    "name": "M7/8 Shop order/product flow 390",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 20,
+        "y": 2567.109375,
+        "w": 334.890625,
+        "h": 79.9375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2675.046875,
+        "w": 350,
+        "h": 224.59375,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 2927.640625,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3065.828125,
+        "w": 140.15625,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 20,
+        "y": 3197.828125,
+        "w": 334.890625,
+        "h": 39.96875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3265.796875,
+        "w": 350,
+        "h": 196.875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3490.671875,
+        "w": 350,
+        "h": 90.1875,
+        "visible": true
+      },
+      {
+        "x": 20,
+        "y": 3628.859375,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583692778628078,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    },
+    "products": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "visible": false
+    }
+  },
+  {
+    "name": "B1/2/3 olive, no box, centered UI 390",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 22,
+      "y": 500.59375,
+      "w": 346,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 22,
+      "y": 756.59375,
+      "w": 288.59375,
+      "h": 346.3125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 157.40625,
+      "y": 1151.65625,
+      "w": 210.59375,
+      "h": 140.5625,
+      "display": "block"
+    },
+    "blue": {
+      "x": 141.8125,
+      "y": 1758.90625,
+      "w": 226.1875,
+      "h": 289.96875,
+      "display": "block"
+    },
+    "black": {
+      "x": 22,
+      "y": 1481.09375,
+      "w": 187.1875,
+      "h": 124.9375,
+      "display": "block"
+    },
+    "title": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "video": {
+      "x": 22,
+      "y": 2401.75,
+      "w": 346,
+      "h": 173,
+      "display": "block"
+    },
+    "copy": {
+      "x": 22,
+      "y": 2602.75,
+      "w": 346,
+      "h": 81.59375,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 22,
+      "y": 2321.75,
+      "w": 346,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2756.34375,
+      "w": 390,
+      "h": 530.828125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2273.75,
+      "w": 390,
+      "h": 482.59375,
+      "display": "block"
+    },
+    "runway": 1.5499851895734598
+  },
+  {
+    "name": "B4 primary/support hierarchy 390",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 22,
+      "y": 500.59375,
+      "w": 346,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 22,
+      "y": 756.59375,
+      "w": 288.59375,
+      "h": 346.3125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 157.40625,
+      "y": 1151.65625,
+      "w": 210.59375,
+      "h": 140.5625,
+      "display": "block"
+    },
+    "blue": {
+      "x": 141.8125,
+      "y": 1758.90625,
+      "w": 226.1875,
+      "h": 289.96875,
+      "display": "block"
+    },
+    "black": {
+      "x": 22,
+      "y": 1481.09375,
+      "w": 187.1875,
+      "h": 124.9375,
+      "display": "block"
+    },
+    "title": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "video": {
+      "x": 22,
+      "y": 2401.75,
+      "w": 346,
+      "h": 173,
+      "display": "block"
+    },
+    "copy": {
+      "x": 22,
+      "y": 2602.75,
+      "w": 346,
+      "h": 81.59375,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 22,
+      "y": 2321.75,
+      "w": 346,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2756.34375,
+      "w": 390,
+      "h": 530.828125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2273.75,
+      "w": 390,
+      "h": 482.59375,
+      "display": "block"
+    },
+    "runway": 1.5499851895734598
+  },
+  {
+    "name": "B5 media before short copy mobile 390",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 22,
+      "y": 500.59375,
+      "w": 346,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 22,
+      "y": 756.59375,
+      "w": 288.59375,
+      "h": 346.3125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 157.40625,
+      "y": 1151.65625,
+      "w": 210.59375,
+      "h": 140.5625,
+      "display": "block"
+    },
+    "blue": {
+      "x": 141.8125,
+      "y": 1758.90625,
+      "w": 226.1875,
+      "h": 289.96875,
+      "display": "block"
+    },
+    "black": {
+      "x": 22,
+      "y": 1481.09375,
+      "w": 187.1875,
+      "h": 124.9375,
+      "display": "block"
+    },
+    "title": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "video": {
+      "x": 22,
+      "y": 2401.75,
+      "w": 346,
+      "h": 173,
+      "display": "block"
+    },
+    "copy": {
+      "x": 22,
+      "y": 2602.75,
+      "w": 346,
+      "h": 81.59375,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 22,
+      "y": 2321.75,
+      "w": 346,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2756.34375,
+      "w": 390,
+      "h": 530.828125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2273.75,
+      "w": 390,
+      "h": 482.59375,
+      "display": "block"
+    },
+    "runway": 1.5499851895734598
+  },
+  {
+    "name": "B6/8 section breath and short runway 390",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 22,
+      "y": 500.59375,
+      "w": 346,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 22,
+      "y": 756.59375,
+      "w": 288.59375,
+      "h": 346.3125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 157.40625,
+      "y": 1151.65625,
+      "w": 210.59375,
+      "h": 140.5625,
+      "display": "block"
+    },
+    "blue": {
+      "x": 141.8125,
+      "y": 1758.90625,
+      "w": 226.1875,
+      "h": 289.96875,
+      "display": "block"
+    },
+    "black": {
+      "x": 22,
+      "y": 1481.09375,
+      "w": 187.1875,
+      "h": 124.9375,
+      "display": "block"
+    },
+    "title": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "video": {
+      "x": 22,
+      "y": 2401.75,
+      "w": 346,
+      "h": 173,
+      "display": "block"
+    },
+    "copy": {
+      "x": 22,
+      "y": 2602.75,
+      "w": 346,
+      "h": 81.59375,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 22,
+      "y": 2321.75,
+      "w": 346,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2756.34375,
+      "w": 390,
+      "h": 530.828125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2273.75,
+      "w": 390,
+      "h": 482.59375,
+      "display": "block"
+    },
+    "runway": 1.5499851895734598
+  },
+  {
+    "name": "BS1/4/6 compact copy 390",
+    "pass": true,
+    "button": {
+      "w": 202.640625,
+      "h": 48,
+      "font": "13px"
+    },
+    "quote": "center",
+    "swatches": 6,
+    "body": [
+      {
+        "text": "A conversation about your taste, proportions and occasion.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Silhouette, collar, sleeve and hem — a pattern for your body.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Choose the cloth by touch and colour, then settle the measurements.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "One pair of hands, from first stitch to last.",
+        "lines": 0.9999281058282209
+      },
+      {
+        "text": "A final fitting and last adjustments, then pressed and wrapped.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Soft silk with graceful drape and deep, even colour.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Breathable cotton that softens with every wearing.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Flax linen holds its structure, with room for air to move.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Cool, translucent mosi, worn through Korean summers.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "A short run of cloth, chosen for one season only.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Sangju Myungjoo silk, with a quiet, uneven lustre.",
+        "lines": 1.999289772727273
+      }
+    ]
+  },
+  {
+    "name": "BS5/7 materials and CTA 390",
+    "pass": true,
+    "button": {
+      "w": 202.640625,
+      "h": 48,
+      "font": "13px"
+    },
+    "quote": "center",
+    "swatches": 6,
+    "body": [
+      {
+        "text": "A conversation about your taste, proportions and occasion.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Silhouette, collar, sleeve and hem — a pattern for your body.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Choose the cloth by touch and colour, then settle the measurements.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "One pair of hands, from first stitch to last.",
+        "lines": 0.9999281058282209
+      },
+      {
+        "text": "A final fitting and last adjustments, then pressed and wrapped.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Soft silk with graceful drape and deep, even colour.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Breathable cotton that softens with every wearing.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Flax linen holds its structure, with room for air to move.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Cool, translucent mosi, worn through Korean summers.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "A short run of cloth, chosen for one season only.",
+        "lines": 1.999289772727273
+      },
+      {
+        "text": "Sangju Myungjoo silk, with a quiet, uneven lustre.",
+        "lines": 1.999289772727273
+      }
+    ]
+  },
+  {
+    "name": "R1 readable cards 390",
+    "pass": true,
+    "width": 350,
+    "scroll": 887,
+    "cards": [
+      {
+        "x": 20,
+        "y": 738.0625,
+        "w": 283.71875
+      },
+      {
+        "x": 319.71875,
+        "y": 738.0625,
+        "w": 283.71875
+      },
+      {
+        "x": 619.4375,
+        "y": 738.0625,
+        "w": 283.71875
+      }
+    ]
+  },
+  {
+    "name": "C2 order and real reservation link collection 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1879.703125,
+        "w": 350,
+        "h": 36.109375
+      },
+      {
+        "x": 20,
+        "y": 1943.8125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2105.3125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2659.3125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2393.3125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2403.8125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C3/4 counter centered and no arrow collection 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1879.703125,
+        "w": 350,
+        "h": 36.109375
+      },
+      {
+        "x": 20,
+        "y": 1943.8125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2105.3125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2659.3125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2393.3125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2403.8125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C6 mobile copy only hidden collection 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1879.703125,
+        "w": 350,
+        "h": 36.109375
+      },
+      {
+        "x": 20,
+        "y": 1943.8125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2105.3125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2659.3125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2393.3125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2403.8125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C2 order and real reservation link collection-youngjin 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1887.109375,
+        "w": 350,
+        "h": 72.21875
+      },
+      {
+        "x": 20,
+        "y": 1987.328125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2148.828125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2702.828125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2436.828125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2447.328125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C3/4 counter centered and no arrow collection-youngjin 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1887.109375,
+        "w": 350,
+        "h": 72.21875
+      },
+      {
+        "x": 20,
+        "y": 1987.328125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2148.828125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2702.828125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2436.828125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2447.328125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C6 mobile copy only hidden collection-youngjin 390",
+    "pass": true,
+    "order": [
+      {
+        "x": 20,
+        "y": 1887.109375,
+        "w": 350,
+        "h": 72.21875
+      },
+      {
+        "x": 20,
+        "y": 1987.328125,
+        "w": 350,
+        "h": 133.5
+      },
+      {
+        "x": 20,
+        "y": 2148.828125,
+        "w": 350,
+        "h": 526
+      },
+      {
+        "x": 105,
+        "y": 2702.828125,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 316,
+      "y": 2436.828125,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 328.8125,
+      "y": 2447.328125,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "none",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "M4 editorial four-photo rail 1024",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 40,
+        "y": 4023.65625,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4094.65625,
+        "w": 944,
+        "h": 605.765625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4735.25,
+        "w": 556.296875,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4860.78125,
+        "w": 140.15625,
+        "h": 50.828125,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 40,
+        "y": 4975.609375,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 134.40625,
+        "y": 5046.609375,
+        "w": 849.59375,
+        "h": 477.890625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5552.5,
+        "w": 944,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5706.03125,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583584822925534,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 691.9375,
+      "y": 4728.421875,
+      "w": 292.0625,
+      "h": 183.1875,
+      "visible": true
+    },
+    "products": {
+      "x": 40,
+      "y": 5850.03125,
+      "w": 944,
+      "h": 318.5,
+      "visible": true
+    }
+  },
+  {
+    "name": "M5/6 original video ratio and order 1024",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 40,
+        "y": 4023.65625,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4094.65625,
+        "w": 944,
+        "h": 605.765625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4735.25,
+        "w": 556.296875,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4860.78125,
+        "w": 140.15625,
+        "h": 50.828125,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 40,
+        "y": 4975.609375,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 134.40625,
+        "y": 5046.609375,
+        "w": 849.59375,
+        "h": 477.890625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5552.5,
+        "w": 944,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5706.03125,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583584822925534,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 691.9375,
+      "y": 4728.421875,
+      "w": 292.0625,
+      "h": 183.1875,
+      "visible": true
+    },
+    "products": {
+      "x": 40,
+      "y": 5850.03125,
+      "w": 944,
+      "h": 318.5,
+      "visible": true
+    }
+  },
+  {
+    "name": "M7/8 Shop order/product flow 1024",
+    "pass": true,
+    "bespoke": [
+      {
+        "x": 40,
+        "y": 4023.65625,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4094.65625,
+        "w": 944,
+        "h": 605.765625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4735.25,
+        "w": 556.296875,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 4860.78125,
+        "w": 140.15625,
+        "h": 50.828125,
+        "visible": true
+      }
+    ],
+    "shop": [
+      {
+        "x": 40,
+        "y": 4975.609375,
+        "w": 944,
+        "h": 43,
+        "visible": true
+      },
+      {
+        "x": 134.40625,
+        "y": 5046.609375,
+        "w": 849.59375,
+        "h": 477.890625,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5552.5,
+        "w": 944,
+        "h": 97.53125,
+        "visible": true
+      },
+      {
+        "x": 40,
+        "y": 5706.03125,
+        "w": 111.75,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "ratio": 1.5583584822925534,
+    "images": 4,
+    "title": 1,
+    "support": {
+      "x": 691.9375,
+      "y": 4728.421875,
+      "w": 292.0625,
+      "h": 183.1875,
+      "visible": true
+    },
+    "products": {
+      "x": 40,
+      "y": 5850.03125,
+      "w": 944,
+      "h": 318.5,
+      "visible": true
+    }
+  },
+  {
+    "name": "B1/2/3 olive, no box, centered UI 1024",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 56,
+      "y": 524,
+      "w": 912,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 56,
+      "y": 850,
+      "w": 474.234375,
+      "h": 569.078125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 603.1875,
+      "y": 904.71875,
+      "w": 364.796875,
+      "h": 243.484375,
+      "display": "block"
+    },
+    "blue": {
+      "x": 621.453125,
+      "y": 1531.078125,
+      "w": 346.546875,
+      "h": 444.28125,
+      "display": "block"
+    },
+    "black": {
+      "x": 238.421875,
+      "y": 1605.328125,
+      "w": 310.078125,
+      "h": 206.96875,
+      "display": "block"
+    },
+    "title": {
+      "x": 56,
+      "y": 2533.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "display": "block"
+    },
+    "video": {
+      "x": 475.53125,
+      "y": 2541.359375,
+      "w": 492.46875,
+      "h": 246.234375,
+      "display": "block"
+    },
+    "copy": {
+      "x": 56,
+      "y": 2593.125,
+      "w": 383.03125,
+      "h": 202.296875,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 56,
+      "y": 2437.53125,
+      "w": 912,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2883.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2349.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "display": "block"
+    },
+    "runway": 1.55
+  },
+  {
+    "name": "B4 primary/support hierarchy 1024",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 56,
+      "y": 524,
+      "w": 912,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 56,
+      "y": 850,
+      "w": 474.234375,
+      "h": 569.078125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 603.1875,
+      "y": 904.71875,
+      "w": 364.796875,
+      "h": 243.484375,
+      "display": "block"
+    },
+    "blue": {
+      "x": 621.453125,
+      "y": 1531.078125,
+      "w": 346.546875,
+      "h": 444.28125,
+      "display": "block"
+    },
+    "black": {
+      "x": 238.421875,
+      "y": 1605.328125,
+      "w": 310.078125,
+      "h": 206.96875,
+      "display": "block"
+    },
+    "title": {
+      "x": 56,
+      "y": 2533.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "display": "block"
+    },
+    "video": {
+      "x": 475.53125,
+      "y": 2541.359375,
+      "w": 492.46875,
+      "h": 246.234375,
+      "display": "block"
+    },
+    "copy": {
+      "x": 56,
+      "y": 2593.125,
+      "w": 383.03125,
+      "h": 202.296875,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 56,
+      "y": 2437.53125,
+      "w": 912,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2883.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2349.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "display": "block"
+    },
+    "runway": 1.55
+  },
+  {
+    "name": "B5 media before short copy mobile 1024",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 56,
+      "y": 524,
+      "w": 912,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 56,
+      "y": 850,
+      "w": 474.234375,
+      "h": 569.078125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 603.1875,
+      "y": 904.71875,
+      "w": 364.796875,
+      "h": 243.484375,
+      "display": "block"
+    },
+    "blue": {
+      "x": 621.453125,
+      "y": 1531.078125,
+      "w": 346.546875,
+      "h": 444.28125,
+      "display": "block"
+    },
+    "black": {
+      "x": 238.421875,
+      "y": 1605.328125,
+      "w": 310.078125,
+      "h": 206.96875,
+      "display": "block"
+    },
+    "title": {
+      "x": 56,
+      "y": 2533.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "display": "block"
+    },
+    "video": {
+      "x": 475.53125,
+      "y": 2541.359375,
+      "w": 492.46875,
+      "h": 246.234375,
+      "display": "block"
+    },
+    "copy": {
+      "x": 56,
+      "y": 2593.125,
+      "w": 383.03125,
+      "h": 202.296875,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 56,
+      "y": 2437.53125,
+      "w": 912,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2883.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2349.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "display": "block"
+    },
+    "runway": 1.55
+  },
+  {
+    "name": "B6/8 section breath and short runway 1024",
+    "pass": true,
+    "mood": "rgb(88, 90, 77)",
+    "arrows": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none"
+    },
+    "counter": {
+      "x": 56,
+      "y": 524,
+      "w": 912,
+      "h": 42,
+      "display": "flex"
+    },
+    "slide": "rgba(0, 0, 0, 0)",
+    "red": {
+      "x": 56,
+      "y": 850,
+      "w": 474.234375,
+      "h": 569.078125,
+      "display": "block"
+    },
+    "yellow": {
+      "x": 603.1875,
+      "y": 904.71875,
+      "w": 364.796875,
+      "h": 243.484375,
+      "display": "block"
+    },
+    "blue": {
+      "x": 621.453125,
+      "y": 1531.078125,
+      "w": 346.546875,
+      "h": 444.28125,
+      "display": "block"
+    },
+    "black": {
+      "x": 238.421875,
+      "y": 1605.328125,
+      "w": 310.078125,
+      "h": 206.96875,
+      "display": "block"
+    },
+    "title": {
+      "x": 56,
+      "y": 2533.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "display": "block"
+    },
+    "video": {
+      "x": 475.53125,
+      "y": 2541.359375,
+      "w": 492.46875,
+      "h": 246.234375,
+      "display": "block"
+    },
+    "copy": {
+      "x": 56,
+      "y": 2593.125,
+      "w": 383.03125,
+      "h": 202.296875,
+      "display": "block"
+    },
+    "tabs": {
+      "x": 56,
+      "y": 2437.53125,
+      "w": 912,
+      "h": 48,
+      "display": "flex"
+    },
+    "atelier": {
+      "x": 0,
+      "y": 2883.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "display": "block"
+    },
+    "track": {
+      "x": 0,
+      "y": 2349.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "display": "block"
+    },
+    "runway": 1.55
+  },
+  {
+    "name": "BS1/4/6 compact copy 1024",
+    "pass": true,
+    "button": {
+      "w": 480,
+      "h": 67,
+      "font": "18px"
+    },
+    "quote": "center",
+    "swatches": 6,
+    "body": [
+      {
+        "text": "We begin with your taste, proportions and occasion, before a single line is drawn.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "We decide silhouette, collar, sleeve and hem together, drafting a pattern for your body alone.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "Six fabrics are laid out in daylight. Once the cloth is chosen, we record your measurements against your pattern.",
+        "lines": 2.999267578125
+      },
+      {
+        "text": "Your garment is built by hand in small batches, from cutting to seams, lining and finishing.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "The final fitting checks the skirt and shoulder. Last adjustments are made before your piece is pressed and wrapped.",
+        "lines": 2.999267578125
+      },
+      {
+        "text": "Continuous-filament silk catches light along every fold, with the deep, even colour a formal jeogori asks for.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Plain-woven cotton softens with wearing, holding a crisp collar and cuff while staying cool against the skin.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Spun from flax, linen stands slightly away from the body; its everyday creases belong to the material.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Finely woven ramie lets light through. Mosi keeps a sculptural silhouette and softens with every wash.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Weight, weave and colour change with each season’s cloth, giving the same pattern a different hand and fall.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Silk woven in Sangju from domestic cocoons on narrow looms, with a quiet lustre that deepens with age.",
+        "lines": 1.9998562116564418
+      }
+    ]
+  },
+  {
+    "name": "BS5/7 materials and CTA 1024",
+    "pass": true,
+    "button": {
+      "w": 480,
+      "h": 67,
+      "font": "18px"
+    },
+    "quote": "center",
+    "swatches": 6,
+    "body": [
+      {
+        "text": "We begin with your taste, proportions and occasion, before a single line is drawn.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "We decide silhouette, collar, sleeve and hem together, drafting a pattern for your body alone.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "Six fabrics are laid out in daylight. Once the cloth is chosen, we record your measurements against your pattern.",
+        "lines": 2.999267578125
+      },
+      {
+        "text": "Your garment is built by hand in small batches, from cutting to seams, lining and finishing.",
+        "lines": 1.99951171875
+      },
+      {
+        "text": "The final fitting checks the skirt and shoulder. Last adjustments are made before your piece is pressed and wrapped.",
+        "lines": 2.999267578125
+      },
+      {
+        "text": "Continuous-filament silk catches light along every fold, with the deep, even colour a formal jeogori asks for.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Plain-woven cotton softens with wearing, holding a crisp collar and cuff while staying cool against the skin.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Spun from flax, linen stands slightly away from the body; its everyday creases belong to the material.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Finely woven ramie lets light through. Mosi keeps a sculptural silhouette and softens with every wash.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Weight, weave and colour change with each season’s cloth, giving the same pattern a different hand and fall.",
+        "lines": 1.9998562116564418
+      },
+      {
+        "text": "Silk woven in Sangju from domestic cocoons on narrow looms, with a quiet lustre that deepens with age.",
+        "lines": 1.9998562116564418
+      }
+    ]
+  },
+  {
+    "name": "R1 readable cards 1024",
+    "pass": true,
+    "width": 960,
+    "scroll": 960,
+    "cards": [
+      {
+        "x": 32,
+        "y": 894.625,
+        "w": 304
+      },
+      {
+        "x": 360,
+        "y": 894.625,
+        "w": 304
+      },
+      {
+        "x": 688,
+        "y": 894.625,
+        "w": 304
+      }
+    ]
+  },
+  {
+    "name": "C2 order and real reservation link collection 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2923.25,
+        "w": 944,
+        "h": 61.90625
+      },
+      {
+        "x": 40,
+        "y": 3013.15625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3128.65625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3710.65625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3430.65625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3441.15625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C3/4 counter centered and no arrow collection 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2923.25,
+        "w": 944,
+        "h": 61.90625
+      },
+      {
+        "x": 40,
+        "y": 3013.15625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3128.65625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3710.65625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3430.65625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3441.15625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C6 mobile copy only hidden collection 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2923.25,
+        "w": 944,
+        "h": 61.90625
+      },
+      {
+        "x": 40,
+        "y": 3013.15625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3128.65625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3710.65625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3430.65625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3441.15625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C2 order and real reservation link collection-youngjin 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2956.84375,
+        "w": 944,
+        "h": 123.8125
+      },
+      {
+        "x": 40,
+        "y": 3108.65625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3224.15625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3806.15625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3526.15625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3536.65625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C3/4 counter centered and no arrow collection-youngjin 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2956.84375,
+        "w": 944,
+        "h": 123.8125
+      },
+      {
+        "x": 40,
+        "y": 3108.65625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3224.15625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3806.15625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3526.15625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3536.65625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  },
+  {
+    "name": "C6 mobile copy only hidden collection-youngjin 1024",
+    "pass": true,
+    "order": [
+      {
+        "x": 40,
+        "y": 2956.84375,
+        "w": 944,
+        "h": 123.8125
+      },
+      {
+        "x": 40,
+        "y": 3108.65625,
+        "w": 944,
+        "h": 87.5
+      },
+      {
+        "x": 162,
+        "y": 3224.15625,
+        "w": 700,
+        "h": 554
+      },
+      {
+        "x": 422,
+        "y": 3806.15625,
+        "w": 180,
+        "h": 48
+      }
+    ],
+    "circle": {
+      "x": 808,
+      "y": 3526.15625,
+      "w": 54,
+      "h": 54
+    },
+    "text": {
+      "x": 820.8125,
+      "y": 3536.65625,
+      "w": 28.359375,
+      "h": 33
+    },
+    "arrow": "none",
+    "caption": "block",
+    "href": "../bespoke/reservation.html",
+    "label": "Reserve Now"
+  }
+]

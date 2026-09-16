@@ -1,0 +1,275 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "documentHeight": 31382,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 4,
+  "pins": 2,
+  "images": [],
+  "media": [
+    {
+      "src": "assets/main/hero/bespoke.mp4",
+      "width": 918,
+      "height": 666,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/hero/shop.mp4",
+      "width": 1124,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "vid/model.mp4",
+      "width": 544,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/bespoke/bespokevod.mp4",
+      "width": 1122,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/shop/shopbanner.mp4",
+      "width": 1280,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "H1",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -1,
+      "w": 1,
+      "h": 1,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "hero",
+      "x": 0,
+      "y": 0,
+      "w": 1920,
+      "h": 986,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "hero_panel_title",
+      "x": 80,
+      "y": 680.984375,
+      "w": 461.671875,
+      "h": 62.015625,
+      "font": "48px"
+    },
+    {
+      "tag": "H2",
+      "class": "hero_panel_title",
+      "x": 1040,
+      "y": 680.984375,
+      "w": 258.25,
+      "h": 62.015625,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "model is_scroll_ready is_model_flow",
+      "x": 0,
+      "y": 986,
+      "w": 1920,
+      "h": 1296,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "model_title",
+      "x": 726.828125,
+      "y": 1747.71875,
+      "w": 466.34375,
+      "h": 124.78125,
+      "font": "52px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "detail is_scroll_ready",
+      "x": 0,
+      "y": 2282,
+      "w": 1920,
+      "h": 6586,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "detail_title",
+      "x": 120,
+      "y": 2427,
+      "w": 578.5,
+      "h": 192,
+      "font": "64px"
+    },
+    {
+      "tag": "H3",
+      "class": "detail_part_title",
+      "x": 1228.79638671875,
+      "y": 3017.176025390625,
+      "w": 469.0478515625,
+      "h": 61.8837890625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "class": "detail_part_title",
+      "x": 344.69781494140625,
+      "y": 3048.05712890625,
+      "w": 451.2449951171875,
+      "h": 59.53515625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "class": "detail_part_title",
+      "x": 344.69781494140625,
+      "y": 3047.53564453125,
+      "w": 451.2449951171875,
+      "h": 59.534912109375,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "class": "detail_part_title",
+      "x": 344.69781494140625,
+      "y": 3047.53564453125,
+      "w": 451.2449951171875,
+      "h": 59.534912109375,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "brand_story",
+      "x": 0,
+      "y": 8868,
+      "w": 1920,
+      "h": 1097.078125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "brand_story_title",
+      "x": 120,
+      "y": 8968,
+      "w": 660.0625,
+      "h": 124.03125,
+      "font": "48px"
+    },
+    {
+      "tag": "DIV",
+      "class": "pin-spacer",
+      "x": 0,
+      "y": 9965.078125,
+      "w": 1920,
+      "h": 11880,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "brand_collage is_enhanced",
+      "x": 0,
+      "y": 9965.078125,
+      "w": 1920,
+      "h": 1080,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "promo_wrap promo_bespoke_wrap",
+      "x": 0,
+      "y": 22445.078125,
+      "w": 1920,
+      "h": 1725.359375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "promo_title",
+      "x": 160,
+      "y": 23653.4375,
+      "w": 529.59375,
+      "h": 62.015625,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "shop",
+      "x": 0,
+      "y": 24400.828125,
+      "w": 1920,
+      "h": 2275.90625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "promo_title",
+      "x": 927,
+      "y": 25685.1875,
+      "w": 263.234375,
+      "h": 62.015625,
+      "font": "48px"
+    },
+    {
+      "tag": "DIV",
+      "class": "collection_scroll is_scroll_ready",
+      "x": 0,
+      "y": 26676.734375,
+      "w": 1920,
+      "h": 2808,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "collection is_scroll_ready",
+      "x": 0,
+      "y": 26676.734375,
+      "w": 1920,
+      "h": 1080,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "collection_title",
+      "x": 627.28125,
+      "y": 26774.05078125,
+      "w": 665.4375,
+      "h": 124.03125,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "closing",
+      "x": 0,
+      "y": 29484.734375,
+      "w": 1920,
+      "h": 760.15625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "closing_title",
+      "x": 654.625,
+      "y": 29634.734375,
+      "w": 610.75,
+      "h": 96.875,
+      "font": "56px"
+    }
+  ],
+  "errors": []
+}

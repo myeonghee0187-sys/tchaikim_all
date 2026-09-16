@@ -1,6 +1,58 @@
 (function () {
   "use strict";
 
+  /* Keep full original copy at desktop; concise excerpts belong to the small
+     screen presentation, without replacing the Process or Material controller. */
+  (function initCompactCopy() {
+    var mobile = window.matchMedia("(max-width: 767px)");
+    var compact = window.matchMedia("(max-width: 1279px)");
+    var definitions = [
+      [".bespoke_hero_desc", ["One piece takes shape across five meetings.", "No standard size, no standard taste. One piece takes shape across five meetings."]],
+      [".philosophy_desc", ["Bespoke is the one right answer, made for one person.", "Bespoke is the one right answer, made for one person — from chosen fabric to final stitch."]],
+      [".process_stage_desc", [
+        ["A conversation about your taste, proportions and occasion.", "We begin with your taste, proportions and occasion, before a single line is drawn."],
+        ["Silhouette, collar, sleeve and hem — a pattern for your body.", "We decide silhouette, collar, sleeve and hem together, drafting a pattern for your body alone."],
+        ["Choose the cloth by touch and colour, then settle the measurements.", "Six fabrics are laid out in daylight. Once the cloth is chosen, we record your measurements against your pattern."],
+        ["One pair of hands, from first stitch to last.", "Your garment is built by hand in small batches, from cutting to seams, lining and finishing."],
+        ["A final fitting and last adjustments, then pressed and wrapped.", "The final fitting checks the skirt and shoulder. Last adjustments are made before your piece is pressed and wrapped."]
+      ]],
+      [".materials_caption_desc", [
+        ["Soft silk with graceful drape and deep, even colour.", "Continuous-filament silk catches light along every fold, with the deep, even colour a formal jeogori asks for."],
+        ["Breathable cotton that softens with every wearing.", "Plain-woven cotton softens with wearing, holding a crisp collar and cuff while staying cool against the skin."],
+        ["Flax linen holds its structure, with room for air to move.", "Spun from flax, linen stands slightly away from the body; its everyday creases belong to the material."],
+        ["Cool, translucent mosi, worn through Korean summers.", "Finely woven ramie lets light through. Mosi keeps a sculptural silhouette and softens with every wash."],
+        ["A short run of cloth, chosen for one season only.", "Weight, weave and colour change with each season’s cloth, giving the same pattern a different hand and fall."],
+        ["Sangju Myungjoo silk, with a quiet, uneven lustre.", "Silk woven in Sangju from domestic cocoons on narrow looms, with a quiet lustre that deepens with age."]
+      ]],
+      [".materials_intro", ["Six fabrics, chosen for line, light and drape.", "Six fabrics kept through the year, chosen for how they hold a line, catch the light and settle against the body."]],
+      [".begin_desc", ["Materials, timeline and investment.", "Explore the materials, timeline and investment before creating your bespoke hanbok."]]
+    ];
+    var records = [];
+    definitions.forEach(function (entry) {
+      Array.from(document.querySelectorAll(entry[0])).forEach(function (node, index) {
+        var copy = Array.isArray(entry[1][0]) ? entry[1][index] : entry[1];
+        records.push({node:node, original:node.innerHTML, copy:copy});
+      });
+    });
+    var reservation = document.querySelector("main > .reservation");
+    var begin = document.querySelector("main > .begin");
+    var marker = null;
+    function sync() {
+      records.forEach(function (record) {
+        if (compact.matches) record.node.textContent = record.copy[mobile.matches ? 0 : 1];
+        else record.node.innerHTML = record.original;
+      });
+      if (compact.matches && !marker && reservation && begin) {
+        marker = document.createComment("Desktop reservation position");
+        reservation.before(marker); begin.after(reservation);
+      } else if (!compact.matches && marker) {
+        marker.replaceWith(reservation); marker = null;
+      }
+    }
+    compact.addEventListener("change", sync); mobile.addEventListener("change", sync);
+    sync();
+  })();
+
   /* ---------------------------------------------------------
      process — 스크롤을 내리면 아래 번호 목록과 위 사진·글이 함께 바뀐다
 

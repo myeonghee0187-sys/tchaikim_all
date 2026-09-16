@@ -1457,7 +1457,43 @@
     Array.prototype.forEach.call(tabs, function (tab) {
       tab.setAttribute("aria-pressed", tab.getAttribute("data-part") === part ? "true" : "false");
     });
+    if (window.matchMedia("(max-width: 1279px)").matches) {
+      var shouldOpen = !section.classList.contains("is_magnified") || activePart !== part;
+      setActivePart(part);
+      section.classList.toggle("is_magnified", shouldOpen);
+      Array.prototype.forEach.call(tabs, function (tab) {
+        tab.setAttribute("aria-expanded", String(tab === event.currentTarget && shouldOpen));
+      });
+      positionCompactLens();
+    }
   }
+
+  function positionCompactLens() {
+    if (!window.matchMedia("(max-width: 1279px)").matches) return;
+    var box = image.getBoundingClientRect();
+    var stageBox = stage.getBoundingClientRect();
+    var diameter = Math.min(window.innerWidth < 768 ? 210 : 300, box.width * .68);
+    stage.style.setProperty("--compact_lens_size", diameter + "px");
+    lens.style.left = (box.left - stageBox.left + box.width / 2) + "px";
+    lens.style.top = (box.top - stageBox.top + box.height / 2) + "px";
+  }
+  var compactMedia = window.matchMedia("(max-width: 1279px)");
+  var compactObserver = new ResizeObserver(positionCompactLens);
+  function handleCompactChange() {
+    if (compactMedia.matches) {
+      compactObserver.observe(image);
+      positionCompactLens();
+    } else {
+      compactObserver.disconnect();
+      section.classList.remove("is_magnified");
+      stage.style.removeProperty("--compact_lens_size");
+      lens.style.removeProperty("left");
+      lens.style.removeProperty("top");
+      Array.prototype.forEach.call(tabs, function (tab) { tab.removeAttribute("aria-expanded"); });
+    }
+  }
+  compactMedia.addEventListener("change", handleCompactChange);
+  handleCompactChange();
 
   Array.prototype.forEach.call(tabs, function (tab) {
     tab.addEventListener("click", handlePartTabClick);
@@ -2350,4 +2386,161 @@
 
   reducedMotion.addEventListener("change", syncMainMotionPreference);
   syncMainMotionPreference();
+})();
+
+/* Small-screen art direction. Every node, timer and listener is owned by this
+   breakpoint lifecycle; the existing desktop scenes never use these controllers. */
+(function setupCompactMain() {
+  "use strict";
+  var media = window.matchMedia("(max-width: 1279px)");
+  var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var destroy = null;
+
+  function mount() {
+    var abort = new AbortController();
+    var signal = abort.signal;
+    var hero = document.querySelector(".hero");
+    var panels = Array.from(hero.querySelectorAll(".hero_panel"));
+    var index = 0;
+    var timer = 0;
+    var isHeroVisible = true;
+    var isDisposed = false;
+    function renderHero() {
+      panels.forEach(function (panel, i) {
+        panel.classList.toggle("is_active", i === index);
+        panel.inert = i !== index;
+      });
+    }
+    function syncHeroTimer() {
+      clearInterval(timer);
+      if (isDisposed) return;
+      if (!motion.matches && isHeroVisible && !document.hidden && !hero.matches(":focus-within")) {
+        timer = setInterval(function () { index = (index + 1) % panels.length; renderHero(); }, 7500);
+      }
+    }
+    hero.classList.add("is_crossfade_ready");
+    renderHero();
+    var heroObserver = new IntersectionObserver(function (entries) {
+      isHeroVisible = entries[0].isIntersecting; syncHeroTimer();
+    });
+    heroObserver.observe(hero);
+    document.addEventListener("visibilitychange", syncHeroTimer, {signal:signal});
+    hero.addEventListener("focusin", function () { clearInterval(timer); }, {signal:signal});
+    hero.addEventListener("focusout", function () { queueMicrotask(syncHeroTimer); }, {signal:signal});
+    hero.addEventListener("pointerdown", function () { clearInterval(timer); }, {signal:signal});
+    hero.addEventListener("pointerup", syncHeroTimer, {signal:signal});
+    hero.addEventListener("pointercancel", syncHeroTimer, {signal:signal});
+
+    var collage = document.querySelector(".brand_collage_row");
+    var title = document.createElement("h2");
+    title.className = "brand_rail_title";
+    title.textContent = "Tchai";
+    collage.before(title);
+    var oldCollageTabindex = collage.getAttribute("tabindex");
+    collage.tabIndex = 0;
+    collage.setAttribute("aria-label", "Tchai editorial images");
+
+    function enableMouseDrag(rail) {
+      var start = null;
+      rail.addEventListener("dragstart", function (event) { event.preventDefault(); }, {signal:signal});
+      rail.addEventListener("pointerdown", function (event) {
+        if (event.pointerType !== "mouse" || event.button !== 0) return;
+        start = {x:event.clientX, left:rail.scrollLeft};
+        rail.classList.add("is_dragging");
+        rail.setPointerCapture(event.pointerId);
+      }, {signal:signal});
+      rail.addEventListener("pointermove", function (event) {
+        if (start) rail.scrollLeft = start.left + start.x - event.clientX;
+      }, {signal:signal});
+      function handleEnd() { start = null; rail.classList.remove("is_dragging"); }
+      rail.addEventListener("pointerup", handleEnd, {signal:signal});
+      rail.addEventListener("pointercancel", handleEnd, {signal:signal});
+      rail.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        rail.scrollBy({left:(event.key === "ArrowRight" ? 1 : -1) * rail.clientWidth * .7, behavior:motion.matches ? "instant" : "smooth"});
+      }, {signal:signal});
+    }
+    enableMouseDrag(collage);
+
+    var rail = document.querySelector(".collection_row");
+    var originals = Array.from(rail.children);
+    var clones = [];
+    var frame = 0;
+    var period = 0;
+    var lastTime = 0;
+    var position = 0;
+    var pauseUntil = 0;
+    var isRailVisible = false;
+    var isPointerDown = false;
+    var oldRailTabindex = rail.getAttribute("tabindex");
+    rail.tabIndex = 0;
+    rail.setAttribute("aria-label", "Collection lookbook");
+    if (!motion.matches) {
+      [true, false].forEach(function (prepend) {
+        var set = originals.map(function (item) {
+          var clone = item.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          clone.classList.add("is_rail_clone");
+          clones.push(clone);
+          return clone;
+        });
+        if (prepend) rail.prepend.apply(rail, set); else rail.append.apply(rail, set);
+      });
+    }
+    function measureRail() {
+      if (!clones.length) return;
+      period = originals[0].offsetLeft - rail.firstElementChild.offsetLeft;
+      position = period; rail.scrollLeft = position;
+    }
+    function pauseRail() { pauseUntil = performance.now() + 4500; position = rail.scrollLeft; }
+    rail.addEventListener("pointerdown", function () { isPointerDown = true; pauseRail(); }, {signal:signal});
+    function releaseRail() { isPointerDown = false; pauseRail(); }
+    window.addEventListener("pointerup", releaseRail, {signal:signal});
+    window.addEventListener("pointercancel", releaseRail, {signal:signal});
+    rail.addEventListener("wheel", pauseRail, {passive:true,signal:signal});
+    rail.addEventListener("keydown", pauseRail, {signal:signal});
+    rail.addEventListener("focusin", pauseRail, {signal:signal});
+    enableMouseDrag(rail);
+    function animate(time) {
+      var elapsed = Math.min((time - lastTime) / 1000, .05); lastTime = time;
+      if (period && isRailVisible && !document.hidden && !isPointerDown && time > pauseUntil && !rail.matches(":focus-within")) {
+        position += elapsed * 18;
+        if (position >= period * 2) position -= period;
+        rail.scrollLeft = position;
+      } else {
+        position = rail.scrollLeft;
+        if (period && !isPointerDown) {
+          if (position < period * .25) position += period;
+          else if (position > period * 1.75) position -= period;
+          rail.scrollLeft = position;
+        }
+      }
+      frame = requestAnimationFrame(animate);
+    }
+    var railObserver = new IntersectionObserver(function (entries) { isRailVisible = entries[0].isIntersecting; });
+    railObserver.observe(rail);
+    var resizeObserver = new ResizeObserver(measureRail);
+    resizeObserver.observe(rail);
+    if (!motion.matches) frame = requestAnimationFrame(animate);
+
+    return function cleanup() {
+      isDisposed = true;
+      abort.abort(); clearInterval(timer); cancelAnimationFrame(frame);
+      heroObserver.disconnect(); railObserver.disconnect(); resizeObserver.disconnect();
+      hero.classList.remove("is_crossfade_ready");
+      panels.forEach(function (panel) { panel.classList.remove("is_active"); panel.inert = false; });
+      title.remove();
+      clones.forEach(function (clone) { clone.remove(); });
+      [collage,rail].forEach(function (element,i) {
+        var original = i ? oldRailTabindex : oldCollageTabindex;
+        if (original === null) element.removeAttribute("tabindex"); else element.setAttribute("tabindex", original);
+        element.removeAttribute("aria-label"); element.classList.remove("is_dragging"); element.scrollLeft = 0;
+      });
+    };
+  }
+  function sync() { if (destroy) destroy(); destroy = media.matches ? mount() : null; }
+  media.addEventListener("change", sync);
+  motion.addEventListener("change", sync);
+  sync();
 })();

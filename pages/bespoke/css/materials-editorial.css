@@ -316,6 +316,16 @@
   outline-offset: 5px;
 }
 
+@media (max-width: 767px) {
+  .materials_title, .materials_texture, .materials_intro, .materials_caption_lead { display: none; }
+  .materials_content { gap: 24px; }
+  .materials_swatches { order: -1; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px 14px; width: 100%; margin: 0; padding: 4px; overflow: visible; }
+  .materials_swatch { min-width: 0; width: auto; }
+  .materials_selected { border: 0; padding: 0; }
+  .materials_selected_name { font-size: 26px; }
+  .materials_caption_desc { max-width: 36ch; font-size: 16px; line-height: 1.65; }
+}
+
 @media (min-width: 768px) {
   .materials_swatches {
     display: grid;
@@ -541,9 +551,11 @@
     align-self: start;
   }
 
-  /* 스와치 격자는 지금이 좋습니다(3 × 2, 한 칸 300px). 두 열 아래 전체 폭. */
+  /* Six quiet samples beneath the image/copy pair, not a second oversized gallery. */
   .materials_swatches {
     grid-column: 1 / -1;
     grid-row: 3;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
   }
 }

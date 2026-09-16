@@ -1,0 +1,866 @@
+[
+  {
+    "name": "Desktop HEAD comparison main 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      31382,
+      31382
+    ],
+    "triggers": [
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2760,
+          "end": 7728,
+          "pin": true
+        },
+        {
+          "start": 14926,
+          "end": 15877,
+          "pin": false
+        },
+        {
+          "start": 9965,
+          "end": 20765,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2760,
+          "end": 7728,
+          "pin": true
+        },
+        {
+          "start": 14926,
+          "end": 15877,
+          "pin": false
+        },
+        {
+          "start": 9965,
+          "end": 20765,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison main 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      30343,
+      30343
+    ],
+    "triggers": [
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2760,
+          "end": 7728,
+          "pin": true
+        },
+        {
+          "start": 13965,
+          "end": 14915,
+          "pin": false
+        },
+        {
+          "start": 9785,
+          "end": 20585,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2760,
+          "end": 7728,
+          "pin": true
+        },
+        {
+          "start": 13965,
+          "end": 14915,
+          "pin": false
+        },
+        {
+          "start": 9785,
+          "end": 20585,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison main 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      29860,
+      29860
+    ],
+    "triggers": [
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2734,
+          "end": 7702,
+          "pin": true
+        },
+        {
+          "start": 13527,
+          "end": 14477,
+          "pin": false
+        },
+        {
+          "start": 9684,
+          "end": 20484,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": 986,
+          "end": 2282,
+          "pin": false
+        },
+        {
+          "start": 2734,
+          "end": 7702,
+          "pin": true
+        },
+        {
+          "start": 13527,
+          "end": 14477,
+          "pin": false
+        },
+        {
+          "start": 9684,
+          "end": 20484,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison brand 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      12956,
+      12956
+    ],
+    "triggers": [
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison brand 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      12879,
+      12879
+    ],
+    "triggers": [
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison brand 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      12836,
+      12836
+    ],
+    "triggers": [
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 0,
+          "end": 10,
+          "pin": true
+        },
+        {
+          "start": 3672,
+          "end": 4212,
+          "pin": true
+        },
+        {
+          "start": 138,
+          "end": 1002,
+          "pin": false
+        },
+        {
+          "start": 847,
+          "end": 1711,
+          "pin": false
+        },
+        {
+          "start": 1788,
+          "end": 2952,
+          "pin": false
+        },
+        {
+          "start": 7283,
+          "end": 10739,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison bespoke 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      14396,
+      14396
+    ],
+    "triggers": [
+      [
+        {
+          "start": 673,
+          "end": 3049,
+          "pin": false
+        },
+        {
+          "start": 2941,
+          "end": 5101,
+          "pin": false
+        },
+        {
+          "start": 6769,
+          "end": 8497,
+          "pin": false
+        },
+        {
+          "start": 673,
+          "end": 2293,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 673,
+          "end": 3049,
+          "pin": false
+        },
+        {
+          "start": 2941,
+          "end": 5101,
+          "pin": false
+        },
+        {
+          "start": 6769,
+          "end": 8497,
+          "pin": false
+        },
+        {
+          "start": 673,
+          "end": 2293,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison bespoke 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      12992,
+      12992
+    ],
+    "triggers": [
+      [
+        {
+          "start": 653,
+          "end": 3029,
+          "pin": false
+        },
+        {
+          "start": 2921,
+          "end": 5081,
+          "pin": false
+        },
+        {
+          "start": 6749,
+          "end": 8477,
+          "pin": false
+        },
+        {
+          "start": 653,
+          "end": 2273,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 653,
+          "end": 3029,
+          "pin": false
+        },
+        {
+          "start": 2921,
+          "end": 5081,
+          "pin": false
+        },
+        {
+          "start": 6749,
+          "end": 8477,
+          "pin": false
+        },
+        {
+          "start": 653,
+          "end": 2273,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison bespoke 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      12224,
+      12224
+    ],
+    "triggers": [
+      [
+        {
+          "start": 6174,
+          "end": 7902,
+          "pin": false
+        },
+        {
+          "start": 1199,
+          "end": 2391,
+          "pin": false
+        },
+        {
+          "start": 1199,
+          "end": 2391,
+          "pin": false
+        },
+        {
+          "start": 2346,
+          "end": 4506,
+          "pin": false
+        }
+      ],
+      [
+        {
+          "start": 6174,
+          "end": 7902,
+          "pin": false
+        },
+        {
+          "start": 1199,
+          "end": 2391,
+          "pin": false
+        },
+        {
+          "start": 1199,
+          "end": 2391,
+          "pin": false
+        },
+        {
+          "start": 2346,
+          "end": 4506,
+          "pin": false
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison reservation 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      7626,
+      7626
+    ],
+    "triggers": [
+      [],
+      []
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison reservation 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      7309,
+      7309
+    ],
+    "triggers": [
+      [],
+      []
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison reservation 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      7133,
+      7133
+    ],
+    "triggers": [
+      [],
+      []
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      8113,
+      8113
+    ],
+    "triggers": [
+      [
+        {
+          "start": 0,
+          "end": 1080,
+          "pin": false
+        },
+        {
+          "start": 1080,
+          "end": 2785,
+          "pin": true
+        },
+        {
+          "start": 3785,
+          "end": 4937,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": 0,
+          "end": 1080,
+          "pin": false
+        },
+        {
+          "start": 1080,
+          "end": 2785,
+          "pin": true
+        },
+        {
+          "start": 3785,
+          "end": 4937,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      6688,
+      6688
+    ],
+    "triggers": [
+      [
+        {
+          "start": -206,
+          "end": 874,
+          "pin": false
+        },
+        {
+          "start": 874,
+          "end": 1955,
+          "pin": true
+        },
+        {
+          "start": 2840,
+          "end": 3704,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": -206,
+          "end": 874,
+          "pin": false
+        },
+        {
+          "start": 874,
+          "end": 1955,
+          "pin": true
+        },
+        {
+          "start": 2840,
+          "end": 3704,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      6175,
+      6175
+    ],
+    "triggers": [
+      [
+        {
+          "start": -296,
+          "end": 784,
+          "pin": false
+        },
+        {
+          "start": 784,
+          "end": 1658,
+          "pin": true
+        },
+        {
+          "start": 2505,
+          "end": 3273,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": -296,
+          "end": 784,
+          "pin": false
+        },
+        {
+          "start": 784,
+          "end": 1658,
+          "pin": true
+        },
+        {
+          "start": 2505,
+          "end": 3273,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection-youngjin 1920",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      8113,
+      8113
+    ],
+    "triggers": [
+      [
+        {
+          "start": 0,
+          "end": 1080,
+          "pin": false
+        },
+        {
+          "start": 1080,
+          "end": 2785,
+          "pin": true
+        },
+        {
+          "start": 3785,
+          "end": 4937,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": 0,
+          "end": 1080,
+          "pin": false
+        },
+        {
+          "start": 1080,
+          "end": 2785,
+          "pin": true
+        },
+        {
+          "start": 3785,
+          "end": 4937,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection-youngjin 1440",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      6688,
+      6688
+    ],
+    "triggers": [
+      [
+        {
+          "start": -206,
+          "end": 874,
+          "pin": false
+        },
+        {
+          "start": 874,
+          "end": 1955,
+          "pin": true
+        },
+        {
+          "start": 2840,
+          "end": 3704,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": -206,
+          "end": 874,
+          "pin": false
+        },
+        {
+          "start": 874,
+          "end": 1955,
+          "pin": true
+        },
+        {
+          "start": 2840,
+          "end": 3704,
+          "pin": true
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Desktop HEAD comparison collection-youngjin 1280",
+    "pass": true,
+    "diffs": [],
+    "heights": [
+      6175,
+      6175
+    ],
+    "triggers": [
+      [
+        {
+          "start": -296,
+          "end": 784,
+          "pin": false
+        },
+        {
+          "start": 784,
+          "end": 1658,
+          "pin": true
+        },
+        {
+          "start": 2505,
+          "end": 3273,
+          "pin": true
+        }
+      ],
+      [
+        {
+          "start": -296,
+          "end": 784,
+          "pin": false
+        },
+        {
+          "start": 784,
+          "end": 1658,
+          "pin": true
+        },
+        {
+          "start": 2505,
+          "end": 3273,
+          "pin": true
+        }
+      ]
+    ]
+  }
+]

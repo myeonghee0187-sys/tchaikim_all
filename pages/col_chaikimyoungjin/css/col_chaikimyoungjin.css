@@ -1263,6 +1263,8 @@
     scrollbar-width: none;
   }
   .showcase_carousel_viewport::-webkit-scrollbar { display: none; }
+  /* The final narrow image needs enough runway to reach its own snap point. */
+  .showcase_carousel_viewport::after { content: ""; flex: 0 0 var(--showcase_end_space, 0px); height: 1px; }
 
   .showcase_slide {
     position: static;
@@ -1279,8 +1281,8 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
-  /* 마지막 장은 start로 설 자리가 없습니다(레일 끝이 먼저 옵니다). */
-  .showcase_slide:last-child { scroll-snap-align: end; }
+  /* End spacing is measured from the real asset width, not a fixed slide size. */
+  .showcase_slide:last-child { scroll-snap-align: start; }
 
   /* 높이만 정하고 폭은 각 사진의 원본 비율이 정합니다 — 그래서 상자가
      사진에 딱 맞고 레터박스가 생기지 않습니다. */
@@ -1307,10 +1309,10 @@
      읽혀서, 레일 아래 오른쪽에 작은 화살표 + 카운터로 내렸습니다. */
   .showcase_carousel_nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 14px;
-    padding-top: 18px;
+    gap: 0;
+    padding-top: 24px;
   }
 
   .showcase_carousel_button {
@@ -1318,7 +1320,7 @@
     left: auto;
     right: auto;
     top: auto;
-    display: grid;
+    display: none;
     place-items: center;
     width: 44px;
     height: 44px;
@@ -1353,57 +1355,33 @@
     transform: scaleX(-1);
   }
 
-  /* ---------- archive ----------
-     레퍼런스(obsidianassembly)의 `-gc sticky`와 같은 방식입니다 —
-     화면 한 장 높이의 sticky 컨테이너에 6열 그리드를 깔고,
-     부모 섹션을 더 높게 두어 그만큼이 스크롤 런웨이가 됩니다.
-
-     그래야 사진 다섯 장이 "한 페이지에" 같이 보입니다. 예전 2열 배치는
-     세로로 흘러 390px에서 섹션이 1159px(화면 1.4장)이었습니다. */
-  /* ★ 프레임을 다시 sticky로 붙입니다.
-     6차에서 sticky를 빼자 섹션이 스크롤과 함께 흘러가, 화면에 걸쳐 있는 동안
-     카드 아래가 잘렸습니다(실제 기기에서 확인). sticky면 이 구간에서 프레임이
-     화면에 정확히 맞춰 서 있어 카드 전체와 카운터가 항상 보입니다.
-     런웨이는 70svh만 둡니다 — 덱이 세로 드래그를 가져가므로(touch-action: none)
-     길면 지나가기가 답답합니다. */
-  .archive {
-    height: 170svh;
-  }
+  /* Responsive Archive: title / year / horizontal deck / action.
+     The normal document flow leaves vertical page scrolling unrestricted.
+     Shared card dimensions keep the counter aligned with the active photo. */
+.archive { height: auto; }
 
   .archive_frame {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(16px, 4vw, 32px);
-    height: 100svh;
-    padding: clamp(72px, 11vw, 120px) var(--layout_gutter) var(--archive_pad_bottom);
-  }
-
-  /* 연도 탭은 위에 고정으로 앉고, 남는 자리를 덱이 전부 씁니다. */
-  .archive_sticky {
-    flex: 0 0 auto;
-    width: 100%;
+    position: relative;
+    top: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
     height: auto;
-    padding: 0;
+    padding: 80px var(--layout_gutter);
   }
-
-  /* 프레임 자체가 sticky라 안쪽에서 또 따라올 필요가 없습니다. */
-  .archive_txt_area {
-    position: static;
-    gap: clamp(16px, 3vw, 32px);
-    width: 100%;
+  .archive_sticky, .archive_txt_area, .archive_txt { display: contents; }
+  .archive_title { grid-row: 1; }
+  .archive_years { grid-row: 2; }
+  .archive_deck { grid-row: 3; width: min(100%, 500px); justify-self: center; }
+  .archive_more.banner_crosslink_link {
+    grid-row: 4; position: relative; inset: auto; justify-self: center;
+    width: auto; min-width: 180px; max-width: none; height: 48px;
+    padding: 12px 24px; border-radius: 0; transform: none;
   }
-
-  .archive_txt {
-    gap: clamp(24px, 5vw, 61px);
-  }
-
   .archive_title {
     font-size: clamp(28px, 6.4vw, 48px);
   }
 
-  /* 세로 목록은 자리를 너무 차지해 가로로 눕힙니다. */
   .archive_year_list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1415,106 +1393,44 @@
     padding-left: 0;
   }
 
-  /* ★ 링크는 카드 더미 "아래"에 따로 놓입니다.
-     레퍼런스의 EXPLORE OBJECTS 버튼과 같은 자리입니다 — 사진 위에 겹치지 않습니다.
-     (한 번 사진 한가운데에 얹었다가 되돌렸습니다. 사진을 가려 읽기도 보기도 나빴습니다.)
-     카드 폭과 같은 폭으로 두어 더미와 한 덩어리로 읽힙니다. */
-  .archive_more {
-    position: absolute;
-    left: 50%;
-    bottom: var(--archive_pad_bottom);
-    z-index: 30;
-    display: inline-flex;
-    width: 74%;
-    max-width: 320px;
-    height: 52px;
-    justify-content: center;
-    border: 1px solid var(--collection_tag_line);
-    border-bottom-color: var(--collection_tag_line);
-    border-radius: 30px;
-    transform: translateX(-50%);
-    transition:
-      border-color var(--duration_fast) var(--easing_base),
-      background-color var(--duration_fast) var(--easing_base);
-  }
-
   .archive_more:hover {
     border-color: var(--color_point);
     opacity: 1;
   }
 
-  /* ---------- 카드 덱 ---------- */
-
-  /* 카드 길이와 아래 여백. 링크를 카드 한가운데에 놓는 계산이 이 둘을 씁니다.
-     카드가 길다고 느껴지면 --archive_card_h만 줄이면 링크도 같이 따라옵니다. */
   .archive_frame {
-    --archive_card_h: min(42svh, 380px);
+    --archive_card_h: min(50svh, 460px);
     --archive_pad_bottom: clamp(24px, 4vw, 44px);
-    /* 카드 아래에 놓이는 버튼이 차지하는 높이(버튼 + 위 여백).
-       카드는 이만큼 위에서 끝나므로 둘이 겹치지 않습니다. */
-    --archive_action_h: 90px;
-    /* 뒤 카드가 위로 겹쳐 올라갈 자리. js의 DECK_VISIBLE_DEPTH × DECK_STEP_Y
-       (2 × 48 = 96)보다 커야 맨 뒤 카드가 덱 위로 삐져나가지 않습니다. */
+
+    --archive_action_h: 0px;
+
     --archive_deck_head: 104px;
   }
 
-  /* ---------- 카드 덱 ----------
-     레퍼런스(obsidianassembly)의 오브젝트 시퀀스와 같은 방식입니다 —
-     다섯 장이 같은 자리에 겹쳐 있고, 앞뒤는 transform(위로 이동 + 축소)과
-     상태 class로만 만듭니다. 위로 밀면 다음 장이 앞으로 나옵니다.
-
-     카드 폭을 72%로 두는 데는 이유가 있습니다. 덱은 세로 드래그를 가로채므로
-     (touch-action: none) 좌우에 남는 여백이 "페이지를 스크롤할 수 있는 자리"가
-     됩니다. 폭을 100%로 하면 이 구간에서 스크롤이 막힙니다. */
-  /* ★ 카드는 덱의 "위쪽"을 기준으로 앉습니다.
-     덱은 연도 탭 바로 아래에서 시작하는 flex 항목이라, 위에서부터 재면
-     연도 탭과 카드 사이 간격이 화면 크기와 무관하게 일정합니다.
-     (바닥 기준으로 두면 화면이 높을수록 간격이 벌어집니다 — 사용자 지적.)
-     아래쪽 넘침은 height의 min()이 막습니다. */
   .archive_deck {
     position: relative;
     flex: 1 1 auto;
     min-height: 0;
-    /* 실제로 그려지는 카드 높이. 화면이 낮으면 min()의 두 번째 항이 이겨
-       카드가 줄어듭니다. 카드와 카운터가 같은 값을 써야 카운터가 늘 카드
-       세로 한가운데에 옵니다(퍼센트는 둘 다 덱 높이를 기준으로 풀립니다). */
-    --archive_card_real: min(
-      var(--archive_card_h),
-      calc(100% - var(--archive_deck_head) - var(--archive_action_h))
-    );
-    /* 세로 드래그를 카드 넘김으로 씁니다. */
-    touch-action: none;
+
+    --archive_card_real: var(--archive_card_h);
+
+    height: calc(var(--archive_card_h) + var(--archive_deck_head));
+    touch-action: pan-y pinch-zoom;
   }
 
   .archive_photo {
     position: absolute;
-    /* ★ top을 반드시 auto로 되돌려야 합니다. 기본 규칙의
-       `top: var(--archive_photo_top)`이 남은 채 bottom을 주면
-       위아래가 함께 고정돼 카드가 세로로 늘어납니다
-       (실제로 266×355여야 할 카드가 266×542가 됐습니다). */
-    /* 뒤 카드가 위로 올라갈 자리(--archive_deck_head)만큼 내려서 시작합니다.
-       이 값이 곧 "연도 탭 ~ 맨 앞 카드" 간격을 일정하게 만드는 기준입니다. */
+
     top: var(--archive_deck_head);
     bottom: auto;
     left: 50%;
     z-index: var(--archive_deck_z, 1);
     width: 74%;
     max-width: 320px;
-    /* ★ 높이를 화면 기준(svh)으로 잡습니다.
-       - 덱 퍼센트만 쓰면 글 블록 높이에 따라 카드 길이가 들쭉날쭉합니다.
-       - svh로 두면 어느 기기에서나 같은 길이이고, 아래 Reverse Now 버튼을
-         카드 한가운데에 놓는 계산(--archive_card_h의 절반)도 가능해집니다.
-       6차의 72%는 실제 기기에서 너무 길어 아래가 잘렸습니다.
-       --archive_card_real이 안전장치를 품고 있습니다 — 화면이 낮으면 카드가
-       덱 위쪽 자리와 버튼 자리를 뺀 만큼으로 줄어 절대 겹치지 않습니다. */
+
     height: var(--archive_card_real);
     opacity: var(--archive_deck_opacity, 1);
-    /* ★ 그림자를 두지 않습니다(사용자 결정 — 데스크톱과 같은 기준).
-       겹친 장수는 뒤 카드가 위로 올라가며 작아지는 것(--archive_deck_y / _scale)으로
-       이미 드러납니다. */
-    /* 뒤로 갈수록 위로 올라가며 작아집니다. js가 --archive_deck_* 를 씁니다.
-       ★ 기울기를 넣지 않습니다. 레퍼런스의 카드 더미는 반듯하게 겹쳐 있고,
-       기울이면 겹친 가장자리가 어긋나 지저분해 보입니다. */
+
     transform:
       translate(-50%, var(--archive_deck_y, 0))
       scale(var(--archive_deck_scale, 1));
@@ -1523,29 +1439,18 @@
       opacity var(--duration_base) var(--easing_base);
   }
 
-  /* ★★★ 사진이 포인터를 받으면 안 됩니다.
-     받으면 마우스로 덱을 끌 때 브라우저 기본 **이미지 드래그**가 시작되고,
-     그 순간 pointercancel이 나서 pointerup이 오지 않습니다 — 즉
-     initArchiveDeck의 넘김 판정이 아예 실행되지 않습니다(실측: 이벤트가
-     pointerdown -> pointercancel로 끝났습니다).
-     ★ 이 규칙은 1279 이하 전용입니다. 데스크톱에서는 .archive_photo가
-     hover 확대를 쓰므로 포인터를 받아야 합니다.
-     ★ 리스너는 .archive_deck에 있으므로 버블링에는 영향이 없습니다. */
   .archive_photo img {
     pointer-events: none;
     -webkit-user-drag: none;
     user-select: none;
   }
 
-  /* 덱에서는 눌림 확대를 쓰지 않습니다. 카드가 겹쳐 있어 어긋나 보입니다. */
   .archive_photo:hover {
     transform:
       translate(-50%, var(--archive_deck_y, 0))
       scale(var(--archive_deck_scale, 1));
   }
 
-  /* 원본 비율이 장마다 달라 그대로 두면 카드 크기가 제각각이 되어 겹침이
-     흐트러집니다. 카드 상자를 채우고 남는 부분은 잘라 냅니다. */
   .archive_photo img {
     width: 100%;
     height: 100%;
@@ -1553,13 +1458,10 @@
     object-fit: cover;
   }
 
-  /* 뒤 카드는 눌러도 반응하지 않게 두고, 맨 앞 장만 조작 대상입니다.
-     js가 맨 앞 장에 is_active를 붙입니다. */
   .archive_photo.is_active {
     cursor: grab;
   }
 
-  /* 레퍼런스처럼 카드 오른쪽, 세로 한가운데에 원으로 둡니다. */
   .archive_deck_counter {
     position: absolute;
     right: 0;
@@ -1570,9 +1472,10 @@
     width: 54px;
     height: 54px;
     gap: 2px;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
-    padding-top: 17px;
+    padding: 0;
+    line-height: 1;
     border: 1px solid var(--collection_tag_line);
     border-radius: 50%;
     margin: 0;
@@ -1588,25 +1491,8 @@
     font-weight: 600;
   }
 
-  /* 덱을 넘기는 제스처는 **세로**입니다(위로 밀면 다음 장 —
-     initArchiveDeck의 pointerup이 clientY만 봅니다). 그래서 힌트도 위쪽
-     방향이어야 합니다 — 가로 화살표를 두면 실제 조작과 어긋납니다.
-     ★ 글자가 아니라 선 두 개입니다. "SWIPE" 같은 큰 라벨은 이 페이지의
-     편집 톤과 맞지 않고, 읽기 도구에도 잡히지 않아야 합니다. */
-  .archive_deck::after {
-    content: "";
-    position: absolute;
-    right: 23px;
-    top: calc(var(--archive_deck_head) + var(--archive_card_real) / 2 - 50px);
-    z-index: 20;
-    width: 8px;
-    height: 8px;
-    border-top: 1px solid var(--color_point);
-    border-left: 1px solid var(--color_point);
-    opacity: .45;
-    transform: rotate(45deg);
-    pointer-events: none;
-  }
+  .archive_deck::after { content: none; }
+  .archive_deck:focus-visible, .showcase_carousel_viewport:focus-visible { outline: 1px solid var(--color_point); outline-offset: -2px; }
 
   /* ---------- as worn ----------
      사진과 글이 가로로 붙은 카드(818px)가 화면보다 넓습니다.
@@ -1999,6 +1885,7 @@
    ############################################################################ */
 @media (max-width: 767.98px) {
   .asworn_list .asworn_text {
+    display: none;
     font-size: 15px;
     line-height: 1.65;
   }
@@ -2032,91 +1919,6 @@
 
   .banner_crosslink_text {
     font-size: 13px;
-  }
-}
-
-/* ############################################################################
-   반응형 7차 — Collection Archive 카드가 가로 띠로 눌리던 문제 (2026-09-15)
-   ----------------------------------------------------------------------------
-   ★★★ 원인은 레이아웃이 아니라 **CSS 특정도 충돌**이었습니다.
-
-   1403행이 `.archive_more { position: absolute; bottom: ... }`로 CTA를 카드
-   더미 **아래**(프레임 바닥)에 두려 합니다. 그런데 이 요소는 class가 둘입니다 —
-   `class="banner_crosslink_link archive_more"`. 6차에서 추가한 44px 히트 판
-   규칙의 `.banner_crosslink_link { position: relative }`가 **같은 특정도
-   (0,1,0)에 소스 순서가 뒤**라 `position: absolute`를 이깁니다.
-
-   그래서 CTA가 흐름 안(연도 목록 바로 아래)으로 올라왔는데, 덱은 여전히
-   `--archive_action_h: 90px`로 **바닥에 있지도 않은 버튼 자리**를 빼고
-   있었습니다. 덱 아래에 정확히 90px이 비어 있는 것을 실측했습니다.
-
-   1024 × 768 실측 (수정 전):
-     kim 카드 320 × 105 · yj 카드 320 × 43   ← 옷이 보이지 않는 가로 띠
-     (계산: 덱 높이 237 − deck_head 104 − action_h 90 = 43)
-
-   ★ 고친 방법 두 가지
-   1) CTA는 지금 자리(제목 → 연도 → CTA)에 **그대로 둡니다.** 되돌리는 대신
-      유지한 이유는, 이 순서가 오히려 데스크톱(1920) 왼쪽 컬럼과 같기
-      때문입니다. 대신 바닥에 없는 버튼 자리를 0으로 되돌려 덱이 그만큼
-      돌려받습니다.
-   2) 900~1279에서는 프레임을 **2열**로 놓습니다 — 왼쪽 글, 오른쪽 덱.
-      데스크톱의 위계(왼쪽 텍스트 + 오른쪽 사진)와 같은 구성이고,
-      100svh 안에서 글과 카드가 세로 자리를 다투지 않아 카드가 제 높이를
-      갖습니다. 가로로 남아돌던 폭도 이때 쓰입니다.
-
-   ★ 경계를 768이 아니라 **900**으로 잡았습니다. 768에서 2열이면 왼쪽 글
-     컬럼(340px)을 빼고 남는 폭이 약 330px이라 카드가 오히려 1열일 때보다
-     좁아집니다. 예약 페이지가 같은 이유로 900을 쓰고 있습니다.
-   ★ 1280 이상은 이 블록에 들어올 수 없습니다 — 전부 max-width 1279.98 안입니다.
-   ★ 두 Collection 파일은 이 블록이 **완전히 같아야 합니다**(§24).
-   ★ 되돌리려면 이 주석부터 파일 끝까지 지우면 됩니다.
-   ############################################################################ */
-
-/* ---------- 공통: 바닥에 없는 버튼 자리를 덱에 돌려줍니다 ---------- */
-@media (max-width: 1279.98px) {
-  .archive_frame {
-    /* CTA가 흐름 안(왼쪽 글 묶음)에 있으므로 덱 바닥에 자리를 비워 둘
-       이유가 없습니다. 0으로 두면 --archive_card_real의 두 번째 항이
-       그만큼 커져 카드가 제 높이를 되찾습니다.
-       ★ CTA를 다시 덱 아래 absolute로 되돌린다면 이 값을 90px로 복구하세요. */
-    --archive_action_h: 0px;
-  }
-}
-
-/* ---------- 태블릿(900~1279): 왼쪽 글 + 오른쪽 덱 2열 ---------- */
-@media (min-width: 900px) and (max-width: 1279.98px) {
-  .archive_frame {
-    display: grid;
-    /* ★ 왼쪽 최솟값 340px은 임의값이 아닙니다 — 데스크톱에서 이 제목이
-       실제로 차지하는 폭이 348.8px(`Tchai Kim Young Jin`, 48px)입니다.
-       더 좁게 두면 자매 페이지 제목이 세 줄로 접힙니다(실측). */
-    grid-template-columns: minmax(340px, 38%) 1fr;
-    gap: clamp(32px, 5vw, 64px);
-    align-items: start;
-
-    /* 2열에서는 카드가 세로로 여유가 생기므로 시안에 가까운 세로 비율로
-       키웁니다(1열의 min(42svh, 380px)은 세로로 다투던 시절의 값입니다).
-       ★ 위 --archive_card_real이 화면이 낮을 때의 안전장치를 그대로
-         품고 있어 이 값을 키워도 덱 밖으로 넘치지 않습니다. */
-    --archive_card_h: min(62svh, 500px);
-  }
-
-  .archive_sticky {
-    /* grid 항목이라 flex 속성은 무시되지만, 남겨 두면 다음 사람이 헷갈립니다. */
-    flex: initial;
-    align-self: center;
-  }
-
-  .archive_deck {
-    /* 열 전체 높이를 씁니다 — 이것이 카드 높이를 되찾는 핵심입니다. */
-    height: 100%;
-    min-height: 0;
-  }
-
-  .archive_photo {
-    /* 오른쪽 열이 넓어진 만큼 카드도 넓힙니다(1열은 320px 그대로). */
-    width: 68%;
-    max-width: 380px;
   }
 }
 

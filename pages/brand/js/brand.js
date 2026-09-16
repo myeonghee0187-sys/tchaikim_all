@@ -1649,6 +1649,66 @@ REVEAL_CLOSED_HEIGHT = 484;
      붙여도 됩니다. */
   initMoodReveal();
 
+  function initCompactArtDirection() {
+    var mobile = window.matchMedia("(max-width: 767px)");
+    var compact = window.matchMedia("(max-width: 1279px)");
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var descriptions = Array.from(document.querySelectorAll(".tchaikim_panel_desc"));
+    var originals = descriptions.map(function (node) { return node.innerHTML; });
+    var summaries = [
+      "Hanbok belonged to daily life — to work in, to walk in, to move in.",
+      "Tchai Kim brings hanbok back to daily life, with ease and room to move.",
+      "Color in Korea carried the seasons long before it touched a piece of cloth.",
+      "Tchai Kim carries Korea’s five directional colors forward in every piece.",
+      "The color in our fabric is woven into the thread, from the first stitch."
+    ];
+    function syncCopy() {
+      descriptions.forEach(function (node, index) {
+        if (mobile.matches) node.textContent = summaries[index];
+        else node.innerHTML = originals[index];
+      });
+    }
+    mobile.addEventListener("change", syncCopy);
+    syncCopy();
+
+    var section = document.querySelector(".heritage");
+    var frame = section.querySelector(".heritage_frame");
+    var photos = Array.from(section.querySelectorAll(".heritage_photos .heritage_stage"));
+    var cleanup = null;
+    function mountHeritage() {
+      var request = 0;
+      var abort = new AbortController();
+      function paint() {
+        request = 0;
+        var travel = Math.max(1, section.offsetHeight - frame.offsetHeight - 80);
+        var progress = Math.max(0, Math.min(1, (80 - section.getBoundingClientRect().top) / travel));
+        var phase = Math.max(0, Math.min(2, (progress - .12) / .72 * 2));
+        photos.forEach(function (photo, index) {
+          photo.style.setProperty("--heritage_fade", String(Math.max(0, 1 - Math.abs(phase - index))));
+          photo.setAttribute("aria-hidden", String(index !== Math.round(phase)));
+        });
+      }
+      function handleScroll() { if (!request) request = requestAnimationFrame(paint); }
+      window.addEventListener("scroll", handleScroll, {passive:true,signal:abort.signal});
+      window.addEventListener("resize", handleScroll, {passive:true,signal:abort.signal});
+      paint();
+      return function () {
+        abort.abort(); cancelAnimationFrame(request);
+        photos.forEach(function (photo) {
+          photo.style.removeProperty("--heritage_fade");
+          photo.removeAttribute("aria-hidden");
+        });
+      };
+    }
+    function syncHeritage() {
+      if (cleanup) cleanup();
+      cleanup = compact.matches && !motion.matches ? mountHeritage() : null;
+    }
+    compact.addEventListener("change", syncHeritage);
+    motion.addEventListener("change", syncHeritage);
+    syncHeritage();
+  }
+
   function init() {
     initMoodSlider();
     initTchaikimPause();
@@ -1657,6 +1717,7 @@ REVEAL_CLOSED_HEIGHT = 484;
     initHeritageReveal();
     initTchaikimTabs();
     initVideos();
+    initCompactArtDirection();
   }
 
   if (document.readyState === "loading") {

@@ -1,5 +1,59 @@
 # Tchai Kim 현재 상태
 
+## Final Tablet + Mobile Art Direction — 2026-09-17
+
+최신 첨부 통합 명세를 기준으로 Main / Brand / Bespoke main / Reservation /
+Collection 2개만 수정했습니다. 아래 과거 작업의 전체 사이트 범위·방향과
+충돌하면 이 항목과 최신 명세를 우선합니다.
+
+- 시작 HEAD: `76499f23cd2c5e550e7f80a8aa7ef4ec2222c2f5` (`최종 QA 2차`). 시작 작업 트리 clean.
+- 프로덕션 CSS/JS 12개 파일 변경. HTML·공통 파일·Shop·Detail·Intro·Done 무변경.
+- 커밋/푸시하지 않음. 새 라이브러리·html zoom·page scale 추가 없음.
+- 명세 33/33 PASS. Collection 6개 요구사항은 두 페이지 각각 PASS.
+- 상세 변경/33개 체크리스트/파일 목록/검증 한계: [REPORT](../mobile-final-art-direction/REPORT.md).
+- 전후 화면: [비교 뷰어](../mobile-final-art-direction/index.html). 로컬 서버 port 5733.
+
+### 구현 요점
+
+- Main: Compact 2-image crossfade(7.5초 주기/1.5초 fade), 원형 magnifier,
+  4-photo Tchai rail, promo 순서·영상 비율, 무한 collection rail. Mobile
+  model+지정 copy 및 products viewport는 document flow에서 제거, Tablet 유지.
+- Brand: olive Mood·unboxed swipe, KYJ 체급/정렬축, Mobile tabs→video→한 문장,
+  Atelier 설명 제거, Heritage 같은 프레임 3-photo crossfade(155svh).
+- Bespoke: 반응형 원문 축약/복원, quote 중앙, 기존 5-step/6-material 보호,
+  Mobile swatches+caption, 작은 CTA, Compact Begin→Reservation 순서와 여백.
+- Reservation: Tablet silhouette 3열, Mobile 82% rail. form instance만 gutter 확장.
+- Collection 둘 다: 중앙 counter/no arrows, Archive title→year→deck→Reserve,
+  원형 counter, horizontal drag/wheel/key. 세로 스크롤 허용. Mobile As Worn 설명 제거.
+
+### 유지해야 할 세부사항
+
+- Main bespoke promo 영상은 16:9가 아니라 **1122:720**. Hero Tablet bespoke
+  이미지의 세로 crop은 **0%**여야 인물 얼굴/모자가 잘리지 않음.
+- 자동 motion은 IO/visibility/사용자 interaction/reduced-motion을 고려.
+  MQL teardown에서 timer·RAF·observer·AbortSignal listener·clone·동적 제목 제거.
+  지연 focusout 처리에서 timer가 부활하지 않도록 `isDisposed` 가드 유지.
+- 요약은 DOM 원본 HTML을 보관했다가 Tablet/Desktop 조건에 맞게 복원.
+- Collection 마지막 narrow slide가 05까지 도달하려면 ResizeObserver로 측정하는
+  `--showcase_end_space`가 필요. Desktop에서는 제거.
+- Archive `.archive_more`의 `position: relative`는 확장 hit area가 year UI를
+  덮지 않게 하는 기준점. 무작정 static으로 변경하지 말 것.
+- Collection CSS의 stack 크기는 같아도 고유 Showcase asset ratio/offset은 유지.
+- Desktop 원문 링크/section 순서/aria 복원 코드 제거 금지.
+
+### 검증 범위
+
+로컬 설치 Chrome, 실제 H.264 재생, touch 입력 모사/CDP/마우스/휠/키보드.
+6페이지 × 13폭(1920/1440/1280/1279/1024/820/768/767/430/402/390/375/360)
+주요 section 스크롤 검사에서 실제 body overflow 0, broken image/console/
+unhandled rejection 0. overflow 숨김을 풀어 별도 측정함.
+
+시작 HEAD 대비 Desktop 1920/1440/1280의 geometry·문서 높이·ST 구간 18/18 PASS.
+Resize 왕복 2회에서 새 listener/timer/clone/inline style 잔재·ST 누적 없음.
+예약은 390/768/1024 × Atelier/Phone 전체 입력→검증→Done 전달 PASS.
+실제 iPhone/iPad Safari는 미검증. 전체 캡처만이 아니라 `verification/`의
+Heritage/확대/예약 상태 이미지도 확인할 것.
+
 ## ★★★ Brand · Collection 2페이지 — Tablet / Mobile 편집 재디자인 (2026-09-16)
 
 기준 커밋 `17ae373`. **1280 이상은 값 141개 중 차이 0**(아래 회귀 표).

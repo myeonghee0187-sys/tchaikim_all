@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Desktop Process click/scroll 0",
+    "pass": true,
+    "active": "consultation",
+    "body": "consultation",
+    "y": 6942
+  },
+  {
+    "name": "Desktop Process click/scroll 1",
+    "pass": true,
+    "active": "design_selection",
+    "body": "design_selection",
+    "y": 7287
+  },
+  {
+    "name": "Desktop Process click/scroll 2",
+    "pass": true,
+    "active": "fabric_measurement",
+    "body": "fabric_measurement",
+    "y": 7633
+  },
+  {
+    "name": "Desktop Process click/scroll 3",
+    "pass": true,
+    "active": "tailoring",
+    "body": "tailoring",
+    "y": 7979
+  },
+  {
+    "name": "Desktop Process click/scroll 4",
+    "pass": true,
+    "active": "completion",
+    "body": "completion",
+    "y": 8324
+  },
+  {
+    "name": "Desktop Process scroll/click 0",
+    "pass": true
+  },
+  {
+    "name": "Desktop Process scroll/click 1",
+    "pass": true
+  },
+  {
+    "name": "Desktop Process scroll/click 2",
+    "pass": true
+  },
+  {
+    "name": "Desktop Process scroll/click 3",
+    "pass": true
+  },
+  {
+    "name": "Desktop Process scroll/click 4",
+    "pass": true
+  }
+]

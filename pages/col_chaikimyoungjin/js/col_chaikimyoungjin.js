@@ -1013,11 +1013,27 @@
       });
     }
 
+    function measureEndSpace() {
+      if (!narrow.matches) return;
+      var space = Math.max(0, viewport.clientWidth - slides[slides.length - 1].offsetWidth);
+      viewport.style.setProperty("--showcase_end_space", space + "px");
+    }
+    var endObserver = new ResizeObserver(measureEndSpace);
+
     function syncMode() {
       if (narrow.matches) {
+        viewport.tabIndex = 0;
+        viewport.setAttribute("aria-label", "Collection images. Use left and right arrow keys.");
+        endObserver.observe(viewport);
+        endObserver.observe(slides[slides.length - 1]);
+        measureEndSpace();
         render();
         return;
       }
+      endObserver.disconnect();
+      viewport.style.removeProperty("--showcase_end_space");
+      viewport.removeAttribute("tabindex");
+      viewport.removeAttribute("aria-label");
       slides.forEach(function (slide) {
         slide.classList.remove("is_current");
         slide.removeAttribute("aria-hidden");
@@ -1815,39 +1831,69 @@
       layout();
     }
 
-    /* --- 위로 밀어 넘기기 ---
-       Pointer 이벤트라 마우스와 손가락을 같은 코드로 받습니다.
-       CSS의 touch-action: none이 있어야 세로 드래그가 페이지 스크롤로 넘어가지
-       않고 여기로 들어옵니다. */
-    var startY = 0;
-    var isDragging = false;
-
-    deck.addEventListener("pointerdown", function (event) {
-      isDragging = true;
-      startY = event.clientY;
-      deck.setPointerCapture(event.pointerId);
-    });
-
-    deck.addEventListener("pointerup", function (event) {
-      if (!isDragging) {
-        return;
-      }
-
-      isDragging = false;
-
-      var moved = event.clientY - startY;
-
-      /* 위로 밀면 다음 장, 아래로 밀면 이전 장입니다. */
-      if (moved <= -DECK_SWIPE_THRESHOLD) {
-        move(1);
-      } else if (moved >= DECK_SWIPE_THRESHOLD) {
-        move(-1);
-      }
-    });
-
-    deck.addEventListener("pointercancel", function () {
-      isDragging = false;
-    });
+    /* Horizontal gestures leave vertical page scrolling available. The desktop
+       pile retains its own hover/scroll behavior and receives no new listeners. */
+    var media = window.matchMedia("(max-width: 1279px)");
+    var cleanup = null;
+    function mountDeck() {
+      var abort = new AbortController();
+      var signal = abort.signal;
+      var startX = null;
+      var startY = 0;
+      var wheelDistance = 0;
+      var lastWheel = 0;
+      var link = archive.querySelector(".archive_more");
+      var label = link.querySelector(".banner_crosslink_text");
+      var originalLabel = label.textContent;
+      var originalHref = link.getAttribute("href");
+      label.textContent = "Reserve Now";
+      link.setAttribute("href", "../bespoke/reservation.html");
+      deck.tabIndex = 0;
+      deck.setAttribute("role", "group");
+      deck.setAttribute("aria-label", "Archive images. Use left and right arrow keys.");
+      var counter = deck.querySelector(".archive_deck_counter");
+      counter.setAttribute("aria-live", "polite");
+      counter.setAttribute("aria-atomic", "true");
+      counter.removeAttribute("aria-hidden");
+      deck.addEventListener("pointerdown", function (event) {
+        if (event.button !== 0) return;
+        startX = event.clientX; startY = event.clientY;
+        deck.setPointerCapture(event.pointerId);
+      }, {signal:signal});
+      deck.addEventListener("pointerup", function (event) {
+        if (startX === null) return;
+        var dx = event.clientX - startX;
+        var dy = event.clientY - startY;
+        startX = null;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) >= DECK_SWIPE_THRESHOLD) move(dx < 0 ? 1 : -1);
+      }, {signal:signal});
+      deck.addEventListener("pointercancel", function () { startX = null; }, {signal:signal});
+      deck.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault(); move(event.key === "ArrowRight" ? 1 : -1);
+      }, {signal:signal});
+      deck.addEventListener("wheel", function (event) {
+        if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+        event.preventDefault();
+        var now = performance.now();
+        if (now - lastWheel < 350) return;
+        wheelDistance += event.deltaX;
+        if (Math.abs(wheelDistance) > 80) {
+          move(wheelDistance > 0 ? 1 : -1);
+          wheelDistance = 0; lastWheel = now;
+        }
+      }, {passive:false,signal:signal});
+      return function () {
+        abort.abort();
+        deck.removeAttribute("tabindex"); deck.removeAttribute("role"); deck.removeAttribute("aria-label");
+        counter.setAttribute("aria-live", "polite"); counter.removeAttribute("aria-atomic");
+        counter.removeAttribute("aria-hidden");
+        label.textContent = originalLabel; link.setAttribute("href", originalHref);
+      };
+    }
+    function syncDeck() { if (cleanup) cleanup(); cleanup = media.matches ? mountDeck() : null; }
+    media.addEventListener("change", syncDeck);
+    syncDeck();
 
     /* 연도를 바꾸면 사진 세트가 통째로 갈리므로 첫 장으로 돌아갑니다.
        initArchive가 사진을 다 갈아 끼운 뒤 이 이벤트를 보냅니다. */

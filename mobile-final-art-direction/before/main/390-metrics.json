@@ -1,0 +1,248 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 10325,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 0,
+  "pins": 0,
+  "images": [],
+  "media": [
+    {
+      "src": "assets/main/hero/bespoke.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/main/hero/shop.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "vid/model.mp4",
+      "width": 544,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/bespoke/bespokevod.mp4",
+      "width": 1122,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/main/shop/shopbanner.mp4",
+      "width": 1280,
+      "height": 720,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "H1",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -1,
+      "w": 1,
+      "h": 1,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "hero",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 1059.15625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "hero_panel_title",
+      "x": 24,
+      "y": 442.265625,
+      "w": 342,
+      "h": 38.375,
+      "font": "31.98px"
+    },
+    {
+      "tag": "H2",
+      "class": "hero_panel_title",
+      "x": 54.609375,
+      "y": 929.03125,
+      "w": 311.390625,
+      "h": 38.375,
+      "font": "31.98px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "model",
+      "x": 0,
+      "y": 1059.15625,
+      "w": 390,
+      "h": 674.34375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "model_title",
+      "x": 37.5,
+      "y": 1559.4375,
+      "w": 269.3125,
+      "h": 75.0625,
+      "font": "30.03px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "detail",
+      "x": 0,
+      "y": 1733.5,
+      "w": 390,
+      "h": 722.65625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "detail_title",
+      "x": 20,
+      "y": 1781.5,
+      "w": 295.484375,
+      "h": 79.9375,
+      "font": "31.98px"
+    },
+    {
+      "tag": "H3",
+      "class": "detail_part_title",
+      "x": 20,
+      "y": 2242.15625,
+      "w": 350,
+      "h": 33.59375,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "brand_story",
+      "x": 0,
+      "y": 2456.15625,
+      "w": 390,
+      "h": 522.140625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "brand_story_title",
+      "x": 20,
+      "y": 2512.15625,
+      "w": 334.890625,
+      "h": 79.9375,
+      "font": "31.98px"
+    },
+    {
+      "tag": "DIV",
+      "class": "brand_word_pin",
+      "x": 0,
+      "y": 2978.296875,
+      "w": 390,
+      "h": 1121.578125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "brand_collage",
+      "x": 0,
+      "y": 2978.296875,
+      "w": 390,
+      "h": 1121.578125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "promo_wrap promo_bespoke_wrap",
+      "x": 0,
+      "y": 4179.875,
+      "w": 390,
+      "h": 885.859375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "promo_title",
+      "x": 20,
+      "y": 4635.109375,
+      "w": 334.890625,
+      "h": 79.9375,
+      "font": "31.98px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "shop",
+      "x": 0,
+      "y": 5153.734375,
+      "w": 390,
+      "h": 1239.453125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "promo_title",
+      "x": 20,
+      "y": 5589.46875,
+      "w": 175.390625,
+      "h": 39.96875,
+      "font": "31.98px"
+    },
+    {
+      "tag": "DIV",
+      "class": "collection_scroll",
+      "x": 0,
+      "y": 6393.1875,
+      "w": 390,
+      "h": 2625.234375,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "collection",
+      "x": 0,
+      "y": 6393.1875,
+      "w": 390,
+      "h": 2625.234375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "collection_title",
+      "x": 20,
+      "y": 6457.1875,
+      "w": 350,
+      "h": 119.90625,
+      "font": "31.98px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "closing",
+      "x": 0,
+      "y": 9018.421875,
+      "w": 390,
+      "h": 454.421875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "closing_title",
+      "x": 20,
+      "y": 9098.421875,
+      "w": 309.984375,
+      "h": 87.71875,
+      "font": "35.1px"
+    }
+  ],
+  "errors": []
+}

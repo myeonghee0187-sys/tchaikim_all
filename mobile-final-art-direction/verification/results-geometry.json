@@ -1,0 +1,950 @@
+[
+  {
+    "name": "overflow main 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 30343,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow main 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 29860,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow main 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 8998,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 8228,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 7309,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 7167,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 7048,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 5891,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 5859,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5828,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 5758,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 5688,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5828,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 8228,
+    "pins": 0,
+    "clones": 24,
+    "hero": 1
+  },
+  {
+    "name": "overflow main 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 31382,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize main",
+    "pass": true,
+    "start": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2
+    },
+    "end": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2
+    }
+  },
+  {
+    "name": "console main",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins main",
+    "pass": true
+  },
+  {
+    "name": "overflow brand 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 12879,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 12836,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 6174,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5750,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 5691,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 5646,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 6116,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 5535,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 5495,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5447,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 5443,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 5384,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5447,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5750,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow brand 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 12956,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize brand",
+    "pass": true,
+    "start": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2
+    },
+    "end": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2
+    }
+  },
+  {
+    "name": "console brand",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins brand",
+    "pass": true
+  },
+  {
+    "name": "overflow bespoke 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 12992,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 12224,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 9445,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 8089,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 8012,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 7906,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 7403,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 6228,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 6197,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 6180,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 6126,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 6129,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 6180,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 8089,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow bespoke 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 14396,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize bespoke",
+    "pass": true,
+    "start": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0
+    },
+    "end": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0
+    }
+  },
+  {
+    "name": "console bespoke",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins bespoke",
+    "pass": true
+  },
+  {
+    "name": "overflow reservation 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 7309,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 7133,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 6324,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5992,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 6386,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 6712,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 6469,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 6025,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 6100,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 6097,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 6087,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 6152,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 6097,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5992,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow reservation 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 7626,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize reservation",
+    "pass": true,
+    "start": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0
+    },
+    "end": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0
+    }
+  },
+  {
+    "name": "console reservation",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins reservation",
+    "pass": true
+  },
+  {
+    "name": "overflow collection 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 6688,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 6175,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 5929,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5512,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 5203,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 5137,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 5294,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 4519,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 4510,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 4477,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 4437,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 4453,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 4477,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5512,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 8113,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize collection",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2
+    }
+  },
+  {
+    "name": "console collection",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins collection",
+    "pass": true
+  },
+  {
+    "name": "overflow collection-youngjin 1440",
+    "pass": true,
+    "overflow": 0,
+    "height": 6688,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 6175,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 6025,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5608,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 820",
+    "pass": true,
+    "overflow": 0,
+    "height": 5245,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 5179,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 5309,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 4508,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 402",
+    "pass": true,
+    "overflow": 0,
+    "height": 4554,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 4520,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 4480,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 4442,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 4520,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 5608,
+    "pins": 0,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "overflow collection-youngjin 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 8113,
+    "pins": 2,
+    "clones": 0,
+    "hero": 0
+  },
+  {
+    "name": "resize collection-youngjin",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2
+    }
+  },
+  {
+    "name": "console collection-youngjin",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced pins collection-youngjin",
+    "pass": true
+  }
+]

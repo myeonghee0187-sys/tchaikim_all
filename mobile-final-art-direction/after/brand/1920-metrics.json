@@ -1,0 +1,239 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "documentHeight": 12956,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 6,
+  "pins": 2,
+  "images": [],
+  "media": [
+    {
+      "src": "assets/images/everyday.mp4",
+      "width": 864,
+      "height": 432,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "src": "assets/images/forward.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/seasons.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/obangsaek.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    },
+    {
+      "src": "assets/images/woven.mp4",
+      "width": 0,
+      "height": 0,
+      "ready": 0,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "H1",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -1,
+      "w": 1,
+      "h": 1,
+      "font": "32px"
+    },
+    {
+      "tag": "DIV",
+      "class": "pin-spacer",
+      "x": 0,
+      "y": 0,
+      "w": 1920,
+      "h": 710,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "mood mood_desktop",
+      "x": 0,
+      "y": 0.0010000000474974513,
+      "w": 1920,
+      "h": 700,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": -0.9990000128746033,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_word_title",
+      "x": 939,
+      "y": 458.0010070800781,
+      "w": 193.28125,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_word_title",
+      "x": 1234,
+      "y": 780.0009765625,
+      "w": 197.28125,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "mood_word_title",
+      "x": 1556,
+      "y": 599.0009765625,
+      "w": 204.296875,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "kimyoungjin",
+      "x": 0,
+      "y": 710,
+      "w": 1920,
+      "h": 2560,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 709,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 700,
+      "y": 1646,
+      "w": 403,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title",
+      "x": 849,
+      "y": 2323,
+      "w": 403,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "youngjin_title youngjin_title_center",
+      "x": 897.203125,
+      "y": 3060,
+      "w": 124.59375,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "DIV",
+      "class": "pin-spacer",
+      "x": 0,
+      "y": 3270,
+      "w": 1920,
+      "h": 2424,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "tchaikim",
+      "x": 0,
+      "y": 3270,
+      "w": 1920,
+      "h": 1884.078125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 3269,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "class": "tchaikim_panel_title",
+      "x": 601.46875,
+      "y": 4165.078125,
+      "w": 104.53125,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "atelier",
+      "x": 0,
+      "y": 5694,
+      "w": 1920,
+      "h": 1588.8125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "a11y_hidden",
+      "x": -1,
+      "y": 6093,
+      "w": 1,
+      "h": 1,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "heritage is_pinned",
+      "x": 0,
+      "y": 7282.8125,
+      "w": 1920,
+      "h": 4536,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "heritage_headline",
+      "x": 197.09002685546875,
+      "y": 7736.91455078125,
+      "w": 1525.81982421875,
+      "h": 171.79638671875,
+      "font": "138px"
+    },
+    {
+      "tag": "H3",
+      "class": "heritage_info_title",
+      "x": 1013.328125,
+      "y": 7621.8125,
+      "w": 480,
+      "h": 30,
+      "font": "24px"
+    }
+  ],
+  "errors": []
+}

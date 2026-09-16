@@ -1,0 +1,193 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "documentHeight": 8113,
+  "overflow": 0,
+  "zoom": "1",
+  "triggers": 3,
+  "pins": 2,
+  "images": [],
+  "media": [
+    {
+      "src": null,
+      "width": 1920,
+      "height": 1080,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "class": "collection_hero",
+      "x": 0,
+      "y": 64,
+      "w": 1920,
+      "h": 1016,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "class": "collection_hero_title is_on_light",
+      "x": 634.875,
+      "y": 535.84375,
+      "w": 650.25,
+      "h": 72.3125,
+      "font": "64px"
+    },
+    {
+      "tag": "DIV",
+      "class": "pin-spacer",
+      "x": 0,
+      "y": 1080,
+      "w": 1920,
+      "h": 2785,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "showcase is_pinned",
+      "x": 0,
+      "y": 1080,
+      "w": 1920,
+      "h": 1080,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "showcase_quote",
+      "x": 760,
+      "y": 1379.052001953125,
+      "w": 288.5,
+      "h": 311,
+      "font": "24px"
+    },
+    {
+      "tag": "DIV",
+      "class": "pin-spacer",
+      "x": 0,
+      "y": 3865,
+      "w": 1920,
+      "h": 2072,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "archive is_hover_ready",
+      "x": 0,
+      "y": 3865,
+      "w": 1920,
+      "h": 920,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "archive_title",
+      "x": 120,
+      "y": 3995,
+      "w": 348.828125,
+      "h": 123.8125,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "class": "asworn",
+      "x": 0,
+      "y": 5937,
+      "w": 1920,
+      "h": 1038.953125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "class": "asworn_title",
+      "x": 883.3125,
+      "y": 6137,
+      "w": 153.359375,
+      "h": 49.015625,
+      "font": "38px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": -418.68798828125,
+      "y": 6579.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 161.31201171875,
+      "y": 6576.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 741.31201171875,
+      "y": 6578.171875,
+      "w": 270,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 1337.31201171875,
+      "y": 6579.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 1917.31201171875,
+      "y": 6576.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 2497.31201171875,
+      "y": 6578.171875,
+      "w": 270,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 3093.31201171875,
+      "y": 6579.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 3673.31201171875,
+      "y": 6576.375,
+      "w": 254,
+      "h": 43.75,
+      "font": "19px"
+    },
+    {
+      "tag": "H3",
+      "class": "asworn_name",
+      "x": 4253.31201171875,
+      "y": 6578.171875,
+      "w": 270,
+      "h": 43.75,
+      "font": "19px"
+    }
+  ],
+  "errors": []
+}

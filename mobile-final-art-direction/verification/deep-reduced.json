@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Reduced motion main",
+    "pass": true,
+    "pins": 0,
+    "heroStopped": true,
+    "railStopped": true,
+    "noClones": true
+  },
+  {
+    "name": "Reduced motion brand",
+    "pass": true,
+    "pins": 0,
+    "height": {
+      "h": 651,
+      "position": "static",
+      "visible": 1
+    }
+  },
+  {
+    "name": "Reduced motion bespoke",
+    "pass": true,
+    "pins": 0
+  },
+  {
+    "name": "Reduced motion reservation",
+    "pass": true,
+    "pins": 0
+  },
+  {
+    "name": "Reduced motion collection",
+    "pass": true,
+    "pins": 0
+  },
+  {
+    "name": "Reduced motion collection-youngjin",
+    "pass": true,
+    "pins": 0
+  }
+]
