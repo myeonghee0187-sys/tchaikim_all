@@ -849,6 +849,7 @@ heritage
   }
   .mood_slides {
     display: flex;
+    gap: 18px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
@@ -860,31 +861,45 @@ heritage
   body[data-page="brand"] .mood_responsive .mood_slides { overscroll-behavior-y: auto; }
   .mood_slide {
     position: relative;
-    flex: 0 0 100%;
+    /* 판을 82%로 좁혀 다음 장이 걸쳐 보이게 합니다(1024에서 약 146px).
+       100%면 "넘길 수 있다"는 신호가 화살표뿐이라, 터치에서 스와이프를
+       시도할 이유가 화면에 없었습니다. */
+    flex: 0 0 82%;
     min-width: 0;
-    /* 사진이 최대 300px이라 판을 더 키우면 빈 자리만 늘어납니다. */
-    height: clamp(404px, 53svh, 468px);
+    /* 사진 상한이 300px이라 판이 높을수록 위쪽만 빕니다 — 1024에서
+       판 407 · 사진 263이라 위 189px이 비어 있었습니다(실측). */
+    height: clamp(340px, 45svh, 400px);
     scroll-snap-align: start;
     scroll-snap-stop: always;
     display: grid;
     /* % 트랙이어야 합니다 — auto로 두면 사진마다(260 × 180 / 200 × 240)
-       트랙 폭이 달라져 넘길 때 키워드 자리가 좌우로 흔들립니다. */
-    grid-template-columns: 50% 50%;
+       트랙 폭이 달라져 넘길 때 키워드 자리가 좌우로 흔들립니다.
+       ★ 사진이 왼쪽입니다(데스크톱과 반대) — 걸쳐 보이는 것이 다음 장의
+       글이 아니라 다음 장의 **사진**이어야 넘기고 싶어집니다. */
+    grid-template-columns: 58% 42%;
     align-items: end;
     background: #252622;
   }
+  /* 마지막 장은 start로 스냅할 자리가 없습니다(레일 끝이 먼저 옵니다).
+     end면 최대 스크롤에서 오른쪽 변이 정확히 맞고, JS의 readIndex()는
+     거리 비교라 이 자리에서도 03을 정확히 읽습니다. */
+  .mood_slide:last-child { scroll-snap-align: end; }
+  /* 걸쳐 보이는 장의 글까지 또렷하면 키워드 둘이 동시에 읽혀 위계가
+     무너집니다. JS가 이미 붙이는 is_active를 그대로 씁니다. */
+  .mood_slide_caption { transition: opacity var(--duration_base, .4s) ease; }
+  .mood_slide:not(.is_active) .mood_slide_caption { opacity: .3; }
   /* 사진 아랫변과 캡션 아랫변을 같은 선(판 아래에서 40px)에 둡니다 —
      가운데 띄워 두면 둘이 서로 무관하게 떠 있는 것처럼 보였습니다. */
   .mood_slide_media {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 40px 36px 40px 12px;
+    padding: 32px 16px 36px 32px;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   /* 원본이 260 × 180 / 200 × 240으로 작습니다(데스크톱은 이 크기 1:1로 씁니다).
      상한이 없으면 1024에서 520 × 360 — 2배 확대라 눈에 띄게 흐려집니다.
@@ -892,9 +907,9 @@ heritage
      ★ object-fit은 contain이어야 합니다 — cover로 자르면 빨간 자락·손·
      꽃가지처럼 이 사진들이 말하려는 부분이 잘려 나갑니다. */
   .mood_slide_media img { width: 100%; height: 100%; max-width: 380px; max-height: 300px; object-fit: contain; }
-  .mood_slide_caption { grid-column: 1; grid-row: 1; align-self: end; padding: 32px 12px 40px 32px; z-index: 1; }
+  .mood_slide_caption { grid-column: 2; grid-row: 1; align-self: end; padding: 32px 30px 36px 8px; z-index: 1; }
   .mood_slide_number { font-size: 12px; letter-spacing: .16em; line-height: 1.5; }
-  .mood_slide_keyword { margin-top: 10px; font: 400 clamp(36px, 4vw, 52px)/1.2 var(--font_display); white-space: nowrap; }
+  .mood_slide_keyword { margin-top: 10px; font: 400 clamp(40px, 4.6vw, 60px)/1.15 var(--font_display); white-space: nowrap; }
   .mood_slide_description { margin-top: 16px; min-block-size: 3.3em; max-width: 24ch; font-size: 16px; line-height: 1.65; }
   .mood_navigation { display: flex; justify-content: flex-end; align-items: center; gap: 16px; padding-top: 12px; }
   .mood_arrow { display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; cursor: pointer; }
@@ -902,15 +917,24 @@ heritage
   .mood_arrow:disabled { opacity: .28; cursor: default; }
   .mood_counter { font-size: 12px; letter-spacing: .1em; font-variant-numeric: tabular-nums; }
   .mood_counter_total { opacity: .5; }
-  .mood_intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 28px; padding-bottom: 48px; }
-  .mood_intro_title { max-width: 16ch; font: 400 28px/1.35 var(--font_display); }
-  .mood_intro_body { max-width: 43ch; font-size: 16px; line-height: 1.65; }
-  .mood_intro_body p + p { margin-top: 12px; }
+  /* WHY: 1279 이하에서는 이 글 덩어리를 내보내지 않습니다. 스와이프 →
+     그라디언트 → Kim Young Jin으로 바로 이어져야 하는데 그 사이에 검정
+     설명 블록이 끼어 1024에서 151px · 390에서 184px을 차지했습니다(실측).
+     display:none이라 height·margin·padding이 아예 생성되지 않습니다.
+     데스크톱(.mood_desktop)은 .mood_copy_title / .mood_copy_body에 같은
+     세 문단을 그대로 갖고 있어 넓은 화면에서 사라지는 글이 없습니다.
+     읽기 도구에는 섹션 맨 앞 .a11y_hidden h2가 같은 문장을 남깁니다. */
+  .mood_intro { display: none; }
   /* This end color is the computed first stop of .kimyoungjin, not the page white. */
   .mood_responsive::after {
     content: "";
     display: block;
-    height: 150px;
+    height: 168px;
+    /* padding-bottom으로 띄우면 안 됩니다 — ::after가 마지막 자식이라 그
+       여백이 그라디언트 **아래**에 검은 띠로 남아 Kim Young Jin과의
+       이음매가 끊깁니다. margin-top은 그라디언트 위를 섹션 배경
+       (--brand_black = 그라디언트 시작색)으로 채웁니다. */
+    margin-top: 44px;
     margin-inline: calc(-1 * var(--brand_gutter));
     background: linear-gradient(to bottom, var(--brand_black), var(--brand_olive));
   }
@@ -918,10 +942,20 @@ heritage
   .kimyoungjin_frame { width: 100%; height: auto; margin: 0; padding: 72px var(--brand_gutter) 96px; display: flex; flex-direction: column; gap: 112px; }
   .youngjin_group { position: static; width: 100%; height: auto; gap: 8%; align-items: end; }
   .youngjin_group_first .youngjin_photo_red { width: 52%; }
-  .youngjin_group_first .youngjin_side { width: 34%; }
+  /* WHY(공백): 아랫변을 맞추면(align-items:end) 곁사진 묶음이 주사진보다
+     짧은 만큼 **위가** 빕니다 — 1024에서 오른쪽 위 220 x 365가 비어 있었고,
+     펼침의 첫인상이 "큰 사진 + 빈 자리"였습니다. 위에서 시작해 살짝
+     내려 앉히면 빈 자리가 글 아래(시선이 빠져나가는 쪽)로 갑니다.
+     주사진은 키우지 않았습니다 — 비율이 5/6이라 폭을 키우면 높이가 더
+     많이 늘어 공백이 오히려 커집니다. 대신 곁을 34% -> 40%로 키웁니다. */
+  .youngjin_group_first { align-items: flex-start; }
+  .youngjin_group_first .youngjin_side { width: 40%; margin-top: 6%; }
   .youngjin_group_second { justify-content: flex-end; }
   .youngjin_group_second .youngjin_side { width: 34%; }
-  .youngjin_group_second .youngjin_photo_blue { width: 46%; }
+  /* WHY(위계): red 474 vs blue 419 — 폭이 1.13배라 어느 쪽도 이끌지
+     못했습니다. blue를 38%로 낮춰 1.37배로 벌립니다. 두 번째 묶음은
+     아랫변 정렬을 그대로 두어 첫 묶음(윗변)과 리듬이 교차합니다. */
+  .youngjin_group_second .youngjin_photo_blue { width: 42%; }
   .youngjin_side { gap: 28px; }
   .youngjin_photo { height: auto; flex-shrink: 0; }
   .youngjin_photo_red { aspect-ratio: 5 / 6; }
@@ -950,7 +984,7 @@ heritage
   .tchaikim_media { width: 82%; height: auto; aspect-ratio: 2 / 1; align-self: flex-end; }
   .tchaikim_panel_desc br, .youngjin_desc br, .heritage_info_desc br { display: none; }
 
-  .atelier { padding-block: 112px 104px; }
+  .atelier { padding-block: 96px 88px; }
   /* ★★★ 이 블록은 원래 `--atelier_scale: calc(min(390px, 35vw) / 460px)`였습니다.
      calc()의 "길이 ÷ 길이"(→ 숫자)는 Chromium이 지원하지 않습니다. 그래서 변수가
      풀리지 않고 width/height 선언이 통째로 무효가 되어, 사진이 좁은 화면에서도
@@ -960,24 +994,31 @@ heritage
      지금은 기준 길이 하나(--atelier_unit = 가장 큰 사진의 폭)를 두고
      나머지를 "길이 × 숫자 ÷ 숫자"로 비율 계산합니다 — 이 형태는 유효합니다.
      ★ 분모에 px를 붙이지 마세요. 같은 증상이 그대로 돌아옵니다. */
-  .atelier_row { --atelier_unit: min(390px, 35vw); gap: 18px; width: max-content; margin-left: 0; }
+  /* 가장 큰 사진이 이 줄의 기준 길이입니다. 35vw면 1024에서 358px —
+     줄에 네 장이 한꺼번에 들어와 크기 차가 덜 드러났습니다. 38vw(389px)면
+     큰 장이 확실히 앞서고 작은 장(186px)과 2.09배로 벌어집니다. */
+  .atelier_row { --atelier_unit: min(420px, 38vw); gap: 18px; width: max-content; margin-left: 0; }
   .atelier_photo_1, .atelier_photo_7 { width: calc(var(--atelier_unit) * 380 / 460); height: calc(var(--atelier_unit) * 507 / 460); }
   .atelier_photo_2, .atelier_photo_6 { width: calc(var(--atelier_unit) * 220 / 460); height: calc(var(--atelier_unit) * 293 / 460); }
   .atelier_photo_3, .atelier_photo_5 { width: calc(var(--atelier_unit) * 300 / 460); height: calc(var(--atelier_unit) * 400 / 460); }
   .atelier_photo_4 { width: var(--atelier_unit); height: calc(var(--atelier_unit) * 613 / 460); }
-  .atelier_desc { margin-top: 40px; padding-inline: var(--brand_gutter); font-size: 17px; line-height: 1.7; }
+  .atelier_desc { margin-top: 48px; padding-inline: var(--brand_gutter); font-size: 17px; line-height: 1.7; }
 
-  .heritage { padding: 32px var(--brand_gutter) 104px; }
-  .heritage_frame { display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 52px; align-items: center; }
+  .heritage { padding: 32px var(--brand_gutter) 88px; }
+  .heritage_frame { display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 44px; align-items: center; }
   .heritage_stage { display: block; height: auto; padding: 0; }
   .heritage_stage_title { grid-column: 1 / -1; }
   .heritage_headline { max-width: 18ch; font-size: clamp(42px, 5.5vw, 64px); line-height: 1.18; letter-spacing: -.03em; white-space: normal; text-align: left; }
   .heritage_split, .heritage_photos, .heritage_photos_frame { display: contents; }
   /* 사진 비율이 400 / 714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
      짧아집니다. 1024에서 첫 장이 492 × 879였습니다 — 화면보다 높았습니다. */
-  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 2; width: 84%; }
-  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 3; width: 58%; justify-self: end; }
-  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 2; grid-row: 3; width: 78%; align-self: end; }
+  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 2; width: 80%; }
+  /* WHY: 둘 다 가운데 거터 쪽에 붙어 있어(58% 오른쪽 정렬 + 78% 왼쪽 정렬)
+     바깥 양쪽이 비고, 285 vs 270으로 크기도 거의 같아 "썸네일 두 장"으로
+     읽혔습니다. 각각 페이지 좌/우 거터에 붙이고 폭 차를 1.28배로 벌린 뒤
+     작은 쪽을 아랫변에 맞춰 대각 리듬을 만듭니다. */
+  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 3; width: 64%; justify-self: start; }
+  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 2; grid-row: 3; width: 64%; justify-self: end; align-self: end; }
   .heritage_figure { width: 100%; height: auto; aspect-ratio: 400 / 714; padding: 0; }
   .heritage_figure img { object-fit: contain; }
   .heritage_info { grid-column: 2; grid-row: 2; width: 100%; max-width: 38ch; text-align: left; gap: 20px; }
@@ -992,22 +1033,24 @@ heritage
 @media (max-width: 767px) {
   .main { --brand_gutter: 22px; }
   .mood_responsive { padding-top: 88px; }
-  .mood_slide { height: clamp(486px, 60svh, 556px); grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  /* 한 장이 화면을 꽉 채우지 않습니다 — 84%면 오른쪽에 43px이 남아
+     "다음 장이 있다"가 보입니다. */
+  .mood_slide { flex: 0 0 84%; height: clamp(452px, 56svh, 520px); grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+  .mood_slides { gap: 12px; }
   /* ★ justify-content를 되돌려야 합니다 — 태블릿 블록의 flex-end를 그대로
      물려받으면, 상한(440px)이 걸리는 500~767 구간에서 사진이 오른쪽 끝에
      붙고 왼쪽에만 최대 303px이 비어 어긋나 보입니다(실측). */
   .mood_slide_media { grid-column: 1; height: 100%; padding: 24px 0 0; justify-content: center; }
+  /* 태블릿에서 캡션을 2열로 보냈으므로 1열 그리드에서 되돌려야 합니다 —
+     안 되돌리면 존재하지 않는 2열이 암시적으로 생겨 판이 넓어집니다. */
+  .mood_slide_caption { grid-column: 1; }
   /* 402 이하에서는 판 폭을 그대로 채웁니다(1.38배). 넓은 폰에서만 상한이 걸립니다. */
   .mood_slide_media img { max-width: min(100%, 440px); max-height: 312px; }
   .mood_slide_caption { grid-row: 2; padding: 24px 24px 28px; }
   .mood_slide_keyword { font-size: 34px; margin-top: 8px; }
   .mood_slide_description { margin-top: 12px; max-width: 26ch; font-size: 15px; line-height: 1.65; }
   .mood_navigation { gap: 12px; padding-top: 8px; }
-  .mood_intro { display: block; margin-top: 24px; padding-bottom: 36px; }
-  .mood_intro_title { max-width: none; font-size: 23px; }
-  .mood_intro_body { margin-top: 20px; max-width: 34ch; font-size: 15px; line-height: 1.7; }
-  .mood_intro_body p + p { margin-top: 10px; }
-  .mood_responsive::after { height: 104px; }
+  .mood_responsive::after { height: 118px; margin-top: 32px; }
 
   .kimyoungjin_frame { padding-top: 64px; padding-bottom: 64px; gap: 64px; }
   .youngjin_group { flex-direction: column; align-items: flex-start; gap: 28px; }
@@ -1040,23 +1083,51 @@ heritage
   .atelier_desc br { display: none; }
 
   .heritage { padding-top: 16px; padding-bottom: 72px; }
-  .heritage_frame { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 1; width: min(64vw, 320px); }
+  /* WHY: 사진 비율이 400/714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
+     짧아집니다. 64/48/44vw는 크기 차가 작아 위계도 약했습니다 —
+     56/42/38로 낮춰 길이를 줄이면서 차이를 벌립니다. */
+  .heritage_frame { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .heritage_photos .heritage_stage:first-child { grid-column: 1; grid-row: 1; width: min(56vw, 288px); }
   .heritage_stage_title { grid-row: 2; margin-top: 8px; }
   .heritage_headline { max-width: 14ch; font-size: 38px; line-height: 1.18; }
   .heritage_info, .heritage_info_desc { display: contents; }
   .heritage_info_title { grid-row: 3; font-size: 24px; }
   .heritage_copy_origin { grid-row: 4; }
-  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 5; width: min(48vw, 258px); justify-self: end; margin-block: 8px; }
+  .heritage_photos .heritage_stage:nth-child(2) { grid-column: 1; grid-row: 5; width: min(42vw, 226px); justify-self: end; margin-block: 8px; }
   .heritage_copy_materials { grid-row: 6; margin-top: 0; }
   .heritage_copy_origin, .heritage_copy_materials { max-width: 34ch; font-size: 16px; line-height: 1.7; text-align: left; }
-  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 1; grid-row: 7; width: min(44vw, 232px); margin-top: 8px; }
+  .heritage_photos .heritage_stage:nth-child(3) { grid-column: 1; grid-row: 7; width: min(38vw, 204px); margin-top: 8px; }
   .heritage_button { grid-row: 8; margin-top: 8px; }
 }
 
 /* 좁은 폰(≤374: iPhone SE / Galaxy S 계열)에서만 가장 긴 장면이 한 줄 더
    늘어납니다(7줄 → 8줄). 그 폭에서만 자리를 한 줄 더 잡아 두면, 전 폭에서
    탭을 눌러도 아래 영상이 움직이지 않습니다. 375 이상은 7줄이라 그대로 둡니다. */
+/* ★★★ Tchai Kim — 900~1279에서만 두 열.
+   1024에서 글(46ch = 487px)이 왼쪽에만 있고 오른쪽 425 x 233이 통째로
+   비었고, 그 아래 영상(748px)은 오른쪽으로 밀려 왼쪽 164px이 또
+   비었습니다(실측). 한 줄에 마주 보게 두면 두 빈자리가 함께 사라집니다.
+   ★ 경계를 900으로 잡은 이유 — 768에서 두 열이면 글 컬럼이 약 270px이라
+   한 줄 25자로 접혀 본문이 열 줄을 넘습니다. 이 저장소가 Archive(900) ·
+   예약 선택 카드(900)에서 이미 쓰는 경계입니다.
+   ★★ 탭 전환 레이아웃 이동 0px은 .tchaikim_panel_desc의 min-height가
+   지킵니다. 글 컬럼을 좁혔으므로 그 값도 이 폭에서 다시 재야 합니다 —
+   아래 값은 5개 장면을 900 / 1024 / 1279에서 전부 재서 나온 최댓값입니다. */
+@media (min-width: 900px) and (max-width: 1279.98px) {
+  .tchaikim_con { flex-direction: row; align-items: center; gap: 4%; }
+  .tchaikim_txt { width: 42%; max-width: none; }
+  .tchaikim_media { width: 54%; align-self: center; }
+  /* 실측(5장면 x 3폭): 900에서 최대 13.59em, 1024에서 11.88em, 1279에서
+     10.18em. 폭이 넓어질수록 줄 수는 줄기만 하므로 구간 최댓값은 각
+     구간의 **좁은 쪽 끝** 값입니다. 한 값(13.6em)으로 통일하면 1024에서
+     29px을 쓰지도 않고 비워 두게 되어 두 구간으로 나눴습니다. */
+  .tchaikim_panel_desc { min-height: 13.6em; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .tchaikim_panel_desc { min-height: 11.9em; }
+}
+
 @media (max-width: 374px) {
   .tchaikim_panel_desc { min-height: 13.6em; }
 }

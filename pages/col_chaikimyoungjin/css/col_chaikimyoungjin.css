@@ -1000,7 +1000,8 @@
    버튼만 감추면 됩니다.
    ========================================================= */
 
-.showcase_carousel_button {
+.showcase_carousel_button,
+.showcase_carousel_nav {
   display: none;
 }
 
@@ -1218,97 +1219,136 @@
      좁은 화면에서는 그 흩뿌림이 성립하지 않아 다섯 장을 한 자리에 겹쳐 놓고
      <> 버튼으로 넘깁니다. */
 
+/* ---------- Showcase — OFFSET EDITORIAL RAIL (1279 이하) ----------
+     WHY: 예전에는 다섯 장이 같은 자리에 겹쳐 있고 한 장만 보이는
+     fade 캐러셀이었습니다 — 크기가 전부 460 x 621로 같고, 다음 장이
+     보이지 않아 "넘길 수 있다"는 신호가 화살표뿐이었습니다.
+
+     ★ 이 페이지(TCHAI KIM YOUNG JIN)는 자매 페이지와 **다른 장치**를
+     씁니다. 여기 다섯 장은 원본 비율이 0.646 / 0.811 / 0.666 / 0.666 /
+     0.667로 거의 균일해서, 아랫변을 맞추면 높이만 다른 막대 그래프처럼
+     보입니다. 그래서 윗변 기준으로 두고 장마다 **세로 오프셋**을 줘
+     위아래로 표류하게 만듭니다 — 윗변도 아랫변도 한 선에 서지 않습니다.
+     ★ 봉우리 자리도 다릅니다 — 자매 페이지는 1·4번, 여기는 1·3번이고
+     뒤로 갈수록 다시 커지는(0.70 -> 0.82) 꼬리가 붙습니다.
+     ★ 1번을 거의 봉우리로 둔 이유 — 레일은 왼쪽 변에 스냅하므로 스크롤 0에서
+     카운터가 01을 가리킵니다. 그때 가장 큰 장이 3번이면 눈이 보는 초점과
+     카운터가 어긋납니다(실제로 그렇게 보였습니다).
+     ★★ 가장 넓은 장(0.811 Silk Lanterns)을 봉우리로 두면 390에서 레일을
+     꽉 채워 peek이 사라집니다. 그래서 봉우리를 0.666짜리에 두었습니다. */
   .showcase_carousel {
-    position: static;
+    position: relative;
     width: 100%;
     align-self: center;
   }
 
-  /* 시안에서 가장 큰 사진(710 × 959)의 비율을 그대로 씁니다. */
   .showcase_carousel_viewport {
-    position: relative;
+    --sc_h: clamp(360px, 66svh, 560px);
+    --sc_gap: 20px;
+    position: static;
     width: 100%;
-    max-width: 460px;
+    max-width: none;
     height: auto;
-    aspect-ratio: 710 / 959;
-    margin-inline: auto;
+    aspect-ratio: auto;
+    margin-inline: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sc_gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    /* 세로 제스처는 페이지로 흘려보냅니다 — 가로 레일이 세로 스크롤을
+       가두면 터치에서 페이지가 멈춥니다(brand mood 레일과 같은 이유). */
+    overscroll-behavior-y: auto;
+    scrollbar-width: none;
   }
+  .showcase_carousel_viewport::-webkit-scrollbar { display: none; }
 
-  /* 다섯 장이 같은 자리에 겹쳐 있고 현재 한 장만 보입니다.
-     visibility까지 끄는 이유: opacity만 0으로 두면 보이지 않는 사진이
-     계속 클릭·탭 순서에 잡힙니다. */
   .showcase_slide {
-    position: absolute;
-    inset: 0;
+    position: static;
+    inset: auto;
+    flex: 0 0 auto;
     width: auto;
     max-width: none;
     height: auto;
     padding: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity var(--duration_base) var(--easing_base),
-      transform var(--duration_base) var(--easing_base),
-      visibility 0s var(--duration_base);
-    transform: scale(1.04);
-  }
-
-  .showcase_slide.is_current {
     opacity: 1;
     visibility: visible;
-    transition:
-      opacity var(--duration_base) var(--easing_base),
-      transform var(--duration_base) var(--easing_base),
-      visibility 0s;
-    transform: scale(1);
+    transform: none;
+    transition: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
+  /* 마지막 장은 start로 설 자리가 없습니다(레일 끝이 먼저 옵니다). */
+  .showcase_slide:last-child { scroll-snap-align: end; }
 
+  /* 높이만 정하고 폭은 각 사진의 원본 비율이 정합니다 — 그래서 상자가
+     사진에 딱 맞고 레터박스가 생기지 않습니다. */
   .showcase_slide img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    max-width: none;
+    height: var(--sc_slide_h);
     aspect-ratio: auto;
     object-fit: cover;
+    display: block;
   }
 
-  /* 버튼은 사진 좌우 안쪽에 겹쳐 둡니다. 바깥에 두면 화면이 좁아질 때
-     사진을 그만큼 더 줄여야 합니다. */
-  .showcase_carousel_button {
-    position: absolute;
-    top: 50%;
-    z-index: 2;
+  .showcase_slide:nth-child(1) { --sc_slide_h: calc(var(--sc_h) * 0.96); margin-top: calc(var(--sc_h) * 0.10); }
+  .showcase_slide:nth-child(2) { --sc_slide_h: calc(var(--sc_h) * 0.58); margin-top: calc(var(--sc_h) * 0.26); }
+  .showcase_slide:nth-child(3) { --sc_slide_h: calc(var(--sc_h) * 1.00); margin-top: calc(var(--sc_h) * 0.00); }
+  .showcase_slide:nth-child(4) { --sc_slide_h: calc(var(--sc_h) * 0.70); margin-top: calc(var(--sc_h) * 0.22); }
+  .showcase_slide:nth-child(5) { --sc_slide_h: calc(var(--sc_h) * 0.82); margin-top: calc(var(--sc_h) * 0.16); }
+
+  /* 걸쳐 보이는 장의 캡션까지 또렷하면 어느 장이 지금인지 흐려집니다. */
+  .showcase_slide .showcase_caption { transition: opacity var(--duration_base) var(--easing_base); }
+  .showcase_slide:not(.is_current) .showcase_caption { opacity: .42; }
+
+  /* 조작부는 사진 위에 얹은 44px 원형 화살표였습니다 — 쇼핑몰 캐러셀로
+     읽혀서, 레일 아래 오른쪽에 작은 화살표 + 카운터로 내렸습니다. */
+  .showcase_carousel_nav {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    padding-top: 18px;
+  }
+
+  .showcase_carousel_button {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    display: grid;
+    place-items: center;
     width: 44px;
     height: 44px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 50%;
-    background-color: rgba(18, 18, 16, 0.42);
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
     cursor: pointer;
-    transform: translateY(-50%);
-    transition: background-color var(--duration_fast) var(--easing_base);
+    transform: none;
+    transition: opacity var(--duration_fast) var(--easing_base);
   }
 
-  .showcase_carousel_button:hover {
-    background-color: rgba(18, 18, 16, 0.72);
-  }
-
-  .showcase_carousel_prev {
-    left: 12px;
-  }
-
-  .showcase_carousel_next {
-    right: 12px;
-  }
+  .showcase_carousel_button:hover { background-color: transparent; opacity: .6; }
+  .showcase_carousel_button:disabled { opacity: .26; cursor: default; }
 
   .showcase_carousel_icon {
-    width: 15px;
-    height: 12.5px;
-    /* 화살표 svg가 짙은 색이라 흰색으로 뒤집습니다. */
-    filter: brightness(0) invert(1);
+    width: 18px;
+    height: 15px;
+    /* 레일 아래는 그라디언트가 거의 흰색으로 풀린 자리라 화살표를
+       뒤집으면 보이지 않습니다. 원본 짙은 색 그대로 씁니다. */
+    filter: none;
   }
 
-  /* 하나뿐인 svg를 좌우로 뒤집어 이전 화살표로 씁니다. */
+  .showcase_counter {
+    font-size: 12px;
+    letter-spacing: .1em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color_text_secondary);
+  }
+  .showcase_counter_total { opacity: .55; }
+
   .showcase_carousel_prev .showcase_carousel_icon {
     transform: scaleX(-1);
   }
@@ -1483,6 +1523,20 @@
       opacity var(--duration_base) var(--easing_base);
   }
 
+  /* ★★★ 사진이 포인터를 받으면 안 됩니다.
+     받으면 마우스로 덱을 끌 때 브라우저 기본 **이미지 드래그**가 시작되고,
+     그 순간 pointercancel이 나서 pointerup이 오지 않습니다 — 즉
+     initArchiveDeck의 넘김 판정이 아예 실행되지 않습니다(실측: 이벤트가
+     pointerdown -> pointercancel로 끝났습니다).
+     ★ 이 규칙은 1279 이하 전용입니다. 데스크톱에서는 .archive_photo가
+     hover 확대를 쓰므로 포인터를 받아야 합니다.
+     ★ 리스너는 .archive_deck에 있으므로 버블링에는 영향이 없습니다. */
+  .archive_photo img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
   /* 덱에서는 눌림 확대를 쓰지 않습니다. 카드가 겹쳐 있어 어긋나 보입니다. */
   .archive_photo:hover {
     transform:
@@ -1532,6 +1586,26 @@
   .archive_deck_index {
     font-size: 19px;
     font-weight: 600;
+  }
+
+  /* 덱을 넘기는 제스처는 **세로**입니다(위로 밀면 다음 장 —
+     initArchiveDeck의 pointerup이 clientY만 봅니다). 그래서 힌트도 위쪽
+     방향이어야 합니다 — 가로 화살표를 두면 실제 조작과 어긋납니다.
+     ★ 글자가 아니라 선 두 개입니다. "SWIPE" 같은 큰 라벨은 이 페이지의
+     편집 톤과 맞지 않고, 읽기 도구에도 잡히지 않아야 합니다. */
+  .archive_deck::after {
+    content: "";
+    position: absolute;
+    right: 23px;
+    top: calc(var(--archive_deck_head) + var(--archive_card_real) / 2 - 50px);
+    z-index: 20;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid var(--color_point);
+    border-left: 1px solid var(--color_point);
+    opacity: .45;
+    transform: rotate(45deg);
+    pointer-events: none;
   }
 
   /* ---------- as worn ----------
@@ -1650,6 +1724,10 @@
    ========================================================= */
 
 @media (max-width: 767px) {
+  /* 한 장이 화면을 꽉 채우지 않게(다음 장이 걸쳐 보이게) 기준 높이를
+     낮춥니다 — 폭은 각 사진의 원본 비율이 따라옵니다. */
+  .showcase_carousel_viewport { --sc_h: clamp(340px, 48svh, 440px); --sc_gap: 16px; }
+
   /* ---------- brand tabs ----------
      두 탭 글자 합이 화면 폭에 가까워집니다. 자간을 줄여 한 줄을 지킵니다.
      ★ 여기서 white-space를 풀면 "TCHAI KIM YOUNG JIN"이 두 줄이 되어

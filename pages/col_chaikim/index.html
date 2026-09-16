@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="../../common/css/common.css">
   <link rel="stylesheet" href="../../common/css/layout.css?v=6">
   <link rel="stylesheet" href="../../common/css/shop_transition.css?v=3">
-  <link rel="stylesheet" href="css/col_chaikim.css">
+  <link rel="stylesheet" href="css/col_chaikim.css?v=2">
 </head>
 
 <body data-page="collection" data-header-variant="black">
@@ -125,34 +125,37 @@
               <img src="asset/showcase_c.png" alt="A model in a mint sheer coat over a dark linen dress">
               <figcaption class="showcase_caption">Mint Sheer Coat</figcaption>
             </figure>
-            <figure class="showcase_photo showcase_slide showcase_photo_d" aria-hidden="true">
+            <figure class="showcase_photo showcase_slide showcase_photo_d">
               <img src="asset/showcase_d.png" alt="Pastel silk lanterns gathered together">
               <figcaption class="showcase_caption">Silk Lanterns</figcaption>
             </figure>
-            <figure class="showcase_photo showcase_slide showcase_photo_e" aria-hidden="true">
+            <figure class="showcase_photo showcase_slide showcase_photo_e">
               <img src="asset/showcase_e.png" alt="A model in a cream jacket and dotted full skirt">
               <figcaption class="showcase_caption">Cream Jacket</figcaption>
             </figure>
-            <figure class="showcase_photo showcase_slide showcase_photo_f" aria-hidden="true">
+            <figure class="showcase_photo showcase_slide showcase_photo_f">
               <img src="asset/showcase_f.png"
                 alt="A model in an embroidered grey dress holding a vase of dried flowers">
               <figcaption class="showcase_caption">Embroidered Grey</figcaption>
             </figure>
-            <figure class="showcase_photo showcase_slide showcase_photo_g" aria-hidden="true">
+            <figure class="showcase_photo showcase_slide showcase_photo_g">
               <img src="asset/showcase_g.png" alt="An ink-washed landscape painted on hanbok silk">
               <figcaption class="showcase_caption">Ink-Washed Silk</figcaption>
             </figure>
+          </div>
 
+          <div class="showcase_carousel_nav">
             <button class="showcase_carousel_button showcase_carousel_prev" type="button"
-              aria-label="Previous image">
+              aria-label="Previous image" disabled>
               <img class="showcase_carousel_icon" src="assets/icons/arrow_right.svg" alt="" aria-hidden="true">
             </button>
-
+            <p class="showcase_counter" aria-hidden="true"><span class="showcase_counter_current">01</span><span class="showcase_counter_total"> / 05</span></p>
             <button class="showcase_carousel_button showcase_carousel_next" type="button"
               aria-label="Next image">
               <img class="showcase_carousel_icon" src="assets/icons/arrow_right.svg" alt="" aria-hidden="true">
             </button>
           </div>
+          <p class="showcase_status a11y_hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
       </div>
     </section>
@@ -340,7 +343,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="../../common/js/common.js?v=10"></script>
   <script src="../../common/js/shop_transition.js?v=5"></script>
-  <script src="js/col_chaikim.js"></script>
+  <script src="js/col_chaikim.js?v=2"></script>
 </body>
 
 </html>

@@ -328,7 +328,13 @@
      3. 카드 자체를 짧게(css의 --archive_card_h) — 같은 56px이라도
         카드가 짧으면 드러나는 비율이 커집니다 */
   var DECK_STEP_Y = 48;
-  var DECK_STEP_SCALE = 0.06;
+  /* 0.06이면 1024에서 뒤 카드가 좌우로 11 / 21px씩 들어가 위로 삐져나온
+     부분이 가느다란 띠 두 줄로 보였습니다 — "겹친 종이"가 아니라 흐린
+     이중선으로 읽혔습니다. 0.038이면 들어가는 폭이 7 / 14px이라 뒤 장이
+     앞 장과 거의 같은 폭으로 보여 더미로 읽힙니다.
+     ★ 이 값은 1279 이하 전용입니다 — --archive_deck_scale을 쓰는 CSS가
+     전부 그 구간 안에 있습니다(데스크톱은 시안 좌표 그대로입니다). */
+  var DECK_STEP_SCALE = 0.038;
   /* ★ 0입니다. 레퍼런스의 뒤 카드는 흐려지지 않고 그대로 보입니다 —
      반투명하면 앞뒤 사진이 서로 비쳐 지저분해집니다(실제로 그렇게 보였습니다).
      깊이는 크기 차이와 그림자로만 만듭니다. */
@@ -921,76 +927,121 @@
       return;
     }
 
+    var viewport = carousel.querySelector(".showcase_carousel_viewport");
     var slides = Array.prototype.slice.call(carousel.querySelectorAll(".showcase_slide"));
     var previous = carousel.querySelector(".showcase_carousel_prev");
     var next = carousel.querySelector(".showcase_carousel_next");
+    var counter = carousel.querySelector(".showcase_counter_current");
+    var counterTotal = carousel.querySelector(".showcase_counter_total");
+    var status = carousel.querySelector(".showcase_status");
 
-    if (slides.length < 2 || !previous || !next) {
+    if (!viewport || slides.length < 2 || !previous || !next) {
       return;
     }
 
-    /* ★ 캐러셀은 1279px 이하 전용입니다.
-       1280px 이상은 디자인 문서 기준 "시안 좌표 그대로"라 다섯 장이 흩어져
-       배치되고 스크롤로 하나씩 떠오릅니다. 그 폭에서는 is_current /
-       aria-hidden이 남아 있으면 안 됩니다 — 보이는 사진을 읽기 도구가
-       건너뛰게 됩니다. 그래서 조건이 어긋나면 표시를 걷어 냅니다. */
+    /* ★ 1279px 이하 전용입니다. 1280px 이상은 시안 좌표 그대로 다섯 장이
+       흩어져 배치되고 스크롤로 하나씩 떠오릅니다 — 그 폭에서 is_current가
+       남아 있으면 안 됩니다. */
     var narrow = window.matchMedia("(max-width: 1279px)");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var current = 0;
+    var frame = null;
+
+    if (counterTotal) {
+      counterTotal.textContent = " / " + String(slides.length).padStart(2, "0");
+    }
+
+    /* 레일은 슬라이드 폭이 제각각입니다(편집 리듬). 그래서 자리를 계산하지
+       않고 실제 offsetLeft 차를 씁니다 — CSS에서 폭·간격을 바꿔도 따라옵니다. */
+    function offsetFor(index) {
+      return slides[index].offsetLeft - slides[0].offsetLeft;
+    }
+
+    function render() {
+      slides.forEach(function (slide, index) {
+        slide.classList.toggle("is_current", index === current);
+      });
+      previous.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      previous.setAttribute("aria-disabled", String(previous.disabled));
+      next.setAttribute("aria-disabled", String(next.disabled));
+      if (counter) {
+        counter.textContent = String(current + 1).padStart(2, "0");
+      }
+      if (status) {
+        var caption = slides[current].querySelector("figcaption");
+        status.textContent = (current + 1) + " / " + slides.length
+          + (caption ? ": " + caption.textContent.trim() : "");
+      }
+    }
+
+    function readIndex() {
+      var nearest = 0;
+      var nearestDistance = Infinity;
+      slides.forEach(function (slide, index) {
+        var distance = Math.abs(offsetFor(index) - viewport.scrollLeft);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearest = index;
+        }
+      });
+      return nearest;
+    }
+
+    /* 끝에서 감지 않습니다 — 레일에는 실제 끝이 있고, 감으면 스크롤 위치와
+       상태가 어긋납니다. 대신 양 끝에서 화살표를 비활성으로 둡니다. */
+    function goTo(index) {
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      render();
+      viewport.scrollTo({
+        left: offsetFor(current),
+        behavior: reduced.matches ? "auto" : "smooth"
+      });
+    }
+
+    function handleScroll() {
+      if (frame !== null) {
+        return;
+      }
+      frame = window.requestAnimationFrame(function () {
+        frame = null;
+        var index = readIndex();
+        if (index !== current) {
+          current = index;
+          render();
+        }
+      });
+    }
 
     function syncMode() {
       if (narrow.matches) {
-        show(current);
+        render();
         return;
       }
-
       slides.forEach(function (slide) {
         slide.classList.remove("is_current");
         slide.removeAttribute("aria-hidden");
       });
     }
 
-    var current = Math.max(slides.findIndex(function (slide) {
-      return slide.classList.contains("is_current");
-    }), 0);
+    previous.addEventListener("click", function () { goTo(current - 1); });
+    next.addEventListener("click", function () { goTo(current + 1); });
 
-    function show(index) {
-      /* 끝에서 이어지도록 감습니다. 음수도 안전하게 나오도록 length를 한 번 더 더합니다. */
-      var target = ((index % slides.length) + slides.length) % slides.length;
-
-      slides.forEach(function (slide, i) {
-        var isCurrent = i === target;
-
-        slide.classList.toggle("is_current", isCurrent);
-
-        /* 보이지 않는 장은 읽기 도구와 탭 순서에서 뺍니다.
-           CSS의 visibility: hidden과 짝을 이룹니다. */
-        if (isCurrent) {
-          slide.removeAttribute("aria-hidden");
-        } else {
-          slide.setAttribute("aria-hidden", "true");
-        }
-      });
-
-      current = target;
-    }
-
-    previous.addEventListener("click", function () {
-      show(current - 1);
-    });
-
-    next.addEventListener("click", function () {
-      show(current + 1);
-    });
-
-    /* 캐러셀에 초점이 있을 때 좌우 화살표로도 넘깁니다. */
+    /* 화살표 버튼에 초점이 있을 때 좌우 키로도 넘깁니다(keydown이 여기까지
+       올라옵니다). viewport에 tabindex를 주지 않는 이유 — 그 요소는
+       데스크톱에서도 살아 있어서 탭 순서가 함께 바뀝니다. */
     carousel.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        show(current - 1);
-      } else if (event.key === "ArrowRight") {
-        event.preventDefault();
-        show(current + 1);
-      }
+      var index;
+      if (event.key === "ArrowLeft") index = current - 1;
+      else if (event.key === "ArrowRight") index = current + 1;
+      else if (event.key === "Home") index = 0;
+      else if (event.key === "End") index = slides.length - 1;
+      else return;
+      event.preventDefault();
+      goTo(index);
     });
+
+    viewport.addEventListener("scroll", handleScroll, { passive: true });
 
     if (narrow.addEventListener) {
       narrow.addEventListener("change", syncMode);
