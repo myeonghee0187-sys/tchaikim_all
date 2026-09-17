@@ -1,0 +1,492 @@
+[
+  {
+    "name": "Mood seamless keys 390",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Mood clone normalization 390",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+        "x": 0,
+        "w": 390
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+        "x": 0,
+        "w": 390
+      }
+    ]
+  },
+  {
+    "name": "Mood touch 390",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood mouse 390",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood trackpad 390",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 0",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 1",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 2",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 3",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 4",
+    "pass": true
+  },
+  {
+    "name": "Heritage same-frame fades 390",
+    "pass": true,
+    "heritage": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0.4583,
+        0.5417,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0.4149,
+        0.5851
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "Heritage centered 390",
+    "pass": true,
+    "title": [
+      {
+        "cx": 194.9921875,
+        "top": 84,
+        "bottom": 173.65625
+      },
+      {
+        "cx": 195,
+        "top": 193.65625,
+        "bottom": 565.015625
+      },
+      {
+        "cx": 195,
+        "top": 585.015625,
+        "bottom": 637.015625
+      }
+    ]
+  },
+  {
+    "name": "Bespoke compact hero 390",
+    "pass": true,
+    "hidden": true,
+    "buttonParent": "bespoke_hero_stage",
+    "count": 1,
+    "triggers": 0,
+    "center": 0.09375
+  },
+  {
+    "name": "Process 390 0",
+    "pass": true,
+    "key": "consultation",
+    "body": "consultation"
+  },
+  {
+    "name": "Process 390 1",
+    "pass": true,
+    "key": "design_selection",
+    "body": "design_selection"
+  },
+  {
+    "name": "Process 390 2",
+    "pass": true,
+    "key": "fabric_measurement",
+    "body": "fabric_measurement"
+  },
+  {
+    "name": "Process 390 3",
+    "pass": true,
+    "key": "tailoring",
+    "body": "tailoring"
+  },
+  {
+    "name": "Process 390 4",
+    "pass": true,
+    "key": "completion",
+    "body": "completion"
+  },
+  {
+    "name": "Materials 390 0",
+    "pass": true,
+    "key": "silk",
+    "caption": "silk"
+  },
+  {
+    "name": "Materials 390 1",
+    "pass": true,
+    "key": "cotton",
+    "caption": "cotton"
+  },
+  {
+    "name": "Materials 390 2",
+    "pass": true,
+    "key": "linen",
+    "caption": "linen"
+  },
+  {
+    "name": "Materials 390 3",
+    "pass": true,
+    "key": "ramie",
+    "caption": "ramie"
+  },
+  {
+    "name": "Materials 390 4",
+    "pass": true,
+    "key": "seasonal",
+    "caption": "seasonal"
+  },
+  {
+    "name": "Materials 390 5",
+    "pass": true,
+    "key": "myungjoo",
+    "caption": "myungjoo"
+  },
+  {
+    "name": "Showcase nav absent collection 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection 390",
+    "pass": true,
+    "show": "02"
+  },
+  {
+    "name": "AsWorn drag collection 390",
+    "pass": true,
+    "a": -272.3139953613281,
+    "z": -553.114013671875
+  },
+  {
+    "name": "Showcase nav absent collection-youngjin 390",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection-youngjin 390",
+    "pass": true,
+    "show": "02"
+  },
+  {
+    "name": "AsWorn drag collection-youngjin 390",
+    "pass": true,
+    "a": -715.8900146484375,
+    "z": -72.69000244140625
+  },
+  {
+    "name": "Shop swatch 390",
+    "pass": true
+  },
+  {
+    "name": "Shop product links 390",
+    "pass": true,
+    "links": [
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html"
+    ]
+  },
+  {
+    "name": "Mood seamless keys 1024",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Mood clone normalization 1024",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+        "x": 0,
+        "w": 1024
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+        "x": 0,
+        "w": 1024
+      }
+    ]
+  },
+  {
+    "name": "Mood touch 1024",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood mouse 1024",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood trackpad 1024",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 0",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 1",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 2",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 3",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 4",
+    "pass": true
+  },
+  {
+    "name": "Heritage same-frame fades 1024",
+    "pass": true,
+    "heritage": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0.4549,
+        0.5451,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0.4194,
+        0.5806
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "Heritage centered 1024",
+    "pass": true,
+    "title": [
+      {
+        "cx": 512,
+        "top": 91.734375,
+        "bottom": 158.171875
+      },
+      {
+        "cx": 512,
+        "top": 190.171875,
+        "bottom": 586.171875
+      },
+      {
+        "cx": 512,
+        "top": 618.171875,
+        "bottom": 670.171875
+      }
+    ]
+  },
+  {
+    "name": "Bespoke compact hero 1024",
+    "pass": true,
+    "hidden": true,
+    "buttonParent": "bespoke_hero_stage",
+    "count": 1,
+    "triggers": 0,
+    "center": 0.09375
+  },
+  {
+    "name": "Process 1024 0",
+    "pass": true,
+    "key": "consultation",
+    "body": "consultation"
+  },
+  {
+    "name": "Process 1024 1",
+    "pass": true,
+    "key": "design_selection",
+    "body": "design_selection"
+  },
+  {
+    "name": "Process 1024 2",
+    "pass": true,
+    "key": "fabric_measurement",
+    "body": "fabric_measurement"
+  },
+  {
+    "name": "Process 1024 3",
+    "pass": true,
+    "key": "tailoring",
+    "body": "tailoring"
+  },
+  {
+    "name": "Process 1024 4",
+    "pass": true,
+    "key": "completion",
+    "body": "completion"
+  },
+  {
+    "name": "Materials 1024 0",
+    "pass": true,
+    "key": "silk",
+    "caption": "silk"
+  },
+  {
+    "name": "Materials 1024 1",
+    "pass": true,
+    "key": "cotton",
+    "caption": "cotton"
+  },
+  {
+    "name": "Materials 1024 2",
+    "pass": true,
+    "key": "linen",
+    "caption": "linen"
+  },
+  {
+    "name": "Materials 1024 3",
+    "pass": true,
+    "key": "ramie",
+    "caption": "ramie"
+  },
+  {
+    "name": "Materials 1024 4",
+    "pass": true,
+    "key": "seasonal",
+    "caption": "seasonal"
+  },
+  {
+    "name": "Materials 1024 5",
+    "pass": true,
+    "key": "myungjoo",
+    "caption": "myungjoo"
+  },
+  {
+    "name": "Showcase nav absent collection 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection 1024",
+    "pass": true,
+    "show": "05"
+  },
+  {
+    "name": "AsWorn drag collection 1024",
+    "pass": true,
+    "a": -1488.14404296875,
+    "z": -517.7160034179688
+  },
+  {
+    "name": "AsWorn image only collection",
+    "pass": true
+  },
+  {
+    "name": "Showcase nav absent collection-youngjin 1024",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection-youngjin 1024",
+    "pass": true,
+    "show": "03"
+  },
+  {
+    "name": "AsWorn drag collection-youngjin 1024",
+    "pass": true,
+    "a": -696.780029296875,
+    "z": -142.39401245117188
+  },
+  {
+    "name": "AsWorn image only collection-youngjin",
+    "pass": true
+  },
+  {
+    "name": "Shop swatch 1024",
+    "pass": true
+  },
+  {
+    "name": "Shop product links 1024",
+    "pass": true,
+    "links": [
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html",
+      "../shop_detail/index.html"
+    ]
+  }
+]

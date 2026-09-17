@@ -1192,3 +1192,47 @@ heritage
   .atelier_row { width: 100%; overflow-x: auto; padding-inline: var(--brand_gutter); }
   .tchaikim_panel, .mood_slide_keyword { animation: none; transition: none; }
 }
+
+/* Post-QA4: compact Mood is keyword / campaign plate / logical counter. */
+/* Resize events and GSAP media contexts can run before the title's DOM cleanup.
+   Keep that transient node out of Desktop measurements in the same CSS frame. */
+@media (min-width: 1280px), (max-width: 767px) {
+  .brand_tablet_title { display: none; }
+}
+@media (max-width: 1279px) {
+  .mood_slide { grid-template-rows: auto auto; }
+  .mood_slide_caption { display: contents; }
+  .mood_slide_number, .mood_slide_description { display: none; }
+  .mood_slide_media picture { display: contents; }
+  .mood_slide_keyword { grid-column: 1; grid-row: 1; margin: 24px var(--brand_gutter); }
+  .mood_slide_media { grid-column: 1; grid-row: 2; }
+  .mood_slide_media img { object-position: center; }
+  .mood_responsive::after {
+    height: 48px; margin-top: 0;
+    /* Both adjoining computed backgrounds start at --brand_olive. A short,
+       quiet bridge avoids the old lighter olive stripe between them. */
+    background: linear-gradient(180deg, var(--brand_olive), var(--brand_olive));
+  }
+  .heritage.is_compact_fade { height: 140svh; }
+  .heritage.is_compact_fade .heritage_frame {
+    position: sticky; top: calc(var(--header_height) + 20px);
+  }
+  .heritage.is_compact_fade .heritage_photos_frame { height: min(44svh, 420px); }
+  .heritage.is_compact_fade .heritage_photos .heritage_stage:nth-child(n) {
+    display: block; position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0;
+  }
+  .heritage.is_compact_fade .heritage_photos .heritage_stage:first-child { opacity: 1; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .mood_slide_keyword { font-size: 40px; line-height: 1.2; }
+  .mood_slide_media { height: auto; aspect-ratio: 3 / 2; }
+  .brand_tablet_title { margin: 0 0 36px; font: 400 38px/1.3 var(--font_display); text-align: left; align-self: flex-start; }
+  /* The frame already has a 112px editorial gap; the title only needs 36px.
+     No image widths, offsets or relationships are changed. */
+  .kimyoungjin_frame > .brand_tablet_title { margin-bottom: -76px; }
+}
+@media (max-width: 767px) {
+  .mood_slide_media { height: min(57svh, 500px); }
+  .mood_responsive::after { height: 32px; }
+  .heritage.is_compact_fade { height: 130svh; }
+}

@@ -2444,123 +2444,6 @@
   }
 }
 
-/* ############################################################################
-   6차 — Shop 모바일 상품 그리드: 균일 1열 → 편집적 mixed grid (2026-09-14)
-   ----------------------------------------------------------------------------
-   [문제] 479px 이하에서 두 그리드가 모두 1열이라, 상품 카드가 전부
-   화면의 90%를 차지한 채 세로로 늘어섰습니다.
-   실측(390px): 이미지 66장 중 **48장이 뷰포트의 85% 이상**,
-   문서 높이 17,635px = **화면 20.9개 분량**. 사이트에서 가장 긴 페이지였고
-   "모든 이미지 100%"(금지 항목)에 해당했습니다.
-
-   [지금] 각 그리드의 **첫 카드 한 장만 전체 폭**, 나머지는 2열.
-   상품 탐색성과 편집적 위계를 함께 가져갑니다.
-
-       1번   ████████████  full   ← 대표
-       2·3   ████  ████    2열
-       4·5   ████  ████    2열
-        6    ████          (홀수 하나는 반폭으로 남김 — 의도된 여백)
-
-   ★★★ 선택자 주의 — `.shop_row`가 `display: contents`입니다.
-     레이아웃에서는 카드가 그리드 아이템이 되지만 **선택자 매칭은 DOM
-     트리 그대로**라, `.shop_grid > :nth-child(...)`는 카드가 아니라
-     **row**를 가리킵니다(실측으로 확인: grid-column이 걸리지 않고
-     카드가 계속 반폭이었습니다). 그래서 row를 명시적으로 거쳐야 합니다.
-   ★ 카드 수: new_arrivals 2행 × 2장, shop 2행 × 3장.
-   ############################################################################ */
-@media (max-width: 479px) {
-  .new_arrivals_grid,
-  .shop_grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* 행 간격은 넉넉히, 열 간격은 좁게 — 두 장이 한 쌍으로 읽힙니다. */
-    gap: 44px 14px;
-  }
-
-  /* 각 그리드의 첫 카드만 전체 폭. */
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child,
-  .shop_grid > .shop_row:first-child > .card_product:first-child {
-    grid-column: 1 / -1;
-  }
-
-  /* 2열 카드는 글자를 한 단계 줄입니다. 먼저 전부 줄이고, 바로 아래에서
-     전체 폭 카드만 원래 크기로 되돌립니다. */
-  .new_arrivals_grid .card_product_name,
-  .shop_grid .card_product_name {
-    font-size: 15px;
-  }
-
-  .new_arrivals_grid .card_product_price,
-  .shop_grid .card_product_price {
-    font-size: 14px;
-  }
-
-  .new_arrivals_grid .card_product_desc,
-  .shop_grid .card_product_desc {
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  /* ★ 이름과 가격이 한 줄에서 space-between으로 마주 보는 구조라,
-     2열 카드(폭 약 168px)에서는 자리가 없어 **가격이 카드 밖으로 밀려
-     페이지에 31px 가로 넘침**이 생겼습니다(실측). 좁은 카드에서는
-     세로로 쌓습니다. */
-  .new_arrivals_grid .card_product_header,
-  .shop_grid .card_product_header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-
-  /* 좁은 카드에서 태그가 여러 줄로 쌓이면 카드 높이가 들쭉날쭉합니다.
-     ★ 처음에 `nowrap + overflow: hidden`으로 잘랐더니 두 번째 태그가
-       글자 중간에서 잘려("Dr…", "B C…") 고장난 것처럼 보였습니다.
-       잘라 보여주는 대신 **첫 태그 하나만** 남깁니다 — 나머지 정보는
-       상품 상세에 있습니다. */
-  .new_arrivals_grid .card_product_tags,
-  .shop_grid .card_product_tags {
-    flex-wrap: nowrap;
-  }
-
-  .new_arrivals_grid .card_product_tags > *:nth-child(n + 2),
-  .shop_grid .card_product_tags > *:nth-child(n + 2) {
-    display: none;
-  }
-
-  /* --- 전체 폭 대표 카드는 원래 크기 --- */
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_header,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_header {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 12px;
-  }
-
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_name,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_name {
-    font-size: 20px;
-  }
-
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_price,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_price {
-    font-size: 16px;
-  }
-
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_desc,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_desc {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_tags,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_tags {
-    flex-wrap: wrap;
-  }
-
-  /* 대표 카드에서는 태그를 전부 보여줍니다. */
-  .new_arrivals_grid > .new_arrivals_row:first-child > .card_product:first-child .card_product_tags > *,
-  .shop_grid > .shop_row:first-child > .card_product:first-child .card_product_tags > * {
-    display: inline-flex;
-  }
-}
 
 /* ############################################################################
    6차 — 360px에서 색상 점의 히트 영역이 페이지를 5px 넘치던 문제 (2026-09-14)
@@ -2673,4 +2556,59 @@
   .motif_reference_copy { gap: 20px; }
   .motif_reference_desc { max-width: 32ch; font-size: 15px; line-height: 1.7; }
   .motif_detail_container { gap: 72px; }
+}
+
+/* Post-QA4 catalogue. New / All share slots, not fixed card heights. */
+@media (max-width: 1279px) {
+  .new_arrivals_section, .shop_section { padding-inline: var(--layout_gutter); }
+  .new_arrivals_inner, .shop_filter_bar, .shop_list_wrap, .shop_list_section { width: 100%; max-width: none; }
+  .new_arrivals_inner, .shop_list_section { gap: 40px; align-items: stretch; }
+  .new_arrivals_grid, .shop_grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 72px 32px; }
+  .new_arrivals_row, .shop_row { display: contents; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product { width: 100%; min-width: 0; grid-column: auto; align-items: stretch; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_media { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5; }
+  /* The scarf's existing markup contains a second media wrapper. Keep its
+     Desktop DOM intact, but do not let the outer flex padding shrink this plate. */
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_media > .card_product_media {
+    position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto;
+  }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_img { object-fit: cover; transform: none; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_content { width: 100%; padding: 20px 0 0; gap: 8px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_primary { width: 100%; gap: 4px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_header { display: grid; grid-template-columns: minmax(0,1fr); gap: 6px; min-height: 0; align-items: start; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_name { min-block-size: 2.6em; font-size: 24px; line-height: 1.3; letter-spacing: 0; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_price { font-size: 16px; line-height: 1.5; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatches { width: 100%; gap: 0; overflow: visible; min-height: 44px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatch {
+    width: 44px; height: 44px; padding: 15px; border: 0; box-shadow: none;
+    background-clip: content-box; position: relative;
+  }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatch::after { content: none; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatch.is_selected::before {
+    content: ""; position: absolute; inset: 12px; border: 1px solid currentColor;
+  }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_supporting { gap: 16px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_desc {
+    font-size: 15px; line-height: 1.6; min-block-size: 3.2em;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tags { gap: 8px; flex-wrap: wrap; align-items: center; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tag { min-height: 36px; padding: 6px 14px; font-size: 12px; line-height: 1.2; letter-spacing: .04em; border-radius: 24px; }
+  .shop_list_wrap { gap: 96px; align-items: stretch; }
+  .shop_more_button { align-self: flex-start; }
+}
+@media (max-width: 767px) {
+  .new_arrivals_grid, .shop_grid { gap: 56px 20px; }
+  .new_arrivals_inner, .shop_list_section { gap: 32px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_content { padding-top: 16px; gap: 4px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_header { gap: 4px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_name { min-block-size: 2.8em; font-size: clamp(15px,4.1vw,16px); line-height: 1.4; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_price { font-size: 13px; line-height: 1.5; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatch { width: 36px; padding-inline: 11px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_swatch.is_selected::before { inset-inline: 8px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_supporting { gap: 12px; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_desc { font-size: 13px; line-height: 1.6; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tags { gap: 6px; flex-wrap: nowrap; }
+  :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tag { min-height: 28px; padding: 5px 7px; font-size: 11px; letter-spacing: .01em; white-space: nowrap; }
+  .shop_list_wrap { gap: 80px; }
 }

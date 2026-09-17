@@ -1,0 +1,4 @@
+[
+  {"name":"collection","baselineCounts":[8,12,12,12],"afterCounts":[8,12,12,12],"pass":true,"note":"Existing adaptive marquee fills one extra complete repeat set on first resize; no further accumulation, identical to HEAD."},
+  {"name":"collection-youngjin","baselineCounts":[9,9,9,9],"afterCounts":[9,9,9,9],"pass":true}
+]

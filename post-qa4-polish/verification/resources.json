@@ -1,0 +1,332 @@
+[
+  {
+    "name": "shop",
+    "pass": true,
+    "start": {
+      "steady": {
+        "listeners": 188,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 2,
+        "ResizeObserver": 1,
+        "IntersectionObserver": 3,
+        "MutationObserver": 0
+      },
+      "peak": {
+        "listeners": 188,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 3,
+        "ResizeObserver": 1,
+        "IntersectionObserver": 3,
+        "MutationObserver": 0
+      }
+    },
+    "samples": [
+      {
+        "steady": {
+          "listeners": 188,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 188,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "steady": {
+          "listeners": 188,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 188,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "brand",
+    "pass": true,
+    "start": {
+      "steady": {
+        "listeners": 70,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 2,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 1,
+        "MutationObserver": 0
+      },
+      "peak": {
+        "listeners": 70,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 3,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 1,
+        "MutationObserver": 0
+      }
+    },
+    "samples": [
+      {
+        "steady": {
+          "listeners": 70,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 1,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 70,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 1,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "steady": {
+          "listeners": 70,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 1,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 70,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 1,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "bespoke",
+    "pass": true,
+    "start": {
+      "steady": {
+        "listeners": 62,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 2,
+        "ResizeObserver": 1,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      },
+      "peak": {
+        "listeners": 62,
+        "timers": 0,
+        "intervals": 1,
+        "raf": 2,
+        "ResizeObserver": 1,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      }
+    },
+    "samples": [
+      {
+        "steady": {
+          "listeners": 62,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 62,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "steady": {
+          "listeners": 62,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 62,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "collection",
+    "pass": true,
+    "start": {
+      "steady": {
+        "listeners": 108,
+        "timers": 0,
+        "intervals": 2,
+        "raf": 2,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      },
+      "peak": {
+        "listeners": 108,
+        "timers": 0,
+        "intervals": 2,
+        "raf": 2,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      }
+    },
+    "samples": [
+      {
+        "steady": {
+          "listeners": 108,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 108,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "steady": {
+          "listeners": 108,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 108,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "collection-youngjin",
+    "pass": true,
+    "start": {
+      "steady": {
+        "listeners": 107,
+        "timers": 0,
+        "intervals": 2,
+        "raf": 2,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      },
+      "peak": {
+        "listeners": 107,
+        "timers": 0,
+        "intervals": 2,
+        "raf": 2,
+        "ResizeObserver": 2,
+        "IntersectionObserver": 0,
+        "MutationObserver": 0
+      }
+    },
+    "samples": [
+      {
+        "steady": {
+          "listeners": 107,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 107,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "steady": {
+          "listeners": 107,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 107,
+          "timers": 0,
+          "intervals": 2,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  }
+]

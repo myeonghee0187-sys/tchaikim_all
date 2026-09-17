@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TCHAI KIM · QA4 이후 최종 비교</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eeede9;color:#213e39;font:15px/1.6 system-ui,sans-serif}header{position:sticky;top:0;z-index:2;background:#f8f7f3ed;padding:18px 28px;border-bottom:1px solid #d4d5cc;backdrop-filter:blur(10px)}h1{font:400 23px Georgia,serif;margin:0 0 8px}p{margin:6px 0}label{margin-right:16px}select,a{color:inherit}select{font:inherit;padding:7px 12px;border:1px solid #b9c5bd;background:white;border-radius:2px}main{max-width:1900px;margin:auto;padding:24px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}figure{margin:0;background:white}figcaption{padding:12px 16px;border-bottom:1px solid #e4e4df}img{display:block;width:100%;height:auto}h2{margin:36px 0 16px;font:400 24px Georgia,serif}.note{font-size:13px;color:#52635c}.full{max-width:100%}.full.mobile{max-width:804px;margin-inline:auto}a:focus-visible,select:focus-visible{outline:2px solid #215b4b;outline-offset:3px}
+</style>
+<header>
+<h1>TCHAI KIM — Final Visual Polish</h1>
+<label>페이지 <select id="page"><option value="shop">Shop Catalogue</option><option value="brand">Brand</option><option value="bespoke">Bespoke</option><option value="collection">TCHAI KIM Collection</option><option value="collection-youngjin">Young Jin Collection</option></select></label>
+<label>화면 폭 <select id="width"><option>390</option><option>1024</option><option>1920</option></select></label>
+<a href="REPORT.md">검증 보고서</a> · <a href="ASSETS.md">Mood 이미지 출처·프롬프트</a>
+<p class="note">기준 HEAD 0bb8299 · 왼쪽 Before / 오른쪽 After · 로컬 Chrome 캡처. 움직이는 영상/마퀴의 시점은 다를 수 있습니다. Desktop 비교는 위치·크기·스크롤 구간도 별도로 검증했습니다.</p>
+</header>
+<main><div id="sections"></div><h2>전체 페이지 · Before / After</h2><div class="pair full" id="full"></div></main>
+<script>
+const p=document.querySelector('#page'),w=document.querySelector('#width');
+const sections={shop:['new_arrivals_section','shop_section'],brand:['mood_responsive','kimyoungjin','tchaikim_track','heritage'],bespoke:['bespoke_hero'],collection:['showcase','asworn'],'collection-youngjin':['showcase','asworn']};
+function image(phase,file){return `<figure><figcaption>${phase==='before'?'Before · HEAD':'After · Local'}</figcaption><a href="${phase}/${p.value}/${w.value}-${file}.png" target="_blank" rel="noopener"><img loading="lazy" src="${phase}/${p.value}/${w.value}-${file}.png" alt="${phase} ${p.value} ${w.value} ${file}"></a></figure>`;}
+function render(){document.querySelector('#sections').innerHTML=sections[p.value].filter(s=>w.value!=='1920'||!['mood_responsive'].includes(s)).map(s=>`<h2>${s.replaceAll('_',' ')}</h2><div class="pair">${image('before',s)+image('after',s)}</div>`).join('');const f=document.querySelector('#full');f.classList.toggle('mobile',w.value==='390');f.innerHTML=image('before','full')+image('after','full');}
+p.addEventListener('change',render);w.addEventListener('change',render);render();
+</script>
+</html>

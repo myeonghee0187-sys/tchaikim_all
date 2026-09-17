@@ -1,0 +1,136 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 4187,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 897.078125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -1148,
+      "y": 92,
+      "w": 346,
+      "h": 34.5,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -758,
+      "y": 92,
+      "w": 346,
+      "h": 34.5,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -368,
+      "y": 92,
+      "w": 346,
+      "h": 34.5,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 22,
+      "y": 92,
+      "w": 346,
+      "h": 34.5,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 412,
+      "y": 92,
+      "w": 346,
+      "h": 34.5,
+      "font": "30px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "kimyoungjin",
+      "x": 0,
+      "y": 897.078125,
+      "w": 390,
+      "h": 635.796875,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_mobile_title",
+      "x": 22,
+      "y": 937.078125,
+      "w": 346,
+      "h": 34.109375,
+      "font": "27.3px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "tchaikim",
+      "x": 0,
+      "y": 1532.875,
+      "w": 390,
+      "h": 540.703125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "tchaikim_mobile_title",
+      "x": 22,
+      "y": 1580.875,
+      "w": 346,
+      "h": 34.109375,
+      "font": "27.3px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "atelier",
+      "x": 0,
+      "y": 2073.578125,
+      "w": 390,
+      "h": 530.828125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "a11y_hidden",
+      "x": 22,
+      "y": 2145.578125,
+      "w": 346,
+      "h": 39,
+      "font": "30px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "heritage",
+      "x": 0,
+      "y": 2652.40625,
+      "w": 390,
+      "h": 682.765625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "heritage_headline",
+      "x": 31.140625,
+      "y": 2684.40625,
+      "w": 327.703125,
+      "h": 89.65625,
+      "font": "38px"
+    }
+  ],
+  "broken": []
+}

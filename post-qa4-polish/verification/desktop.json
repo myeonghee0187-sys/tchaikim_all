@@ -1,0 +1,472 @@
+[
+  {
+    "name": "desktop shop 1920",
+    "pass": true,
+    "beforeHeight": 18960,
+    "afterHeight": 18960,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 949,
+        "end": 2490
+      },
+      {
+        "pin": true,
+        "start": 2684,
+        "end": 8624
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 949,
+        "end": 2490
+      },
+      {
+        "pin": true,
+        "start": 2684,
+        "end": 8624
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop shop 1280",
+    "pass": true,
+    "beforeHeight": 18513,
+    "afterHeight": 18513,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 327,
+        "end": 1743
+      },
+      {
+        "pin": true,
+        "start": 1937,
+        "end": 7877
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 327,
+        "end": 1743
+      },
+      {
+        "pin": true,
+        "start": 1937,
+        "end": 7877
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop brand 1920",
+    "pass": true,
+    "beforeHeight": 12956,
+    "afterHeight": 12956,
+    "beforeTriggers": [
+      {
+        "pin": true,
+        "start": 0,
+        "end": 10
+      },
+      {
+        "pin": true,
+        "start": 3672,
+        "end": 4212
+      },
+      {
+        "pin": false,
+        "start": 138,
+        "end": 1002
+      },
+      {
+        "pin": false,
+        "start": 847,
+        "end": 1711
+      },
+      {
+        "pin": false,
+        "start": 1788,
+        "end": 2952
+      },
+      {
+        "pin": false,
+        "start": 7283,
+        "end": 10739
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": true,
+        "start": 0,
+        "end": 10
+      },
+      {
+        "pin": true,
+        "start": 3672,
+        "end": 4212
+      },
+      {
+        "pin": false,
+        "start": 138,
+        "end": 1002
+      },
+      {
+        "pin": false,
+        "start": 847,
+        "end": 1711
+      },
+      {
+        "pin": false,
+        "start": 1788,
+        "end": 2952
+      },
+      {
+        "pin": false,
+        "start": 7283,
+        "end": 10739
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop brand 1280",
+    "pass": true,
+    "beforeHeight": 12836,
+    "afterHeight": 12836,
+    "beforeTriggers": [
+      {
+        "pin": true,
+        "start": 0,
+        "end": 10
+      },
+      {
+        "pin": true,
+        "start": 3672,
+        "end": 4212
+      },
+      {
+        "pin": false,
+        "start": 138,
+        "end": 1002
+      },
+      {
+        "pin": false,
+        "start": 847,
+        "end": 1711
+      },
+      {
+        "pin": false,
+        "start": 1788,
+        "end": 2952
+      },
+      {
+        "pin": false,
+        "start": 7283,
+        "end": 10739
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": true,
+        "start": 0,
+        "end": 10
+      },
+      {
+        "pin": true,
+        "start": 3672,
+        "end": 4212
+      },
+      {
+        "pin": false,
+        "start": 138,
+        "end": 1002
+      },
+      {
+        "pin": false,
+        "start": 847,
+        "end": 1711
+      },
+      {
+        "pin": false,
+        "start": 1788,
+        "end": 2952
+      },
+      {
+        "pin": false,
+        "start": 7283,
+        "end": 10739
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop bespoke 1920",
+    "pass": true,
+    "beforeHeight": 14396,
+    "afterHeight": 14396,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 673,
+        "end": 3049
+      },
+      {
+        "pin": false,
+        "start": 2941,
+        "end": 5101
+      },
+      {
+        "pin": false,
+        "start": 6769,
+        "end": 8497
+      },
+      {
+        "pin": false,
+        "start": 673,
+        "end": 2293
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 673,
+        "end": 3049
+      },
+      {
+        "pin": false,
+        "start": 2941,
+        "end": 5101
+      },
+      {
+        "pin": false,
+        "start": 6769,
+        "end": 8497
+      },
+      {
+        "pin": false,
+        "start": 673,
+        "end": 2293
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop bespoke 1280",
+    "pass": true,
+    "beforeHeight": 12224,
+    "afterHeight": 12224,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 6174,
+        "end": 7902
+      },
+      {
+        "pin": false,
+        "start": 1199,
+        "end": 2391
+      },
+      {
+        "pin": false,
+        "start": 1199,
+        "end": 2391
+      },
+      {
+        "pin": false,
+        "start": 2346,
+        "end": 4506
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 6174,
+        "end": 7902
+      },
+      {
+        "pin": false,
+        "start": 1199,
+        "end": 2391
+      },
+      {
+        "pin": false,
+        "start": 1199,
+        "end": 2391
+      },
+      {
+        "pin": false,
+        "start": 2346,
+        "end": 4506
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop collection 1920",
+    "pass": true,
+    "beforeHeight": 8113,
+    "afterHeight": 8113,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 0,
+        "end": 1080
+      },
+      {
+        "pin": true,
+        "start": 1080,
+        "end": 2785
+      },
+      {
+        "pin": true,
+        "start": 3785,
+        "end": 4937
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 0,
+        "end": 1080
+      },
+      {
+        "pin": true,
+        "start": 1080,
+        "end": 2785
+      },
+      {
+        "pin": true,
+        "start": 3785,
+        "end": 4937
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop collection 1280",
+    "pass": true,
+    "beforeHeight": 6175,
+    "afterHeight": 6175,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": -296,
+        "end": 784
+      },
+      {
+        "pin": true,
+        "start": 784,
+        "end": 1658
+      },
+      {
+        "pin": true,
+        "start": 2505,
+        "end": 3273
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": -296,
+        "end": 784
+      },
+      {
+        "pin": true,
+        "start": 784,
+        "end": 1658
+      },
+      {
+        "pin": true,
+        "start": 2505,
+        "end": 3273
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop collection-youngjin 1920",
+    "pass": true,
+    "beforeHeight": 8113,
+    "afterHeight": 8113,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": 0,
+        "end": 1080
+      },
+      {
+        "pin": true,
+        "start": 1080,
+        "end": 2785
+      },
+      {
+        "pin": true,
+        "start": 3785,
+        "end": 4937
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": 0,
+        "end": 1080
+      },
+      {
+        "pin": true,
+        "start": 1080,
+        "end": 2785
+      },
+      {
+        "pin": true,
+        "start": 3785,
+        "end": 4937
+      }
+    ],
+    "diff": []
+  },
+  {
+    "name": "desktop collection-youngjin 1280",
+    "pass": true,
+    "beforeHeight": 6175,
+    "afterHeight": 6175,
+    "beforeTriggers": [
+      {
+        "pin": false,
+        "start": -296,
+        "end": 784
+      },
+      {
+        "pin": true,
+        "start": 784,
+        "end": 1658
+      },
+      {
+        "pin": true,
+        "start": 2505,
+        "end": 3273
+      }
+    ],
+    "afterTriggers": [
+      {
+        "pin": false,
+        "start": -296,
+        "end": 784
+      },
+      {
+        "pin": true,
+        "start": 784,
+        "end": 1658
+      },
+      {
+        "pin": true,
+        "start": 2505,
+        "end": 3273
+      }
+    ],
+    "diff": []
+  }
+]

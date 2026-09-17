@@ -1,0 +1,244 @@
+{
+  "width": 390,
+  "height": 844,
+  "documentHeight": 8576,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "hero_section",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 806.359375,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "banner",
+      "x": 0,
+      "y": 806.359375,
+      "w": 390,
+      "h": 429.015625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "banner_title",
+      "x": 20,
+      "y": 932.4375,
+      "w": 350,
+      "h": 72.78125,
+      "font": "28px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "garment_story_scroll",
+      "x": 0,
+      "y": 1235.375,
+      "w": 390,
+      "h": 778.53125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "garment_story_section",
+      "x": 0,
+      "y": 1275.375,
+      "w": 390,
+      "h": 698.53125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 20,
+      "y": 1701.375,
+      "w": 67.265625,
+      "h": 33.53125,
+      "font": "26px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 338,
+      "y": 1701.375,
+      "w": 106.140625,
+      "h": 33.53125,
+      "font": "26px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 656,
+      "y": 1701.375,
+      "w": 102.984375,
+      "h": 33.53125,
+      "font": "26px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 974,
+      "y": 1701.375,
+      "w": 131.03125,
+      "h": 33.53125,
+      "font": "26px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "new_arrivals_section",
+      "x": 0,
+      "y": 2013.90625,
+      "w": 390,
+      "h": 1674.0625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "new_arrivals_title",
+      "x": 20,
+      "y": 2101.90625,
+      "w": 63.0625,
+      "h": 38.6875,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 2488.59375,
+      "w": 211.734375,
+      "h": 28,
+      "font": "20px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 2896.984375,
+      "w": 136,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 218,
+      "y": 2896.984375,
+      "w": 114.984375,
+      "h": 21,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 3353.671875,
+      "w": 136,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "shop_section",
+      "x": 0,
+      "y": 3687.96875,
+      "w": 390,
+      "h": 2960.109375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "shop_list_title",
+      "x": 20,
+      "y": 4066.96875,
+      "w": 41.921875,
+      "h": 38.6875,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 4503.65625,
+      "w": 194.78125,
+      "h": 28,
+      "font": "20px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 5035.65625,
+      "w": 136,
+      "h": 63,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 218,
+      "y": 5035.65625,
+      "w": 136,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 5609.09375,
+      "w": 136,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 218,
+      "y": 5609.09375,
+      "w": 125.09375,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 36,
+      "y": 6193.796875,
+      "w": 136,
+      "h": 42,
+      "font": "15px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "motif_detail_section",
+      "x": 0,
+      "y": 6648.078125,
+      "w": 390,
+      "h": 1075.875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "motif_reference_title",
+      "x": 20,
+      "y": 7045.15625,
+      "w": 350,
+      "h": 38.6875,
+      "font": "30px"
+    },
+    {
+      "tag": "H3",
+      "cls": "motif_related_title",
+      "x": 20,
+      "y": 7226.84375,
+      "w": 350,
+      "h": 45.109375,
+      "font": "32px"
+    }
+  ],
+  "broken": []
+}

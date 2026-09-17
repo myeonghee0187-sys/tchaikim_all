@@ -1,5 +1,33 @@
 # Tchai Kim 현재 상태
 
+## Post-QA4 Narrow-scope Final Polish (2026-09-18)
+
+최신 작업은 이전 61개 명세 재실행이 아닙니다. 시작 HEAD
+`0bb829963e6c9bb91b2b813225f4b2938f13816e` (`최종 QA 4차`), clean tree.
+commit/push 없이 Shop/Brand/Bespoke/Collection 두 페이지의 좁은 범위만 수정했습니다.
+
+- Shop compact: New/All 모두 2-column, 공통 4:5 사진과 내부 슬롯 정렬.
+  가장 긴 상품명도 360px에서 2줄. 스카프의 기존 중첩 media wrapper는
+  DOM을 없애지 않고 compact CSS로 같은 image frame에 맞춤.
+- Brand: 생성 캠페인 JPEG 3장(실제 1448×1086)을 <=1279 picture source에만 연결.
+  Desktop 원본/초기 네트워크 유지. Mood keyword→image→counter, 설명 제거.
+  짧은 olive 연결부, Tablet 제목 두 개, Heritage 3장 same-frame fade 복원.
+  140svh Tablet / 130svh Mobile, pin spacer 없음, reduced-motion 정적 대표 1장.
+- Tablet 제목은 CSS에서도 해당 폭 밖 display:none 처리해야 합니다.
+  DOM cleanup보다 GSAP 측정이 먼저 실행되면 Desktop pin 높이에 28px이 남습니다.
+- Bespoke: 기존 Mobile 버튼 reparent를 <=1279로 확장. Philosophy/Atelier 숨김.
+  Hero 전환도 width>=1280 조건이 필요합니다. 기존 화면비 조건만 남기면
+  가로 Tablet에서 숨긴 Philosophy가 animation runway를 계속 만듭니다.
+- Collection 둘: compact Showcase nav 숨김, Tablet As Worn body/gradient 숨김.
+  Archive/year/deck 및 기존 swipe/drag controller는 수정하지 않았습니다.
+
+Desktop 1920/1280 HEAD geometry/trigger 비교, 10폭×5페이지 실제 overflow 검사,
+왕복 resize, touch/mouse/wheel/keyboard, resource 누적과 reduced-motion 검증.
+결과 및 45개 acceptance: [최종 보고](../post-qa4-polish/REPORT.md).
+[비교 뷰어](../post-qa4-polish/index.html), [이미지 출처·프롬프트](../post-qa4-polish/ASSETS.md).
+Shop 검색/실제 filter 결과 handler는 HEAD부터 없으며 이번 범위에서 추가하지 않았습니다.
+실기기 Safari와 생성 이미지의 브랜드 적합성 최종 승인은 남아 있습니다.
+
 ## Final Responsive Art Direction V2 — 61 requirements (2026-09-18)
 
 최신 61개 명세가 아래 과거 33개 명세보다 우선합니다. 시작 HEAD는

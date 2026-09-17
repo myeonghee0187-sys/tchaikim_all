@@ -1,0 +1,354 @@
+[
+  {
+    "name": "Bespoke 1279x900 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 6399,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1279x650 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 6149,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x768 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5807,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x600 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5639,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 768x900 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5718,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 767x500 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5974,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 430x700 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4983,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 390x844 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4965,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 375x667 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4922,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 360x640 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4937,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x900 round 0",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5615,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1920x1080 round 0",
+    "pass": true,
+    "s": {
+      "runway": true,
+      "height": 14396,
+      "triggers": [
+        "bespoke_hero_stage",
+        "atelier is_story_ready",
+        "process is_scroll_ready",
+        "bespoke_hero_stage"
+      ],
+      "buttonParent": "atelier_body",
+      "buttonCount": 1,
+      "buttonGap": 2298,
+      "center": 498.390625,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1279x900 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 6399,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1279x650 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 6149,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x768 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5807,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x600 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5639,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 768x900 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5718,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 767x500 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5974,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 430x700 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4983,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 390x844 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4965,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 375x667 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4922,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 360x640 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 4937,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1024x900 round 1",
+    "pass": true,
+    "s": {
+      "runway": false,
+      "height": 5615,
+      "triggers": [],
+      "buttonParent": "bespoke_hero_stage",
+      "buttonCount": 1,
+      "buttonGap": 28,
+      "center": 0,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Bespoke 1920x1080 round 1",
+    "pass": true,
+    "s": {
+      "runway": true,
+      "height": 14396,
+      "triggers": [
+        "bespoke_hero_stage",
+        "atelier is_story_ready",
+        "process is_scroll_ready",
+        "bespoke_hero_stage"
+      ],
+      "buttonParent": "atelier_body",
+      "buttonCount": 1,
+      "buttonGap": 2298,
+      "center": 498.390625,
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final Bespoke Desktop baseline",
+    "pass": true,
+    "before": 14396,
+    "after": 14396
+  }
+]

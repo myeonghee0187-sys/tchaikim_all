@@ -1,0 +1,476 @@
+[
+  {
+    "name": "Shop baseline controls before 1024",
+    "pass": true,
+    "ui": {
+      "query": "Jeogori",
+      "label": "DRESS",
+      "open": "false",
+      "focused": "shop_select_button",
+      "cards": 6
+    },
+    "note": "HEAD has no catalogue filtering/search handler; only the existing controls/state are protected."
+  },
+  {
+    "name": "Shop Escape before 1024",
+    "pass": true
+  },
+  {
+    "name": "Shop common axis 1024",
+    "pass": true,
+    "axis": [
+      {
+        "s": ".new_arrivals_title",
+        "x": 40
+      },
+      {
+        "s": ".new_arrivals_grid",
+        "x": 40
+      },
+      {
+        "s": ".shop_filter_bar",
+        "x": 40
+      },
+      {
+        "s": ".shop_list_title",
+        "x": 40
+      },
+      {
+        "s": ".shop_grid",
+        "x": 40
+      },
+      {
+        "s": ".shop_more_button",
+        "x": 40
+      }
+    ]
+  },
+  {
+    "name": "Shop baseline controls after 1024",
+    "pass": true,
+    "ui": {
+      "query": "Jeogori",
+      "label": "DRESS",
+      "open": "false",
+      "focused": "shop_select_button",
+      "cards": 6
+    },
+    "note": "HEAD has no catalogue filtering/search handler; only the existing controls/state are protected."
+  },
+  {
+    "name": "Shop Escape after 1024",
+    "pass": true
+  },
+  {
+    "name": "Shop baseline controls before 390",
+    "pass": true,
+    "ui": {
+      "query": "Jeogori",
+      "label": "DRESS",
+      "open": "false",
+      "focused": "shop_select_button",
+      "cards": 6
+    },
+    "note": "HEAD has no catalogue filtering/search handler; only the existing controls/state are protected."
+  },
+  {
+    "name": "Shop Escape before 390",
+    "pass": true
+  },
+  {
+    "name": "Shop common axis 390",
+    "pass": true,
+    "axis": [
+      {
+        "s": ".new_arrivals_title",
+        "x": 20
+      },
+      {
+        "s": ".new_arrivals_grid",
+        "x": 20
+      },
+      {
+        "s": ".shop_filter_bar",
+        "x": 20
+      },
+      {
+        "s": ".shop_list_title",
+        "x": 20
+      },
+      {
+        "s": ".shop_grid",
+        "x": 20
+      },
+      {
+        "s": ".shop_more_button",
+        "x": 20
+      }
+    ]
+  },
+  {
+    "name": "Shop baseline controls after 390",
+    "pass": true,
+    "ui": {
+      "query": "Jeogori",
+      "label": "DRESS",
+      "open": "false",
+      "focused": "shop_select_button",
+      "cards": 6
+    },
+    "note": "HEAD has no catalogue filtering/search handler; only the existing controls/state are protected."
+  },
+  {
+    "name": "Shop Escape after 390",
+    "pass": true
+  },
+  {
+    "name": "Boundary brand 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 1279",
+    "pass": true,
+    "s": {
+      "clones": 2,
+      "titles": 2,
+      "fade": 1,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 768",
+    "pass": true,
+    "s": {
+      "clones": 2,
+      "titles": 2,
+      "fade": 1,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 767",
+    "pass": true,
+    "s": {
+      "clones": 2,
+      "titles": 0,
+      "fade": 1,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 768",
+    "pass": true,
+    "s": {
+      "clones": 2,
+      "titles": 2,
+      "fade": 1,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 1279",
+    "pass": true,
+    "s": {
+      "clones": 2,
+      "titles": 2,
+      "fade": 1,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary brand 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "atelier_body",
+      "philosophy": true,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "bespoke_hero_stage",
+      "philosophy": false,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "bespoke_hero_stage",
+      "philosophy": false,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 767",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "bespoke_hero_stage",
+      "philosophy": false,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "bespoke_hero_stage",
+      "philosophy": false,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "bespoke_hero_stage",
+      "philosophy": false,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary bespoke 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 1,
+      "buttonParent": "atelier_body",
+      "philosophy": true,
+      "overlays": 0
+    }
+  },
+  {
+    "name": "Boundary collection 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 8,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 767",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 12,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 12,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 6,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 767",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 9,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 768",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 1279",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 0,
+      "drag": true
+    }
+  },
+  {
+    "name": "Boundary collection-youngjin 1280",
+    "pass": true,
+    "s": {
+      "clones": 0,
+      "titles": 0,
+      "fade": 0,
+      "button": 0,
+      "nav": false,
+      "overlays": 9,
+      "drag": true
+    }
+  }
+]

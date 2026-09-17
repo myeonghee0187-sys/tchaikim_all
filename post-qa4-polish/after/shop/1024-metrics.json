@@ -1,0 +1,244 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 9569,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "hero_section",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 1118.796875,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "banner",
+      "x": 0,
+      "y": 1118.796875,
+      "w": 1024,
+      "h": 594.625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "banner_title",
+      "x": 229.421875,
+      "y": 1254.875,
+      "w": 565.15625,
+      "h": 218.390625,
+      "font": "52px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "garment_story_scroll",
+      "x": 0,
+      "y": 1713.421875,
+      "w": 1024,
+      "h": 674,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "garment_story_section",
+      "x": 0,
+      "y": 1753.421875,
+      "w": 1024,
+      "h": 594,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 420.890625,
+      "y": 1964.203125,
+      "w": 83.328125,
+      "h": 41.265625,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 1291.609375,
+      "y": 1964.203125,
+      "w": 131.53125,
+      "h": 41.265625,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 2162.328125,
+      "y": 1964.203125,
+      "w": 127.53125,
+      "h": 41.265625,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 3033.046875,
+      "y": 1964.203125,
+      "w": 162.375,
+      "h": 41.265625,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "new_arrivals_section",
+      "x": 0,
+      "y": 2387.421875,
+      "w": 1024,
+      "h": 1965.21875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "new_arrivals_title",
+      "x": 40,
+      "y": 2452.421875,
+      "w": 944,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 40,
+      "y": 3128.859375,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 528,
+      "y": 3128.859375,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 40,
+      "y": 4039.25,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 528,
+      "y": 4039.25,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "shop_section",
+      "x": 0,
+      "y": 4352.640625,
+      "w": 1024,
+      "h": 3386.609375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "shop_list_title",
+      "x": 40,
+      "y": 4613.640625,
+      "w": 944,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 40,
+      "y": 5290.078125,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 528,
+      "y": 5290.078125,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 40,
+      "y": 6200.46875,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 528,
+      "y": 6200.46875,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 40,
+      "y": 7110.859375,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 528,
+      "y": 7110.859375,
+      "w": 456,
+      "h": 62.390625,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "motif_detail_section",
+      "x": 0,
+      "y": 7739.25,
+      "w": 1024,
+      "h": 1165.90625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "motif_reference_title",
+      "x": 444.796875,
+      "y": 7959.359375,
+      "w": 547.203125,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "motif_related_title",
+      "x": 32,
+      "y": 8344.046875,
+      "w": 960,
+      "h": 45.109375,
+      "font": "32px"
+    }
+  ],
+  "broken": []
+}

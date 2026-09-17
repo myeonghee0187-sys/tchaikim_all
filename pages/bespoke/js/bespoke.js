@@ -51,10 +51,10 @@
       } else if (!compact.matches && marker) {
         marker.replaceWith(reservation); marker = null;
       }
-      if (mobile.matches && atelierButton && heroStage && !buttonMarker) {
+      if (compact.matches && atelierButton && heroStage && !buttonMarker) {
         buttonMarker = document.createComment("Atelier button desktop position");
         atelierButton.before(buttonMarker); heroStage.append(atelierButton);
-      } else if (!mobile.matches && buttonMarker) {
+      } else if (!compact.matches && buttonMarker) {
         buttonMarker.replaceWith(atelierButton); buttonMarker = null;
       }
     }
@@ -380,7 +380,7 @@
        `HERO_GATE`의 반대인 세로 화면이다. 모션 감소일 때는 어느 쪽도 돌지 않는다.
        패럴랙스와 퇴장은 전환과 겹치지 않으므로 아래 블록에 그대로 둔다. */
     gsap.matchMedia().add(
-      "(min-width: 768px) and (prefers-reduced-motion: no-preference) and (max-aspect-ratio: 1332/1000)",
+      "(min-width: 1280px) and (prefers-reduced-motion: no-preference) and (max-aspect-ratio: 1332/1000)",
       function () {
         /* 1) 등장 — 제목이 먼저, 본문이 조금 늦게 올라온다.
               `from`이라 끝값은 CSS가 정한 값 그대로다(불투명도 1). */
@@ -419,7 +419,7 @@
 
     /* 조건이 어긋나면(모션 감소 설정으로 바꾸면) matchMedia가 아래에서 준
        정리 함수를 부르고, GSAP이 자기가 넣은 인라인 스타일도 되돌린다. */
-    gsap.matchMedia().add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", function () {
+    gsap.matchMedia().add("(min-width: 1280px) and (prefers-reduced-motion: no-preference)", function () {
       section.classList.add("is_motion_ready");
 
       /* ※ 2) 배경 패럴랙스를 **제거했습니다** (2026-08-11, 사용자 요청 —
@@ -1158,7 +1158,7 @@
   var HERO_HEADER_REACH = 82; /* % — 100%가 화면 모서리 */
 
   var HERO_GATE =
-    "(min-aspect-ratio: 1333/1000) and (prefers-reduced-motion: no-preference)";
+    "(min-width: 1280px) and (min-aspect-ratio: 1333/1000) and (prefers-reduced-motion: no-preference)";
 
   function initHeroTransition() {
     var section = document.querySelector(".bespoke_hero");
@@ -1780,7 +1780,7 @@
      (그 뒤의 refresh는 `refreshInit` 훅이 막아 준다 — 이건 첫 측정용이다.) */
   initPhilosophyMotion();
   initHeroTransition();
-  initAtelierZoom();
+  // Compact Atelier is absent; do not create its former image/text triggers.
   initAtelierStory();
 
   /* 글 나누기는 **웹폰트가 적용된 뒤**에 해야 한다. 시스템 폰트로 재면 줄 폭이
@@ -1803,10 +1803,9 @@
 
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(function () {
-      initAtelierText();
       refreshTriggers();
     });
   } else {
-    initAtelierText();
+    refreshTriggers();
   }
 })();

@@ -1,0 +1,169 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 5985,
+  "overflow": 0,
+  "triggers": [
+    {
+      "start": 3969,
+      "end": 4571,
+      "pin": false
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 940.65625,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -3016,
+      "y": 96,
+      "w": 912,
+      "h": 48,
+      "font": "40px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -1992,
+      "y": 96,
+      "w": 912,
+      "h": 48,
+      "font": "40px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": -968,
+      "y": 96,
+      "w": 912,
+      "h": 48,
+      "font": "40px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 56,
+      "y": 96,
+      "w": 912,
+      "h": 48,
+      "font": "40px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 1080,
+      "y": 96,
+      "w": 912,
+      "h": 48,
+      "font": "40px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "kimyoungjin",
+      "x": 0,
+      "y": 940.65625,
+      "w": 1024,
+      "h": 1692.921875,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "brand_tablet_title",
+      "x": 56,
+      "y": 1012.65625,
+      "w": 344.25,
+      "h": 49.390625,
+      "font": "38px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 603.1875,
+      "y": 1424.25,
+      "w": 364.796875,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 238.421875,
+      "y": 2088.34375,
+      "w": 310.078125,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title youngjin_title_center",
+      "x": 439.3125,
+      "y": 2383.40625,
+      "w": 145.359375,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "tchaikim",
+      "x": 0,
+      "y": 2633.578125,
+      "w": 1024,
+      "h": 619.28125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "brand_tablet_title",
+      "x": 56,
+      "y": 2721.578125,
+      "w": 912,
+      "h": 49.390625,
+      "font": "38px"
+    },
+    {
+      "tag": "H3",
+      "cls": "tchaikim_panel_title",
+      "x": 56,
+      "y": 2902.96875,
+      "w": 139.375,
+      "h": 41.59375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "atelier",
+      "x": 0,
+      "y": 3252.859375,
+      "w": 1024,
+      "h": 808.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "heritage is_compact_fade",
+      "x": 0,
+      "y": 4061.171875,
+      "w": 1024,
+      "h": 1260,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "heritage_headline",
+      "x": 235.015625,
+      "y": 4093.171875,
+      "w": 553.96875,
+      "h": 66.4375,
+      "font": "56.32px"
+    }
+  ],
+  "broken": []
+}

@@ -2010,3 +2010,10 @@
   .archive_year_item.is_active .archive_year_link { font-size: 15px; font-weight: 600; }
   .archive_frame { padding-inline: 20px; }
 }
+/* Post-QA4: paging remains native; the redundant compact nav has no layout. */
+@media (max-width: 1279px) {
+  .showcase .showcase_carousel_nav { display: none; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .asworn_track.is_draggable .asworn_body { display: none; }
+}

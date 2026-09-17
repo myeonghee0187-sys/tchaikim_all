@@ -1,0 +1,82 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 5502,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "collection_hero",
+      "x": 0,
+      "y": 72,
+      "w": 1024,
+      "h": 575.984375,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "cls": "collection_hero_title is_on_light",
+      "x": 186.875,
+      "y": 323.828125,
+      "w": 650.25,
+      "h": 72.3125,
+      "font": "64px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "showcase",
+      "x": 0,
+      "y": 647.984375,
+      "w": 1024,
+      "h": 2186.859375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "showcase_quote",
+      "x": 282,
+      "y": 1817.75,
+      "w": 460,
+      "h": 190.71875,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "archive is_hover_ready",
+      "x": 0,
+      "y": 2834.84375,
+      "w": 1024,
+      "h": 993.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "archive_title",
+      "x": 337.578125,
+      "y": 2914.84375,
+      "w": 348.828125,
+      "h": 123.8125,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "asworn",
+      "x": 0,
+      "y": 3828.15625,
+      "w": 1024,
+      "h": 1009.921875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "asworn_title",
+      "x": 414.703125,
+      "y": 3940.78125,
+      "w": 194.59375,
+      "h": 61.90625,
+      "font": "48px"
+    }
+  ],
+  "broken": []
+}

@@ -1,0 +1,285 @@
+[
+  {
+    "name": "Final Brand Desktop geometry",
+    "pass": true,
+    "actualHeight": 12956,
+    "expectedHeight": 12956
+  },
+  {
+    "name": "Desktop does not fetch responsive campaign",
+    "pass": true,
+    "requests": []
+  },
+  {
+    "name": "Final campaign 1280",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/unique.jpg",
+          "w": 260,
+          "rect": 0
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/elegant.jpg",
+          "w": 260,
+          "rect": 0
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/modern.jpg",
+          "w": 200,
+          "rect": 0
+        }
+      ],
+      "descriptions": 0,
+      "clones": 0,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 1279",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 1279
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 1279
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 1279
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 1024",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 1024
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 1024
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 1024
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final picture loop 1024",
+    "pass": true,
+    "seq": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Final campaign 768",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 768
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 768
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 768
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 767",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 767
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 767
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 767
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 430",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 430
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 430
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 430
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 390",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 390
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 390
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 390
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final picture loop 390",
+    "pass": true,
+    "seq": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Final campaign 375",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 375
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 375
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 375
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign 360",
+    "pass": true,
+    "data": {
+      "image": [
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-unique-qa4.jpg",
+          "w": 1448,
+          "rect": 360
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-elegant-qa4.jpg",
+          "w": 1448,
+          "rect": 360
+        },
+        {
+          "src": "http://127.0.0.1:5733/pages/brand/assets/images/mood-modern-qa4.jpg",
+          "w": 1448,
+          "rect": 360
+        }
+      ],
+      "descriptions": 0,
+      "clones": 2,
+      "counter": "01",
+      "overflow": 0
+    }
+  },
+  {
+    "name": "Final campaign errors",
+    "pass": true,
+    "errors": []
+  }
+]

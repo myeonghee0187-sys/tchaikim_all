@@ -1597,6 +1597,24 @@ REVEAL_CLOSED_HEIGHT = 484;
 
   function initCompactArtDirection() {
     var mobile = window.matchMedia("(max-width: 767px)");
+    var tablet = window.matchMedia("(min-width: 768px) and (max-width: 1279px)");
+    var tabletTitles = [];
+    function syncTitles() {
+      tabletTitles.forEach(function (title) { title.remove(); });
+      tabletTitles = [];
+      if (!tablet.matches) return;
+      [[".kimyoungjin_frame", "Tchai Kimyoungjin"], [".tchaikim_track", "Tchaikim"]].forEach(function (entry) {
+        var frame = document.querySelector(entry[0]);
+        if (!frame) return;
+        var title = document.createElement("h3");
+        title.className = "brand_tablet_title";
+        title.textContent = entry[1];
+        frame.prepend(title);
+        tabletTitles.push(title);
+      });
+    }
+    tablet.addEventListener("change", syncTitles);
+    syncTitles();
     var descriptions = Array.from(document.querySelectorAll(".tchaikim_panel_desc"));
     var originals = descriptions.map(function (node) { return node.innerHTML; });
     var summaries = [
@@ -1617,6 +1635,33 @@ REVEAL_CLOSED_HEIGHT = 484;
 
   }
 
+  // A short same-frame sequence, with no pin spacer. matchMedia owns both the
+  // timeline and its inline opacity, so Desktop and reduced motion stay intact.
+  function initCompactHeritage() {
+    var section = document.querySelector(".heritage");
+    var frame = section && section.querySelector(".heritage_frame");
+    var stages = section && Array.from(section.querySelectorAll(".heritage_photos .heritage_stage"));
+    if (!frame || stages.length !== 3 || !window.gsap || !window.ScrollTrigger) return;
+    window.gsap.matchMedia().add("(max-width: 1279px) and (prefers-reduced-motion: no-preference)", function () {
+      section.classList.add("is_compact_fade");
+      var gsap = window.gsap;
+      gsap.set(stages, { opacity: 0 });
+      gsap.set(stages[0], { opacity: 1 });
+      var timeline = gsap.timeline({ scrollTrigger: {
+        id: "heritage_compact_fade", trigger: section,
+        start: function () { return "top " + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header_height")) + 20); },
+        end: function () { return "+=" + Math.max(200, section.clientHeight - frame.offsetHeight - 80); },
+        scrub: true, invalidateOnRefresh: true
+      }});
+      timeline.to(stages[1], { opacity: 1, duration: .24, ease: "none" }, .12)
+        .to(stages[0], { opacity: 0, duration: .24, ease: "none" }, .12)
+        .to(stages[2], { opacity: 1, duration: .24, ease: "none" }, .56)
+        .to(stages[1], { opacity: 0, duration: .24, ease: "none" }, .56)
+        .to({}, { duration: .2 });
+      return function () { section.classList.remove("is_compact_fade"); };
+    });
+  }
+
   function init() {
     initMoodSlider();
     initYoungjinCarousel();
@@ -1627,6 +1672,7 @@ REVEAL_CLOSED_HEIGHT = 484;
     initTchaikimTabs();
     initVideos();
     initCompactArtDirection();
+    initCompactHeritage();
   }
 
   if (document.readyState === "loading") {
