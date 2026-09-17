@@ -1,0 +1,269 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 7476,
+  "overflow": 0,
+  "triggers": [
+    {
+      "start": 1174,
+      "end": 2602,
+      "pin": false
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "bespoke_hero",
+      "x": 0,
+      "y": 72,
+      "w": 1024,
+      "h": 967.375,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "cls": "bespoke_hero_title",
+      "x": 40,
+      "y": 176,
+      "w": 944,
+      "h": 156.1875,
+      "font": "46.08px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "philosophy is_motion_ready",
+      "x": 0,
+      "y": 1039.375,
+      "w": 1024,
+      "h": 900,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "philosophy_title",
+      "x": 40,
+      "y": 1397.375,
+      "w": 716.96875,
+      "h": 134.390625,
+      "font": "35.84px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "atelier is_zoom_ready is_text_ready",
+      "x": 0,
+      "y": 1939.375,
+      "w": 1024,
+      "h": 1247.515625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "atelier_title",
+      "x": 40,
+      "y": 1999.375,
+      "w": 944,
+      "h": 34.546875,
+      "font": "24.576px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "quote",
+      "x": 0,
+      "y": 3186.890625,
+      "w": 1024,
+      "h": 304,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "process",
+      "x": 0,
+      "y": 3490.890625,
+      "w": 1024,
+      "h": 629.234375,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "process_stage_title",
+      "x": 40,
+      "y": 3939.859375,
+      "w": 444.8125,
+      "h": 29.484375,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "process_stage_title",
+      "x": 40,
+      "y": 3949.859375,
+      "w": 444.8125,
+      "h": 29.484375,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "process_stage_title",
+      "x": 40,
+      "y": 3949.859375,
+      "w": 444.8125,
+      "h": 29.484375,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "process_stage_title",
+      "x": 40,
+      "y": 3949.859375,
+      "w": 444.8125,
+      "h": 29.484375,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "process_stage_title",
+      "x": 40,
+      "y": 3949.859375,
+      "w": 444.8125,
+      "h": 29.484375,
+      "font": "24.576px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "materials",
+      "x": 0,
+      "y": 4120.125,
+      "w": 1024,
+      "h": 992.953125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "materials_title",
+      "x": 40,
+      "y": 4211.125,
+      "w": 944,
+      "h": 34.546875,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 63.078125,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 113.71875,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 97.90625,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 106.5625,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 260.015625,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "H3",
+      "cls": "materials_selected_name",
+      "x": 468.265625,
+      "y": 4382.828125,
+      "w": 256.40625,
+      "h": 39.796875,
+      "font": "36.864px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "begin",
+      "x": 0,
+      "y": 5113.078125,
+      "w": 1024,
+      "h": 1108.28125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "begin_title",
+      "x": 40,
+      "y": 5173.078125,
+      "w": 771,
+      "h": 34.546875,
+      "font": "24.576px"
+    },
+    {
+      "tag": "H3",
+      "cls": "begin_card_title",
+      "x": 73,
+      "y": 5395.625,
+      "w": 878,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "begin_card_title",
+      "x": 73,
+      "y": 5704.203125,
+      "w": 878,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "H3",
+      "cls": "begin_card_title",
+      "x": 73,
+      "y": 6012.78125,
+      "w": 878,
+      "h": 30,
+      "font": "24px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "reservation",
+      "x": 0,
+      "y": 6341.359375,
+      "w": 1024,
+      "h": 391.515625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "reservation_title",
+      "x": 40,
+      "y": 6438.34375,
+      "w": 480,
+      "h": 34.546875,
+      "font": "24.576px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

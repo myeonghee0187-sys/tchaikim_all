@@ -1006,26 +1006,27 @@ heritage
   .atelier_photo_4 { width: var(--atelier_unit); height: calc(var(--atelier_unit) * 613 / 460); }
   .atelier_desc { margin-top: 48px; padding-inline: var(--brand_gutter); font-size: 17px; line-height: 1.7; }
 
-  .heritage { height: 155svh; padding: 32px var(--brand_gutter) 64px; }
-  .heritage_frame { position: sticky; top: calc(var(--header_height) + 16px); display: grid; grid-template-columns: 54% 38%; column-gap: 8%; row-gap: 28px; align-items: center; }
+  .heritage { height: auto; padding: 32px var(--brand_gutter) 80px; }
+  .heritage_frame { position: relative; top: auto; display: grid; grid-template-columns: minmax(0,1fr); row-gap: 32px; justify-items: center; align-items: center; }
   .heritage_stage { display: block; height: auto; padding: 0; }
   .heritage_stage_title { grid-column: 1 / -1; }
-  .heritage_headline { max-width: 18ch; font-size: clamp(42px, 5.5vw, 64px); line-height: 1.18; letter-spacing: -.03em; white-space: normal; text-align: left; }
+  .heritage_headline { max-width: 18ch; font-size: clamp(42px, 5.5vw, 64px); line-height: 1.18; letter-spacing: -.03em; white-space: normal; text-align: center; }
   .heritage_split { display: contents; }
   .heritage_photos { display: block; grid-column: 1; grid-row: 2; }
   .heritage_photos_frame { display: block; position: relative; height: min(52svh, 480px); width: 100%; }
   /* 사진 비율이 400 / 714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
      짧아집니다. 1024에서 첫 장이 492 × 879였습니다 — 화면보다 높았습니다. */
-  .heritage_photos .heritage_stage:nth-child(n) { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: var(--heritage_fade, 0); }
-  .heritage_photos .heritage_stage:first-child { opacity: var(--heritage_fade, 1); }
+  .heritage_photos .heritage_stage:nth-child(n) { display: none; }
+  .heritage_photos .heritage_stage:last-child { display: block; position: relative; width: 100%; height: 100%; margin: 0; opacity: 1; }
   /* WHY: 둘 다 가운데 거터 쪽에 붙어 있어(58% 오른쪽 정렬 + 78% 왼쪽 정렬)
      바깥 양쪽이 비고, 285 vs 270으로 크기도 거의 같아 "썸네일 두 장"으로
      읽혔습니다. 각각 페이지 좌/우 거터에 붙이고 폭 차를 1.28배로 벌린 뒤
      작은 쪽을 아랫변에 맞춰 대각 리듬을 만듭니다. */
   .heritage_figure { width: 100%; height: 100%; padding: 0; margin: 0; }
-  .heritage_figure img { width: 100%; height: 100%; object-position: left center; }
+  .heritage_figure img { width: 100%; height: 100%; object-position: center; }
   .heritage_figure img { object-fit: contain; }
-  .heritage_info { grid-column: 2; grid-row: 2; width: 100%; max-width: 38ch; text-align: left; gap: 20px; }
+  .heritage_info { display: contents; }
+  .heritage_info_title, .heritage_info_desc { display: none; }
   .heritage_info_title { font-size: 28px; line-height: 1.3; }
   .heritage_info_desc { font-size: 17px; line-height: 1.7; }
   .heritage_copy_materials { display: block; margin-top: 20px; }
@@ -1087,7 +1088,7 @@ heritage
   .atelier #atelier_title { position: static; width: auto; height: auto; margin: 0 var(--brand_gutter) 28px; overflow: visible; clip: auto; clip-path: none; white-space: normal; font: 400 30px/1.3 var(--font_display); }
   .atelier_desc br { display: none; }
 
-  .heritage { height: 155svh; padding-top: 16px; padding-bottom: 48px; }
+  .heritage { height: auto; margin-top: 48px; padding-top: 32px; padding-bottom: 64px; }
   /* WHY: 사진 비율이 400/714(세로 1.79배)라 폭을 조금만 줄여도 섹션이 크게
      짧아집니다. 64/48/44vw는 크기 차가 작아 위계도 약했습니다 —
      56/42/38로 낮춰 길이를 줄이면서 차이를 벌립니다. */
@@ -1133,6 +1134,51 @@ heritage
   .tchaikim_panel_desc { min-height: 5.1em; }
 }
 
+/* V2: one complete Mood plate at a time, not a row of preview cards. */
+@media (max-width: 1279px) {
+  .mood_responsive { padding-inline: 0; padding-top: var(--header_height); }
+  .mood_slides { position: relative; gap: 0; width: 100%; touch-action: pan-x pan-y; overflow-anchor: none; }
+  .mood_slides.is_dragging, .youngjin_mobile_rail.is_dragging { scroll-snap-type: none; cursor: grabbing; }
+  .mood_slide { flex: 0 0 100%; width: 100%; min-height: 0; display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: auto; }
+  .mood_slide:last-child { scroll-snap-align: start; }
+  .mood_slide_media { grid-row: auto; grid-column: 1; height: clamp(390px,60svh,650px); }
+  .mood_slide_media img { display: block; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; object-position: center 42%; }
+  .mood_slide_modern img { object-position: center 28%; }
+  .mood_responsive::after { margin-inline: 0; background: linear-gradient(180deg,var(--brand_olive),#606255,var(--brand_olive)); }
+  .heritage_photos { width: min(62%,460px); }
+  .heritage_button { grid-column: 1; grid-row: 3; margin: 0; }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .mood_slide_caption { display: none; }
+  .tchaikim_tabs { justify-content: center; }
+  .youngjin_wordmark { inset: auto 0 12px; width: 100%; font-size: clamp(170px,27vw,340px); text-align: center; }
+  .youngjin_handmade { width: min(100%,440px); margin-inline: auto; align-items: center; text-align: center; padding-block: 48px; }
+  .youngjin_handmade .youngjin_desc { text-align: center; }
+}
+@media (max-width: 767px) {
+  .mood_slide { grid-template-rows: auto min(57svh,500px) auto; align-items: start; }
+  .mood_slide_caption { display: contents; }
+  .mood_slide_keyword { grid-row: 1; grid-column: 1; margin: 28px 22px 24px; font-size: 30px; }
+  .mood_slide_media { grid-row: 2; height: 100%; }
+  .mood_slide_description { grid-row: 3; grid-column: 1; margin: 24px 22px 0; max-width: 32ch; min-height: 3.3em; }
+  .mood_slide:not(.is_active) .mood_slide_caption { opacity: 1; }
+  .kimyoungjin_frame { display: block; padding-top: 40px; padding-bottom: 56px; }
+  .kimyoungjin_frame > .youngjin_group, .kimyoungjin_frame > .youngjin_handmade { display: none; }
+  .youngjin_mobile_title, .tchaikim_mobile_title { margin: 0 0 28px; font: 400 clamp(27px,7vw,34px)/1.25 var(--font_display); }
+  .youngjin_mobile_rail { position: relative; display: flex; width: 100%; overflow-x: auto; gap: 0; scroll-snap-type: x mandatory; scrollbar-width: none; touch-action: pan-x pan-y; }
+  .youngjin_mobile_rail::-webkit-scrollbar { display: none; }
+  .youngjin_mobile_slide { flex: 0 0 100%; margin: 0; height: min(108vw,460px); scroll-snap-align: start; scroll-snap-stop: always; }
+  .youngjin_mobile_slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .youngjin_mobile_label { margin: 24px 0 0; font: 400 25px/1.3 var(--font_display); transition: opacity .18s ease; }
+  .youngjin_mobile_label.is_changing { opacity: 0; }
+  .tchaikim_tabs { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); width: 100%; overflow: visible; gap: 3px; padding: 0; }
+  .tchaikim_tab { min-width: 0; min-height: 44px; padding: 8px 2px; font-size: clamp(11px,2.65vw,13px); letter-spacing: -.04em; white-space: nowrap; }
+  .heritage_photos { width: min(74vw,380px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .youngjin_mobile_label { transition: none; }
+}
+
 /* Reduced motion has no hidden story, no autonomous marquee, and native paging. */
 @media (prefers-reduced-motion: reduce) {
   .atelier_row.is_marquee { animation: none; transform: none; }
@@ -1141,7 +1187,7 @@ heritage
 @media (max-width: 1279px) and (prefers-reduced-motion: reduce) {
   .heritage { height: auto; }
   .heritage_frame { position: static; }
-  .heritage_photos .heritage_stage:not(:first-child) { display: none; }
+  .heritage_photos .heritage_stage:last-child { display: block; }
   .atelier { overflow: visible; }
   .atelier_row { width: 100%; overflow-x: auto; padding-inline: var(--brand_gutter); }
   .tchaikim_panel, .mood_slide_keyword { animation: none; transition: none; }

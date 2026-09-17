@@ -1,0 +1,245 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 15228,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "hero_section",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 1118.796875,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "banner",
+      "x": 0,
+      "y": 1118.796875,
+      "w": 1024,
+      "h": 594.625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "banner_title",
+      "x": 229.421875,
+      "y": 1254.875,
+      "w": 565.15625,
+      "h": 218.390625,
+      "font": "52px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "garment_story_scroll",
+      "x": 0,
+      "y": 1713.421875,
+      "w": 1024,
+      "h": 5554.65625,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "garment_story_section",
+      "x": 0,
+      "y": 1793.421875,
+      "w": 1024,
+      "h": 5394.65625,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 152,
+      "y": 2810.296875,
+      "w": 94.046875,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 152,
+      "y": 4118,
+      "w": 148.453125,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 152,
+      "y": 5399.625,
+      "w": 143.890625,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 152,
+      "y": 6707.328125,
+      "w": 183.265625,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "new_arrivals_section",
+      "x": 0,
+      "y": 7268.078125,
+      "w": 1024,
+      "h": 1517.03125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "new_arrivals_title",
+      "x": 32,
+      "y": 7333.078125,
+      "w": 75.96875,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 48,
+      "y": 7815.515625,
+      "w": 342.984375,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 548,
+      "y": 7815.515625,
+      "w": 354.671875,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 48,
+      "y": 8481.8125,
+      "w": 251.078125,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 548,
+      "y": 8481.8125,
+      "w": 354.671875,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "shop_section",
+      "x": 0,
+      "y": 8785.109375,
+      "w": 1024,
+      "h": 3351.484375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "shop_list_title",
+      "x": 32,
+      "y": 9046.109375,
+      "w": 50.59375,
+      "h": 46.4375,
+      "font": "36px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 48,
+      "y": 9725.546875,
+      "w": 315.296875,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 548,
+      "y": 9725.546875,
+      "w": 354.671875,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 48,
+      "y": 10624.921875,
+      "w": 366.765625,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 548,
+      "y": 10624.921875,
+      "w": 333.1875,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 48,
+      "y": 11498.21875,
+      "w": 272.640625,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 548,
+      "y": 11498.21875,
+      "w": 329.765625,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "motif_detail_section",
+      "x": 0,
+      "y": 12136.59375,
+      "w": 1024,
+      "h": 2427.453125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "motif_reference_title",
+      "x": 32,
+      "y": 12825.671875,
+      "w": 520,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "motif_related_title",
+      "x": 32,
+      "y": 14002.9375,
+      "w": 960,
+      "h": 45.109375,
+      "font": "32px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

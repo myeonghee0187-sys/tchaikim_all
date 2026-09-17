@@ -1,0 +1,1209 @@
+[
+  {
+    "id": "M-B4",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "width": 360
+    }
+  },
+  {
+    "id": "M-B2",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "visible": 1
+    }
+  },
+  {
+    "id": "M-B1",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-B5",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-B6",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-B7",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "width": 316,
+      "scrollWidth": 316
+    }
+  },
+  {
+    "id": "M-B8",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-B9",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "title": 0,
+      "figure": 2721.953125,
+      "button": 3147.0625
+    }
+  },
+  {
+    "id": "M-B10",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "gap": 0,
+      "gradient": "linear-gradient(rgb(88, 90, 77), rgb(96, 98, 85), rgb(88, 90, 77))"
+    }
+  },
+  {
+    "id": "M-BS1",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-BS2",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-BS3",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "center": 180,
+      "y": 651.703125,
+      "videoBottom": 623.703125
+    }
+  },
+  {
+    "id": "M-R1",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-C2",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "x": [
+        71.203125,
+        101.44865417480469,
+        131.69418334960938,
+        44.65667724609375
+      ]
+    }
+  },
+  {
+    "id": "M-C3",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "w": 101.078125
+    }
+  },
+  {
+    "id": "M-C4",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "count": 7
+    }
+  },
+  {
+    "id": "M-C2",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "x": [
+        71.203125,
+        101.44865417480469,
+        131.69418334960938,
+        131.69418334960938,
+        44.65667724609375
+      ]
+    }
+  },
+  {
+    "id": "M-C3",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "w": 199.421875
+    }
+  },
+  {
+    "id": "M-C4",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "count": 7
+    }
+  },
+  {
+    "id": "M-S2",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "h": 698.53125
+    }
+  },
+  {
+    "id": "M-S1",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-S3",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-S4",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-S5",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "lines": 2
+    }
+  },
+  {
+    "id": "M-S6",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-B4",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "width": 390
+    }
+  },
+  {
+    "id": "M-B2",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "visible": 1
+    }
+  },
+  {
+    "id": "M-B1",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-B5",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-B6",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-B7",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "width": 346,
+      "scrollWidth": 346
+    }
+  },
+  {
+    "id": "M-B8",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-B9",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "title": 0,
+      "figure": 2794.0625,
+      "button": 3219.171875
+    }
+  },
+  {
+    "id": "M-B10",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "gap": 0,
+      "gradient": "linear-gradient(rgb(88, 90, 77), rgb(96, 98, 85), rgb(88, 90, 77))"
+    }
+  },
+  {
+    "id": "M-BS1",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-BS2",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-BS3",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "center": 195,
+      "y": 668.578125,
+      "videoBottom": 640.578125
+    }
+  },
+  {
+    "id": "M-R1",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-C2",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "x": [
+        76,
+        109.08199310302734,
+        142.16400146484375,
+        46.9639892578125
+      ]
+    }
+  },
+  {
+    "id": "M-C3",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "w": 109.859375
+    }
+  },
+  {
+    "id": "M-C4",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "count": 7
+    }
+  },
+  {
+    "id": "M-C2",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "x": [
+        76,
+        109.08199310302734,
+        142.16400146484375,
+        142.16400146484375,
+        46.9639892578125
+      ]
+    }
+  },
+  {
+    "id": "M-C3",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "w": 216.765625
+    }
+  },
+  {
+    "id": "M-C4",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "count": 7
+    }
+  },
+  {
+    "id": "M-S2",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "h": 698.53125
+    }
+  },
+  {
+    "id": "M-S1",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-S3",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-S4",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-S5",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "lines": 2
+    }
+  },
+  {
+    "id": "M-S6",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "T-M1",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-M2",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-M5",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-M3",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 3974.546875,
+        "w": 515.84375,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 587.84375,
+        "y": 3967.265625,
+        "w": 140.15625,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M4",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 4676.125,
+        "w": 544.25,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 616.25,
+        "y": 4668.84375,
+        "w": 111.75,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M6",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "shop": [
+        0,
+        0
+      ],
+      "bespoke": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "T-B2",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "width": 768
+    }
+  },
+  {
+    "id": "T-B3",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "visible": 1
+    }
+  },
+  {
+    "id": "T-B1",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-B5",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-B6",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-B9",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-B10",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "glyphWidth": 637.21875
+    }
+  },
+  {
+    "id": "T-B7",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "title": 0,
+      "figure": 3842.078125,
+      "button": 4342.078125
+    }
+  },
+  {
+    "id": "T-B8",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "gap": 0,
+      "gradient": "linear-gradient(rgb(88, 90, 77), rgb(96, 98, 85), rgb(88, 90, 77))"
+    }
+  },
+  {
+    "id": "T-BS1",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-BS2",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-BS3",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "lines": 1.9993279569892473
+    }
+  },
+  {
+    "id": "T-BS4",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-BS5",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-BS6",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-BS7",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-C2",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "title": 2579.703125,
+      "year": 2665.609375,
+      "deck": 2745.109375,
+      "cta": 3303.109375
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "x": [
+        224,
+        268.4800109863281,
+        312.96002197265625,
+        184.9600067138672
+      ]
+    }
+  },
+  {
+    "id": "T-C2",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "title": 2613.296875,
+      "year": 2761.109375,
+      "deck": 2840.609375,
+      "cta": 3398.609375
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "x": [
+        224,
+        268.4800109863281,
+        312.96002197265625,
+        312.96002197265625,
+        184.9600067138672
+      ]
+    }
+  },
+  {
+    "id": "T-S1",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "h": 594
+    }
+  },
+  {
+    "id": "T-C4",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop — selectors absent from Collections"
+    }
+  },
+  {
+    "id": "T-C5",
+    "width": 768,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop"
+    }
+  },
+  {
+    "id": "T-M1",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-M2",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-M5",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-M3",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 4719.703125,
+        "w": 771.84375,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 843.84375,
+        "y": 4712.421875,
+        "w": 140.15625,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M4",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 5592.5625,
+        "w": 800.25,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 872.25,
+        "y": 5585.28125,
+        "w": 111.75,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M6",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "shop": [
+        0,
+        0
+      ],
+      "bespoke": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "T-B2",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "width": 1024
+    }
+  },
+  {
+    "id": "T-B3",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "visible": 1
+    }
+  },
+  {
+    "id": "T-B1",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-B5",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-B6",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-B9",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-B10",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "glyphWidth": 849.625
+    }
+  },
+  {
+    "id": "T-B7",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "title": 0,
+      "figure": 3946.171875,
+      "button": 4446.171875
+    }
+  },
+  {
+    "id": "T-B8",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "gap": 0,
+      "gradient": "linear-gradient(rgb(88, 90, 77), rgb(96, 98, 85), rgb(88, 90, 77))"
+    }
+  },
+  {
+    "id": "T-BS1",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-BS2",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-BS3",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "lines": 1.9997603376027833
+    }
+  },
+  {
+    "id": "T-BS4",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-BS5",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-BS6",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-BS7",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-C2",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "title": 2923.25,
+      "year": 3009.15625,
+      "deck": 3088.65625,
+      "cta": 3646.65625
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "x": [
+        352,
+        396.4800109863281,
+        440.96002197265625,
+        312.96002197265625
+      ]
+    }
+  },
+  {
+    "id": "T-C2",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "title": 2956.84375,
+      "year": 3104.65625,
+      "deck": 3184.15625,
+      "cta": 3742.15625
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "x": [
+        352,
+        396.4800109863281,
+        440.96002197265625,
+        440.96002197265625,
+        312.96002197265625
+      ]
+    }
+  },
+  {
+    "id": "T-S1",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "h": 594
+    }
+  },
+  {
+    "id": "T-C4",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop — selectors absent from Collections"
+    }
+  },
+  {
+    "id": "T-C5",
+    "width": 1024,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop"
+    }
+  },
+  {
+    "id": "T-M1",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-M2",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-M5",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-M3",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 5174.140625,
+        "w": 1026.84375,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 1098.84375,
+        "y": 5166.859375,
+        "w": 140.15625,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M4",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "lead": {
+        "x": 40,
+        "y": 6218.03125,
+        "w": 1055.25,
+        "h": 29.4375
+      },
+      "cta": {
+        "x": 1127.25,
+        "y": 6210.75,
+        "w": 111.75,
+        "h": 44
+      }
+    }
+  },
+  {
+    "id": "T-M6",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "shop": [
+        0,
+        0
+      ],
+      "bespoke": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "id": "T-B2",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "width": 1279
+    }
+  },
+  {
+    "id": "T-B3",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "visible": 1
+    }
+  },
+  {
+    "id": "T-B1",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-B5",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-B6",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-B9",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-B10",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "glyphWidth": 1044.828125
+    }
+  },
+  {
+    "id": "T-B7",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "title": 0,
+      "figure": 4310.875,
+      "button": 4810.875
+    }
+  },
+  {
+    "id": "T-B8",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "gap": 0,
+      "gradient": "linear-gradient(rgb(88, 90, 77), rgb(96, 98, 85), rgb(88, 90, 77))"
+    }
+  },
+  {
+    "id": "T-BS1",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-BS2",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-BS3",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "lines": 1.9998699271592093
+    }
+  },
+  {
+    "id": "T-BS4",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-BS5",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-BS6",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-BS7",
+    "width": 1279,
+    "pass": true
+  },
+  {
+    "id": "T-C2",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "title": 3190.09375,
+      "year": 3276,
+      "deck": 3355.5,
+      "cta": 3913.5
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "page": "collection",
+      "x": [
+        479.5,
+        523.97998046875,
+        568.4600219726562,
+        440.46002197265625
+      ]
+    }
+  },
+  {
+    "id": "T-C2",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "title": 3223.6875,
+      "year": 3371.5,
+      "deck": 3451,
+      "cta": 4009
+    }
+  },
+  {
+    "id": "T-C3",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "page": "collection-youngjin",
+      "x": [
+        479.5,
+        523.97998046875,
+        568.4600219726562,
+        568.4600219726562,
+        440.46002197265625
+      ]
+    }
+  },
+  {
+    "id": "T-S1",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "h": 594
+    }
+  },
+  {
+    "id": "T-C4",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop — selectors absent from Collections"
+    }
+  },
+  {
+    "id": "T-C5",
+    "width": 1279,
+    "pass": true,
+    "detail": {
+      "mappedPage": "Shop"
+    }
+  },
+  {
+    "id": "M-SD6",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-SD1",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-SD2",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-SD3",
+    "width": 360,
+    "pass": true
+  },
+  {
+    "id": "M-SD4",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "narrative": 1527.390625,
+      "craft": 1244.671875
+    }
+  },
+  {
+    "id": "M-SD5",
+    "width": 360,
+    "pass": true,
+    "detail": {
+      "copy": "From a third-generation weaving atelier in Gyeonggi-do, this 80-count silk-cotton blend balances structural weight with effortless movement. A matte depth recalls Joseon textiles, while pleated panels billow with the body."
+    }
+  },
+  {
+    "id": "M-SD6",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-SD1",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-SD2",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-SD3",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "id": "M-SD4",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "narrative": 1460.046875,
+      "craft": 1223.671875
+    }
+  },
+  {
+    "id": "M-SD5",
+    "width": 390,
+    "pass": true,
+    "detail": {
+      "copy": "From a third-generation weaving atelier in Gyeonggi-do, this 80-count silk-cotton blend balances structural weight with effortless movement. A matte depth recalls Joseon textiles, while pleated panels billow with the body."
+    }
+  },
+  {
+    "id": "T-SD1",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "id": "T-SD1",
+    "width": 1024,
+    "pass": true
+  },
+  {
+    "id": "T-SD1",
+    "width": 1279,
+    "pass": true
+  }
+]

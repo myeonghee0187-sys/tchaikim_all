@@ -1,0 +1,137 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 5750,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 778,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 533.859375,
+      "y": 389.03125,
+      "w": 312.6875,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 1354.40625,
+      "y": 389.03125,
+      "w": 312.6875,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "H3",
+      "cls": "mood_slide_keyword",
+      "x": 2174.953125,
+      "y": 389.03125,
+      "w": 312.6875,
+      "h": 54.171875,
+      "font": "47.104px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "kimyoungjin",
+      "x": 0,
+      "y": 778,
+      "w": 1024,
+      "h": 1571.53125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 603.1875,
+      "y": 1176.203125,
+      "w": 364.796875,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 238.421875,
+      "y": 1840.296875,
+      "w": 310.078125,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title youngjin_title_center",
+      "x": 439.3125,
+      "y": 2111.359375,
+      "w": 145.359375,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "tchaikim",
+      "x": 0,
+      "y": 2349.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "tchaikim_panel_title",
+      "x": 56,
+      "y": 2533.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "atelier",
+      "x": 0,
+      "y": 2883.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "heritage",
+      "x": 0,
+      "y": 3691.734375,
+      "w": 1024,
+      "h": 1395,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "heritage_headline",
+      "x": 56,
+      "y": 3723.734375,
+      "w": 624.46875,
+      "h": 66.4375,
+      "font": "56.32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "heritage_info_title",
+      "x": 621.421875,
+      "y": 3856.40625,
+      "w": 346.546875,
+      "h": 36.390625,
+      "font": "28px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

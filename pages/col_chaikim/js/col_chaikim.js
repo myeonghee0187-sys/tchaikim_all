@@ -941,6 +941,7 @@
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     var current = 0;
     var frame = null;
+    var isExplicitSelection = false;
 
     if (counterTotal) {
       counterTotal.textContent = " / " + String(slides.length).padStart(2, "0");
@@ -949,7 +950,8 @@
     /* 레일은 슬라이드 폭이 제각각입니다(편집 리듬). 그래서 자리를 계산하지
        않고 실제 offsetLeft 차를 씁니다 — CSS에서 폭·간격을 바꿔도 따라옵니다. */
     function offsetFor(index) {
-      return slides[index].offsetLeft - slides[0].offsetLeft;
+      var desired = slides[index].offsetLeft - slides[0].offsetLeft;
+      return Math.min(desired, Math.max(0, viewport.scrollWidth - viewport.clientWidth));
     }
 
     function render() {
@@ -971,6 +973,7 @@
     }
 
     function readIndex() {
+      if (viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 2) return slides.length - 1;
       var nearest = 0;
       var nearestDistance = Infinity;
       slides.forEach(function (slide, index) {
@@ -987,6 +990,9 @@
        상태가 어긋납니다. 대신 양 끝에서 화살표를 비활성으로 둡니다. */
     function goTo(index) {
       current = Math.max(0, Math.min(slides.length - 1, index));
+      // Several photos can be visible at the end. Keyboard selection still
+      // visits every logical photo even when two photos share a scroll limit.
+      isExplicitSelection = narrow.matches;
       render();
       viewport.scrollTo({
         left: offsetFor(current),
@@ -995,11 +1001,12 @@
     }
 
     function handleScroll() {
-      if (frame !== null) {
+      if (!narrow.matches || frame !== null || isExplicitSelection) {
         return;
       }
       frame = window.requestAnimationFrame(function () {
         frame = null;
+        if (!narrow.matches || isExplicitSelection) return;
         var index = readIndex();
         if (index !== current) {
           current = index;
@@ -1010,12 +1017,16 @@
 
     function measureEndSpace() {
       if (!narrow.matches) return;
-      var space = Math.max(0, viewport.clientWidth - slides[slides.length - 1].offsetWidth);
+      var gap = parseFloat(getComputedStyle(viewport).columnGap) || 0;
+      // The final photo now snaps by its end, so it needs no synthetic runway.
+      // Cancel the flex gap before the spacer as well; keep all real slide gaps.
+      var space = -gap;
       viewport.style.setProperty("--showcase_end_space", space + "px");
     }
     var endObserver = new ResizeObserver(measureEndSpace);
 
     function syncMode() {
+      isExplicitSelection = false;
       if (narrow.matches) {
         viewport.tabIndex = 0;
         viewport.setAttribute("aria-label", "Collection images. Use left and right arrow keys.");
@@ -1026,6 +1037,7 @@
         return;
       }
       endObserver.disconnect();
+      if (frame !== null) { window.cancelAnimationFrame(frame); frame = null; }
       viewport.style.removeProperty("--showcase_end_space");
       viewport.removeAttribute("tabindex");
       viewport.removeAttribute("aria-label");
@@ -1053,6 +1065,8 @@
     });
 
     viewport.addEventListener("scroll", handleScroll, { passive: true });
+    viewport.addEventListener("pointerdown", function () { isExplicitSelection = false; }, { passive: true });
+    viewport.addEventListener("wheel", function () { isExplicitSelection = false; }, { passive: true });
 
     if (narrow.addEventListener) {
       narrow.addEventListener("change", syncMode);
@@ -1791,6 +1805,8 @@
         var capped = Math.min(depth, DECK_VISIBLE_DEPTH);
 
         card.style.setProperty("--archive_deck_y", -DECK_STEP_Y * capped + "px");
+        if (window.innerWidth < 1280) card.style.setProperty("--archive_deck_x", depth === 0 ? "0%" : depth === cards.length - 1 ? "-16%" : Math.min(depth, 2) * 12 + "%");
+        else card.style.removeProperty("--archive_deck_x");
         card.style.setProperty("--archive_deck_scale", 1 - DECK_STEP_SCALE * capped);
         card.style.setProperty("--archive_deck_opacity",
           Math.max(1 - DECK_STEP_FADE * capped, 0));

@@ -1,0 +1,251 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "documentHeight": 18960,
+  "overflow": 0,
+  "triggers": [
+    {
+      "start": 2684,
+      "end": 8624,
+      "pin": true
+    }
+  ],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "hero_section",
+      "x": 0,
+      "y": 0,
+      "w": 1920,
+      "h": 1770,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "banner",
+      "x": 0,
+      "y": 1770,
+      "w": 1920,
+      "h": 720,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "banner_title",
+      "x": 600,
+      "y": 1968.765625,
+      "w": 720,
+      "h": 218.390625,
+      "font": "52px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "garment_story_scroll",
+      "x": 0,
+      "y": 2490,
+      "w": 1920,
+      "h": 7408.78125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "garment_story_section is_drag_ready",
+      "x": 0,
+      "y": 2684.390625,
+      "w": 1920,
+      "h": 1080,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 806,
+      "y": 3057.484375,
+      "w": 126.203125,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 806,
+      "y": 4009.484375,
+      "w": 199.203125,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 806,
+      "y": 4961.484375,
+      "w": 192.96875,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "garment_title",
+      "x": 806,
+      "y": 5913.484375,
+      "w": 245.953125,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "new_arrivals_section",
+      "x": 0,
+      "y": 9898.78125,
+      "w": 1920,
+      "h": 2056.28125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "new_arrivals_title",
+      "x": 120.5,
+      "y": 9963.78125,
+      "w": 101.765625,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 136.5,
+      "y": 10764.6875,
+      "w": 342.984375,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 1015.5,
+      "y": 10764.6875,
+      "w": 358.734375,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 136.5,
+      "y": 11696.875,
+      "w": 251.078125,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 1015.5,
+      "y": 11696.875,
+      "w": 393.921875,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "shop_section",
+      "x": 0,
+      "y": 11955.0625,
+      "w": 1920,
+      "h": 2827.65625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "shop_list_title",
+      "x": 78,
+      "y": 12280.0625,
+      "w": 67.921875,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 94,
+      "y": 13059.96875,
+      "w": 315.296875,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 712,
+      "y": 13059.96875,
+      "w": 422.671875,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 1330,
+      "y": 13059.96875,
+      "w": 392.265625,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 94,
+      "y": 14094.34375,
+      "w": 333.1875,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 712,
+      "y": 14094.34375,
+      "w": 272.640625,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "H3",
+      "cls": "card_product_name",
+      "x": 1330,
+      "y": 14094.34375,
+      "w": 329.765625,
+      "h": 45.109375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "motif_detail_section",
+      "x": 0,
+      "y": 14782.71875,
+      "w": 1920,
+      "h": 3040.109375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "motif_reference_title",
+      "x": 198.5,
+      "y": 15652.53125,
+      "w": 380,
+      "h": 61.90625,
+      "font": "48px"
+    },
+    {
+      "tag": "H3",
+      "cls": "motif_related_title",
+      "x": 198.5,
+      "y": 17138.71875,
+      "w": 1523,
+      "h": 45.109375,
+      "font": "32px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

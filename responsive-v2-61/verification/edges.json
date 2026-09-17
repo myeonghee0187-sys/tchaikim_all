@@ -1,0 +1,187 @@
+[
+  {
+    "name": "Showcase all logical photos collection 360",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection-youngjin 360",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection 390",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection-youngjin 390",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection 768",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection-youngjin 768",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection 1024",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection-youngjin 1024",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection 1279",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Showcase all logical photos collection-youngjin 1279",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "04",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Vertical scroll over rail brand",
+    "pass": true,
+    "before": 0,
+    "after": 285
+  },
+  {
+    "name": "Vertical scroll over rail shop",
+    "pass": true,
+    "before": 1171,
+    "after": 1456
+  },
+  {
+    "name": "Vertical scroll over rail collection",
+    "pass": true,
+    "before": 1848,
+    "after": 2133
+  },
+  {
+    "name": "Vertical scroll over rail collection-youngjin",
+    "pass": true,
+    "before": 1856,
+    "after": 2141
+  },
+  {
+    "name": "Existing search baseline unchanged 390",
+    "pass": true,
+    "before": 6,
+    "after": 6,
+    "limitation": "HEAD has no search handler; UI field only. Not implemented in responsive scope."
+  },
+  {
+    "name": "Existing search baseline unchanged 1024",
+    "pass": true,
+    "before": 6,
+    "after": 6,
+    "limitation": "HEAD has no search handler; UI field only. Not implemented in responsive scope."
+  },
+  {
+    "name": "Existing search baseline unchanged 1920",
+    "pass": true,
+    "before": 6,
+    "after": 6,
+    "limitation": "HEAD has no search handler; UI field only. Not implemented in responsive scope."
+  }
+]

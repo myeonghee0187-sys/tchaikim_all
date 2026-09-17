@@ -2622,3 +2622,55 @@
     align-self: center;
   }
 }
+
+/* V2 — compact editorial chapters, not a desktop scroll runway. */
+@media (max-width: 1279px) {
+  .garment_story_scroll { --garment_story_section_gap: 40px; }
+  .garment_story_frame { padding: 64px var(--layout_gutter); }
+  .garment_content { display: flex; align-items: center; width: 100%; max-width: none; gap: 40px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; touch-action: pan-x pan-y; padding-bottom: 16px; }
+  .garment_content::-webkit-scrollbar { display: none; }
+  .garment_content.is_dragging { scroll-snap-type: none; cursor: grabbing; }
+  .garment_story_unit { flex: 0 0 88%; display: grid; grid-template-columns: 42% minmax(0,1fr); gap: 32px; align-items: center; scroll-snap-align: start; }
+  .garment_story_unit > .garment_media_img:nth-child(n) { position: static; grid-column: 1; grid-row: 1; width: 100%; height: 450px; max-width: none; object-fit: contain; transform: none; opacity: 1; }
+  .garment_story_unit:nth-child(even) > .garment_media_img { height: 360px; }
+  .garment_story_unit > .garment_panel:nth-child(n) { grid-column: 2; grid-row: 1; width: 100%; transform: none; opacity: 1; pointer-events: auto; gap: 24px; will-change: auto; }
+  .garment_story_unit .garment_title, .garment_story_unit .garment_desc { margin-block: 0; }
+  .garment_title { font-size: 32px; }
+  .garment_desc { font-size: 16px; line-height: 1.65; }
+  .garment_content:focus-visible { outline: 1px solid var(--color_point); outline-offset: 4px; }
+  .motif_video { display: none; }
+  .motif_hero { display: block; }
+  .motif_reference { position: static; width: 100%; max-width: none; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0,1.2fr); gap: 48px; align-items: center; }
+  .motif_reference_image { width: 100%; height: auto; aspect-ratio: 1; }
+  .motif_reference_copy { width: 100%; }
+  .motif_reference_desc { max-width: 38ch; font-size: 16px; line-height: 1.7; }
+}
+@media (max-width: 767px) {
+  .banner_content { width: 100%; max-width: none; }
+  .banner_title { font-size: 28px; line-height: 1.3; }
+  .banner_title br { display: none; }
+  .banner { padding-block: 80px; }
+  .hero_gallery { width: 82%; max-width: 360px; margin-inline: auto; }
+  .hero_section_watermark { font-size: 23vw; }
+  .garment_story_frame { padding-block: 56px 72px; }
+  .garment_content { gap: 24px; align-items: start; }
+  .garment_story_unit { flex-basis: 84%; display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
+  .garment_story_unit > .garment_media_img:nth-child(n) { width: 80%; height: 300px; object-position: left bottom; align-self: flex-start; }
+  .garment_story_unit:nth-child(even) > .garment_media_img { width: 70%; height: 250px; margin-top: 50px; }
+  .garment_story_unit > .garment_panel:nth-child(n) { text-align: left; gap: 16px; }
+  .garment_title { font-size: 26px; }
+  .garment_label { font-size: 12px; }
+  .garment_desc { font-size: 15px; line-height: 1.65; min-height: 5em; }
+  .new_arrivals_section, .shop_section { padding-block: 88px; }
+  .new_arrivals_grid, .shop_grid { row-gap: 56px; }
+  .new_arrivals_title, .shop_list_title { font-size: 30px; }
+  .card_product.is_size_new .card_product_media, .card_product.is_size_shop .card_product_media { max-height: 340px; }
+  .card_product_name { font-size: 16px; line-height: 1.4; }
+  .motif_detail_section { padding-block: 96px; }
+  .motif_reference { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+  .motif_reference_image { width: 68%; max-width: 280px; }
+  .motif_reference_title { font-size: 30px; }
+  .motif_reference_copy { gap: 20px; }
+  .motif_reference_desc { max-width: 32ch; font-size: 15px; line-height: 1.7; }
+  .motif_detail_container { gap: 72px; }
+}

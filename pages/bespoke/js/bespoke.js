@@ -37,6 +37,9 @@
     var reservation = document.querySelector("main > .reservation");
     var begin = document.querySelector("main > .begin");
     var marker = null;
+    var atelierButton = document.querySelector(".atelier_button");
+    var heroStage = document.querySelector(".bespoke_hero_stage");
+    var buttonMarker = null;
     function sync() {
       records.forEach(function (record) {
         if (compact.matches) record.node.textContent = record.copy[mobile.matches ? 0 : 1];
@@ -47,6 +50,12 @@
         reservation.before(marker); begin.after(reservation);
       } else if (!compact.matches && marker) {
         marker.replaceWith(reservation); marker = null;
+      }
+      if (mobile.matches && atelierButton && heroStage && !buttonMarker) {
+        buttonMarker = document.createComment("Atelier button desktop position");
+        atelierButton.before(buttonMarker); heroStage.append(atelierButton);
+      } else if (!mobile.matches && buttonMarker) {
+        buttonMarker.replaceWith(atelierButton); buttonMarker = null;
       }
     }
     compact.addEventListener("change", sync); mobile.addEventListener("change", sync);
@@ -371,7 +380,7 @@
        `HERO_GATE`의 반대인 세로 화면이다. 모션 감소일 때는 어느 쪽도 돌지 않는다.
        패럴랙스와 퇴장은 전환과 겹치지 않으므로 아래 블록에 그대로 둔다. */
     gsap.matchMedia().add(
-      "(prefers-reduced-motion: no-preference) and (max-aspect-ratio: 1332/1000)",
+      "(min-width: 768px) and (prefers-reduced-motion: no-preference) and (max-aspect-ratio: 1332/1000)",
       function () {
         /* 1) 등장 — 제목이 먼저, 본문이 조금 늦게 올라온다.
               `from`이라 끝값은 CSS가 정한 값 그대로다(불투명도 1). */
@@ -410,7 +419,7 @@
 
     /* 조건이 어긋나면(모션 감소 설정으로 바꾸면) matchMedia가 아래에서 준
        정리 함수를 부르고, GSAP이 자기가 넣은 인라인 스타일도 되돌린다. */
-    gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", function () {
+    gsap.matchMedia().add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", function () {
       section.classList.add("is_motion_ready");
 
       /* ※ 2) 배경 패럴랙스를 **제거했습니다** (2026-08-11, 사용자 요청 —
@@ -488,7 +497,7 @@
      무대는 `object-fit: contain`으로 **사진 전체를 보여주는** 것이 목적이라
      18% 확대(=잘림)와 목적이 정면으로 어긋난다.
      그래서 이 확대는 스토리가 없는 폭에서만 돈다. */
-  var ATELIER_ZOOM_GATE = "(max-width: 1279px) and (prefers-reduced-motion: no-preference)";
+  var ATELIER_ZOOM_GATE = "(min-width: 768px) and (max-width: 1279px) and (prefers-reduced-motion: no-preference)";
 
   function initAtelierZoom() {
     var section = document.querySelector(".atelier");

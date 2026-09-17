@@ -1,0 +1,514 @@
+[
+  {
+    "name": "Mood seamless keys 390",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Mood clone normalization 390",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/modern.jpg",
+        "x": 0,
+        "w": 390
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/modern.jpg",
+        "x": 0,
+        "w": 390
+      }
+    ]
+  },
+  {
+    "name": "Mood touch 390",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood mouse 390",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood trackpad 390",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 0",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 1",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 2",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 3",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 390 4",
+    "pass": true
+  },
+  {
+    "name": "KYJ autoplay",
+    "pass": true,
+    "first": "Origin",
+    "next": "Traditional"
+  },
+  {
+    "name": "KYJ user pause",
+    "pass": true
+  },
+  {
+    "name": "KYJ resumes",
+    "pass": true
+  },
+  {
+    "name": "Process 390 0",
+    "pass": true,
+    "active": 1,
+    "key": "consultation",
+    "body": "consultation"
+  },
+  {
+    "name": "Process 390 1",
+    "pass": true,
+    "active": 1,
+    "key": "design_selection",
+    "body": "design_selection"
+  },
+  {
+    "name": "Process 390 2",
+    "pass": true,
+    "active": 1,
+    "key": "fabric_measurement",
+    "body": "fabric_measurement"
+  },
+  {
+    "name": "Process 390 3",
+    "pass": true,
+    "active": 1,
+    "key": "tailoring",
+    "body": "tailoring"
+  },
+  {
+    "name": "Process 390 4",
+    "pass": true,
+    "active": 1,
+    "key": "completion",
+    "body": "completion"
+  },
+  {
+    "name": "Materials 390 0",
+    "pass": true,
+    "key": "silk",
+    "caption": "silk"
+  },
+  {
+    "name": "Materials 390 1",
+    "pass": true,
+    "key": "cotton",
+    "caption": "cotton"
+  },
+  {
+    "name": "Materials 390 2",
+    "pass": true,
+    "key": "linen",
+    "caption": "linen"
+  },
+  {
+    "name": "Materials 390 3",
+    "pass": true,
+    "key": "ramie",
+    "caption": "ramie"
+  },
+  {
+    "name": "Materials 390 4",
+    "pass": true,
+    "key": "seasonal",
+    "caption": "seasonal"
+  },
+  {
+    "name": "Materials 390 5",
+    "pass": true,
+    "key": "myungjoo",
+    "caption": "myungjoo"
+  },
+  {
+    "name": "Showcase swipe collection 390",
+    "pass": true,
+    "show": "02"
+  },
+  {
+    "name": "Showcase reaches last photo collection 390",
+    "pass": true,
+    "left": 849,
+    "max": 849,
+    "gap": 0.28125,
+    "lastWidth": 142.453125,
+    "counter": "05",
+    "slides": 5
+  },
+  {
+    "name": "Archive collection 390 true",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive collection 390 false",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive year collection 390 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection 390 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection 390 2021",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection-youngjin 390",
+    "pass": true,
+    "show": "02"
+  },
+  {
+    "name": "Showcase reaches last photo collection-youngjin 390",
+    "pass": true,
+    "left": 836,
+    "max": 836,
+    "gap": -0.015625,
+    "lastWidth": 221.65625,
+    "counter": "05",
+    "slides": 5
+  },
+  {
+    "name": "Archive collection-youngjin 390 true",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive collection-youngjin 390 false",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive year collection-youngjin 390 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection-youngjin 390 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection-youngjin 390 2021",
+    "pass": true
+  },
+  {
+    "name": "Garment story 390 true",
+    "pass": true,
+    "left": 318
+  },
+  {
+    "name": "Garment story 390 false",
+    "pass": true,
+    "left": 318
+  },
+  {
+    "name": "Garment trackpad 390",
+    "pass": true
+  },
+  {
+    "name": "Look card 390 0",
+    "pass": true
+  },
+  {
+    "name": "Look escape 390 0",
+    "pass": true
+  },
+  {
+    "name": "Look card 390 1",
+    "pass": true
+  },
+  {
+    "name": "Look escape 390 1",
+    "pass": true
+  },
+  {
+    "name": "Look card 390 2",
+    "pass": true
+  },
+  {
+    "name": "Look escape 390 2",
+    "pass": true
+  },
+  {
+    "name": "Product gallery keyboard",
+    "pass": true
+  },
+  {
+    "name": "Mood seamless keys 1024",
+    "pass": true,
+    "sequence": [
+      "02",
+      "03",
+      "01",
+      "03",
+      "02",
+      "01"
+    ]
+  },
+  {
+    "name": "Mood clone normalization 1024",
+    "pass": true,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/modern.jpg",
+        "x": 0,
+        "w": 1024
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/brand/assets/images/modern.jpg",
+        "x": 0,
+        "w": 1024
+      }
+    ]
+  },
+  {
+    "name": "Mood touch 1024",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood mouse 1024",
+    "pass": true,
+    "next": "02"
+  },
+  {
+    "name": "Mood trackpad 1024",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 0",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 1",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 2",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 3",
+    "pass": true
+  },
+  {
+    "name": "Tchaikim tabs 1024 4",
+    "pass": true
+  },
+  {
+    "name": "Process 1024 0",
+    "pass": true,
+    "active": 1,
+    "key": "consultation",
+    "body": "consultation"
+  },
+  {
+    "name": "Process 1024 1",
+    "pass": true,
+    "active": 1,
+    "key": "design_selection",
+    "body": "design_selection"
+  },
+  {
+    "name": "Process 1024 2",
+    "pass": true,
+    "active": 1,
+    "key": "fabric_measurement",
+    "body": "fabric_measurement"
+  },
+  {
+    "name": "Process 1024 3",
+    "pass": true,
+    "active": 1,
+    "key": "tailoring",
+    "body": "tailoring"
+  },
+  {
+    "name": "Process 1024 4",
+    "pass": true,
+    "active": 1,
+    "key": "completion",
+    "body": "completion"
+  },
+  {
+    "name": "Materials 1024 0",
+    "pass": true,
+    "key": "silk",
+    "caption": "silk"
+  },
+  {
+    "name": "Materials 1024 1",
+    "pass": true,
+    "key": "cotton",
+    "caption": "cotton"
+  },
+  {
+    "name": "Materials 1024 2",
+    "pass": true,
+    "key": "linen",
+    "caption": "linen"
+  },
+  {
+    "name": "Materials 1024 3",
+    "pass": true,
+    "key": "ramie",
+    "caption": "ramie"
+  },
+  {
+    "name": "Materials 1024 4",
+    "pass": true,
+    "key": "seasonal",
+    "caption": "seasonal"
+  },
+  {
+    "name": "Materials 1024 5",
+    "pass": true,
+    "key": "myungjoo",
+    "caption": "myungjoo"
+  },
+  {
+    "name": "Showcase swipe collection 1024",
+    "pass": true,
+    "show": "05"
+  },
+  {
+    "name": "Showcase reaches last photo collection 1024",
+    "pass": true,
+    "left": 645,
+    "max": 645,
+    "gap": 0.421875,
+    "lastWidth": 189.0625,
+    "counter": "05",
+    "slides": 5
+  },
+  {
+    "name": "Archive collection 1024 true",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive collection 1024 false",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive year collection 1024 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection 1024 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection 1024 2021",
+    "pass": true
+  },
+  {
+    "name": "Showcase swipe collection-youngjin 1024",
+    "pass": true,
+    "show": "03"
+  },
+  {
+    "name": "Showcase reaches last photo collection-youngjin 1024",
+    "pass": true,
+    "left": 687,
+    "max": 687,
+    "gap": 0.046875,
+    "lastWidth": 306.390625,
+    "counter": "05",
+    "slides": 5
+  },
+  {
+    "name": "Archive collection-youngjin 1024 true",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive collection-youngjin 1024 false",
+    "pass": true,
+    "index": "2"
+  },
+  {
+    "name": "Archive year collection-youngjin 1024 2019",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection-youngjin 1024 2020",
+    "pass": true
+  },
+  {
+    "name": "Archive year collection-youngjin 1024 2021",
+    "pass": true
+  },
+  {
+    "name": "Garment story 1024 true",
+    "pass": true,
+    "left": 871
+  },
+  {
+    "name": "Garment story 1024 false",
+    "pass": true,
+    "left": 871
+  },
+  {
+    "name": "Garment trackpad 1024",
+    "pass": true
+  },
+  {
+    "name": "Look card 1024 0",
+    "pass": true
+  },
+  {
+    "name": "Look escape 1024 0",
+    "pass": true
+  },
+  {
+    "name": "Look card 1024 1",
+    "pass": true
+  },
+  {
+    "name": "Look escape 1024 1",
+    "pass": true
+  },
+  {
+    "name": "Look card 1024 2",
+    "pass": true
+  },
+  {
+    "name": "Look escape 1024 2",
+    "pass": true
+  }
+]

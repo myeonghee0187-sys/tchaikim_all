@@ -1330,179 +1330,125 @@ REVEAL_CLOSED_HEIGHT = 484;
     handleMotionChange();
   }
 
-  // Responsive Mood is a native three-page scroll-snap rail. No clones,
-  // touch interception, autoplay or desktop GSAP selectors are involved.
+  /* Compact-only native snap loop. Clone boundaries are visually identical;
+     normalize only when scrolling settles, never while a finger is dragging. */
+  function mountImageLoop(viewport, slides, onChange, shouldAutoplay) {
+    var abort = new AbortController();
+    var signal = abort.signal;
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var count = slides.length, index = 0, width = 0, settleTimer = 0, timer = 0;
+    var isVisible = false, isHeld = false, isDisposed = false, hasKeyboardFocus = false, mouse = null;
+    var clones = [slides[count - 1].cloneNode(true), slides[0].cloneNode(true)];
+    clones.forEach(function (clone) { clone.classList.add("is_loop_clone"); clone.setAttribute("aria-hidden", "true"); clone.inert = true; });
+    viewport.prepend(clones[0]); viewport.append(clones[1]);
+    function render() {
+      var physical = Math.max(0, Math.min(count + 1, Math.round(viewport.scrollLeft / Math.max(width, 1))));
+      var next = (physical - 1 + count) % count;
+      Array.from(viewport.children).forEach(function (slide, i) { slide.classList.toggle("is_active", (i - 1 + count) % count === next); });
+      index = next; onChange(index);
+    }
+    function scheduleAuto() {
+      clearTimeout(timer);
+      if (shouldAutoplay && !isDisposed && isVisible && !document.hidden && !isHeld && !motion.matches && !hasKeyboardFocus) {
+        timer = setTimeout(function () { go(1); scheduleAuto(); }, 6500);
+      }
+    }
+    function settle() {
+      clearTimeout(settleTimer);
+      if (!width || isHeld) return;
+      var physical = Math.round(viewport.scrollLeft / width);
+      var target = (physical === 0 ? count : physical === count + 1 ? 1 : physical) * width;
+      if (Math.abs(viewport.scrollLeft - target) > 1) viewport.scrollTo({left:target, behavior:"instant"});
+      render();
+    }
+    function go(direction) { viewport.scrollTo({left:(index + 1 + direction) * width, behavior:motion.matches ? "instant" : "smooth"}); }
+    function handleScroll() { render(); clearTimeout(settleTimer); settleTimer = setTimeout(settle, 160); }
+    viewport.addEventListener("scroll", handleScroll, {passive:true,signal:signal});
+    viewport.addEventListener("scrollend", settle, {signal:signal});
+    viewport.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      hasKeyboardFocus = true;
+      e.preventDefault(); go(e.key === "ArrowRight" ? 1 : -1); scheduleAuto();
+    }, {signal:signal});
+    viewport.addEventListener("dragstart", function(e) { e.preventDefault(); }, {signal:signal});
+    viewport.addEventListener("pointerdown", function(e) {
+      if (e.button !== 0) return;
+      isHeld = true; hasKeyboardFocus = false; clearTimeout(timer);
+      if (e.pointerType === "mouse") { mouse={x:e.clientX,left:viewport.scrollLeft}; viewport.classList.add("is_dragging"); viewport.setPointerCapture(e.pointerId); }
+    }, {signal:signal});
+    viewport.addEventListener("pointermove", function(e) { if (mouse) viewport.scrollLeft=mouse.left+mouse.x-e.clientX; }, {signal:signal});
+    function handleRelease() { isHeld=false; mouse=null; viewport.classList.remove("is_dragging"); clearTimeout(settleTimer); settleTimer=setTimeout(settle,180); scheduleAuto(); }
+    window.addEventListener("pointerup", handleRelease, {signal:signal});
+    viewport.addEventListener("pointercancel", handleRelease, {signal:signal});
+    viewport.addEventListener("wheel", function() { clearTimeout(timer); scheduleAuto(); }, {passive:true,signal:signal});
+    viewport.addEventListener("focusin", function() { if (!isHeld) hasKeyboardFocus = true; clearTimeout(timer); }, {signal:signal});
+    viewport.addEventListener("focusout", function() { hasKeyboardFocus = false; queueMicrotask(scheduleAuto); }, {signal:signal});
+    document.addEventListener("visibilitychange", scheduleAuto, {signal:signal});
+    motion.addEventListener("change", scheduleAuto, {signal:signal});
+    var observer = new IntersectionObserver(function(entries) { isVisible=entries[0].isIntersecting; scheduleAuto(); });
+    observer.observe(viewport);
+    var resize = new ResizeObserver(function() {
+      if (width === viewport.clientWidth) return;
+      width=viewport.clientWidth; viewport.scrollTo({left:(index+1)*width,behavior:"instant"}); render();
+    });
+    resize.observe(viewport);
+    width=viewport.clientWidth; viewport.scrollLeft=width; render();
+    return function() {
+      isDisposed=true; abort.abort(); clearTimeout(timer); clearTimeout(settleTimer);
+      observer.disconnect(); resize.disconnect(); clones.forEach(function(e) { e.remove(); });
+      viewport.classList.remove("is_dragging"); viewport.scrollLeft=0;
+    };
+  }
+
   function initMoodSlider() {
-    var section = document.querySelector(".mood_responsive");
-    if (!section) {
-      return;
+    var section=document.querySelector(".mood_responsive");
+    if (!section) return;
+    var viewport=section.querySelector(".mood_slides");
+    var slides=Array.from(viewport.querySelectorAll(".mood_slide"));
+    var media=window.matchMedia("(max-width: 1279px)"), cleanup=null;
+    function sync() {
+      if (cleanup) { cleanup(); cleanup=null; }
+      section.classList.toggle("is_slider_ready", media.matches);
+      if (!media.matches) { delete section.dataset.activeIndex; return; }
+      cleanup=mountImageLoop(viewport,slides,function(index) {
+        section.dataset.activeIndex=String(index);
+        section.querySelector(".mood_current").textContent=String(index+1).padStart(2,"0");
+        section.querySelector(".mood_status").textContent=slides[index].querySelector("h3").textContent+", "+(index+1)+" of 3";
+      },false);
     }
-    var viewport = section.querySelector(".mood_slides");
-    var slides = Array.prototype.slice.call(section.querySelectorAll(".mood_slide"));
-    var previous = section.querySelector('[data-mood-direction="prev"]');
-    var next = section.querySelector('[data-mood-direction="next"]');
-    var counter = section.querySelector(".mood_current");
-    var status = section.querySelector(".mood_status");
-    if (!viewport || !slides.length || !previous || !next) {
-      return;
+    media.addEventListener("change",sync); sync();
+  }
+
+  function initYoungjinCarousel() {
+    var media=window.matchMedia("(max-width: 767px)"), cleanup=null;
+    var frame=document.querySelector(".kimyoungjin_frame"), track=document.querySelector(".tchaikim_track");
+    if (!frame || !track) return;
+    function sync() {
+      if (cleanup) { cleanup(); cleanup=null; }
+      if (!media.matches) return;
+      var wrap=document.createElement("div"); wrap.className="youngjin_mobile";
+      var title=document.createElement("h3"); title.className="youngjin_mobile_title"; title.textContent="Tchai Kimyoungjin";
+      var viewport=document.createElement("div"); viewport.className="youngjin_mobile_rail"; viewport.tabIndex=0;
+      viewport.setAttribute("role","region"); viewport.setAttribute("aria-label","Origin, Traditional and Handmade. Use arrow keys to explore.");
+      var labels=["Origin","Traditional","Handmade"];
+      var slides=["red","black","blue"].map(function(color) {
+        var figure=document.createElement("figure"); figure.className="youngjin_mobile_slide";
+        var image=frame.querySelector(".youngjin_photo_"+color+" img").cloneNode(true); image.loading="eager";
+        figure.append(image); viewport.append(figure); return figure;
+      });
+      var label=document.createElement("p"); label.className="youngjin_mobile_label"; label.textContent=labels[0];
+      wrap.append(title,viewport,label); frame.prepend(wrap);
+      var storyTitle=document.createElement("h3"); storyTitle.className="tchaikim_mobile_title"; storyTitle.textContent="Tchaikim"; track.prepend(storyTitle);
+      var last=-1, labelTimer=0;
+      var stop=mountImageLoop(viewport,slides,function(index) {
+        if (last===index) return; last=index; clearTimeout(labelTimer);
+        if (isReducedMotion()) { label.textContent=labels[index]; label.classList.remove("is_changing"); return; }
+        label.classList.add("is_changing");
+        labelTimer=setTimeout(function() { label.textContent=labels[index]; label.classList.remove("is_changing"); },180);
+      },true);
+      cleanup=function() { stop(); clearTimeout(labelTimer); wrap.remove(); storyTitle.remove(); };
     }
-    var media = window.matchMedia("(max-width: 1279px)");
-    var currentIndex = 0;
-    var cleanup = null;
-
-    function mount() {
-      var measuredWidth = viewport.clientWidth;
-      var frame = null;
-      var settleTimer = null;
-      var requestedIndex = null;
-      var renderedIndex = -1;
-      section.classList.add("is_slider_ready");
-
-      function offsetFor(index) {
-        return slides[index].offsetLeft - slides[0].offsetLeft;
-      }
-
-      function render() {
-        if (renderedIndex === currentIndex) {
-          return;
-        }
-        renderedIndex = currentIndex;
-        section.dataset.activeIndex = String(currentIndex);
-        slides.forEach(function (slide, index) {
-          var isActive = index === currentIndex;
-          slide.classList.toggle("is_active", isActive);
-          slide.setAttribute("aria-current", isActive ? "true" : "false");
-        });
-        previous.disabled = currentIndex === 0;
-        next.disabled = currentIndex === slides.length - 1;
-        previous.setAttribute("aria-disabled", String(previous.disabled));
-        next.setAttribute("aria-disabled", String(next.disabled));
-        if (counter) {
-          counter.textContent = String(currentIndex + 1).padStart(2, "0");
-        }
-        if (status) {
-          var keyword = slides[currentIndex].querySelector("h3");
-          status.textContent = (currentIndex + 1) + " / " + slides.length
-            + (keyword ? ": " + keyword.textContent.trim() : "");
-        }
-      }
-
-      function readIndex() {
-        var nearestIndex = 0;
-        var nearestDistance = Infinity;
-        slides.forEach(function (slide, index) {
-          var distance = Math.abs(offsetFor(index) - viewport.scrollLeft);
-          if (distance < nearestDistance) {
-            nearestDistance = distance;
-            nearestIndex = index;
-          }
-        });
-        return nearestIndex;
-      }
-
-      function settle() {
-        window.clearTimeout(settleTimer);
-        if (viewport.clientWidth !== measuredWidth) {
-          return;
-        }
-        requestedIndex = null;
-        currentIndex = readIndex();
-        render();
-      }
-
-      function handleScroll() {
-        window.clearTimeout(settleTimer);
-        if (frame === null) {
-          frame = window.requestAnimationFrame(function () {
-            frame = null;
-            if (viewport.clientWidth === measuredWidth && requestedIndex === null) {
-              currentIndex = readIndex();
-              render();
-            }
-          });
-        }
-        settleTimer = window.setTimeout(settle, 140);
-      }
-
-      function goTo(index) {
-        currentIndex = Math.max(0, Math.min(slides.length - 1, index));
-        requestedIndex = currentIndex;
-        render();
-        viewport.scrollTo({
-          left: offsetFor(currentIndex),
-          behavior: isReducedMotion() ? "instant" : "smooth"
-        });
-      }
-
-      function handlePrevious() { goTo(currentIndex - 1); }
-      function handleNext() { goTo(currentIndex + 1); }
-      function handleUserInput() { requestedIndex = null; }
-      function handleKeydown(event) {
-        var index;
-        if (event.key === "ArrowLeft") index = currentIndex - 1;
-        else if (event.key === "ArrowRight") index = currentIndex + 1;
-        else if (event.key === "Home") index = 0;
-        else if (event.key === "End") index = slides.length - 1;
-        else return;
-        event.preventDefault();
-        goTo(index);
-      }
-
-      function alignCurrentSlide() {
-        measuredWidth = viewport.clientWidth;
-        requestedIndex = null;
-        viewport.scrollTo({ left: offsetFor(currentIndex), behavior: "instant" });
-        render();
-      }
-
-      var resizeObserver = typeof window.ResizeObserver !== "undefined"
-        ? new window.ResizeObserver(function () {
-          if (viewport.clientWidth !== measuredWidth) alignCurrentSlide();
-        }) : null;
-      if (resizeObserver) resizeObserver.observe(viewport);
-      else window.addEventListener("resize", alignCurrentSlide);
-      viewport.addEventListener("scroll", handleScroll, { passive: true });
-      viewport.addEventListener("scrollend", settle);
-      viewport.addEventListener("pointerdown", handleUserInput, { passive: true });
-      viewport.addEventListener("wheel", handleUserInput, { passive: true });
-      viewport.addEventListener("keydown", handleKeydown);
-      previous.addEventListener("click", handlePrevious);
-      next.addEventListener("click", handleNext);
-      alignCurrentSlide();
-
-      return function () {
-        if (frame !== null) window.cancelAnimationFrame(frame);
-        window.clearTimeout(settleTimer);
-        if (resizeObserver) resizeObserver.disconnect();
-        else window.removeEventListener("resize", alignCurrentSlide);
-        viewport.removeEventListener("scroll", handleScroll);
-        viewport.removeEventListener("scrollend", settle);
-        viewport.removeEventListener("pointerdown", handleUserInput);
-        viewport.removeEventListener("wheel", handleUserInput);
-        viewport.removeEventListener("keydown", handleKeydown);
-        previous.removeEventListener("click", handlePrevious);
-        next.removeEventListener("click", handleNext);
-        section.classList.remove("is_slider_ready");
-        /* 1280 이상으로 넓히면 이 섹션은 display:none이 되지만, 슬라이더가
-           남긴 표시는 DOM에 그대로 있습니다. 다시 좁혔을 때 render()가
-           renderedIndex === currentIndex로 판단해 건너뛰지 않도록,
-           그리고 데스크톱에서 죽은 상태값이 남지 않도록 되돌립니다. */
-        delete section.dataset.activeIndex;
-        renderedIndex = -1;
-      };
-    }
-
-    function handleBreakpointChange() {
-      if (cleanup) {
-        cleanup();
-        cleanup = null;
-      }
-      if (media.matches) {
-        cleanup = mount();
-      }
-    }
-    media.addEventListener("change", handleBreakpointChange);
-    handleBreakpointChange();
+    media.addEventListener("change",sync); sync();
   }
 
   function initTchaikimTabs() {
@@ -1651,8 +1597,6 @@ REVEAL_CLOSED_HEIGHT = 484;
 
   function initCompactArtDirection() {
     var mobile = window.matchMedia("(max-width: 767px)");
-    var compact = window.matchMedia("(max-width: 1279px)");
-    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var descriptions = Array.from(document.querySelectorAll(".tchaikim_panel_desc"));
     var originals = descriptions.map(function (node) { return node.innerHTML; });
     var summaries = [
@@ -1671,46 +1615,11 @@ REVEAL_CLOSED_HEIGHT = 484;
     mobile.addEventListener("change", syncCopy);
     syncCopy();
 
-    var section = document.querySelector(".heritage");
-    var frame = section.querySelector(".heritage_frame");
-    var photos = Array.from(section.querySelectorAll(".heritage_photos .heritage_stage"));
-    var cleanup = null;
-    function mountHeritage() {
-      var request = 0;
-      var abort = new AbortController();
-      function paint() {
-        request = 0;
-        var travel = Math.max(1, section.offsetHeight - frame.offsetHeight - 80);
-        var progress = Math.max(0, Math.min(1, (80 - section.getBoundingClientRect().top) / travel));
-        var phase = Math.max(0, Math.min(2, (progress - .12) / .72 * 2));
-        photos.forEach(function (photo, index) {
-          photo.style.setProperty("--heritage_fade", String(Math.max(0, 1 - Math.abs(phase - index))));
-          photo.setAttribute("aria-hidden", String(index !== Math.round(phase)));
-        });
-      }
-      function handleScroll() { if (!request) request = requestAnimationFrame(paint); }
-      window.addEventListener("scroll", handleScroll, {passive:true,signal:abort.signal});
-      window.addEventListener("resize", handleScroll, {passive:true,signal:abort.signal});
-      paint();
-      return function () {
-        abort.abort(); cancelAnimationFrame(request);
-        photos.forEach(function (photo) {
-          photo.style.removeProperty("--heritage_fade");
-          photo.removeAttribute("aria-hidden");
-        });
-      };
-    }
-    function syncHeritage() {
-      if (cleanup) cleanup();
-      cleanup = compact.matches && !motion.matches ? mountHeritage() : null;
-    }
-    compact.addEventListener("change", syncHeritage);
-    motion.addEventListener("change", syncHeritage);
-    syncHeritage();
   }
 
   function init() {
     initMoodSlider();
+    initYoungjinCarousel();
     initTchaikimPause();
     initYoungjinMotion();
     initAtelierMarquee();

@@ -1,0 +1,382 @@
+{
+  "startingHead": "fbed57a53f2d9205e4c790b15b1258cc97e89485",
+  "scope": "Local Chrome, with visual review recorded in REPORT.md; not physical Safari approval.",
+  "tablet": {
+    "pass": 30,
+    "total": 30
+  },
+  "mobile": {
+    "pass": 31,
+    "total": 31
+  },
+  "requirements": [
+    {
+      "id": "T-M1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-M2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-M3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-M4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-M5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-M6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B4",
+      "pass": true,
+      "evidenceFile": "functions.json",
+      "measurements": 5
+    },
+    {
+      "id": "T-B5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B7",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B8",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B9",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-B10",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-BS7",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-S1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "T-C1",
+      "pass": true,
+      "evidenceFile": "functions.json",
+      "measurements": 2
+    },
+    {
+      "id": "T-C2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 6
+    },
+    {
+      "id": "T-C3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 6
+    },
+    {
+      "id": "T-C4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3,
+      "mapping": "Shop Tablet: specified selectors do not exist in either Collection."
+    },
+    {
+      "id": "T-C5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3,
+      "mapping": "Shop Tablet: specified selectors do not exist in either Collection."
+    },
+    {
+      "id": "T-SD1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 3
+    },
+    {
+      "id": "M-B1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B3",
+      "pass": true,
+      "evidenceFile": "functions.json",
+      "measurements": 5
+    },
+    {
+      "id": "M-B4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B7",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B8",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B9",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-B10",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-BS1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-BS2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-BS3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-R1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-R2",
+      "pass": true,
+      "evidenceFile": "reservation.json",
+      "measurements": 18
+    },
+    {
+      "id": "M-C1",
+      "pass": true,
+      "evidenceFile": "functions.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-C2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 4
+    },
+    {
+      "id": "M-C3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 4
+    },
+    {
+      "id": "M-C4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 4
+    },
+    {
+      "id": "M-S1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-S2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-S3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-S4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-S5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-S6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD1",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD2",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD3",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD4",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD5",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    },
+    {
+      "id": "M-SD6",
+      "pass": true,
+      "evidenceFile": "layout-acceptance.json",
+      "measurements": 2
+    }
+  ]
+}

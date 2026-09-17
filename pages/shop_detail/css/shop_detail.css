@@ -1260,3 +1260,79 @@ html.has_purchase_modal {
     font-size: 13px;
   }
 }
+
+/* V2: a dedicated image stage keeps garment pins tied to the photograph,
+   while the selected note lives in the editorial margin, not over the outfit. */
+@media (max-width: 1279px) {
+  .look_visual {
+    width: calc(100% - var(--layout_gutter) * 2);
+    aspect-ratio: auto;
+    overflow: visible;
+    margin-top: 40px;
+  }
+  .look_stage { position: relative; aspect-ratio: 1920 / 900; }
+  .look_stage > img { width: 100%; height: 100%; object-fit: cover; }
+  .look_stage .look_pin { position: absolute; }
+  .look_visual .look_products { inset: auto; left: 0; top: 32%; width: 31%; }
+  .look_visual .look_product {
+    position: relative; inset: auto; width: 100%; min-height: 0;
+    display: none; padding: 20px; transform: none;
+    box-shadow: none; backdrop-filter: none; border-width: 0 0 1px;
+  }
+  .look_visual .look_product.is_active { display: flex; transform: none; }
+  .look_visual .look_product h3 { font-size: 23px; }
+  .look_visual .look_product p { width: auto; max-width: 22ch; }
+  .look_visual .look_caption {
+    position: static; padding: 20px 0 0; background: none;
+    color: var(--detail_secondary); font-size: 10px; letter-spacing: .08em;
+  }
+}
+
+@media (max-width: 767px) {
+  .product_gallery { scrollbar-width: none; padding-bottom: 32px; }
+  .product_gallery::-webkit-scrollbar { display: none; }
+  .product_gallery .product_gallery_item { aspect-ratio: auto; height: min(108vw, 440px); }
+  .product_gallery_item img { object-fit: contain; object-position: center; }
+  .narrative_copy > p:first-of-type { display: none; }
+  .narrative_section > .common_container,
+  .craft_section > .common_container { padding-block: 0; }
+  .narrative_section, .craft_section { padding-block: 72px; }
+  .narrative_grid, .craft_inner { gap: 40px; }
+  .narrative_grid { margin-top: 40px; }
+  .narrative_copy > p, .craft_copy > p:not(.section_label) {
+    max-width: 36ch; font-size: 15px; line-height: 1.7;
+  }
+  .narrative_copy .display_title { font-size: 44px; line-height: 1.15; }
+  .narrative_copy blockquote { margin-block: 32px; font-size: 23px; }
+  .narrative_main_image { width: 78%; margin-left: auto; aspect-ratio: auto; }
+  .narrative_main_image img { height: 330px; object-fit: contain; }
+  .narrative_main_image figcaption { position: static; padding: 12px 0 0; background: none; color: var(--detail_secondary); font-size: 11px; line-height: 1.6; letter-spacing: .04em; }
+  .product_facts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; margin-top: 24px; padding-top: 24px; }
+  .product_facts dt { font-size: 12px; }
+  .narrative_media_row { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 28px; gap: 16px; }
+  .narrative_media_row > img, .edition_card { width: 100%; height: 180px; aspect-ratio: auto; }
+  .edition_card { gap: 8px; padding: 12px; }
+  .edition_card strong { line-height: 1; }
+  .craft_media { height: auto; }
+  .craft_media .craft_main_image { width: 86%; height: 230px; }
+  .craft_media_row { margin-top: 24px; gap: 16px; }
+  .craft_media_row > img, .weave_card { height: 150px; aspect-ratio: auto; }
+  .craft_copy .section_title br { display: none; }
+  .craft_copy .section_title { max-width: none; font-size: 34px; line-height: 1.2; }
+  .craft_copy .detail_accordion { margin-top: 36px; }
+  .look_visual { margin-top: 32px; }
+  .look_stage { aspect-ratio: 1.1; }
+  .look_stage > img { object-position: 50% center; }
+  /* Pins remapped to the centered crop of the original 1920×900 image. */
+  .look_stage .pin_top { left: 55%; top: 14%; }
+  .look_stage .pin_skirt { left: 42%; top: 50%; }
+  .look_stage .pin_outer { left: 82%; top: 54%; }
+  .look_visual .look_products {
+    position: relative; inset: auto; width: 92%; margin: 0;
+  }
+  .look_visual .look_products:has(.is_active) { margin-top: -20px; }
+  .look_visual .look_product { padding: 22px 18px; border-width: 0 0 1px; }
+  .look_visual .look_caption { gap: 12px; font-size: 11px; line-height: 1.6; letter-spacing: .04em; }
+  .look_visual .look_caption span:first-child { max-width: none; }
+  .look_visual .look_caption span:last-child { text-align: right; }
+}

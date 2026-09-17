@@ -1986,3 +1986,27 @@
     padding-top: clamp(40px, 8vw, 72px);
   }
 }
+
+/* V2 — deck depth follows its horizontal gesture, with a shared center axis. */
+@media (max-width: 1279px) {
+  .showcase_slide:last-child { scroll-snap-align: end; }
+  .showcase_carousel_viewport::after { flex-basis: 0; margin-left: var(--showcase_end_space,0px); }
+  .archive_frame { gap: 24px; --archive_deck_head: 20px; }
+  .archive_title, .archive_years { justify-self: center; text-align: center; }
+  .archive_year_list { justify-content: center; margin-bottom: 8px; }
+  .archive_deck { width: min(100%,540px); height: calc(var(--archive_card_h) + 84px); }
+  .archive_photo, .archive_photo:hover {
+    width: 68%; max-width: 320px; top: 0;
+    transform: translateX(calc(-50% + var(--archive_deck_x,0%))) scale(var(--archive_deck_scale,1));
+    transform-origin: center center;
+  }
+  .archive_deck_counter { left: 50%; right: auto; top: auto; bottom: 0; transform: translateX(-50%); }
+}
+@media (max-width: 767px) {
+  .archive_title { display: flex; justify-content: center; gap: .24em; font-size: clamp(20px,5.7vw,32px); white-space: nowrap; max-width: 100%; }
+  .archive_title br { display: none; }
+  .archive_year_list { flex-wrap: nowrap; gap: 2px; align-items: center; }
+  .archive_year_link, .archive_year_item.is_active .archive_year_link { min-width: 44px; min-height: 44px; font-size: 12px; text-align: center; transform: none; }
+  .archive_year_item.is_active .archive_year_link { font-size: 15px; font-weight: 600; }
+  .archive_frame { padding-inline: 20px; }
+}

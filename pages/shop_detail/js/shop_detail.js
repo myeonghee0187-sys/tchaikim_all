@@ -99,6 +99,13 @@
       return;
     }
 
+    // On a phone, reserving every closed panel leaves a full empty screen.
+    // Let the existing accordion expand naturally; Desktop retains its reserve.
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      accordion.style.removeProperty("min-height");
+      return;
+    }
+
     var openedBefore = accordionItems.map(function (item) {
       return item.classList.contains("is_open");
     });
@@ -152,6 +159,48 @@
 
   var lookPins = Array.prototype.slice.call(document.querySelectorAll(".look_pin"));
   var lookCards = Array.prototype.slice.call(document.querySelectorAll("[data-look-card]"));
+
+  // Compact art direction owns only a temporary stage; restore the original
+  // desktop DOM and copy when crossing back over 1280px.
+  (function initCompactLook() {
+    var compactMedia = window.matchMedia("(max-width: 1279px)");
+    var mobileMedia = window.matchMedia("(max-width: 767px)");
+    var visual = document.querySelector(".look_visual");
+    var materialCopy = document.querySelector(".craft_copy > p:not(.section_label)");
+    var originalCopy = materialCopy ? materialCopy.innerHTML : "";
+    var materialTitle = document.getElementById("craft_title");
+    var originalTitle = materialTitle ? materialTitle.innerHTML : "";
+    var stage = null;
+    var placements = [];
+
+    function syncLayout() {
+      if (materialTitle) materialTitle.innerHTML = mobileMedia.matches
+        ? "Craft held to a higher register" : originalTitle;
+      if (materialCopy) materialCopy.innerHTML = mobileMedia.matches
+        ? "From a third-generation weaving atelier in Gyeonggi-do, this 80-count silk-cotton blend balances structural weight with effortless movement. A matte depth recalls Joseon textiles, while pleated panels billow with the body."
+        : originalCopy;
+      if (!visual) return;
+      if (compactMedia.matches && !stage) {
+        stage = document.createElement("div");
+        stage.className = "look_stage";
+        visual.insertBefore(stage, visual.firstChild);
+        [visual.querySelector(":scope > img")].concat(lookPins).filter(Boolean).forEach(function (node) {
+          var marker = document.createComment("desktop look position");
+          node.before(marker);
+          placements.push([node, marker]);
+          stage.appendChild(node);
+        });
+      } else if (!compactMedia.matches && stage) {
+        placements.forEach(function (item) { item[1].replaceWith(item[0]); });
+        placements = [];
+        stage.remove();
+        stage = null;
+      }
+    }
+    compactMedia.addEventListener("change", syncLayout);
+    mobileMedia.addEventListener("change", syncLayout);
+    syncLayout();
+  })();
 
   lookPins.forEach(function (pin) {
     pin.addEventListener("click", function () {

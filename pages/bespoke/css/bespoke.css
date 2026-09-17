@@ -2551,13 +2551,27 @@
     width: min(62%, 554px);
     max-width: 554px;
     height: auto;
-    margin-inline: auto;
+    margin: 0;
+    align-self: center;
   }
 
   .atelier_image img {
     width: 100%;
     height: auto;
   }
+  .atelier_stage { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .atelier_body { margin: 0; }
+  .atelier_body > :not(.atelier_button) { display: none; }
+  .quote_body { width: min(100%,760px); max-width: none; margin-inline: auto; align-items: flex-start; text-align: left; }
+  .quote_text { max-width: 46ch; margin-inline: 0; font-size: clamp(24px,2.55vw,31px); line-height: 1.55; text-align: left; }
+  .quote_cite { display: block; text-align: left; white-space: nowrap; font-size: 14px; }
+  .main .process { padding-top: 140px; }
+}
+
+@media (max-width: 767px) {
+  .philosophy, .atelier { display: none; }
+  .bespoke_hero_stage { height: auto; position: relative; display: flex; flex-direction: column; align-items: center; gap: 28px; padding-bottom: 32px; }
+  .bespoke_hero_stage > .atelier_button { margin: 0; min-height: 48px; align-self: center; }
 }
 
 /* ############################################################################

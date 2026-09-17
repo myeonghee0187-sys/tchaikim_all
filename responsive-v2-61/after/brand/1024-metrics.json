@@ -1,0 +1,101 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 5242,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "mood_responsive is_slider_ready",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 866,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "kimyoungjin",
+      "x": 0,
+      "y": 866,
+      "w": 1024,
+      "h": 1607.53125,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 603.1875,
+      "y": 1264.203125,
+      "w": 364.796875,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title",
+      "x": 238.421875,
+      "y": 1928.296875,
+      "w": 310.078125,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "H3",
+      "cls": "youngjin_title youngjin_title_center",
+      "x": 439.3125,
+      "y": 2223.359375,
+      "w": 145.359375,
+      "h": 36.390625,
+      "font": "28px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "tchaikim",
+      "x": 0,
+      "y": 2473.53125,
+      "w": 1024,
+      "h": 533.890625,
+      "font": "16px"
+    },
+    {
+      "tag": "H3",
+      "cls": "tchaikim_panel_title",
+      "x": 56,
+      "y": 2657.53125,
+      "w": 139.375,
+      "h": 41.59375,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "atelier",
+      "x": 0,
+      "y": 3007.421875,
+      "w": 1024,
+      "h": 808.3125,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "heritage",
+      "x": 0,
+      "y": 3815.734375,
+      "w": 1024,
+      "h": 762.4375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "heritage_headline",
+      "x": 235.015625,
+      "y": 3847.734375,
+      "w": 553.96875,
+      "h": 66.4375,
+      "font": "56.32px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

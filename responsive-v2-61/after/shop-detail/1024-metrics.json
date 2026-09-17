@@ -1,0 +1,83 @@
+{
+  "width": 1024,
+  "height": 900,
+  "documentHeight": 6497,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "product_hero",
+      "x": 0,
+      "y": 72,
+      "w": 1024,
+      "h": 2093,
+      "font": "16px"
+    },
+    {
+      "tag": "H1",
+      "cls": "product_title",
+      "x": 624,
+      "y": 110.546875,
+      "w": 360,
+      "h": 90.21875,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "narrative_section",
+      "x": 0,
+      "y": 2165,
+      "w": 1024,
+      "h": 1482.078125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "display_title",
+      "x": 112,
+      "y": 2427.078125,
+      "w": 376,
+      "h": 217.9375,
+      "font": "64px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "craft_section",
+      "x": 0,
+      "y": 3647.078125,
+      "w": 1024,
+      "h": 1259.421875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "section_title",
+      "x": 536,
+      "y": 3853.15625,
+      "w": 440,
+      "h": 185.71875,
+      "font": "48px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "look_section",
+      "x": 0,
+      "y": 4906.5,
+      "w": 1024,
+      "h": 927.390625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "section_title",
+      "x": 64,
+      "y": 5072.578125,
+      "w": 226.328125,
+      "h": 123.8125,
+      "font": "48px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

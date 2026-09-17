@@ -1,0 +1,209 @@
+{
+  "width": 768,
+  "height": 900,
+  "documentHeight": 7061,
+  "overflow": 0,
+  "triggers": [],
+  "geometry": [
+    {
+      "tag": "SECTION",
+      "cls": "hero is_crossfade_ready",
+      "x": 0,
+      "y": 0,
+      "w": 768,
+      "h": 738,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "hero_panel_title",
+      "x": 40,
+      "y": 569.015625,
+      "w": 688,
+      "h": 32.390625,
+      "font": "27px"
+    },
+    {
+      "tag": "H2",
+      "cls": "hero_panel_title",
+      "x": 40,
+      "y": 569.015625,
+      "w": 688,
+      "h": 32.390625,
+      "font": "27px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "model",
+      "x": 0,
+      "y": 738,
+      "w": 768,
+      "h": 553.875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "model_title",
+      "x": 385.6875,
+      "y": 962.5,
+      "w": 286.984375,
+      "h": 76.78125,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "detail",
+      "x": 0,
+      "y": 1291.875,
+      "w": 768,
+      "h": 751.84375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "detail_title",
+      "x": 40,
+      "y": 1355.875,
+      "w": 688,
+      "h": 81.59375,
+      "font": "34px"
+    },
+    {
+      "tag": "H3",
+      "cls": "detail_part_title",
+      "x": 404,
+      "y": 1800.71875,
+      "w": 310.234375,
+      "h": 38.390625,
+      "font": "32px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "brand_story",
+      "x": 0,
+      "y": 2043.71875,
+      "w": 768,
+      "h": 664.890625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "brand_story_title",
+      "x": 40,
+      "y": 2107.71875,
+      "w": 487.859375,
+      "h": 135,
+      "font": "36px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "brand_word_pin",
+      "x": 0,
+      "y": 2708.609375,
+      "w": 768,
+      "h": 645.171875,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "brand_collage",
+      "x": 0,
+      "y": 2708.609375,
+      "w": 768,
+      "h": 645.171875,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "brand_rail_title",
+      "x": 40,
+      "y": 2796.609375,
+      "w": 79.140625,
+      "h": 36.859375,
+      "font": "30.72px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "promo_wrap promo_bespoke_wrap",
+      "x": 0,
+      "y": 3449.78125,
+      "w": 768,
+      "h": 637.578125,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "promo_title",
+      "x": 40,
+      "y": 3449.78125,
+      "w": 688,
+      "h": 36,
+      "font": "30px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "shop",
+      "x": 0,
+      "y": 4151.359375,
+      "w": 768,
+      "h": 1077.90625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "promo_title",
+      "x": 40,
+      "y": 4151.359375,
+      "w": 688,
+      "h": 36,
+      "font": "30px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "collection_scroll",
+      "x": 0,
+      "y": 5229.265625,
+      "w": 768,
+      "h": 658.375,
+      "font": "16px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "collection",
+      "x": 0,
+      "y": 5229.265625,
+      "w": 768,
+      "h": 658.375,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "collection_title",
+      "x": 40,
+      "y": 5317.265625,
+      "w": 688,
+      "h": 80.625,
+      "font": "32.256px"
+    },
+    {
+      "tag": "SECTION",
+      "cls": "closing",
+      "x": 0,
+      "y": 5887.640625,
+      "w": 768,
+      "h": 508.390625,
+      "font": "16px"
+    },
+    {
+      "tag": "H2",
+      "cls": "closing_title",
+      "x": 195.53125,
+      "y": 5983.640625,
+      "w": 376.921875,
+      "h": 44.921875,
+      "font": "34.56px"
+    }
+  ],
+  "broken": [],
+  "errors": []
+}

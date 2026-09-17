@@ -1,0 +1,80 @@
+const fs=require('node:fs'),path=require('node:path');
+const {PAGES,launch,ready,scroll,baseline}=require('./qa.cjs');
+const OUT=path.join(__dirname,'verification');fs.mkdirSync(OUT,{recursive:true});
+const results=[];
+function check(name,pass,detail={}){results.push({name,pass:!!pass,...detail});console.log(pass?'PASS':'FAIL',name,JSON.stringify(detail));}
+async function view(p,s){await scroll(p,await p.locator(s).first().evaluate(e=>e.getBoundingClientRect().top+scrollY-100));await p.waitForTimeout(400);}
+async function shot(p,name){await p.screenshot({path:path.join(OUT,name+'.png')});}
+async function gesture(p,s,d=1,touch=false){
+ await view(p,s);const b=await p.locator(s).first().boundingBox(),w=p.viewportSize().width;
+ const x=d>0?Math.min(w-35,b.x+b.width*.8):Math.max(35,b.x+b.width*.2),y=Math.min(520,b.y+Math.min(b.height*.5,260)),end=x-d*Math.min(b.width*.65,w*.65);
+ if(touch){const c=await p.context().newCDPSession(p);await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});for(let i=1;i<=12;i++){await c.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+(end-x)*i/12,y}]});await p.waitForTimeout(25);}await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await c.detach();}
+ else{await p.mouse.move(x,y);await p.mouse.down();await p.mouse.move(end,y,{steps:15});await p.mouse.up();}
+ await p.waitForTimeout(750);
+}
+async function state(p){return p.evaluate(()=>({height:document.documentElement.scrollHeight,triggers:window.ScrollTrigger?ScrollTrigger.getAll().length:0,pins:document.querySelectorAll('.pin-spacer').length,clones:document.querySelectorAll('.is_loop_clone,.is_rail_clone').length,youngjin:document.querySelectorAll('.youngjin_mobile').length,occasion:document.querySelectorAll('.occasion_control').length,look:document.querySelectorAll('.look_stage').length,units:document.querySelectorAll('.garment_story_unit').length}));}
+async function geometry(browser){
+ const names=Object.keys(PAGES),widths=[1920,1440,1280,1279,1024,820,768,767,430,402,390,375,360];
+ await Promise.all([0,1].map(async()=>{while(names.length){const name=names.shift(),p=await browser.newPage({viewport:{width:1920,height:1080}}),errors=[];
+ p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await p.addInitScript(()=>addEventListener('unhandledrejection',e=>console.error('Unhandled: '+e.reason)));
+ await ready(p,name);const start=await state(p);
+ for(const w of widths){await p.setViewportSize({width:w,height:w>=1280?1080:w>=768?900:844});await scroll(p,0);await p.waitForTimeout(650);
+ const metrics=await p.evaluate(()=>{const old=[document.documentElement.style.overflowX,document.body.style.overflowX];document.documentElement.style.overflowX='visible';document.body.style.overflowX='visible';const overflow=Math.max(document.body.scrollWidth,document.documentElement.scrollWidth)-document.documentElement.clientWidth;const bad=[...document.querySelectorAll('main>*,main section')].filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&(r.right>innerWidth+1||r.left< -1);}).map(e=>e.className);document.documentElement.style.overflowX=old[0];document.body.style.overflowX=old[1];return {overflow,bad,height:document.documentElement.scrollHeight,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth&&i.getAttribute('src')).map(i=>i.src)};});
+ check('width '+name+' '+w,metrics.overflow<=1&&!metrics.broken.length,metrics);
+ }
+ for(let round=0;round<2;round++){for(const w of [1920,1024,390,1024,1920]){await p.setViewportSize({width:w,height:w>=1280?1080:w>=768?900:844});await scroll(p,0);await p.waitForTimeout(500);}await p.waitForTimeout(1000);const end=await state(p);check('resize cycle '+name+' '+round,JSON.stringify(start)===JSON.stringify(end),{start,end});}
+ check('console/rejection '+name,!errors.length,{errors});
+ await p.emulateMedia({reducedMotion:'reduce'});await p.setViewportSize({width:390,height:844});await p.waitForTimeout(800);check('reduced motion pins '+name,await p.locator('.pin-spacer').count()===0);
+ if(name==='brand'){await view(p,'.youngjin_mobile');const s=await p.locator('.youngjin_mobile_label').textContent();await p.waitForTimeout(7000);check('reduced autoplay off',s===await p.locator('.youngjin_mobile_label').textContent());}
+ await p.close();}}));
+}
+async function desktop(browser){
+ for(const name of Object.keys(PAGES))for(const width of [1920,1440,1280]){
+ const pages=await Promise.all([0,1].map(()=>browser.newPage({viewport:{width,height:1080}})));
+ await baseline(pages[0]);const data=[];
+ for(const p of pages){await ready(p,name);await p.evaluate(()=>{document.querySelectorAll('video').forEach(v=>v.pause());document.getAnimations().forEach(a=>{a.pause();a.currentTime=0;});});
+data.push(await p.evaluate(()=>({height:document.documentElement.scrollHeight,triggers:window.ScrollTrigger?ScrollTrigger.getAll().map(t=>({pin:!!t.pin,start:Math.round(t.start),end:Math.round(t.end)})):[],elements:[...document.querySelectorAll('main>*,main section,main h1,main h2,main h3,main img,main button')].filter(e=>e.getBoundingClientRect().width>0).map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e),marquee=e.closest(".asworn_list");return {tag:e.tagName,cls:e.className,x:Math.round(r.x-(marquee?marquee.getBoundingClientRect().x:0)),y:Math.round(r.y+scrollY),w:Math.round(r.width),h:Math.round(r.height),font:s.fontSize};})})));}
+ const a=data[0],b=data[1],diff=[];for(let i=0;i<Math.max(a.elements.length,b.elements.length);i++){const x=a.elements[i],y=b.elements[i];if(!x||!y||x.tag!==y.tag||x.w!==y.w||x.h!==y.h||x.font!==y.font||Math.abs(x.x-y.x)>2||Math.abs(x.y-y.y)>2)diff.push({before:x,after:y});}
+ check('desktop '+name+' '+width,a.height===b.height&&JSON.stringify(a.triggers)===JSON.stringify(b.triggers)&&!diff.length,{beforeHeight:a.height,afterHeight:b.height,diff});await Promise.all(pages.map(p=>p.close()));
+ }
+}
+async function functions(browser){
+ for(const width of [390,1024]){
+ const p=await browser.newPage({viewport:{width,height:width<768?844:900},hasTouch:true});await ready(p,'brand');
+ await p.locator('.mood_slides').focus();const sequence=[];
+ for(const key of ['ArrowRight','ArrowRight','ArrowRight','ArrowLeft','ArrowLeft','ArrowLeft']){await p.keyboard.press(key);await p.waitForTimeout(900);sequence.push((await p.locator('.mood_current').textContent()).trim());}
+ check('Mood seamless keys '+width,sequence.join() ==='02,03,01,03,02,01',{sequence});
+ // Clone and original boundary must display the identical image rectangle.
+ const boundary=await p.locator('.mood_slides').evaluate(async e=>{const get=()=>{const r=e.getBoundingClientRect();return [...e.querySelectorAll('.mood_slide_media img')].map(i=>({src:i.src,x:Math.round(i.getBoundingClientRect().x),w:Math.round(i.getBoundingClientRect().width)})).filter(i=>i.x<r.right&&i.x+i.w>r.left);};e.scrollTo({left:0,behavior:'instant'});const before=get();await new Promise(r=>setTimeout(r,500));return {before,after:get()};});
+ check('Mood clone normalization '+width,JSON.stringify(boundary.before)===JSON.stringify(boundary.after),boundary);
+ await p.locator('.mood_slides').evaluate(e=>e.scrollTo({left:e.clientWidth,behavior:'instant'}));await p.waitForTimeout(450);
+ for(const touch of [true,false]){await gesture(p,'.mood_slides',1,touch);const next=await p.locator('.mood_current').textContent();await gesture(p,'.mood_slides',-1,touch);check('Mood '+(touch?'touch':'mouse')+' '+width,next==='02'&&await p.locator('.mood_current').textContent()==='01',{next});}
+ await view(p,'.mood_slides');await p.mouse.move(width/2,300);await p.mouse.wheel(width,0);await p.waitForTimeout(800);check('Mood trackpad '+width,await p.locator('.mood_current').textContent()==='02');
+ for(let i=0;i<5;i++){await p.locator('.tchaikim_tab').nth(i).click();await p.waitForTimeout(350);check('Tchaikim tabs '+width+' '+i,await p.locator('.tchaikim_panel:not([hidden])').count()===1);}
+ await shot(p,'brand-'+width+'-tabs');
+ if(width<768){await view(p,'.youngjin_mobile');await p.locator('.tchaikim_tab').first().evaluate(e=>e.blur());const first=await p.locator('.youngjin_mobile_label').textContent();await p.waitForTimeout(7200);const next=await p.locator('.youngjin_mobile_label').textContent();check('KYJ autoplay',first!==next,{first,next});await gesture(p,'.youngjin_mobile_rail',1,true);const label=await p.locator('.youngjin_mobile_label').textContent();await p.waitForTimeout(1500);check('KYJ user pause',label===await p.locator('.youngjin_mobile_label').textContent());await p.waitForTimeout(5800);check('KYJ resumes',label!==await p.locator('.youngjin_mobile_label').textContent());await shot(p,'brand-390-youngjin');}
+ await ready(p,'bespoke');for(let i=0;i<5;i++){await p.locator('.process_step_head').nth(i).click();await p.waitForTimeout(600);const s=await p.locator('.process').evaluate(e=>({active:e.querySelectorAll('.process_step.is_active').length,key:e.querySelector('.process_step.is_active').dataset.step,body:e.querySelector('.process_stage_item.is_active').dataset.step}));check('Process '+width+' '+i,s.active===1&&s.key===s.body,s);}
+ for(let i=0;i<6;i++){await p.locator('.materials_swatch_button').nth(i).click();await p.waitForTimeout(500);const s=await p.locator('.materials').evaluate(e=>({key:e.querySelector('.materials_swatch.is_active').dataset.fabric,caption:e.querySelector('.materials_caption_item.is_active').dataset.fabric}));check('Materials '+width+' '+i,s.key===s.caption,s);}await shot(p,'bespoke-'+width+'-materials');
+ for(const name of ['collection','collection-youngjin']){await ready(p,name);await gesture(p,'.showcase_carousel_viewport',1,true);const show=await p.locator('.showcase_counter_current').textContent();await gesture(p,'.showcase_carousel_viewport',-1,true);check('Showcase swipe '+name+' '+width,show!=='01'&&await p.locator('.showcase_counter_current').textContent()==='01',{show});
+ const end=await p.locator('.showcase_carousel_viewport').evaluate(async e=>{e.scrollTo({left:e.scrollWidth,behavior:'instant'});await new Promise(r=>setTimeout(r,500));const last=e.querySelector('.showcase_slide:last-of-type'),r=last.getBoundingClientRect(),v=e.getBoundingClientRect();return {left:e.scrollLeft,max:e.scrollWidth-e.clientWidth,gap:v.right-r.right,lastWidth:r.width,counter:document.querySelector('.showcase_counter_current').textContent,slides:e.querySelectorAll('.showcase_slide').length};});check('Showcase reaches last photo '+name+' '+width,end.gap>=-1&&end.gap<=40&&Number(end.counter)===end.slides,end);await shot(p,name+'-'+width+'-showcase-end');
+ for(const touch of [true,false]){await gesture(p,'.archive_deck',1,touch);const index=await p.locator('.archive_deck_index').textContent();await gesture(p,'.archive_deck',-1,touch);check('Archive '+name+' '+width+' '+touch,index==='2'&&await p.locator('.archive_deck_index').textContent()==='1',{index});}
+ for(const year of ['2019','2020','2021']){await p.locator('.archive_year_button[data-year="'+year+'"]').click();await p.waitForTimeout(550);check('Archive year '+name+' '+width+' '+year,await p.locator('.archive_deck_index').textContent()==='1');}await shot(p,name+'-'+width+'-archive');}
+ await ready(p,'shop');for(const touch of [true,false]){await gesture(p,'.garment_content',1,touch);const left=await p.locator('.garment_content').evaluate(e=>e.scrollLeft);await gesture(p,'.garment_content',-1,touch);check('Garment story '+width+' '+touch,left>30&&await p.locator('.garment_content').evaluate(e=>e.scrollLeft)<left,{left});}await view(p,'.garment_content');await p.mouse.move(width/2,400);await p.mouse.wheel(600,0);await p.waitForTimeout(600);check('Garment trackpad '+width,await p.locator('.garment_content').evaluate(e=>e.scrollLeft)>30);await shot(p,'shop-'+width+'-story');
+ await ready(p,'shop-detail');for(let i=0;i<3;i++){await p.locator('.look_pin').nth(i).click();await p.waitForTimeout(450);const s=await p.locator('.look_product.is_active').boundingBox();check('Look card '+width+' '+i,s&&s.x>=0&&s.x+s.width<=width+1);await shot(p,'detail-'+width+'-look-'+i);await p.keyboard.press('Escape');check('Look escape '+width+' '+i,await p.locator('.look_product.is_active').count()===0);}
+ if(width<768){await p.locator('.product_gallery').focus();await p.keyboard.press('ArrowRight');await p.waitForTimeout(700);check('Product gallery keyboard',await p.locator('.product_gallery').evaluate(e=>e.scrollLeft)>0);}
+ await p.close();
+ }
+}
+async function reservation(browser){
+ for(const width of [360,390,430,768,1024])for(const mode of ['atelier','phone']){
+ const p=await browser.newPage({viewport:{width,height:width<768?844:900},hasTouch:true});await ready(p,'reservation');
+ if(width<768){await view(p,'.occasion_control');await p.locator('.occasion_trigger').click();const boxes=await p.locator('.occasion_control').evaluate(e=>{const a=e.querySelector('button').getBoundingClientRect(),b=e.querySelector('[role=listbox]').getBoundingClientRect();return {x:a.x,bx:b.x,w:a.width,bw:b.width,top:b.top,bottom:b.bottom,triggerTop:a.top,triggerBottom:a.bottom};});check('Occasion alignment '+width+' '+mode,Math.abs(boxes.x-boxes.bx)<1&&Math.abs(boxes.w-boxes.bw)<1&&boxes.top>=0&&boxes.bottom<=844,boxes);await shot(p,'reservation-'+width+'-popup');await p.keyboard.press('End');await p.keyboard.press('Enter');check('Occasion keyboard '+width+' '+mode,await p.locator('#field_occasion').evaluate(e=>e.selectedIndex===e.options.length-1));await p.locator('.occasion_trigger').click();await p.keyboard.press('Escape');check('Occasion focus '+width+' '+mode,await p.locator('.occasion_trigger').evaluate(e=>e===document.activeElement)&&!await p.locator('.occasion_options').isVisible());}
+ await p.locator('label:has(input[name="silhouette"][value="durumagi"])').click();await p.locator('label:has(input[name="fabric"][value="traditional_silk"])').click();
+ await p.locator('label:has(input[name="meeting_mode"][value="'+mode+'"])').click();check('Reservation validation '+width+' '+mode,await p.locator('#reservation_submit_button').isDisabled());
+ const before=await p.locator('#reservation_date_value').inputValue();await p.locator('.reservation_day[aria-label*="weekend"]').first().evaluate(e=>e.click());check('Weekend disabled '+width+' '+mode,before===await p.locator('#reservation_date_value').inputValue());
+ await p.locator('.reservation_day:not(:disabled)').first().click();await p.locator('label:has(input[name="meeting_time"])').first().click();const date=await p.locator('#reservation_date_value').inputValue(),time=await p.locator('input[name="meeting_time"]:checked').inputValue();for(const trip of ['phone','atelier',mode])await p.locator('label:has(input[name="meeting_mode"][value="'+trip+'"])').click();check('Mode preserves selection '+width+' '+mode,date===await p.locator('#reservation_date_value').inputValue()&&time===await p.locator('input[name="meeting_time"]:checked').inputValue());
+ await p.locator('#field_name').fill('Local responsive QA');await p.locator('#field_phone').fill('010-0000-0000');await p.locator('#field_email').fill('qa@example.com');await p.locator('#field_notes').fill('Local test only.');await p.locator('label[for="agree_all"]').click();await p.locator('#reservation_submit_button').click();await p.waitForURL('**/reservation_done.html');await p.waitForTimeout(700);const data=await p.evaluate(()=>JSON.parse(sessionStorage.getItem('tchaiBespokeReservation')));check('Done data '+width+' '+mode,data.meetingValue===mode&&data.silhouette.includes('Durumagi')&&data.fabric.includes('Silk'),data);check('Done mode '+width+' '+mode,await p.locator(mode==='phone'?'#done_phone':'#done_visit').isVisible());await shot(p,'done-'+width+'-'+mode);await p.close();
+ }
+}
+async function run(){const group=process.argv[2]||'geometry',browser=await launch();try{await ({geometry,desktop,functions,reservation}[group])(browser);}finally{fs.writeFileSync(path.join(OUT,group+'.json'),JSON.stringify(results,null,2));await browser.close();}}
+if(require.main===module)run().catch(e=>{console.error(e);process.exitCode=1;});

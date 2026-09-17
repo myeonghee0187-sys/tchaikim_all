@@ -1,0 +1,1294 @@
+[
+  {
+    "name": "width main 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 31382,
+    "broken": []
+  },
+  {
+    "name": "width main 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 30343,
+    "broken": []
+  },
+  {
+    "name": "width main 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 29860,
+    "broken": []
+  },
+  {
+    "name": "width main 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8939,
+    "broken": []
+  },
+  {
+    "name": "width main 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8166,
+    "broken": []
+  },
+  {
+    "name": "width brand 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 12956,
+    "broken": []
+  },
+  {
+    "name": "width main 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7215,
+    "broken": []
+  },
+  {
+    "name": "width brand 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 12879,
+    "broken": []
+  },
+  {
+    "name": "width main 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7061,
+    "broken": []
+  },
+  {
+    "name": "width brand 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 12836,
+    "broken": []
+  },
+  {
+    "name": "width main 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7102,
+    "broken": []
+  },
+  {
+    "name": "width brand 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5675,
+    "broken": []
+  },
+  {
+    "name": "width main 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5918,
+    "broken": []
+  },
+  {
+    "name": "width brand 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5242,
+    "broken": []
+  },
+  {
+    "name": "width main 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5883,
+    "broken": []
+  },
+  {
+    "name": "width brand 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5169,
+    "broken": []
+  },
+  {
+    "name": "width main 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5852,
+    "broken": []
+  },
+  {
+    "name": "width brand 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5139,
+    "broken": []
+  },
+  {
+    "name": "width main 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5780,
+    "broken": []
+  },
+  {
+    "name": "width brand 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4576,
+    "broken": []
+  },
+  {
+    "name": "width main 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5709,
+    "broken": []
+  },
+  {
+    "name": "width brand 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4226,
+    "broken": []
+  },
+  {
+    "name": "width brand 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4221,
+    "broken": []
+  },
+  {
+    "name": "width brand 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4187,
+    "broken": []
+  },
+  {
+    "name": "width brand 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4147,
+    "broken": []
+  },
+  {
+    "name": "width brand 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4107,
+    "broken": []
+  },
+  {
+    "name": "resize cycle main 0",
+    "pass": true,
+    "start": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle brand 0",
+    "pass": true,
+    "start": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle main 1",
+    "pass": true,
+    "start": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 31382,
+      "triggers": 4,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection main",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins main",
+    "pass": true
+  },
+  {
+    "name": "resize cycle brand 1",
+    "pass": true,
+    "start": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 12956,
+      "triggers": 6,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection brand",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins brand",
+    "pass": true
+  },
+  {
+    "name": "reduced autoplay off",
+    "pass": true
+  },
+  {
+    "name": "width reservation 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7626,
+    "broken": []
+  },
+  {
+    "name": "width reservation 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7309,
+    "broken": []
+  },
+  {
+    "name": "width reservation 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7133,
+    "broken": []
+  },
+  {
+    "name": "width reservation 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6324,
+    "broken": []
+  },
+  {
+    "name": "width reservation 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5992,
+    "broken": []
+  },
+  {
+    "name": "width reservation 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6386,
+    "broken": []
+  },
+  {
+    "name": "width reservation 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6712,
+    "broken": []
+  },
+  {
+    "name": "width reservation 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6320,
+    "broken": []
+  },
+  {
+    "name": "width reservation 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5790,
+    "broken": []
+  },
+  {
+    "name": "width reservation 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5879,
+    "broken": []
+  },
+  {
+    "name": "width reservation 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5881,
+    "broken": []
+  },
+  {
+    "name": "width reservation 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5878,
+    "broken": []
+  },
+  {
+    "name": "width reservation 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5940,
+    "broken": []
+  },
+  {
+    "name": "resize cycle reservation 0",
+    "pass": true,
+    "start": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "width bespoke 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 14396,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 12992,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 12224,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8617,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7372,
+    "broken": []
+  },
+  {
+    "name": "resize cycle reservation 1",
+    "pass": true,
+    "start": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 7626,
+      "triggers": 0,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection reservation",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "width bespoke 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7401,
+    "broken": []
+  },
+  {
+    "name": "reduced motion pins reservation",
+    "pass": true
+  },
+  {
+    "name": "width bespoke 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7324,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5906,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4983,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4974,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4965,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4922,
+    "broken": []
+  },
+  {
+    "name": "width bespoke 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4937,
+    "broken": []
+  },
+  {
+    "name": "resize cycle bespoke 0",
+    "pass": true,
+    "start": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle bespoke 1",
+    "pass": true,
+    "start": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 14396,
+      "triggers": 4,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection bespoke",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins bespoke",
+    "pass": true
+  },
+  {
+    "name": "width collection-youngjin 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8113,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6688,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6175,
+    "broken": []
+  },
+  {
+    "name": "width collection 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8113,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5961,
+    "broken": []
+  },
+  {
+    "name": "width collection 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6688,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5544,
+    "broken": []
+  },
+  {
+    "name": "width collection 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6175,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5181,
+    "broken": []
+  },
+  {
+    "name": "width collection 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5865,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5115,
+    "broken": []
+  },
+  {
+    "name": "width collection 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5448,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5167,
+    "broken": []
+  },
+  {
+    "name": "width collection 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5139,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4354,
+    "broken": []
+  },
+  {
+    "name": "width collection 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5073,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4398,
+    "broken": []
+  },
+  {
+    "name": "width collection 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5213,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4363,
+    "broken": []
+  },
+  {
+    "name": "width collection 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4401,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4322,
+    "broken": []
+  },
+  {
+    "name": "width collection 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4390,
+    "broken": []
+  },
+  {
+    "name": "width collection-youngjin 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4283,
+    "broken": []
+  },
+  {
+    "name": "width collection 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4356,
+    "broken": []
+  },
+  {
+    "name": "width collection 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4315,
+    "broken": []
+  },
+  {
+    "name": "width collection 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 4329,
+    "broken": []
+  },
+  {
+    "name": "resize cycle collection-youngjin 0",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle collection 0",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle collection-youngjin 1",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection collection-youngjin",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins collection-youngjin",
+    "pass": true
+  },
+  {
+    "name": "resize cycle collection 1",
+    "pass": true,
+    "start": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 8113,
+      "triggers": 3,
+      "pins": 2,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection collection",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins collection",
+    "pass": true
+  },
+  {
+    "name": "width shop 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 18960,
+    "broken": []
+  },
+  {
+    "name": "width shop 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 17324,
+    "broken": []
+  },
+  {
+    "name": "width shop 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 18513,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 1920",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7401,
+    "broken": []
+  },
+  {
+    "name": "width shop 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 9884,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 1440",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 7099,
+    "broken": []
+  },
+  {
+    "name": "width shop 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 9085,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 1280",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6982,
+    "broken": []
+  },
+  {
+    "name": "width shop 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8557,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 1279",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6681,
+    "broken": []
+  },
+  {
+    "name": "width shop 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8421,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 1024",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6497,
+    "broken": []
+  },
+  {
+    "name": "width shop 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8086,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 820",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6695,
+    "broken": []
+  },
+  {
+    "name": "width shop 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8707,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 768",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 6862,
+    "broken": []
+  },
+  {
+    "name": "width shop 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8636,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 767",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5889,
+    "broken": []
+  },
+  {
+    "name": "width shop 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8576,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 430",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5599,
+    "broken": []
+  },
+  {
+    "name": "width shop 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8535,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 402",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5653,
+    "broken": []
+  },
+  {
+    "name": "width shop 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 8534,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 390",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5626,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 375",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5641,
+    "broken": []
+  },
+  {
+    "name": "width shop-detail 360",
+    "pass": true,
+    "overflow": 0,
+    "bad": [],
+    "height": 5646,
+    "broken": []
+  },
+  {
+    "name": "resize cycle shop 0",
+    "pass": true,
+    "start": {
+      "height": 18960,
+      "triggers": 2,
+      "pins": 1,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 18960,
+      "triggers": 2,
+      "pins": 1,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle shop-detail 0",
+    "pass": true,
+    "start": {
+      "height": 7401,
+      "triggers": 1,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 7401,
+      "triggers": 1,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "resize cycle shop 1",
+    "pass": true,
+    "start": {
+      "height": 18960,
+      "triggers": 2,
+      "pins": 1,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 18960,
+      "triggers": 2,
+      "pins": 1,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection shop",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins shop",
+    "pass": true
+  },
+  {
+    "name": "resize cycle shop-detail 1",
+    "pass": true,
+    "start": {
+      "height": 7401,
+      "triggers": 1,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    },
+    "end": {
+      "height": 7401,
+      "triggers": 1,
+      "pins": 0,
+      "clones": 0,
+      "youngjin": 0,
+      "occasion": 0,
+      "look": 0,
+      "units": 0
+    }
+  },
+  {
+    "name": "console/rejection shop-detail",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "reduced motion pins shop-detail",
+    "pass": true
+  }
+]

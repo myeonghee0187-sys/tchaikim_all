@@ -6,6 +6,7 @@
   if (!video) return;
 
   var motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var videoDesktop = window.matchMedia("(min-width: 1280px)");
   var isInViewport = false;
   var isPageHidden = false;
   var isPlayPending = false;
@@ -15,7 +16,7 @@
   video.pause();
 
   function shouldPlayVideo() {
-    return isInViewport && !isPageHidden && !document.hidden && !motionPreference.matches;
+    return videoDesktop.matches && isInViewport && !isPageHidden && !document.hidden && !motionPreference.matches;
   }
 
   function pauseVideo() {
@@ -95,6 +96,7 @@
   if (!("IntersectionObserver" in window)) return;
 
   video.addEventListener("playing", handlePlaying);
+  videoDesktop.addEventListener("change", updatePlayback);
   video.addEventListener("pause", handlePause);
   video.addEventListener("error", pauseVideo);
   document.addEventListener("visibilitychange", handleVisibilityChange);
@@ -1684,4 +1686,55 @@ heroSwipeQuery.addEventListener("change", syncHeroSwipe);
        크기는 그대로라 지금 어디에 있는지 알아보기 어렵습니다. */
     card.addEventListener("focus", handleSelect);
   });
+})();
+
+/* Compact garment stories keep each image with its own copy. Original nodes and
+   positions are restored before the desktop scroll scene is refreshed. */
+(function initCompactShopStories() {
+  var media=matchMedia("(max-width: 1279px)"), mobile=matchMedia("(max-width: 767px)");
+  var content=document.querySelector(".garment_content"), cleanup=null;
+  if (!content) return;
+  var panels=Array.from(content.querySelectorAll(".garment_panel"));
+  var images=Array.from(content.querySelectorAll(".garment_media_img"));
+  var descriptions=panels.map(function(p){return p.querySelector(".garment_desc");});
+  var originals=descriptions.map(function(p){return p.innerHTML;});
+  var shortCopy=[
+    "A reversible quilted baeja, with velvet side ties to adjust the fit.",
+    "The Joseon robe’s waist seam and pleats, reshaped for everyday wear.",
+    "The traditional raised front line, built into a skirt that holds its fold.",
+    "Slanted panels and a tapered leg, with an easy, open waist."
+  ];
+  var tabletCopy=[
+    "A sleeveless vest worn over the jeogori. Tchai Kim quilts it in nylon, reversible, with velvet side ties to adjust the fit.",
+    "Joseon officials wore this robe with its fitted bodice and finely pleated skirt. Tchai Kim keeps the seam and pleats, reshaping it for daily life.",
+    "A long skirt lifted at the waist for walking and working. Tchai Kim restores the raised front line in a fold that holds without retying.",
+    "Made for sitting cross-legged, with a wide seat and narrow ankle. Tchai Kim keeps the slanted panels and opens the waist for ease."
+  ];
+  var motif=document.querySelector(".motif_reference_desc");
+  var motifOriginal=motif.innerHTML;
+  function syncCopy(){
+    descriptions.forEach(function(e,i){if(media.matches)e.textContent=(mobile.matches?shortCopy:tabletCopy)[i];else e.innerHTML=originals[i];});
+    if(media.matches)motif.textContent=mobile.matches?"Namsadangpae’s freedom in motion, reimagined in contemporary silhouettes.":"Inspired by the travelling Namsadangpae, TCHAIKIM carries their graceful, practical garments into contemporary silhouettes made for freedom in motion.";
+    else motif.innerHTML=motifOriginal;
+  }
+  function mount(){
+    var abort=new AbortController(),records=[],units=[];
+    panels.forEach(function(panel,i){
+      var unit=document.createElement("article");unit.className="garment_story_unit";
+      [images[i],panel].forEach(function(node){var marker=document.createComment("Garment desktop position");node.before(marker);records.push({node:node,marker:marker});unit.append(node);});
+      content.append(unit);units.push(unit);
+    });
+    content.tabIndex=0;content.setAttribute("aria-label","Garment stories. Swipe or use arrow keys.");
+    var pointer=null,wasDragged=false;
+    content.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse"||e.button!==0)return;pointer={x:e.clientX,left:content.scrollLeft};wasDragged=false;content.classList.add("is_dragging");content.setPointerCapture(e.pointerId);},{signal:abort.signal});
+    content.addEventListener("pointermove",function(e){if(!pointer)return;wasDragged=wasDragged||Math.abs(pointer.x-e.clientX)>6;content.scrollLeft=pointer.left+pointer.x-e.clientX;},{signal:abort.signal});
+    function release(){pointer=null;content.classList.remove("is_dragging");}
+    content.addEventListener("pointerup",release,{signal:abort.signal});content.addEventListener("pointercancel",release,{signal:abort.signal});
+    content.addEventListener("dragstart",function(e){e.preventDefault();},{signal:abort.signal});
+    content.addEventListener("click",function(e){if(wasDragged){e.preventDefault();wasDragged=false;}},{capture:true,signal:abort.signal});
+    content.addEventListener("keydown",function(e){if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;e.preventDefault();content.scrollBy({left:(e.key==="ArrowRight"?1:-1)*content.clientWidth*.85,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});},{signal:abort.signal});
+    return function(){abort.abort();records.forEach(function(r){r.marker.replaceWith(r.node);});units.forEach(function(n){n.remove();});content.removeAttribute("tabindex");content.removeAttribute("aria-label");content.classList.remove("is_dragging");content.scrollLeft=0;};
+  }
+  function sync(){if(cleanup){cleanup();cleanup=null;}syncCopy();if(media.matches)cleanup=mount();if(window.ScrollTrigger)requestAnimationFrame(function(){ScrollTrigger.refresh();});}
+  media.addEventListener("change",sync);mobile.addEventListener("change",syncCopy);sync();
 })();

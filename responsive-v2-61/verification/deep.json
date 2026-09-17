@@ -1,0 +1,602 @@
+[
+  {
+    "name": "Color 390",
+    "pass": true
+  },
+  {
+    "name": "Size 390",
+    "pass": true
+  },
+  {
+    "name": "Size guide 390",
+    "pass": true
+  },
+  {
+    "name": "Purchase modal 390",
+    "pass": true
+  },
+  {
+    "name": "Purchase focus return 390",
+    "pass": true
+  },
+  {
+    "name": "Accordion 390 0",
+    "pass": true
+  },
+  {
+    "name": "Accordion 390 1",
+    "pass": true
+  },
+  {
+    "name": "Accordion 390 2",
+    "pass": true
+  },
+  {
+    "name": "Shop category 390",
+    "pass": true
+  },
+  {
+    "name": "Shop search no cards 390",
+    "pass": false
+  },
+  {
+    "name": "Color 1024",
+    "pass": true
+  },
+  {
+    "name": "Size 1024",
+    "pass": true
+  },
+  {
+    "name": "Size guide 1024",
+    "pass": true
+  },
+  {
+    "name": "Purchase modal 1024",
+    "pass": true
+  },
+  {
+    "name": "Purchase focus return 1024",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1024 0",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1024 1",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1024 2",
+    "pass": true
+  },
+  {
+    "name": "Shop category 1024",
+    "pass": true
+  },
+  {
+    "name": "Shop search no cards 1024",
+    "pass": false
+  },
+  {
+    "name": "Color 1920",
+    "pass": true
+  },
+  {
+    "name": "Size 1920",
+    "pass": true
+  },
+  {
+    "name": "Size guide 1920",
+    "pass": true
+  },
+  {
+    "name": "Purchase modal 1920",
+    "pass": true
+  },
+  {
+    "name": "Purchase focus return 1920",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1920 0",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1920 1",
+    "pass": true
+  },
+  {
+    "name": "Accordion 1920 2",
+    "pass": true
+  },
+  {
+    "name": "Shop category 1920",
+    "pass": true
+  },
+  {
+    "name": "Shop search no cards 1920",
+    "pass": false
+  },
+  {
+    "name": "scroll overflow main 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".hero",
+        "overflow": 0
+      },
+      {
+        "section": ".detail",
+        "overflow": 0
+      },
+      {
+        "section": ".brand_collage",
+        "overflow": 0
+      },
+      {
+        "section": ".promo_bespoke_wrap",
+        "overflow": 0
+      },
+      {
+        "section": ".shop",
+        "overflow": 0
+      },
+      {
+        "section": ".collection",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow brand 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".mood_responsive",
+        "overflow": 0
+      },
+      {
+        "section": ".kimyoungjin",
+        "overflow": 0
+      },
+      {
+        "section": ".tchaikim_track",
+        "overflow": 0
+      },
+      {
+        "section": ".atelier",
+        "overflow": 0
+      },
+      {
+        "section": ".heritage",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow bespoke 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".quote",
+        "overflow": 0
+      },
+      {
+        "section": ".process",
+        "overflow": 0
+      },
+      {
+        "section": ".materials",
+        "overflow": 0
+      },
+      {
+        "section": ".begin",
+        "overflow": 0
+      },
+      {
+        "section": ".reservation",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow reservation 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".bespoke_choice_grid",
+        "overflow": 0
+      },
+      {
+        "section": ".reservation_schedule",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow collection 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".showcase",
+        "overflow": 0
+      },
+      {
+        "section": ".archive",
+        "overflow": 0
+      },
+      {
+        "section": ".asworn",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow collection-youngjin 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".showcase",
+        "overflow": 0
+      },
+      {
+        "section": ".archive",
+        "overflow": 0
+      },
+      {
+        "section": ".asworn",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow shop 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".banner",
+        "overflow": 0
+      },
+      {
+        "section": ".garment_story_section",
+        "overflow": 0
+      },
+      {
+        "section": ".motif_detail_section",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow shop-detail 390",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".product_hero",
+        "overflow": 0
+      },
+      {
+        "section": ".narrative_section",
+        "overflow": 0
+      },
+      {
+        "section": ".craft_section",
+        "overflow": 0
+      },
+      {
+        "section": ".look_visual",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow main 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".hero",
+        "overflow": 0
+      },
+      {
+        "section": ".model",
+        "overflow": 0
+      },
+      {
+        "section": ".detail",
+        "overflow": 0
+      },
+      {
+        "section": ".brand_collage",
+        "overflow": 0
+      },
+      {
+        "section": ".promo_bespoke_wrap",
+        "overflow": 0
+      },
+      {
+        "section": ".shop",
+        "overflow": 0
+      },
+      {
+        "section": ".collection",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow brand 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".mood_responsive",
+        "overflow": 0
+      },
+      {
+        "section": ".kimyoungjin",
+        "overflow": 0
+      },
+      {
+        "section": ".tchaikim_track",
+        "overflow": 0
+      },
+      {
+        "section": ".atelier",
+        "overflow": 0
+      },
+      {
+        "section": ".heritage",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow bespoke 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".atelier",
+        "overflow": 0
+      },
+      {
+        "section": ".quote",
+        "overflow": 0
+      },
+      {
+        "section": ".process",
+        "overflow": 0
+      },
+      {
+        "section": ".materials",
+        "overflow": 0
+      },
+      {
+        "section": ".begin",
+        "overflow": 0
+      },
+      {
+        "section": ".reservation",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow reservation 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".bespoke_choice_grid",
+        "overflow": 0
+      },
+      {
+        "section": ".reservation_schedule",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow collection 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".showcase",
+        "overflow": 0
+      },
+      {
+        "section": ".archive",
+        "overflow": 0
+      },
+      {
+        "section": ".asworn",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow collection-youngjin 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".showcase",
+        "overflow": 0
+      },
+      {
+        "section": ".archive",
+        "overflow": 0
+      },
+      {
+        "section": ".asworn",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow shop 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".banner",
+        "overflow": 0
+      },
+      {
+        "section": ".garment_story_section",
+        "overflow": 0
+      },
+      {
+        "section": ".motif_detail_section",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "scroll overflow shop-detail 1024",
+    "pass": true,
+    "measurements": [
+      {
+        "section": ".product_hero",
+        "overflow": 0
+      },
+      {
+        "section": ".narrative_section",
+        "overflow": 0
+      },
+      {
+        "section": ".craft_section",
+        "overflow": 0
+      },
+      {
+        "section": ".look_visual",
+        "overflow": 0
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes main before",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 2760,
+        "end": 7728,
+        "cls": "detail_pin"
+      },
+      {
+        "start": 9965,
+        "end": 20765,
+        "cls": "brand_word_pin is_pinned"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes main after",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 2760,
+        "end": 7728,
+        "cls": "detail_pin"
+      },
+      {
+        "start": 9965,
+        "end": 20765,
+        "cls": "brand_word_pin is_pinned"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes brand before",
+    "pass": true,
+    "scenes": [
+      {
+        "start": -0.001,
+        "end": 10,
+        "cls": "mood mood_desktop"
+      },
+      {
+        "start": 3672,
+        "end": 4212,
+        "cls": "tchaikim"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes brand after",
+    "pass": true,
+    "scenes": [
+      {
+        "start": -0.001,
+        "end": 10,
+        "cls": "mood mood_desktop"
+      },
+      {
+        "start": 3672,
+        "end": 4212,
+        "cls": "tchaikim"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes collection before",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 1080,
+        "end": 2785,
+        "cls": "showcase is_pinned"
+      },
+      {
+        "start": 3785,
+        "end": 4937,
+        "cls": "archive is_hover_ready"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes collection after",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 1080,
+        "end": 2785,
+        "cls": "showcase is_pinned"
+      },
+      {
+        "start": 3785,
+        "end": 4937,
+        "cls": "archive is_hover_ready"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes collection-youngjin before",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 1080,
+        "end": 2785,
+        "cls": "showcase is_pinned"
+      },
+      {
+        "start": 3785,
+        "end": 4937,
+        "cls": "archive is_hover_ready"
+      }
+    ]
+  },
+  {
+    "name": "Desktop scenes collection-youngjin after",
+    "pass": true,
+    "scenes": [
+      {
+        "start": 1080,
+        "end": 2785,
+        "cls": "showcase is_pinned"
+      },
+      {
+        "start": 3785,
+        "end": 4937,
+        "cls": "archive is_hover_ready"
+      }
+    ]
+  }
+]

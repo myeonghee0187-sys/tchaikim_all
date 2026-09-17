@@ -410,3 +410,38 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
+
+/* Mobile occasion popup remains tied to the real select used by form validation
+   and the Done payload. Desktop keeps the original native select untouched. */
+(function initMobileOccasion() {
+  var media=matchMedia("(max-width: 767px)"), select=document.querySelector(".bespoke_field_select"), cleanup=null;
+  if(!select)return;
+  function mount(){
+    var abort=new AbortController(),signal=abort.signal,isOpen=false,index=select.selectedIndex;
+    var label=document.querySelector('label[for="'+select.id+'"]'),originalFor=label.getAttribute("for");
+    var wrap=document.createElement("span");wrap.className="occasion_control";
+    var trigger=document.createElement("button");trigger.type="button";trigger.id="occasion_trigger";trigger.className="occasion_trigger";
+    trigger.setAttribute("role","combobox");trigger.setAttribute("aria-haspopup","listbox");trigger.setAttribute("aria-controls","occasion_options");trigger.setAttribute("aria-expanded","false");
+    var list=document.createElement("span");list.className="occasion_options";list.id="occasion_options";list.setAttribute("role","listbox");list.setAttribute("aria-label","Occasion");list.hidden=true;
+    var buttons=Array.from(select.options).map(function(option,i){var button=document.createElement("button");button.type="button";button.className="occasion_option";button.id="occasion_option_"+i;button.setAttribute("role","option");button.tabIndex=-1;button.textContent=option.textContent;button.addEventListener("pointerdown",function(e){e.preventDefault();},{signal:signal});button.addEventListener("click",function(){index=i;commit();},{signal:signal});list.append(button);return button;});
+    select.after(wrap);wrap.append(trigger,list);select.classList.add("is_enhanced_select");label.setAttribute("for",trigger.id);
+    function render(){trigger.textContent=select.options[select.selectedIndex].textContent;buttons.forEach(function(b,i){b.setAttribute("aria-selected",String(i===select.selectedIndex));b.classList.toggle("is_active",i===index);});if(isOpen)trigger.setAttribute("aria-activedescendant",buttons[index].id);else trigger.removeAttribute("aria-activedescendant");}
+    function close(){isOpen=false;list.hidden=true;trigger.setAttribute("aria-expanded","false");render();}
+    function open(){index=select.selectedIndex;isOpen=true;list.hidden=false;trigger.setAttribute("aria-expanded","true");var r=trigger.getBoundingClientRect(),below=innerHeight-r.bottom-16,above=r.top-16;var isAbove=below<220&&above>below;list.classList.toggle("is_above",isAbove);list.style.maxHeight=Math.max(100,Math.min(270,isAbove?above:below))+"px";render();}
+    function commit(){select.selectedIndex=index;select.dispatchEvent(new Event("change",{bubbles:true}));close();trigger.focus({preventScroll:true});}
+    trigger.addEventListener("click",function(){if(isOpen)close();else open();},{signal:signal});
+    trigger.addEventListener("keydown",function(e){
+      if(e.key==="Escape"){if(isOpen){e.preventDefault();close();}return;}
+      if(e.key==="Tab"){close();return;}
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();if(isOpen)commit();else open();return;}
+      if(["ArrowDown","ArrowUp","Home","End"].includes(e.key)){e.preventDefault();if(!isOpen){open();return;}index=e.key==="Home"?0:e.key==="End"?buttons.length-1:Math.max(0,Math.min(buttons.length-1,index+(e.key==="ArrowDown"?1:-1)));render();buttons[index].scrollIntoView({block:"nearest"});}
+      else if(e.key.length===1){var match=buttons.findIndex(b=>b.textContent.toLowerCase().startsWith(e.key.toLowerCase()));if(match>=0){if(!isOpen)open();index=match;render();}}
+    },{signal:signal});
+    document.addEventListener("pointerdown",function(e){if(!wrap.contains(e.target))close();},{signal:signal});
+    window.addEventListener("resize",close,{signal:signal});window.addEventListener("scroll",close,{passive:true,signal:signal});
+    select.addEventListener("change",render,{signal:signal});render();
+    return function(){abort.abort();wrap.remove();select.classList.remove("is_enhanced_select");label.setAttribute("for",originalFor);};
+  }
+  function sync(){if(cleanup){cleanup();cleanup=null;}if(media.matches)cleanup=mount();}
+  media.addEventListener("change",sync);sync();
+})();

@@ -1,5 +1,51 @@
 # Tchai Kim 현재 상태
 
+## Final Responsive Art Direction V2 — 61 requirements (2026-09-18)
+
+최신 61개 명세가 아래 과거 33개 명세보다 우선합니다. 시작 HEAD는
+`fbed57a53f2d9205e4c790b15b1258cc97e89485` (`최종 QA 3차`), 시작 트리는 clean.
+1280+ Desktop hard lock을 유지하면서 페이지 CSS/JS 16개를 수정했습니다.
+HTML·common·Intro·Done은 수정하지 않았고 commit/push하지 않았습니다.
+
+- Main Tablet: subtitle/promo 보조 이미지/collection 설명 제거, lead–CTA 같은 행,
+  Shop/Bespoke 영상 같은 프레임 크기.
+- Brand: one-image infinite Mood; Mobile KYJ title/3-photo autoplay/synced label;
+  5 tabs 한 줄; Heritage의 155svh crossfade 폐기, 중앙 title/image/button.
+- Bespoke: Tablet quote 좌측 2줄, Materials selected + 하단 3×2.
+  Mobile philosophy/Atelier image 제거, 기존 Atelier 버튼을 hero 영상 아래 중앙.
+- Reservation Mobile: 3 choices 동시 표시. 원래 select와 연결된 정렬 popup,
+  keyboard/focus/selection 및 Desktop native select 복원.
+- Shop: compact horizontal garment chapters, short copy, motif 영상 wrapper 제거.
+- Collection 둘: 마지막 사진 end-snap과 gap 상쇄, horizontal Archive depth.
+  끝에서 사진 둘의 scroll limit가 같아도 keyboard 논리 선택은 01–05를 전부 방문.
+- Detail: Mobile contain gallery, 지정 paragraph 숨김/소재 문단 요약,
+  metadata 2열·닫힌 accordion 예약 높이 제거, compact look stage와 핀/정보 배치.
+
+**매핑 예외:** T-C4/T-C5의 motif_*는 Collection에 없고 Shop에만 있습니다.
+실제 Shop Tablet에 적용했으며 Collection에 새 콘텐츠를 만들지 않았습니다.
+최신 61개 체크리스트·검증·파일 목록은 [REPORT](../responsive-v2-61/REPORT.md),
+Before/After는 [비교 뷰어](../responsive-v2-61/index.html)에 있습니다.
+
+주의: Shop 검색창은 시작 HEAD부터 handler가 없는 UI로 확인됐습니다.
+responsive 회귀가 아니므로 임의 검색 기능을 추가하지 않았습니다.
+Mood hero 원본은 저해상도(약 200–260px)이며 고해상도 교체는 아직 필요합니다.
+실제 iPhone/iPad Safari 미검증; 로컬 Chrome/CDP touch/keyboard로 검증했습니다.
+
+### 이번에 확인한 cascade / QA 주의점
+
+- `.main .process`가 `.process`보다 강하므로 Tablet top padding도 같은 특정도 사용.
+- `.quote_body`의 기존 `max-width:34ch`와 `.motif_reference`의 520px cap을 풀어야
+  두 줄 인용문/넓은 Tablet 좌우 composition이 실제로 적용됩니다.
+- Mobile `<br>`를 숨기면 `heldto`처럼 단어가 붙을 수 있으므로 craft title은
+  Mobile에서 공백 포함 text로 바꾸고 Desktop에서 원래 HTML을 복원합니다.
+- Product gallery/수평 rail의 스크롤바만 숨깁니다. body overflow로 가리지 않습니다.
+- Chrome full-page capture가 Mood native scroll-snap을 이동시키는 경우가 있어
+  Brand 전체 캡처 상단은 같은 실제 viewport screenshot tile로 보정했습니다.
+- Desktop 비교 시 자동 marquee의 시간 차이는 내부 상대 좌표로 정규화합니다.
+- 경계 폭 중간 스크롤 왕복 16/16 PASS. Shop 배너의 `once:true` trigger는
+  스크롤 후 정상 제거되므로 완료 후 상태를 비교합니다(시작 HEAD와 동일).
+- 프로덕션에 새 framework/library/zoom/page-scale을 추가하지 않았습니다.
+
 ## Final Tablet + Mobile Art Direction — 2026-09-17
 
 최신 첨부 통합 명세를 기준으로 Main / Brand / Bespoke main / Reservation /

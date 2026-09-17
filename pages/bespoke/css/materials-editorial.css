@@ -518,7 +518,7 @@
        브라우저가 사진의 남는 높이를 **두 행에 나눠** 넣습니다 — 1279에서
        머리글과 이름 블록 사이가 177px 벌어졌습니다(실측).
        1행은 글 높이(auto), 남는 높이는 2행(1fr)이 전부 흡수합니다. */
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto;
     column-gap: clamp(32px, 4.6vw, 48px);
     row-gap: 28px;
     align-items: start;
@@ -531,7 +531,7 @@
 
   .materials_texture {
     grid-column: 1;
-    grid-row: 1 / span 2;
+    grid-row: 1;
     /* 6차의 58% / 1:1 / margin-left:auto 세 줄을 전부 되돌립니다. */
     width: 100%;
     max-width: none;
@@ -540,22 +540,21 @@
   }
 
   .materials_intro {
-    grid-column: 2;
-    grid-row: 1;
-    max-width: none;
+    display: none;
   }
 
   .materials_selected {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
     align-self: start;
   }
 
-  /* Six quiet samples beneath the image/copy pair, not a second oversized gallery. */
+  /* V2: selected copy occupies the former intro position; six swatches below. */
   .materials_swatches {
     grid-column: 1 / -1;
-    grid-row: 3;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 14px;
+    grid-row: 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
+  .materials_swatch_img { height: clamp(100px,14vw,164px); aspect-ratio: auto; }
 }

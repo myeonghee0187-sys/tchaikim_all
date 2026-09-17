@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Occasion alignment 360 atelier",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 320,
+    "bw": 320,
+    "top": 156.0625,
+    "bottom": 386.0625,
+    "triggerTop": 100.0625,
+    "triggerBottom": 148.0625
+  },
+  {
+    "name": "Occasion keyboard 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Done data 360 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 360 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion alignment 360 phone",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 320,
+    "bw": 320,
+    "top": 156.0625,
+    "bottom": 386.0625,
+    "triggerTop": 100.0625,
+    "triggerBottom": 148.0625
+  },
+  {
+    "name": "Occasion keyboard 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Done data 360 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 360 phone",
+    "pass": true
+  },
+  {
+    "name": "Occasion alignment 390 atelier",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 350,
+    "bw": 350,
+    "top": 156.15625,
+    "bottom": 386.15625,
+    "triggerTop": 100.15625,
+    "triggerBottom": 148.15625
+  },
+  {
+    "name": "Occasion keyboard 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Done data 390 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 390 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion alignment 390 phone",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 350,
+    "bw": 350,
+    "top": 156.15625,
+    "bottom": 386.15625,
+    "triggerTop": 100.15625,
+    "triggerBottom": 148.15625
+  },
+  {
+    "name": "Occasion keyboard 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Done data 390 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 390 phone",
+    "pass": true
+  },
+  {
+    "name": "Occasion alignment 430 atelier",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 390,
+    "bw": 390,
+    "top": 155.9375,
+    "bottom": 385.9375,
+    "triggerTop": 99.9375,
+    "triggerBottom": 147.9375
+  },
+  {
+    "name": "Occasion keyboard 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Done data 430 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 430 atelier",
+    "pass": true
+  },
+  {
+    "name": "Occasion alignment 430 phone",
+    "pass": true,
+    "x": 20,
+    "bx": 20,
+    "w": 390,
+    "bw": 390,
+    "top": 155.9375,
+    "bottom": 385.9375,
+    "triggerTop": 99.9375,
+    "triggerBottom": 147.9375
+  },
+  {
+    "name": "Occasion keyboard 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Occasion focus 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Done data 430 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 430 phone",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "Done data 768 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 768 atelier",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 768 phone",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 768 phone",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 768 phone",
+    "pass": true
+  },
+  {
+    "name": "Done data 768 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 768 phone",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "Done data 1024 atelier",
+    "pass": true,
+    "meetingValue": "atelier",
+    "meeting": "Visit the Atelier",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 1024 atelier",
+    "pass": true
+  },
+  {
+    "name": "Reservation validation 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "Weekend disabled 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "Mode preserves selection 1024 phone",
+    "pass": true
+  },
+  {
+    "name": "Done data 1024 phone",
+    "pass": true,
+    "meetingValue": "phone",
+    "meeting": "Phone Call",
+    "date": "2026-09-18",
+    "dateLabel": "Friday, September 18, 2026",
+    "time": "11:00 AM",
+    "silhouette": "Durumagi",
+    "fabric": "Traditional Silk",
+    "phone": "010-0000-0000"
+  },
+  {
+    "name": "Done mode 1024 phone",
+    "pass": true
+  }
+]

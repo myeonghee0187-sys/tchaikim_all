@@ -1,0 +1,3234 @@
+[
+  {
+    "name": "main",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 31382,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 4,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 29860,
+        "scroll": 22325,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8939,
+        "scroll": 6067,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 8166,
+        "scroll": 5606,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7061,
+        "scroll": 4689,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 7102,
+        "scroll": 4689,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5852,
+        "scroll": 3493,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 7102,
+        "scroll": 4689,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7061,
+        "scroll": 4689,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 8166,
+        "scroll": 5606,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8939,
+        "scroll": 6231,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 29860,
+        "scroll": 6231,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 31382,
+        "scroll": 6257,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "brand",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 12956,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 6,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12836,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5675,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5242,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5139,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 4576,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4187,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 4576,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5139,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5242,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5675,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12836,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 12956,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "main",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 31382,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 4,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 29860,
+        "scroll": 6231,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8939,
+        "scroll": 6101,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 8166,
+        "scroll": 5640,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7061,
+        "scroll": 4724,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 7102,
+        "scroll": 4724,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5852,
+        "scroll": 3528,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 7102,
+        "scroll": 4724,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7061,
+        "scroll": 4724,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 8166,
+        "scroll": 5640,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8939,
+        "scroll": 6266,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 29860,
+        "scroll": 6266,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 31382,
+        "scroll": 6292,
+        "pins": 2,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "brand",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 12956,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 6,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12836,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5675,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5242,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5139,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 4576,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4187,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 4576,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 4,
+          ".youngjin_mobile": 1,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5139,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5242,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5675,
+        "scroll": 0,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 2,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12836,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 12956,
+        "scroll": 0,
+        "pins": 2,
+        "triggers": 6,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "reservation",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 7626,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 0,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 7133,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6324,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5992,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6706,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 6320,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5881,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 6320,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6706,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5992,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6324,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 7133,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 7626,
+        "scroll": 3923,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "reservation",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 7626,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 0,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 7133,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6324,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5992,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6706,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 6320,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5881,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 6320,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 1,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6706,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5992,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6324,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 7133,
+        "scroll": 3549,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 7626,
+        "scroll": 3923,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "bespoke",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 14396,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 4,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12224,
+        "scroll": 8917,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8617,
+        "scroll": 7717,
+        "pins": 0,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 7372,
+        "scroll": 6472,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7324,
+        "scroll": 6424,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5906,
+        "scroll": 5062,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4965,
+        "scroll": 4121,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5906,
+        "scroll": 5031,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7324,
+        "scroll": 5031,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 7372,
+        "scroll": 4771,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8617,
+        "scroll": 5221,
+        "pins": 0,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12224,
+        "scroll": 6166,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 14396,
+        "scroll": 6761,
+        "pins": 0,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "bespoke",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 14396,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 4,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12224,
+        "scroll": 6166,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8617,
+        "scroll": 6166,
+        "pins": 0,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 7372,
+        "scroll": 5095,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7324,
+        "scroll": 5144,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5906,
+        "scroll": 5062,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4965,
+        "scroll": 4121,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5906,
+        "scroll": 5031,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 7324,
+        "scroll": 5031,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 7372,
+        "scroll": 4771,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 8617,
+        "scroll": 5221,
+        "pins": 0,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 12224,
+        "scroll": 6166,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 14396,
+        "scroll": 6761,
+        "pins": 0,
+        "triggers": 4,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "collection",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 8113,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 3,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 3745,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5865,
+        "scroll": 3660,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5448,
+        "scroll": 3393,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5073,
+        "scroll": 3049,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5213,
+        "scroll": 3049,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4356,
+        "scroll": 3049,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5213,
+        "scroll": 3049,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5073,
+        "scroll": 3051,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5448,
+        "scroll": 3395,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5865,
+        "scroll": 3662,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 2518,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 8113,
+        "scroll": 3805,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "collection-youngjin",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 8113,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 3,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 3745,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5961,
+        "scroll": 3756,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5544,
+        "scroll": 3489,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5115,
+        "scroll": 3146,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5167,
+        "scroll": 3146,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4363,
+        "scroll": 3146,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5167,
+        "scroll": 3146,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5115,
+        "scroll": 3148,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5544,
+        "scroll": 3491,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5961,
+        "scroll": 3758,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 2614,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 8113,
+        "scroll": 3949,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "collection",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 8113,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 3,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 2518,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5865,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5448,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5073,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5213,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4356,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5213,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5073,
+        "scroll": 2518,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5448,
+        "scroll": 2861,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5865,
+        "scroll": 3128,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 1985,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 8113,
+        "scroll": 1985,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "collection-youngjin",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 8113,
+      "scroll": 0,
+      "pins": 2,
+      "triggers": 3,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 2614,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5961,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5544,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 2,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5115,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5167,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 4363,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5167,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 5115,
+        "scroll": 2614,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 5544,
+        "scroll": 2958,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 5961,
+        "scroll": 3225,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6175,
+        "scroll": 2082,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 8113,
+        "scroll": 2082,
+        "pins": 2,
+        "triggers": 3,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "shop-detail",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 7401,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 1,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6982,
+        "scroll": 5124,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6681,
+        "scroll": 5124,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 6497,
+        "scroll": 5128,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6862,
+        "scroll": 5611,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5889,
+        "scroll": 5045,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5626,
+        "scroll": 4782,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5889,
+        "scroll": 5014,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6862,
+        "scroll": 5000,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 6497,
+        "scroll": 4518,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6681,
+        "scroll": 5779,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6982,
+        "scroll": 5779,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 7401,
+        "scroll": 5779,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "shop-detail",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 7401,
+      "scroll": 0,
+      "pins": 0,
+      "triggers": 1,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6982,
+        "scroll": 5779,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6681,
+        "scroll": 5593,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 6497,
+        "scroll": 5597,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6862,
+        "scroll": 5962,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5889,
+        "scroll": 5045,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 5626,
+        "scroll": 4782,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 5889,
+        "scroll": 5014,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 6862,
+        "scroll": 5004,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 6497,
+        "scroll": 4566,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 6681,
+        "scroll": 5781,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 1,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 6982,
+        "scroll": 5781,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 7401,
+        "scroll": 5781,
+        "pins": 0,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "shop",
+    "round": 0,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 18960,
+      "scroll": 2564,
+      "pins": 1,
+      "triggers": 1,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 18513,
+        "scroll": 2564,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 9884,
+        "scroll": 2564,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 9085,
+        "scroll": 2513,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 8421,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 8086,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 8576,
+        "scroll": 2346,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 8086,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 8421,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 9085,
+        "scroll": 2513,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 9884,
+        "scroll": 2564,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 18513,
+        "scroll": 2564,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 18960,
+        "scroll": 3311,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "shop",
+    "round": 1,
+    "pass": true,
+    "initial": {
+      "overflow": 0,
+      "height": 18960,
+      "scroll": 2564,
+      "pins": 1,
+      "triggers": 1,
+      "dynamic": {
+        ".is_loop_clone": 0,
+        ".youngjin_mobile": 0,
+        ".occasion_control": 0,
+        ".look_stage": 0,
+        ".garment_story_unit": 0
+      }
+    },
+    "samples": [
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 18513,
+        "scroll": 2564,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 9884,
+        "scroll": 2564,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 9085,
+        "scroll": 2513,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 8421,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 8086,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 390,
+        "overflow": 0,
+        "height": 8576,
+        "scroll": 2346,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 767,
+        "overflow": 0,
+        "height": 8086,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 768,
+        "overflow": 0,
+        "height": 8421,
+        "scroll": 2439,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1024,
+        "overflow": 0,
+        "height": 9085,
+        "scroll": 2513,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1279,
+        "overflow": 0,
+        "height": 9884,
+        "scroll": 2564,
+        "pins": 0,
+        "triggers": 0,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 4
+        }
+      },
+      {
+        "width": 1280,
+        "overflow": 0,
+        "height": 18513,
+        "scroll": 2564,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "height": 18960,
+        "scroll": 3311,
+        "pins": 1,
+        "triggers": 1,
+        "dynamic": {
+          ".is_loop_clone": 0,
+          ".youngjin_mobile": 0,
+          ".occasion_control": 0,
+          ".look_stage": 0,
+          ".garment_story_unit": 0
+        }
+      }
+    ],
+    "errors": []
+  }
+]
