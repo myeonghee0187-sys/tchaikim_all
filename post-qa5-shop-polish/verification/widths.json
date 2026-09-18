@@ -1,0 +1,757 @@
+[
+  {
+    "name": "width shop 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 18960,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 1920",
+    "pass": true,
+    "center": 0,
+    "clones": 0,
+    "bar": "auto",
+    "originals": 8
+  },
+  {
+    "name": "width shop 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 18513,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 1280",
+    "pass": true,
+    "center": 0,
+    "clones": 0,
+    "bar": "auto",
+    "originals": 8
+  },
+  {
+    "name": "width shop 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 10587,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 1279",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 9569,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 1024",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 8594,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 768",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 8503,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 767",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 7305,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 430",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 7159,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 390",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 7114,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 375",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "width shop 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 7064,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Shop scope 360",
+    "pass": true,
+    "center": 0,
+    "clones": 16,
+    "bar": "none",
+    "originals": 8
+  },
+  {
+    "name": "errors shop",
+    "pass": true,
+    "errors": []
+  },
+  {
+    "name": "width shop-detail 1920",
+    "pass": true,
+    "overflow": 0,
+    "height": 7401,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "width shop-detail 1280",
+    "pass": true,
+    "overflow": 0,
+    "height": 6982,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "width shop-detail 1279",
+    "pass": true,
+    "overflow": 0,
+    "height": 6681,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "width shop-detail 1024",
+    "pass": true,
+    "overflow": 0,
+    "height": 6497,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "width shop-detail 768",
+    "pass": true,
+    "overflow": 0,
+    "height": 6862,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "width shop-detail 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 5466,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Detail mobile layout 767",
+    "pass": true,
+    "gallery": [
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      },
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      },
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      },
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      },
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      },
+      {
+        "w": 320,
+        "h": 320,
+        "fit": "contain"
+      }
+    ],
+    "br": 0,
+    "title": "Cheollik Dress No.7",
+    "caption": false,
+    "main": {
+      "x": 449.875,
+      "y": -2717.171875,
+      "w": 293.125,
+      "h": 458.796875,
+      "right": 743,
+      "bottom": -2258.375
+    },
+    "edition": {
+      "x": 273,
+      "y": -2717.171875,
+      "w": 164.875,
+      "h": 200.953125,
+      "right": 437.875,
+      "bottom": -2516.21875
+    },
+    "floral": {
+      "x": 273,
+      "y": -2504.21875,
+      "w": 164.875,
+      "h": 245.84375,
+      "right": 437.875,
+      "bottom": -2258.375
+    },
+    "craft": {
+      "x": 148.5,
+      "y": -2114.375,
+      "w": 274.796875,
+      "h": 292,
+      "right": 423.296875,
+      "bottom": -1822.375
+    },
+    "thread": {
+      "x": 435.296875,
+      "y": -2114.375,
+      "w": 183.203125,
+      "h": 160,
+      "right": 618.5,
+      "bottom": -1954.375
+    },
+    "weave": {
+      "x": 435.296875,
+      "y": -1942.375,
+      "w": 183.203125,
+      "h": 120,
+      "right": 618.5,
+      "bottom": -1822.375
+    },
+    "borders": [
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ],
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ]
+    ]
+  },
+  {
+    "name": "width shop-detail 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 5041,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Detail mobile layout 430",
+    "pass": true,
+    "gallery": [
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      },
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      },
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      },
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      },
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      },
+      {
+        "w": 304.1875,
+        "h": 304.1875,
+        "fit": "contain"
+      }
+    ],
+    "br": 0,
+    "title": "Cheollik Dress No.7",
+    "caption": false,
+    "main": {
+      "x": 169.1875,
+      "y": -2273.234375,
+      "w": 236.8125,
+      "h": 370.65625,
+      "right": 406,
+      "bottom": -1902.578125
+    },
+    "edition": {
+      "x": 24,
+      "y": -2273.234375,
+      "w": 133.1875,
+      "h": 178.328125,
+      "right": 157.1875,
+      "bottom": -2094.90625
+    },
+    "floral": {
+      "x": 24,
+      "y": -2082.90625,
+      "w": 133.1875,
+      "h": 180.328125,
+      "right": 157.1875,
+      "bottom": -1902.578125
+    },
+    "craft": {
+      "x": 24,
+      "y": -1758.578125,
+      "w": 222,
+      "h": 261,
+      "right": 246,
+      "bottom": -1497.578125
+    },
+    "thread": {
+      "x": 258,
+      "y": -1758.578125,
+      "w": 148,
+      "h": 129,
+      "right": 406,
+      "bottom": -1629.578125
+    },
+    "weave": {
+      "x": 258,
+      "y": -1617.578125,
+      "w": 148,
+      "h": 120,
+      "right": 406,
+      "bottom": -1497.578125
+    },
+    "borders": [
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ],
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ]
+    ]
+  },
+  {
+    "name": "width shop-detail 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5003,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Detail mobile layout 390",
+    "pass": true,
+    "gallery": [
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      },
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      },
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      },
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      },
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      },
+      {
+        "w": 273,
+        "h": 273,
+        "fit": "contain"
+      }
+    ],
+    "br": 0,
+    "title": "Cheollik Dress No.7",
+    "caption": false,
+    "main": {
+      "x": 154.796875,
+      "y": -2266.421875,
+      "w": 211.203125,
+      "h": 330.578125,
+      "right": 366,
+      "bottom": -1935.84375
+    },
+    "edition": {
+      "x": 24,
+      "y": -2266.421875,
+      "w": 118.796875,
+      "h": 171.9375,
+      "right": 142.796875,
+      "bottom": -2094.484375
+    },
+    "floral": {
+      "x": 24,
+      "y": -2082.484375,
+      "w": 118.796875,
+      "h": 146.640625,
+      "right": 142.796875,
+      "bottom": -1935.84375
+    },
+    "craft": {
+      "x": 24,
+      "y": -1791.84375,
+      "w": 198,
+      "h": 249,
+      "right": 222,
+      "bottom": -1542.84375
+    },
+    "thread": {
+      "x": 234,
+      "y": -1791.84375,
+      "w": 132,
+      "h": 117,
+      "right": 366,
+      "bottom": -1674.84375
+    },
+    "weave": {
+      "x": 234,
+      "y": -1662.84375,
+      "w": 132,
+      "h": 120,
+      "right": 366,
+      "bottom": -1542.84375
+    },
+    "borders": [
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ],
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ]
+    ]
+  },
+  {
+    "name": "width shop-detail 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 5004,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Detail mobile layout 375",
+    "pass": true,
+    "gallery": [
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      },
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      },
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      },
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      },
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      },
+      {
+        "w": 261.296875,
+        "h": 261.296875,
+        "fit": "contain"
+      }
+    ],
+    "br": 0,
+    "title": "Cheollik Dress No.7",
+    "caption": false,
+    "main": {
+      "x": 149.390625,
+      "y": -2250.375,
+      "w": 201.609375,
+      "h": 315.5625,
+      "right": 351,
+      "bottom": -1934.8125
+    },
+    "edition": {
+      "x": 24,
+      "y": -2250.375,
+      "w": 113.390625,
+      "h": 166.453125,
+      "right": 137.390625,
+      "bottom": -2083.921875
+    },
+    "floral": {
+      "x": 24,
+      "y": -2071.921875,
+      "w": 113.390625,
+      "h": 137.109375,
+      "right": 137.390625,
+      "bottom": -1934.8125
+    },
+    "craft": {
+      "x": 24,
+      "y": -1790.8125,
+      "w": 189,
+      "h": 244.5,
+      "right": 213,
+      "bottom": -1546.3125
+    },
+    "thread": {
+      "x": 225,
+      "y": -1790.8125,
+      "w": 126,
+      "h": 112.5,
+      "right": 351,
+      "bottom": -1678.3125
+    },
+    "weave": {
+      "x": 225,
+      "y": -1666.3125,
+      "w": 126,
+      "h": 120,
+      "right": 351,
+      "bottom": -1546.3125
+    },
+    "borders": [
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ],
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ]
+    ]
+  },
+  {
+    "name": "width shop-detail 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 4976,
+    "broken": [],
+    "sections": []
+  },
+  {
+    "name": "Detail mobile layout 360",
+    "pass": true,
+    "gallery": [
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      },
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      },
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      },
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      },
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      },
+      {
+        "w": 249.59375,
+        "h": 249.59375,
+        "fit": "contain"
+      }
+    ],
+    "br": 0,
+    "title": "Cheollik Dress No.7",
+    "caption": false,
+    "main": {
+      "x": 144,
+      "y": -2213.078125,
+      "w": 192,
+      "h": 300.515625,
+      "right": 336,
+      "bottom": -1912.5625
+    },
+    "edition": {
+      "x": 24,
+      "y": -2213.078125,
+      "w": 108,
+      "h": 160.953125,
+      "right": 132,
+      "bottom": -2052.125
+    },
+    "floral": {
+      "x": 24,
+      "y": -2040.125,
+      "w": 108,
+      "h": 127.5625,
+      "right": 132,
+      "bottom": -1912.5625
+    },
+    "craft": {
+      "x": 24,
+      "y": -1768.5625,
+      "w": 180,
+      "h": 240,
+      "right": 204,
+      "bottom": -1528.5625
+    },
+    "thread": {
+      "x": 216,
+      "y": -1768.5625,
+      "w": 120,
+      "h": 108,
+      "right": 336,
+      "bottom": -1660.5625
+    },
+    "weave": {
+      "x": 216,
+      "y": -1648.5625,
+      "w": 120,
+      "h": 120,
+      "right": 336,
+      "bottom": -1528.5625
+    },
+    "borders": [
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ],
+      [
+        "0px",
+        "none",
+        "rgb(255, 253, 249)",
+        "0px"
+      ]
+    ]
+  },
+  {
+    "name": "errors shop-detail",
+    "pass": true,
+    "errors": []
+  }
+]

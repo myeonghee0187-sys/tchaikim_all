@@ -2104,7 +2104,7 @@
   .motif_product_strip {
     width: 100%;
     max-width: none;
-    /* 선택된 카드(320) + 스크롤바 자리(20). 높이를 auto로 두면 선택이
+    /* 선택된 카드(320) + 아래 여백(20). 높이를 auto로 두면 선택이
        바뀔 때마다 가장 큰 카드가 달라져 스트립 높이가 출렁입니다
        (기본 규칙의 주석과 같은 이유). */
     height: 340px;
@@ -2146,6 +2146,11 @@
    (선택 사항: 그리드는 "1280에서 2열", 재킹은 "1280 미만에서 해제")
    --------------------------------------------------------- */
 @media (max-width: 1279px) {
+  .motif_product_strip { scrollbar-width: none; }
+  .motif_product_strip::-webkit-scrollbar { display: none; }
+  .motif_product_strip.is_circular { scroll-snap-type: none; scroll-behavior: auto; overflow-anchor: none; cursor: grab; }
+  .motif_product_strip.is_dragging { cursor: grabbing; user-select: none; }
+  .motif_product_strip.is_circular .motif_product_card { transition: none; }
 
   .garment_story_scroll {
     --garment_story_section_gap: 80px;
@@ -2595,7 +2600,7 @@
   :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tags { gap: 8px; flex-wrap: wrap; align-items: center; }
   :is(.new_arrivals_grid, .shop_grid) .card_product .card_product_tag { min-height: 36px; padding: 6px 14px; font-size: 12px; line-height: 1.2; letter-spacing: .04em; border-radius: 24px; }
   .shop_list_wrap { gap: 96px; align-items: stretch; }
-  .shop_more_button { align-self: flex-start; }
+  .shop_more_button { align-self: center; margin-inline: auto; }
 }
 @media (max-width: 767px) {
   .new_arrivals_grid, .shop_grid { gap: 56px 20px; }

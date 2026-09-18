@@ -1665,8 +1665,12 @@ heroSwipeQuery.addEventListener("change", syncHeroSwipe);
   }
 
   var cards = Array.prototype.slice.call(strip.querySelectorAll(".motif_product_card"));
+  var compactMedia = window.matchMedia("(max-width: 1279px)");
+  var cleanupLoop = null;
 
   function selectCard(card) {
+    // Compact manual scrolling keeps the three image sizes stable while moving.
+    if (compactMedia.matches) return;
     if (card.classList.contains("is_selected")) {
       return;
     }
@@ -1686,6 +1690,132 @@ heroSwipeQuery.addEventListener("change", syncHeroSwipe);
        크기는 그대로라 지금 어디에 있는지 알아보기 어렵습니다. */
     card.addEventListener("focus", handleSelect);
   });
+
+  function initCompactLoop() {
+    var controller = new AbortController();
+    var clones = [];
+    var cycleWidth = 0;
+    var stripWidth = 0;
+    var pointerId = null;
+    var lastX = 0;
+    var dragDistance = 0;
+    var didDrag = false;
+    var previousTabIndex = strip.getAttribute("tabindex");
+    strip.classList.add("is_circular");
+    strip.tabIndex = 0;
+
+    // One complete copy on either side. Original links alone remain in the
+    // accessibility/tab order; copies retain their real href for pointer users.
+    function makeCopy(card, index) {
+      var copy = card.cloneNode(true);
+      copy.removeAttribute("id");
+      copy.setAttribute("data-motif-copy", String(index));
+      copy.setAttribute("aria-hidden", "true");
+      copy.tabIndex = -1;
+      copy.querySelectorAll("[id]").forEach(function (node) { node.removeAttribute("id"); });
+      copy.querySelectorAll("a,button,input,select,textarea,[tabindex]").forEach(function (node) { node.tabIndex = -1; });
+      clones.push(copy);
+      return copy;
+    }
+    var before = document.createDocumentFragment();
+    var after = document.createDocumentFragment();
+    cards.forEach(function (card, index) { before.appendChild(makeCopy(card, index)); after.appendChild(makeCopy(card, index)); });
+    strip.prepend(before);
+    strip.append(after);
+
+    function normalizePosition() {
+      if (!cycleWidth) return;
+      var x = strip.scrollLeft;
+      if (x < cycleWidth || x >= cycleWidth * 2) {
+        strip.scrollLeft = cycleWidth + ((x - cycleWidth) % cycleWidth + cycleWidth) % cycleWidth;
+      }
+    }
+    function measure() {
+      var width = strip.clientWidth;
+      if (width === stripWidth && cycleWidth) return;
+      var progress = cycleWidth ? (strip.scrollLeft - cycleWidth) / cycleWidth : 0;
+      stripWidth = width;
+      cycleWidth = cards[0].getBoundingClientRect().left - strip.firstElementChild.getBoundingClientRect().left;
+      strip.scrollLeft = cycleWidth * (1 + progress);
+      normalizePosition();
+    }
+    function move(distance) { strip.scrollLeft += distance; normalizePosition(); }
+    function handlePointerDown(event) {
+      didDrag = false;
+      if (event.pointerType !== "mouse" || event.button !== 0) return;
+      event.preventDefault();
+      pointerId = event.pointerId;
+      lastX = event.clientX;
+      dragDistance = 0;
+    }
+    function handlePointerMove(event) {
+      if (pointerId !== event.pointerId) return;
+      var delta = lastX - event.clientX;
+      lastX = event.clientX;
+      dragDistance += Math.abs(delta);
+      if (dragDistance > 6) {
+        didDrag = true;
+        strip.setPointerCapture(pointerId);
+        strip.classList.add("is_dragging");
+        move(delta);
+      }
+    }
+    function handlePointerEnd() {
+      if (pointerId !== null && strip.hasPointerCapture(pointerId)) strip.releasePointerCapture(pointerId);
+      pointerId = null;
+      strip.classList.remove("is_dragging");
+    }
+    function handleClick(event) {
+      if (didDrag) { event.preventDefault(); event.stopPropagation(); }
+    }
+    function handleWheel(event) {
+      var delta = event.shiftKey && !event.deltaX ? event.deltaY : event.deltaX;
+      if (!delta || (!event.shiftKey && Math.abs(delta) <= Math.abs(event.deltaY))) return;
+      event.preventDefault();
+      move(delta * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? strip.clientWidth : 1));
+    }
+    function handleKey(event) {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      move((event.key === "ArrowRight" ? 1 : -1) * (cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(strip).gap)));
+    }
+    function handleFocus(event) {
+      var copy = event.target.closest("[data-motif-copy]");
+      if (copy) cards[Number(copy.getAttribute("data-motif-copy"))].focus({ preventScroll: true });
+    }
+    function listen(target, type, callback, options) {
+      target.addEventListener(type, callback, Object.assign({ signal: controller.signal }, options));
+    }
+    listen(strip, "scroll", normalizePosition, { passive: true });
+    listen(strip, "wheel", handleWheel, { passive: false });
+    listen(strip, "pointerdown", handlePointerDown);
+    listen(strip, "pointermove", handlePointerMove);
+    listen(window, "pointerup", handlePointerEnd);
+    listen(window, "pointercancel", handlePointerEnd);
+    listen(strip, "lostpointercapture", handlePointerEnd);
+    listen(strip, "click", handleClick, { capture: true });
+    listen(strip, "keydown", handleKey);
+    listen(strip, "focusin", handleFocus);
+    var observer = new ResizeObserver(measure);
+    observer.observe(strip);
+    measure();
+    return function () {
+      handlePointerEnd();
+      controller.abort();
+      observer.disconnect();
+      clones.forEach(function (copy) { copy.remove(); });
+      strip.classList.remove("is_circular", "is_dragging");
+      if (previousTabIndex === null) strip.removeAttribute("tabindex");
+      else strip.setAttribute("tabindex", previousTabIndex);
+      strip.scrollLeft = 0;
+    };
+  }
+  function syncLoop() {
+    if (compactMedia.matches && !cleanupLoop) cleanupLoop = initCompactLoop();
+    else if (!compactMedia.matches && cleanupLoop) { cleanupLoop(); cleanupLoop = null; }
+  }
+  compactMedia.addEventListener("change", syncLoop);
+  syncLoop();
 })();
 
 /* Compact garment stories keep each image with its own copy. Original nodes and

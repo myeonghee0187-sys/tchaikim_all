@@ -1,5 +1,28 @@
 # Tchai Kim 현재 상태
 
+## Post-QA5 — Shop / Shop Detail 마지막 12개 수정 (2026-09-19)
+
+시작 HEAD `e5532468d19993394af752a49b297cf37a09d6a6` (`최종 QA 5차`), clean tree.
+이 작업은 이전 전체 responsive/Brand 명세 재실행이 아닙니다. commit/push 없음.
+
+- Production 수정은 Shop/Detail CSS·JS 4개뿐. Shop 두 영역 <=1279,
+  Detail 지정 영역 <=767만 변경. common/HTML/자산/다른 페이지 무변경.
+- Shop: View More actual box 중앙, 기존 motif controller 안에서 native horizontal
+  scroll + 앞뒤 cycle 복제/정규화. manual only, Desktop hover 유지.
+  compact clone 16개는 aria-hidden/tabindex -1, Desktop exit에서 완전히 제거.
+- Detail Mobile: 6개 square contain frame, product title 공백 포함 br 해제,
+  짧은 Joseon/Cheollik/Namsadangpae 문단. narrative left edition+floral / right main,
+  craft left main / right thread+weave. 넓은 Mobile narrative는 470px cap.
+- 1024 craft 두 사진의 실제 CSS border는 **0px none, rgb(255,253,249), radius 0**.
+  밝은 border처럼 보이는 부분은 원본 PNG 자체이며 임의 테두리를 추가하지 않음.
+- 1920/1280 Desktop과 Detail 1279/1024/768 HEAD geometry/trigger/copy 동일.
+  10폭 실제 overflow 0, error/broken/rejection 0, 3회 resize 왕복 resource 누적 0.
+  390 Detail 높이 5626→5003px. 두 페이지 1920/1024 높이는 원래대로 유지.
+
+12개 acceptance/측정/한계: [보고서](../post-qa5-shop-polish/REPORT.md).
+Before/After: [비교 뷰어](../post-qa5-shop-polish/index.html).
+실기기 Safari 관성 입력과 원본 사진 crop의 최종 사람 검수는 남아 있습니다.
+
 ## Post-QA4 Narrow-scope Final Polish (2026-09-18)
 
 최신 작업은 이전 61개 명세 재실행이 아닙니다. 시작 HEAD

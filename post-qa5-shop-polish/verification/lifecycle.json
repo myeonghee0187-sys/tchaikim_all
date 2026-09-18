@@ -1,0 +1,890 @@
+[
+  {
+    "name": "shop",
+    "pass": true,
+    "countsPass": true,
+    "compactPass": true,
+    "statesPass": true,
+    "samples": [
+      {
+        "round": 0,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 390,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 390,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 390,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 203,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1024,
+        "clones": 16,
+        "strip": "motif_product_strip is_circular",
+        "tabindex": "0",
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 199,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1920,
+        "clones": 0,
+        "strip": "motif_product_strip",
+        "tabindex": null,
+        "triggers": 2,
+        "pins": 1,
+        "gallery": 0,
+        "stage": 0,
+        "steady": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 189,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 1,
+          "IntersectionObserver": 3,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "shop-detail",
+    "pass": true,
+    "countsPass": true,
+    "compactPass": true,
+    "statesPass": true,
+    "samples": [
+      {
+        "round": 0,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 390,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik Dress No.7",
+        "paragraph": "TCHAI KIM reinterprets six centuries of Joseon ceremony through the Cheollik.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 0,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 390,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik Dress No.7",
+        "paragraph": "TCHAI KIM reinterprets six centuries of Joseon ceremony through the Cheollik.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 1,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 3,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 390,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik Dress No.7",
+        "paragraph": "TCHAI KIM reinterprets six centuries of Joseon ceremony through the Cheollik.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1024,
+        "clones": 0,
+        "triggers": 0,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 1,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      },
+      {
+        "round": 2,
+        "w": 1920,
+        "clones": 0,
+        "triggers": 1,
+        "pins": 0,
+        "gallery": 6,
+        "stage": 0,
+        "title": "Cheollik<br>Dress No.7",
+        "paragraph": "In the court registers of Joseon, the Cheollik was never merely garment — it was grammar. A language of rank, movement, and belonging worn across six centuries of Korean ceremony. TCHAI KIM returns to this primary vocabulary not to quote history, but to speak it again in a new register.",
+        "steady": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        },
+        "peak": {
+          "listeners": 79,
+          "timers": 0,
+          "intervals": 1,
+          "raf": 2,
+          "ResizeObserver": 2,
+          "IntersectionObserver": 0,
+          "MutationObserver": 0
+        }
+      }
+    ]
+  }
+]

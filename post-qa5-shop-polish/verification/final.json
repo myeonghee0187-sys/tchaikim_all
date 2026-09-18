@@ -1,0 +1,1921 @@
+[
+  {
+    "name": "boundary fresh equivalence shop 767",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 936.40625,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 392.625,
+          "y": 936.40625
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1329.03125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1369.03125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1622.21875,
+          "y": 2107.5625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2772.984375,
+          "y": 3729.78125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1117.875,
+          "y": 6502.765625
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 936.40625,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 392.625,
+          "y": 936.40625
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1329.03125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1369.03125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1622.21875,
+          "y": 2107.5625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2772.984375,
+          "y": 3729.78125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1117.875,
+          "y": 6502.765625
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 768",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1045.1875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1045.1875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1639.8125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1679.8125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1645.21875,
+          "y": 2313.8125
+        },
+        {
+          "cls": "shop_section",
+          "h": 2906.609375,
+          "y": 3959.03125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1063.5,
+          "y": 6865.640625
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1045.1875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1045.1875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1639.8125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1679.8125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1645.21875,
+          "y": 2313.8125
+        },
+        {
+          "cls": "shop_section",
+          "h": 2906.609375,
+          "y": 3959.03125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1063.5,
+          "y": 6865.640625
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 767",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 936.40625,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 392.625,
+          "y": 936.40625
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1329.03125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1369.03125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1622.21875,
+          "y": 2107.5625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2772.984375,
+          "y": 3729.78125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1117.875,
+          "y": 6502.765625
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 936.40625,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 392.625,
+          "y": 936.40625
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1329.03125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1369.03125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1622.21875,
+          "y": 2107.5625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2772.984375,
+          "y": 3729.78125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1117.875,
+          "y": 6502.765625
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 768",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1045.1875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1045.1875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1639.8125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1679.8125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1645.21875,
+          "y": 2313.8125
+        },
+        {
+          "cls": "shop_section",
+          "h": 2906.609375,
+          "y": 3959.03125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1063.5,
+          "y": 6865.640625
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1045.1875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1045.1875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1639.8125
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1679.8125
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1645.21875,
+          "y": 2313.8125
+        },
+        {
+          "cls": "shop_section",
+          "h": 2906.609375,
+          "y": 3959.03125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1063.5,
+          "y": 6865.640625
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 1279",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1169.796875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1169.796875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1764.421875
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1804.421875
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 2283.96875,
+          "y": 2438.421875
+        },
+        {
+          "cls": "shop_section",
+          "h": 3864.734375,
+          "y": 4722.390625
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1267.90625,
+          "y": 8587.125
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1169.796875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1169.796875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1764.421875
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1804.421875
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 2283.96875,
+          "y": 2438.421875
+        },
+        {
+          "cls": "shop_section",
+          "h": 3864.734375,
+          "y": 4722.390625
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1267.90625,
+          "y": 8587.125
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 1280",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1147.96875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1147.96875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 6174,
+          "y": 1742.59375
+        },
+        {
+          "cls": "garment_story_section is_drag_ready",
+          "h": 900,
+          "y": 1904.59375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1631.59375,
+          "y": 7916.59375
+        },
+        {
+          "cls": "shop_section",
+          "h": 3817.265625,
+          "y": 9548.1875
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 2896,
+          "y": 13365.453125
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1147.96875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1147.96875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 6174,
+          "y": 1742.59375
+        },
+        {
+          "cls": "garment_story_section is_drag_ready",
+          "h": 900,
+          "y": 1904.59375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1631.59375,
+          "y": 7916.59375
+        },
+        {
+          "cls": "shop_section",
+          "h": 3817.265625,
+          "y": 9548.1875
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 2896,
+          "y": 13365.453125
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 1279",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1169.796875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1169.796875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1764.421875
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1804.421875
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 2283.96875,
+          "y": 2438.421875
+        },
+        {
+          "cls": "shop_section",
+          "h": 3864.734375,
+          "y": 4722.390625
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1267.90625,
+          "y": 8587.125
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1169.796875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1169.796875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 674,
+          "y": 1764.421875
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 594,
+          "y": 1804.421875
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 2283.96875,
+          "y": 2438.421875
+        },
+        {
+          "cls": "shop_section",
+          "h": 3864.734375,
+          "y": 4722.390625
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1267.90625,
+          "y": 8587.125
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 1280",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1147.96875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1147.96875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 6174,
+          "y": 1742.59375
+        },
+        {
+          "cls": "garment_story_section is_drag_ready",
+          "h": 900,
+          "y": 1904.59375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1631.59375,
+          "y": 7916.59375
+        },
+        {
+          "cls": "shop_section",
+          "h": 3817.265625,
+          "y": 9548.1875
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 2896,
+          "y": 13365.453125
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 1147.96875,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 594.625,
+          "y": 1147.96875
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 6174,
+          "y": 1742.59375
+        },
+        {
+          "cls": "garment_story_section is_drag_ready",
+          "h": 900,
+          "y": 1904.59375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1631.59375,
+          "y": 7916.59375
+        },
+        {
+          "cls": "shop_section",
+          "h": 3817.265625,
+          "y": 9548.1875
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 2896,
+          "y": 13365.453125
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop 390",
+    "pass": true,
+    "current": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 806.359375,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 429.015625,
+          "y": 806.359375
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1235.375
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1275.375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1150.90625,
+          "y": 2013.90625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2066.015625,
+          "y": 3164.8125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1075.875,
+          "y": 5230.828125
+        }
+      ],
+      "detail": null
+    },
+    "expected": {
+      "button": 1,
+      "copies": 16,
+      "main": [
+        {
+          "cls": "hero_section",
+          "h": 806.359375,
+          "y": 0
+        },
+        {
+          "cls": "banner is_revealing",
+          "h": 429.015625,
+          "y": 806.359375
+        },
+        {
+          "cls": "garment_story_scroll",
+          "h": 778.53125,
+          "y": 1235.375
+        },
+        {
+          "cls": "garment_story_section",
+          "h": 698.53125,
+          "y": 1275.375
+        },
+        {
+          "cls": "new_arrivals_section",
+          "h": 1150.90625,
+          "y": 2013.90625
+        },
+        {
+          "cls": "shop_section",
+          "h": 2066.015625,
+          "y": 3164.8125
+        },
+        {
+          "cls": "motif_detail_section",
+          "h": 1075.875,
+          "y": 5230.828125
+        }
+      ],
+      "detail": null
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 767",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 1016.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1283,
+          "y": 1152.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1107.671875,
+          "y": 2435.625
+        },
+        {
+          "cls": "look_section",
+          "h": 1039.765625,
+          "y": 3543.296875
+        }
+      ],
+      "detail": [
+        {
+          "w": 560,
+          "h": 45.109375,
+          "x": 103.5,
+          "y": 454.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 470,
+          "h": 458.796875,
+          "x": 273,
+          "y": 1904.828125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 329,
+          "x": 148.5,
+          "y": 2507.625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 1016.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1283,
+          "y": 1152.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1107.671875,
+          "y": 2435.625
+        },
+        {
+          "cls": "look_section",
+          "h": 1039.765625,
+          "y": 3543.296875
+        }
+      ],
+      "detail": [
+        {
+          "w": 560,
+          "h": 45.109375,
+          "x": 103.5,
+          "y": 454.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 470,
+          "h": 458.796875,
+          "x": 273,
+          "y": 1904.828125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 329,
+          "x": 148.5,
+          "y": 2507.625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 768",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 2093,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1816.0625,
+          "y": 2165
+        },
+        {
+          "cls": "craft_section",
+          "h": 1408.734375,
+          "y": 3981.0625
+        },
+        {
+          "cls": "look_section",
+          "h": 807.390625,
+          "y": 5389.796875
+        }
+      ],
+      "detail": [
+        {
+          "w": 360,
+          "h": 90.21875,
+          "x": 368,
+          "y": 110.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 248,
+          "h": 1393.984375,
+          "x": 408,
+          "y": 2427.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 312,
+          "h": 606.53125,
+          "x": 48,
+          "y": 4121.0625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 2093,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1816.0625,
+          "y": 2165
+        },
+        {
+          "cls": "craft_section",
+          "h": 1408.734375,
+          "y": 3981.0625
+        },
+        {
+          "cls": "look_section",
+          "h": 807.390625,
+          "y": 5389.796875
+        }
+      ],
+      "detail": [
+        {
+          "w": 360,
+          "h": 90.21875,
+          "x": 368,
+          "y": 110.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 248,
+          "h": 1393.984375,
+          "x": 408,
+          "y": 2427.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 312,
+          "h": 606.53125,
+          "x": 48,
+          "y": 4121.0625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 767",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 1016.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1283,
+          "y": 1152.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1107.671875,
+          "y": 2435.625
+        },
+        {
+          "cls": "look_section",
+          "h": 1039.765625,
+          "y": 3543.296875
+        }
+      ],
+      "detail": [
+        {
+          "w": 560,
+          "h": 45.109375,
+          "x": 103.5,
+          "y": 454.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 470,
+          "h": 458.796875,
+          "x": 273,
+          "y": 1904.828125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 329,
+          "x": 148.5,
+          "y": 2507.625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 1016.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1283,
+          "y": 1152.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1107.671875,
+          "y": 2435.625
+        },
+        {
+          "cls": "look_section",
+          "h": 1039.765625,
+          "y": 3543.296875
+        }
+      ],
+      "detail": [
+        {
+          "w": 560,
+          "h": 45.109375,
+          "x": 103.5,
+          "y": 454.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 470,
+          "h": 458.796875,
+          "x": 273,
+          "y": 1904.828125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 329,
+          "x": 148.5,
+          "y": 2507.625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 768",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 2093,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1816.0625,
+          "y": 2165
+        },
+        {
+          "cls": "craft_section",
+          "h": 1408.734375,
+          "y": 3981.0625
+        },
+        {
+          "cls": "look_section",
+          "h": 807.390625,
+          "y": 5389.796875
+        }
+      ],
+      "detail": [
+        {
+          "w": 360,
+          "h": 90.21875,
+          "x": 368,
+          "y": 110.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 248,
+          "h": 1393.984375,
+          "x": 408,
+          "y": 2427.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 312,
+          "h": 606.53125,
+          "x": 48,
+          "y": 4121.0625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 2093,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1816.0625,
+          "y": 2165
+        },
+        {
+          "cls": "craft_section",
+          "h": 1408.734375,
+          "y": 3981.0625
+        },
+        {
+          "cls": "look_section",
+          "h": 807.390625,
+          "y": 5389.796875
+        }
+      ],
+      "detail": [
+        {
+          "w": 360,
+          "h": 90.21875,
+          "x": 368,
+          "y": 110.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 248,
+          "h": 1393.984375,
+          "x": 408,
+          "y": 2427.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 312,
+          "h": 606.53125,
+          "x": 48,
+          "y": 4121.0625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 1279",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2161
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3643.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1046.921875,
+          "y": 4902.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 919.5,
+          "y": 170.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 699.5,
+          "y": 2423.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 119.5,
+          "y": 3783.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2161
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3643.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1046.921875,
+          "y": 4902.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 919.5,
+          "y": 170.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 699.5,
+          "y": 2423.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 119.5,
+          "y": 3783.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 1280",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2153
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3635.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1069.890625,
+          "y": 4894.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 920,
+          "y": 159.796875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 700,
+          "y": 2415.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 120,
+          "y": 3775.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2153
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3635.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1069.890625,
+          "y": 4894.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 920,
+          "y": 159.796875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 700,
+          "y": 2415.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 120,
+          "y": 3775.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 1279",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2161
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3643.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1046.921875,
+          "y": 4902.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 919.5,
+          "y": 170.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 699.5,
+          "y": 2423.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 119.5,
+          "y": 3783.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 72
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2161
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3643.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1046.921875,
+          "y": 4902.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 919.5,
+          "y": 170.546875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 699.5,
+          "y": 2423.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 119.5,
+          "y": 3783.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 1280",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2153
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3635.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1069.890625,
+          "y": 4894.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 920,
+          "y": 159.796875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 700,
+          "y": 2415.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 120,
+          "y": 3775.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero is_gallery_scroll_ready",
+          "h": 2089,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1482.078125,
+          "y": 2153
+        },
+        {
+          "cls": "craft_section",
+          "h": 1259.421875,
+          "y": 3635.078125
+        },
+        {
+          "cls": "look_section",
+          "h": 1069.890625,
+          "y": 4894.5
+        }
+      ],
+      "detail": [
+        {
+          "w": 264,
+          "h": 90.21875,
+          "x": 920,
+          "y": 159.796875,
+          "html": "Cheollik<br>Dress No.7"
+        },
+        {
+          "w": 460,
+          "h": 1060,
+          "x": 700,
+          "y": 2415.078125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 470,
+          "h": 689,
+          "x": 120,
+          "y": 3775.078125,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "boundary fresh equivalence shop-detail 390",
+    "pass": true,
+    "current": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 969.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1189.53125,
+          "y": 1105.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1064.671875,
+          "y": 2295.15625
+        },
+        {
+          "cls": "look_section",
+          "h": 790.9375,
+          "y": 3359.828125
+        }
+      ],
+      "detail": [
+        {
+          "w": 342,
+          "h": 45.109375,
+          "x": 24,
+          "y": 407.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 342,
+          "h": 330.578125,
+          "x": 24,
+          "y": 1892.578125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 342,
+          "h": 286,
+          "x": 24,
+          "y": 2367.15625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    },
+    "expected": {
+      "button": 0,
+      "copies": 0,
+      "main": [
+        {
+          "cls": "product_hero",
+          "h": 969.625,
+          "y": 64
+        },
+        {
+          "cls": "narrative_section",
+          "h": 1189.53125,
+          "y": 1105.625
+        },
+        {
+          "cls": "craft_section",
+          "h": 1064.671875,
+          "y": 2295.15625
+        },
+        {
+          "cls": "look_section",
+          "h": 790.9375,
+          "y": 3359.828125
+        }
+      ],
+      "detail": [
+        {
+          "w": 342,
+          "h": 45.109375,
+          "x": 24,
+          "y": 407.546875,
+          "html": "Cheollik Dress No.7"
+        },
+        {
+          "w": 342,
+          "h": 330.578125,
+          "x": 24,
+          "y": 1892.578125,
+          "html": "\n            <figure class=\"narrative_main_image\">\n              <img src=\"assets/cheollik.png\" alt=\"Cheollik Dress reversible floral lining\">\n              <figcaption>PRODUCT DETAILS — REVERSIBLE LINING</figcaption>\n            </figure>\n            <div class=\"narrative_media_row\">\n              <img src=\"assets/cheollik2.png\" alt=\"Close-up of the Cheollik floral textile\">\n              <div class=\"edition_card\"><strong>XII</strong><span>PIECES IN EDITION</span><i></i><span>EACH HAND-STITCHED</span></div>\n            </div>\n          "
+        },
+        {
+          "w": 342,
+          "h": 286,
+          "x": 24,
+          "y": 2367.15625,
+          "html": "\n            <img class=\"craft_main_image\" src=\"assets/count_weave.png\" alt=\"Handwoven silk and cotton textile\">\n            <div class=\"craft_media_row\">\n              <img src=\"assets/silk_cotton.png\" alt=\"Silk and cotton thread detail\">\n              <div class=\"weave_card\"><strong>80</strong><span>COUNT WEAVE</span><i></i><span>SILK × COTTON</span></div>\n            </div>\n            <p>GYEONGGI-DO, SOUTH KOREA · HANDWOVEN</p>\n          "
+        }
+      ]
+    }
+  },
+  {
+    "name": "no autoplay reduced motion 1024",
+    "pass": true
+  },
+  {
+    "name": "reduced motion manual keys 1024",
+    "pass": true
+  },
+  {
+    "name": "filter UI 1024",
+    "pass": true
+  },
+  {
+    "name": "search input retained 1024",
+    "pass": true
+  },
+  {
+    "name": "clone product link 1024",
+    "pass": true
+  },
+  {
+    "name": "no autoplay reduced motion 390",
+    "pass": true
+  },
+  {
+    "name": "reduced motion manual keys 390",
+    "pass": true
+  },
+  {
+    "name": "filter UI 390",
+    "pass": true
+  },
+  {
+    "name": "search input retained 390",
+    "pass": true
+  },
+  {
+    "name": "clone product link 390",
+    "pass": true
+  },
+  {
+    "name": "gallery touch and alt",
+    "pass": true
+  },
+  {
+    "name": "final detail 360",
+    "pass": true,
+    "overflow": 0,
+    "height": 4976,
+    "narrativeWidth": 312,
+    "gallery": [
+      [
+        249.59375,
+        249.59375
+      ],
+      [
+        249.59375,
+        249.59375
+      ],
+      [
+        249.59375,
+        249.59375
+      ],
+      [
+        249.59375,
+        249.59375
+      ],
+      [
+        249.59375,
+        249.59375
+      ],
+      [
+        249.59375,
+        249.59375
+      ]
+    ]
+  },
+  {
+    "name": "final detail 375",
+    "pass": true,
+    "overflow": 0,
+    "height": 5004,
+    "narrativeWidth": 327,
+    "gallery": [
+      [
+        261.296875,
+        261.296875
+      ],
+      [
+        261.296875,
+        261.296875
+      ],
+      [
+        261.296875,
+        261.296875
+      ],
+      [
+        261.296875,
+        261.296875
+      ],
+      [
+        261.296875,
+        261.296875
+      ],
+      [
+        261.296875,
+        261.296875
+      ]
+    ]
+  },
+  {
+    "name": "final detail 390",
+    "pass": true,
+    "overflow": 0,
+    "height": 5003,
+    "narrativeWidth": 342,
+    "gallery": [
+      [
+        273,
+        273
+      ],
+      [
+        273,
+        273
+      ],
+      [
+        273,
+        273
+      ],
+      [
+        273,
+        273
+      ],
+      [
+        273,
+        273
+      ],
+      [
+        273,
+        273
+      ]
+    ]
+  },
+  {
+    "name": "final detail 430",
+    "pass": true,
+    "overflow": 0,
+    "height": 5041,
+    "narrativeWidth": 382,
+    "gallery": [
+      [
+        304.1875,
+        304.1875
+      ],
+      [
+        304.1875,
+        304.1875
+      ],
+      [
+        304.1875,
+        304.1875
+      ],
+      [
+        304.1875,
+        304.1875
+      ],
+      [
+        304.1875,
+        304.1875
+      ],
+      [
+        304.1875,
+        304.1875
+      ]
+    ]
+  },
+  {
+    "name": "final detail 767",
+    "pass": true,
+    "overflow": 0,
+    "height": 5466,
+    "narrativeWidth": 470,
+    "gallery": [
+      [
+        320,
+        320
+      ],
+      [
+        320,
+        320
+      ],
+      [
+        320,
+        320
+      ],
+      [
+        320,
+        320
+      ],
+      [
+        320,
+        320
+      ],
+      [
+        320,
+        320
+      ]
+    ]
+  }
+]
