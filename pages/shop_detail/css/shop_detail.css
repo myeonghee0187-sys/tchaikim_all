@@ -1147,7 +1147,7 @@ html.has_purchase_modal {
   .product_gallery_item.is_medium,
   .product_gallery_item.is_crop,
   .product_gallery_item.is_skirt {
-    flex: 0 0 min(78%, 320px);
+    flex: 0 0 min(72vw, 280px);
     width: auto;
     height: auto;
     scroll-snap-align: center;
@@ -1292,7 +1292,7 @@ html.has_purchase_modal {
   .product_gallery::-webkit-scrollbar { display: none; }
   .product_gallery .product_gallery_item {
     position: relative;
-    aspect-ratio: 4 / 5; height: auto; padding: 0;
+    aspect-ratio: 3 / 4; height: auto; padding: 0;
     background: var(--color_bg);
   }
   .product_gallery .product_gallery_item img {
@@ -1320,7 +1320,7 @@ html.has_purchase_modal {
     object-position: 50% 0%;
   }
   .product_gallery .product_gallery_item.is_skirt img {
-    object-position: 50% 75%;
+    object-position: 50% 68%;
   }
   .narrative_copy > p:first-of-type { display: block; }
   .narrative_section > .common_container,
@@ -1336,16 +1336,31 @@ html.has_purchase_modal {
   .narrative_copy blockquote { margin-block: 28px; font-size: 23px; }
   .narrative_media {
     display: grid; grid-template-columns: minmax(0, .36fr) minmax(0, .64fr);
-    gap: 12px; width: 100%; max-width: 470px; margin-left: auto;
+    gap: clamp(8px, 3vw, 12px); align-items: stretch;
+    width: 100%; max-width: 470px; margin-left: auto;
   }
-  .narrative_main_image { grid-column: 2; grid-row: 1 / 3; width: 100%; margin: 0; aspect-ratio: 460 / 720; }
+  .narrative_main_image { grid-column: 2; grid-row: 1; width: 100%; margin: 0; aspect-ratio: 460 / 720; }
   .narrative_main_image img { height: 100%; object-fit: contain; object-position: right center; }
   .narrative_main_image figcaption { display: none; }
   .product_facts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; margin-top: 24px; padding-top: 24px; }
   .product_facts dt { font-size: 12px; }
-  .narrative_media_row { display: contents; }
-  .narrative_media_row > img { grid-column: 1; grid-row: 2; width: 100%; height: 100%; min-height: 0; aspect-ratio: 1; object-fit: cover; }
-  .edition_card { grid-column: 1; grid-row: 1; width: 100%; height: auto; aspect-ratio: auto; gap: 6px; padding: 12px 8px; }
+  .narrative_media_row {
+    grid-column: 1; grid-row: 1;
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 3vw, 12px); margin: 0;
+    min-width: 0; min-height: 0;
+    /* The right portrait sets the parent row height. Keep the left image's
+       intrinsic size out of that calculation; stretch then sizes both rows.
+       Size containment does not clip the card or hide overflowing content. */
+    contain: size;
+  }
+  .narrative_media_row > img {
+    grid-column: 1; grid-row: 2;
+    width: 100%; height: 100%; min-width: 0; min-height: 0;
+    aspect-ratio: auto; object-fit: cover;
+  }
+  .edition_card { grid-column: 1; grid-row: 1; width: 100%; height: auto; min-width: 0; min-height: 0; aspect-ratio: auto; gap: 6px; padding: 12px 8px; }
   .edition_card strong { font-size: clamp(32px, 9vw, 44px); line-height: 1; }
   .edition_card span { font-size: 11px; line-height: 1.5; letter-spacing: .04em; }
   .craft_media {
