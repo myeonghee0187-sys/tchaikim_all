@@ -1292,10 +1292,38 @@ html.has_purchase_modal {
   .product_gallery { scrollbar-width: none; padding-bottom: 32px; }
   .product_gallery::-webkit-scrollbar { display: none; }
   .product_gallery .product_gallery_item {
-    aspect-ratio: 1; height: auto; padding: 8px;
+    aspect-ratio: 1; height: auto; padding: 0;
     background: var(--color_bg);
   }
-  .product_gallery_item img { object-fit: contain; object-position: center; }
+  .product_gallery .product_gallery_item img {
+    object-fit: contain;
+    object-position: center;
+  }
+  /* Keep the square rail geometry; crop only within each existing frame.
+     The portrait origins protect the hoods/faces. The skirt keeps its hem. */
+  .product_gallery .product_gallery_item.is_tall img {
+    transform: scale(1.46);
+    transform-origin: 50% 12%;
+  }
+  .product_gallery .product_gallery_item.is_short img {
+    transform: scale(1.1);
+    transform-origin: 50% 30%;
+  }
+  .product_gallery .product_gallery_item.is_long img {
+    transform: scale(1.5);
+    transform-origin: 50% 12%;
+  }
+  .product_gallery .product_gallery_item.is_medium img {
+    transform: scale(1.22);
+    transform-origin: 50% 48%;
+  }
+  .product_gallery .product_gallery_item.is_crop img {
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+  .product_gallery .product_gallery_item.is_skirt img {
+    transform: scale(1.24);
+  }
   .narrative_copy > p:first-of-type { display: block; }
   .narrative_section > .common_container,
   .craft_section > .common_container { padding-block: 0; }
