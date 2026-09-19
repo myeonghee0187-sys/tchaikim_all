@@ -664,7 +664,7 @@ html.has_purchase_modal {
   margin-top: 20px;
 }
 
-.narrative_media_row > img,
+.narrative_detail_image,
 .edition_card { height: 320px; }
 
 .edition_card,
@@ -1005,7 +1005,6 @@ html.has_purchase_modal {
   .product_facts { grid-template-columns: 1fr; }
   .narrative_main_image { height: auto; aspect-ratio: 460 / 720; }
   .narrative_media_row { grid-template-columns: repeat(2, 1fr); }
-  .narrative_media_row > img,
   .edition_card { height: auto; aspect-ratio: 220 / 320; }
   .edition_card span, .weave_card span { font-size: 11px; }
   .craft_inner { grid-template-columns: 1fr; width: 100%; max-width: 470px; }
@@ -1346,19 +1345,24 @@ html.has_purchase_modal {
   .product_facts dt { font-size: 12px; }
   .narrative_media_row {
     grid-column: 1; grid-row: 1;
+    align-self: stretch;
     display: grid; grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto minmax(0, 1fr);
     gap: clamp(8px, 3vw, 12px); margin: 0;
     min-width: 0; min-height: 0;
-    /* The right portrait sets the parent row height. Keep the left image's
-       intrinsic size out of that calculation; stretch then sizes both rows.
-       Size containment does not clip the card or hide overflowing content. */
-    contain: size;
   }
-  .narrative_media_row > img {
+  .narrative_detail_image {
     grid-column: 1; grid-row: 2;
-    width: 100%; height: 100%; min-width: 0; min-height: 0;
-    aspect-ratio: auto; object-fit: cover;
+    position: relative;
+    height: auto; min-width: 0; min-height: 0; margin: 0;
+    overflow: hidden;
+  }
+  /* Only the media viewport participates in grid sizing, not the image's
+     intrinsic height. The right portrait remains the row-height reference. */
+  .narrative_detail_image > img {
+    position: absolute; inset: 0;
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
   }
   .edition_card { grid-column: 1; grid-row: 1; width: 100%; height: auto; min-width: 0; min-height: 0; aspect-ratio: auto; gap: 6px; padding: 12px 8px; }
   .edition_card strong { font-size: clamp(32px, 9vw, 44px); line-height: 1; }
