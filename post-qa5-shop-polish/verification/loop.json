@@ -1,0 +1,626 @@
+[
+  {
+    "name": "clone accessibility 1024",
+    "pass": true,
+    "a11y": true,
+    "ids": [
+      "header",
+      "header_toggle",
+      "header_inner",
+      "header_currency_trigger",
+      "header_currency_menu",
+      "cart_drawer",
+      "cart_drawer_title",
+      "cart_drawer_description",
+      "main_content",
+      "hero_gallery",
+      "hero_gallery_canvas",
+      "garment_story_section",
+      "garment_story_title",
+      "garment_orbit_list",
+      "garment_info",
+      "garment_media",
+      "new_arrivals_title",
+      "shop_search_input",
+      "shop_select_wrap",
+      "shop_select_button",
+      "shop_select_list",
+      "shop_list_title",
+      "motif_reference",
+      "motif_detail_title",
+      "motif_product_strip",
+      "footer",
+      "footer_newsletter",
+      "footer_newsletter_label",
+      "footer_email_input",
+      "footer_email_message"
+    ],
+    "children": 24
+  },
+  {
+    "name": "identical seam 1024 -1",
+    "pass": true,
+    "cycle": 1788,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -156,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 50,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 256,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 492,
+        "y": 180.15625,
+        "w": 270,
+        "h": 320
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-4_web.webp",
+        "x": 778,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -156,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 50,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 256,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 492,
+        "y": 180.15625,
+        "w": 270,
+        "h": 320
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-4_web.webp",
+        "x": 778,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      }
+    ],
+    "left": 3558
+  },
+  {
+    "name": "identical seam 1024 1",
+    "pass": true,
+    "cycle": 1788,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 14,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 220,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 456,
+        "y": 180.15625,
+        "w": 270,
+        "h": 320
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-4_web.webp",
+        "x": 742,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-5_web.webp",
+        "x": 978,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 14,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 220,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 456,
+        "y": 180.15625,
+        "w": 270,
+        "h": 320
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-4_web.webp",
+        "x": 742,
+        "y": 215.15625,
+        "w": 220,
+        "h": 285
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-5_web.webp",
+        "x": 978,
+        "y": 250.15625,
+        "w": 190,
+        "h": 250
+      }
+    ],
+    "left": 1806
+  },
+  {
+    "name": "boundary mouse 1024 1",
+    "pass": true,
+    "start": {
+      "cycle": 1788,
+      "left": 3516
+    },
+    "end": 2142,
+    "distance": 414
+  },
+  {
+    "name": "boundary mouse 1024 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1788,
+      "left": 1848
+    },
+    "end": 3222,
+    "distance": 414
+  },
+  {
+    "name": "boundary touch 1024 1",
+    "pass": true,
+    "start": {
+      "cycle": 1788,
+      "left": 3516
+    },
+    "end": 2266,
+    "distance": 538
+  },
+  {
+    "name": "boundary touch 1024 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1788,
+      "left": 1848
+    },
+    "end": 3112,
+    "distance": 524
+  },
+  {
+    "name": "horizontal trackpad 1024",
+    "pass": true
+  },
+  {
+    "name": "vertical wheel 1024",
+    "pass": true
+  },
+  {
+    "name": "keyboard 1024",
+    "pass": true
+  },
+  {
+    "name": "clone accessibility 390",
+    "pass": true,
+    "a11y": true,
+    "ids": [
+      "header",
+      "header_toggle",
+      "header_inner",
+      "header_currency_trigger",
+      "header_currency_menu",
+      "cart_drawer",
+      "cart_drawer_title",
+      "cart_drawer_description",
+      "main_content",
+      "hero_gallery",
+      "hero_gallery_canvas",
+      "garment_story_section",
+      "garment_story_title",
+      "garment_orbit_list",
+      "garment_info",
+      "garment_media",
+      "new_arrivals_title",
+      "shop_search_input",
+      "shop_select_wrap",
+      "shop_select_button",
+      "shop_select_list",
+      "shop_list_title",
+      "motif_reference",
+      "motif_detail_title",
+      "motif_product_strip",
+      "footer",
+      "footer_newsletter",
+      "footer_newsletter_label",
+      "footer_email_input",
+      "footer_email_message"
+    ],
+    "children": 24
+  },
+  {
+    "name": "identical seam 390 -1",
+    "pass": true,
+    "cycle": 1446,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -129,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 38,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 205,
+        "y": 213.703125,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -129,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 38,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 205,
+        "y": 213.703125,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "left": 2874
+  },
+  {
+    "name": "identical seam 390 1",
+    "pass": true,
+    "cycle": 1446,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 2,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 169,
+        "y": 213.703125,
+        "w": 180,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 361,
+        "y": 179.703125,
+        "w": 215,
+        "h": 284
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 2,
+        "y": 248.703125,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 169,
+        "y": 213.703125,
+        "w": 180,
+        "h": 250
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-3_web.webp",
+        "x": 361,
+        "y": 179.703125,
+        "w": 215,
+        "h": 284
+      }
+    ],
+    "left": 1464
+  },
+  {
+    "name": "boundary mouse 390 1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 2832
+    },
+    "end": 1602,
+    "distance": 216
+  },
+  {
+    "name": "boundary mouse 390 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 1506
+    },
+    "end": 2736,
+    "distance": 216
+  },
+  {
+    "name": "boundary touch 390 1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 2832
+    },
+    "end": 1632,
+    "distance": 246
+  },
+  {
+    "name": "boundary touch 390 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 1506
+    },
+    "end": 2709,
+    "distance": 243
+  },
+  {
+    "name": "horizontal trackpad 390",
+    "pass": true
+  },
+  {
+    "name": "vertical wheel 390",
+    "pass": true
+  },
+  {
+    "name": "keyboard 390",
+    "pass": true
+  },
+  {
+    "name": "clone accessibility 360",
+    "pass": true,
+    "a11y": true,
+    "ids": [
+      "header",
+      "header_toggle",
+      "header_inner",
+      "header_currency_trigger",
+      "header_currency_menu",
+      "cart_drawer",
+      "cart_drawer_title",
+      "cart_drawer_description",
+      "main_content",
+      "hero_gallery",
+      "hero_gallery_canvas",
+      "garment_story_section",
+      "garment_story_title",
+      "garment_orbit_list",
+      "garment_info",
+      "garment_media",
+      "new_arrivals_title",
+      "shop_search_input",
+      "shop_select_wrap",
+      "shop_select_button",
+      "shop_select_list",
+      "shop_list_title",
+      "motif_reference",
+      "motif_detail_title",
+      "motif_product_strip",
+      "footer",
+      "footer_newsletter",
+      "footer_newsletter_label",
+      "footer_email_input",
+      "footer_email_message"
+    ],
+    "children": 24
+  },
+  {
+    "name": "identical seam 360 -1",
+    "pass": true,
+    "cycle": 1446,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -129,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 38,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 205,
+        "y": 213.5,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-8_web.webp",
+        "x": -129,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 38,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 205,
+        "y": 213.5,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "left": 2874
+  },
+  {
+    "name": "identical seam 360 1",
+    "pass": true,
+    "cycle": 1446,
+    "before": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 2,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 169,
+        "y": 213.5,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "after": [
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-1_web.webp",
+        "x": 2,
+        "y": 248.5,
+        "w": 155,
+        "h": 215
+      },
+      {
+        "src": "http://127.0.0.1:5733/pages/shop/assets/images/image-2_web.webp",
+        "x": 169,
+        "y": 213.5,
+        "w": 180,
+        "h": 250
+      }
+    ],
+    "left": 1464
+  },
+  {
+    "name": "boundary mouse 360 1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 2832
+    },
+    "end": 1584,
+    "distance": 198
+  },
+  {
+    "name": "boundary mouse 360 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 1506
+    },
+    "end": 2754,
+    "distance": 198
+  },
+  {
+    "name": "boundary touch 360 1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 2832
+    },
+    "end": 1608,
+    "distance": 222
+  },
+  {
+    "name": "boundary touch 360 -1",
+    "pass": true,
+    "start": {
+      "cycle": 1446,
+      "left": 1506
+    },
+    "end": 2736,
+    "distance": 216
+  },
+  {
+    "name": "horizontal trackpad 360",
+    "pass": true
+  },
+  {
+    "name": "vertical wheel 360",
+    "pass": true
+  },
+  {
+    "name": "keyboard 360",
+    "pass": true
+  }
+]

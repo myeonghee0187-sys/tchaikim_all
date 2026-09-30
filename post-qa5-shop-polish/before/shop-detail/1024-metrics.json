@@ -1,0 +1,27 @@
+{
+  "height": 6497,
+  "borders": [
+    {
+      "selector": "craft_main_image",
+      "width": "0px",
+      "style": "none",
+      "color": "rgb(255, 253, 249)",
+      "radius": "0px",
+      "natural": [
+        470,
+        400
+      ]
+    },
+    {
+      "selector": "Silk and cotton thread detail",
+      "width": "0px",
+      "style": "none",
+      "color": "rgb(255, 253, 249)",
+      "radius": "0px",
+      "natural": [
+        228,
+        240
+      ]
+    }
+  ]
+}

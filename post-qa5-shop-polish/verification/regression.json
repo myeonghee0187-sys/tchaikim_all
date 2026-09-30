@@ -1,0 +1,37 @@
+[
+  {
+    "name": "locked baseline shop 1920",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop 1280",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop-detail 1920",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop-detail 1280",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop-detail 1279",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop-detail 1024",
+    "pass": true,
+    "diffs": []
+  },
+  {
+    "name": "locked baseline shop-detail 768",
+    "pass": true,
+    "diffs": []
+  }
+]

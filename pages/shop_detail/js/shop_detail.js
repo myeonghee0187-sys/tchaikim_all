@@ -170,10 +170,18 @@
     var originalCopy = materialCopy ? materialCopy.innerHTML : "";
     var materialTitle = document.getElementById("craft_title");
     var originalTitle = materialTitle ? materialTitle.innerHTML : "";
+    var mobileCopy = [
+      [document.querySelector(".product_title"), "Cheollik Dress No.7"],
+      [document.querySelector(".narrative_copy > p:first-of-type"), "TCHAI KIM reinterprets six centuries of Joseon ceremony through the Cheollik."],
+      [document.querySelector(".narrative_copy > p:nth-of-type(2)"), "<u>Namsadangpae</u> performers inspire the motif’s layered, asymmetric movement."]
+    ].filter(function (item) { return item[0]; }).map(function (item) { return { node: item[0], compact: item[1], original: item[0].innerHTML }; });
     var stage = null;
     var placements = [];
 
     function syncLayout() {
+      mobileCopy.forEach(function (item) {
+        item.node.innerHTML = mobileMedia.matches ? item.compact : item.original;
+      });
       if (materialTitle) materialTitle.innerHTML = mobileMedia.matches
         ? "Craft held to a higher register" : originalTitle;
       if (materialCopy) materialCopy.innerHTML = mobileMedia.matches

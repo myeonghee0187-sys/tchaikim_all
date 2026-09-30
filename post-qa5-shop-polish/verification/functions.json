@@ -1,0 +1,78 @@
+[
+  {
+    "name": "color 390",
+    "pass": true
+  },
+  {
+    "name": "size 390",
+    "pass": true
+  },
+  {
+    "name": "purchase dialog 390",
+    "pass": true
+  },
+  {
+    "name": "accordion 390 0",
+    "pass": true
+  },
+  {
+    "name": "accordion 390 1",
+    "pass": true
+  },
+  {
+    "name": "accordion 390 2",
+    "pass": true
+  },
+  {
+    "name": "gallery keyboard 390",
+    "pass": true
+  },
+  {
+    "name": "color 1024",
+    "pass": true
+  },
+  {
+    "name": "size 1024",
+    "pass": true
+  },
+  {
+    "name": "purchase dialog 1024",
+    "pass": true
+  },
+  {
+    "name": "accordion 1024 0",
+    "pass": true
+  },
+  {
+    "name": "accordion 1024 1",
+    "pass": true
+  },
+  {
+    "name": "accordion 1024 2",
+    "pass": true
+  },
+  {
+    "name": "color 1920",
+    "pass": true
+  },
+  {
+    "name": "size 1920",
+    "pass": true
+  },
+  {
+    "name": "purchase dialog 1920",
+    "pass": true
+  },
+  {
+    "name": "accordion 1920 0",
+    "pass": true
+  },
+  {
+    "name": "accordion 1920 1",
+    "pass": true
+  },
+  {
+    "name": "accordion 1920 2",
+    "pass": true
+  }
+]

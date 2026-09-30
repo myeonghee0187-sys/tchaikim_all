@@ -664,7 +664,7 @@ html.has_purchase_modal {
   margin-top: 20px;
 }
 
-.narrative_media_row > img,
+.narrative_detail_image,
 .edition_card { height: 320px; }
 
 .edition_card,
@@ -1005,7 +1005,6 @@ html.has_purchase_modal {
   .product_facts { grid-template-columns: 1fr; }
   .narrative_main_image { height: auto; aspect-ratio: 460 / 720; }
   .narrative_media_row { grid-template-columns: repeat(2, 1fr); }
-  .narrative_media_row > img,
   .edition_card { height: auto; aspect-ratio: 220 / 320; }
   .edition_card span, .weave_card span { font-size: 11px; }
   .craft_inner { grid-template-columns: 1fr; width: 100%; max-width: 470px; }
@@ -1147,10 +1146,9 @@ html.has_purchase_modal {
   .product_gallery_item.is_medium,
   .product_gallery_item.is_crop,
   .product_gallery_item.is_skirt {
-    flex: 0 0 min(78%, 320px);
+    flex: 0 0 min(72vw, 280px);
     width: auto;
     height: auto;
-    aspect-ratio: 348 / 464;
     scroll-snap-align: center;
   }
 }
@@ -1291,9 +1289,39 @@ html.has_purchase_modal {
 @media (max-width: 767px) {
   .product_gallery { scrollbar-width: none; padding-bottom: 32px; }
   .product_gallery::-webkit-scrollbar { display: none; }
-  .product_gallery .product_gallery_item { aspect-ratio: auto; height: min(108vw, 440px); }
-  .product_gallery_item img { object-fit: contain; object-position: center; }
-  .narrative_copy > p:first-of-type { display: none; }
+  .product_gallery .product_gallery_item {
+    position: relative;
+    aspect-ratio: 3 / 4; height: auto; padding: 0;
+    background: var(--color_bg);
+  }
+  .product_gallery .product_gallery_item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+    transform-origin: center;
+  }
+  /* Portrait frames retain more garment detail without contain letterboxing. */
+  .product_gallery .product_gallery_item.is_tall img {
+    object-position: 50% 16%;
+  }
+  .product_gallery .product_gallery_item.is_short img {
+    object-position: 50% 50%;
+  }
+  .product_gallery .product_gallery_item.is_long img {
+    object-position: 50% 12%;
+  }
+  .product_gallery .product_gallery_item.is_medium img {
+    object-position: 50% 45%;
+  }
+  .product_gallery .product_gallery_item.is_crop img {
+    object-position: 50% 0%;
+  }
+  .product_gallery .product_gallery_item.is_skirt img {
+    object-position: 50% 68%;
+  }
+  .narrative_copy > p:first-of-type { display: block; }
   .narrative_section > .common_container,
   .craft_section > .common_container { padding-block: 0; }
   .narrative_section, .craft_section { padding-block: 72px; }
@@ -1303,20 +1331,56 @@ html.has_purchase_modal {
     max-width: 36ch; font-size: 15px; line-height: 1.7;
   }
   .narrative_copy .display_title { font-size: 44px; line-height: 1.15; }
-  .narrative_copy blockquote { margin-block: 32px; font-size: 23px; }
-  .narrative_main_image { width: 78%; margin-left: auto; aspect-ratio: auto; }
-  .narrative_main_image img { height: 330px; object-fit: contain; }
-  .narrative_main_image figcaption { position: static; padding: 12px 0 0; background: none; color: var(--detail_secondary); font-size: 11px; line-height: 1.6; letter-spacing: .04em; }
+  .narrative_copy > p { padding-top: 24px; }
+  .narrative_copy blockquote { margin-block: 28px; font-size: 23px; }
+  .narrative_media {
+    display: grid; grid-template-columns: minmax(0, .36fr) minmax(0, .64fr);
+    gap: clamp(8px, 3vw, 12px); align-items: stretch;
+    width: 100%; max-width: 470px; margin-left: auto;
+  }
+  .narrative_main_image { grid-column: 2; grid-row: 1; width: 100%; margin: 0; aspect-ratio: 460 / 720; }
+  .narrative_main_image img { height: 100%; object-fit: contain; object-position: right center; }
+  .narrative_main_image figcaption { display: none; }
   .product_facts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; margin-top: 24px; padding-top: 24px; }
   .product_facts dt { font-size: 12px; }
-  .narrative_media_row { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 28px; gap: 16px; }
-  .narrative_media_row > img, .edition_card { width: 100%; height: 180px; aspect-ratio: auto; }
-  .edition_card { gap: 8px; padding: 12px; }
-  .edition_card strong { line-height: 1; }
-  .craft_media { height: auto; }
-  .craft_media .craft_main_image { width: 86%; height: 230px; }
-  .craft_media_row { margin-top: 24px; gap: 16px; }
-  .craft_media_row > img, .weave_card { height: 150px; aspect-ratio: auto; }
+  .narrative_media_row {
+    grid-column: 1; grid-row: 1;
+    align-self: stretch;
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: clamp(8px, 3vw, 12px); margin: 0;
+    min-width: 0; min-height: 0;
+  }
+  .narrative_detail_image {
+    grid-column: 1; grid-row: 2;
+    position: relative;
+    height: auto; min-width: 0; min-height: 0; margin: 0;
+    overflow: hidden;
+  }
+  /* Only the media viewport participates in grid sizing, not the image's
+     intrinsic height. The right portrait remains the row-height reference. */
+  .narrative_detail_image > img {
+    position: absolute; inset: 0;
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+  }
+  .edition_card { grid-column: 1; grid-row: 1; width: 100%; height: auto; min-width: 0; min-height: 0; aspect-ratio: auto; gap: 6px; padding: 12px 8px; }
+  .edition_card strong { font-size: clamp(32px, 9vw, 44px); line-height: 1; }
+  .edition_card span { font-size: 11px; line-height: 1.5; letter-spacing: .04em; }
+  .craft_media {
+    display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, .4fr);
+    gap: 12px; height: auto;
+  }
+  .craft_media .craft_main_image { grid-column: 1; grid-row: 1 / 3; width: 100%; height: 100%; aspect-ratio: auto; }
+  .craft_media_row { display: contents; }
+  .craft_media_row > img { grid-column: 2; grid-row: 1; width: 100%; height: clamp(104px, 30vw, 160px); aspect-ratio: auto; }
+  /* Measured at the locked 1024px baseline: 0px / none / #fffdf9 / 0px.
+     The pale edge belongs to the source images, not a CSS border. */
+  .craft_media .craft_main_image, .craft_media_row > img { border: 0 none #fffdf9; border-radius: 0; }
+  .weave_card { grid-column: 2; grid-row: 2; height: auto; min-height: 120px; aspect-ratio: auto; padding: 12px 8px; gap: 6px; }
+  .weave_card strong { font-size: 38px; line-height: 1; }
+  .weave_card span { font-size: 11px; line-height: 1.5; letter-spacing: .04em; }
+  .craft_media > p { grid-column: 1 / -1; margin: 4px 0 0; }
   .craft_copy .section_title br { display: none; }
   .craft_copy .section_title { max-width: none; font-size: 34px; line-height: 1.2; }
   .craft_copy .detail_accordion { margin-top: 36px; }

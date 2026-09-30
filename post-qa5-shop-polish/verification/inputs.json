@@ -1,0 +1,132 @@
+[
+  {
+    "name": "vertical touch 1024",
+    "pass": true,
+    "start": 8115,
+    "end": 8260
+  },
+  {
+    "name": "tab originals only 1024",
+    "pass": true,
+    "focus": [
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card is_selected",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "footer_menu_link",
+        "clone": false,
+        "href": "../main/index.html"
+      }
+    ]
+  },
+  {
+    "name": "active drag exit cleanup 1024",
+    "pass": true
+  },
+  {
+    "name": "active drag reentry 1024",
+    "pass": true
+  },
+  {
+    "name": "vertical touch 390",
+    "pass": true,
+    "start": 5581,
+    "end": 5754
+  },
+  {
+    "name": "tab originals only 390",
+    "pass": true,
+    "focus": [
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card is_selected",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "motif_product_card",
+        "clone": false,
+        "href": "../shop_detail/index.html"
+      },
+      {
+        "cls": "footer_menu_link",
+        "clone": false,
+        "href": "../main/index.html"
+      }
+    ]
+  },
+  {
+    "name": "active drag exit cleanup 390",
+    "pass": true
+  },
+  {
+    "name": "active drag reentry 390",
+    "pass": true
+  }
+]
