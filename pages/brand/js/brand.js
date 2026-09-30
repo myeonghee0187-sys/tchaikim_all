@@ -325,7 +325,7 @@
            상쇄해 두었으므로(★★ 2026-08-22 추가 주석 참고), 이 안의
            .mood_reveal에는 실제 창 높이를 배수 없이 그대로 씁니다 —
            무대(.mood_stage, height:100vh)와 정확히 같은 높이로 열립니다. */
-REVEAL_STAGE_HEIGHT = 700;
+REVEAL_STAGE_HEIGHT = window.innerHeight;
 REVEAL_CLOSED_HEIGHT = 484;
 
         /* .mood_inner를 얼마나 밀어야 mood_right(무드 단어)가 화면 밖으로
